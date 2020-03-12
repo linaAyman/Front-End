@@ -1,1 +1,19 @@
-<p>mayestro works!</p>
+<div class="row home">
+    <section class="col-2 p-0 ">
+        <div class="position-fixed bg-dark p-2 side">
+            <app-side-bar></app-side-bar>
+        </div>
+    </section>
+    <section class="col-10">
+        <app-header></app-header>
+        <div class="w-100 p-2 router">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</div>
+<div class="row ">
+    <footer class="col-12 player fixed-bottom bg-danger">
+        <app-player></app-player>
+    </footer>
+</div>
+
