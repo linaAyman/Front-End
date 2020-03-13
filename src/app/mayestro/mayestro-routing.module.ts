@@ -4,7 +4,11 @@ import { MayestroComponent } from './mayestro.component';
 
 
 const routes: Routes = [
-  {path:'',pathMatch:"full",component:MayestroComponent}
+  {path: '',
+  component: MayestroComponent, // base template component
+  children: [
+    
+  ]}
 ];
 
 @NgModule({

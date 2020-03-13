@@ -4,7 +4,11 @@ import { AccountMayestroComponent } from './account-mayestro.component';
 
 
 const routes: Routes = [
-  {path:'',pathMatch:'full',component:AccountMayestroComponent}
+  {path: '',
+  component: AccountMayestroComponent, // base template component
+  children: [
+    
+  ]}
 ];
 
 @NgModule({
