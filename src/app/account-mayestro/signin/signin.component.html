@@ -1,1 +1,51 @@
-<p>signin works!</p>
+<div class="signin container">
+  <div class="row">
+    <h5 class="col-12 text-center h5 mb-3">To continue, log in to Spotify.</h5>
+  </div>
+  <div class="row">
+    <button class="col-12 mb-2 facebook-btn custom-btn btn text-white"><i class="fa fa-facebook"></i> continue with facebook</button>
+  </div>
+  <div class="row text-center">
+    <h3 class="col-12 or h3 font-weight-bold">OR</h3>
+  </div>
+    <form #f="ngForm" class="form-group d-block" (ngSubmit)="submit(f)">
+      <div class="row">
+        <div class="col-12">
+          <mat-form-field class="w-100">
+            <mat-label>Email or username</mat-label>
+            <input matInput ngModel name="Email" #Email="ngModel" >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <mat-form-field class="w-100">
+            <mat-label>password</mat-label>
+            <input matInput ngModel name="Password" #Password="ngModel" >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <mat-checkbox class=" w-100 mt-2"><span class="remember">Remember me!</span></mat-checkbox>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <button type="submit" class="login-btn w-100 custom-btn btn text-white float-right">login</button>
+        </div>
+      </div>
+    </form>   
+    <div class="row text-center pb-3">
+      <a class="col-12 forgot-password" href="#">Forgot your password?</a>
+    </div> 
+    <hr>
+    <div class="row pt-3">
+      <h4 class="font-weight-bolder m-auto">Don't have an account?</h4>
+    </div>
+    <div class="row pt-4">
+      <button class="col-12 mb-2  custom-btn bg-white  signub-btn">sign up for mayestro</button>
+    </div>
+    <hr>
+    <div class="row">
+      <p>If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree to Spotify's <span class="imp-text">Terms & Conditions</span> and <span class="imp-text">Privacy Policy.</span></p>
+    </div>
+</div>

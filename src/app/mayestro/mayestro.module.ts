@@ -12,7 +12,7 @@ import { PlayerComponent } from './player/player.component';
   declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent],
   imports: [
     CommonModule,
-    MayestroRoutingModule
+    MayestroRoutingModule,
   ]
 })
 export class MayestroModule { }
