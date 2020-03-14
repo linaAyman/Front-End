@@ -4,7 +4,12 @@ import { OpenMayestroComponent } from './open-mayestro.component';
 
 
 const routes: Routes = [
-  {path:'',pathMatch:'full',component:OpenMayestroComponent}
+  {path:'',
+  component:OpenMayestroComponent,
+  children:[
+    
+  ]
+}
 ];
 
 @NgModule({

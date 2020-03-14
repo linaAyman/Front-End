@@ -6,9 +6,6 @@ import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
-  // {path:'',pathMatch:'full',component:AccountMayestroComponent},
-  // {path:'signin',component:SigninComponent},
-  // {path:'signup',component:SignupComponent}
   {path: '',
   component: AccountMayestroComponent, // base template component
   children: [
