@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -22,7 +24,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     FormsModule,
     MatInputModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule,
+    MatRadioModule
   ]
 })
 export class AccountMayestroModule { }

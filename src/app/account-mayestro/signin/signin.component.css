@@ -1,11 +1,13 @@
 .custom-btn{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1;
     min-width: 160px;
     padding: 16px 14px 18px;
     border-radius: 500px;
     letter-spacing: 2px;
+    text-transform: uppercase;
+
 }
 h5,h4{
     font-size: 16px;
@@ -21,18 +23,32 @@ h5,h4{
 }
 .login-btn{
     width: 50%;
-    background-color: #1db954;
+}
+.login-btn:hover{
+    background-color: #1ED760;
+}
+a{
+    text-decoration: none;
+}
+.forgot-password:hover,.imp-text:hover{
+    color:#1ED760 ;
 }
 .facebook-btn{
     background-color: #3b5998;
-
+}
+.facebook-btn:hover{
+    background-color: #3a61b3;
 }
 .signub-btn{
     border: 2px solid#616467;
+    background-color: white;
     color:#616467;
-    text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
+}
+.signub-btn:hover{
+    color: white;
+    background-color: #616467;
 }
 .remember{
     line-height: 1.5;
@@ -44,7 +60,9 @@ h5,h4{
 ::ng-deep .mat-checkbox .mat-checkbox-frame {
     border-color: #1db954;
   }
-::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+ .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background ,
+ .login-btn{
     background-color:#1db954;
 }
 .or::after{
@@ -69,7 +87,7 @@ h5,h4{
     font-size: 12px;
     letter-spacing: 1px;
 }
-.forgot-password{
+.forgot-password,.imp-text{
     color: #1db954;
 }
 
@@ -78,14 +96,10 @@ h5,h4{
     font-weight: 700;
     width: 450px;
     position: relative;
-    /* text-align: center; */
 }
 p{
     font-size: .7em;
     color: #c1c3c6;
     text-align: center;
 
-}
-.imp-text{
-    color: #1db954;
 }
