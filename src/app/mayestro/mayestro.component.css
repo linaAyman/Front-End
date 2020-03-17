@@ -17,23 +17,36 @@
     
 
 }
+
 .router{
+    z-index: -1;
+    max-width: 85%;
+    width: 100%;
+    margin: 0;
     height: 573px;
-    margin-top: 56px;
+    margin-top: 62px; 
+    margin-left: 228px;
+    padding-left: 18px;
 }
+
 .side{
     display: flex;
     flex-direction: column;
     background-color: rgba(0,0,0,.8);
-    width: 18%;
-    height:85% ;
+    width: 230px;
+    height:100% ;
     top:0;
     left:0;
     right:0;
     position: fixed;
     min-height: 85%;
 }
-
+.headd{
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    margin-left: 230px;
+}
 .flexnav{
     display: flex;
     flex-direction: column;

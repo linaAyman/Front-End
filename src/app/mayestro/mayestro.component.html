@@ -1,18 +1,16 @@
-<div class="px-3">
-    <div class="side">
-            <div class="side">
-                <app-side-bar style="background-color:  rgba(0,0,0,.8)"></app-side-bar>
-            </div>
-        <section class="col-10 p-0">
+<div class="p-0">
+        <div class="side" >
+            <app-side-bar ></app-side-bar>
+        </div>
+        <div class="position-fixed headd">
             <app-header></app-header>
-            <div class="w-100 p-2 router">
-                <router-outlet></router-outlet>
+        </div>
+        <section class=" position-relative p-0">
+            <div class="container  router ">
+                    <router-outlet ></router-outlet>
             </div>
         </section>
-    </div>
-    <div class="row col-12 ">
         <footer class="player  bg-danger">
             <app-player></app-player>
         </footer>
-    </div>    
 </div>
