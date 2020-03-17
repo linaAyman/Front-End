@@ -13,8 +13,7 @@
     left:0;
     bottom: 0;
     flex-direction: row;
-    height: 15%;
-    
+    height: 75px;   
 
 }
 
@@ -23,10 +22,12 @@
     max-width: 85%;
     width: 100%;
     margin: 0;
-    height: 573px;
-    margin-top: 62px; 
+    height: 650px;
+    padding-top: 60px; 
     margin-left: 228px;
     padding-left: 18px;
+    overflow-x: auto; 
+    text-align: justify;
 }
 
 .side{
@@ -46,6 +47,7 @@
     top: 0;
     width: 100%;
     margin-left: 230px;
+    height: 60px;
 }
 .flexnav{
     display: flex;
