@@ -6,11 +6,14 @@ import { MayestroComponent } from './mayestro.component';
 import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { PlayerComponent } from './player/player.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 @NgModule({
   declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent],
   imports: [
+    MatMenuModule,
     CommonModule,
     MayestroRoutingModule
   ]
