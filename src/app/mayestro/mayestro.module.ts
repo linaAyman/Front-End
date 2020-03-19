@@ -6,10 +6,11 @@ import { MayestroComponent } from './mayestro.component';
 import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { PlayerComponent } from './player/player.component';
+import { ArtistComponent } from './artist/artist.component';
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, ArtistComponent],
   imports: [
     CommonModule,
     MayestroRoutingModule,
