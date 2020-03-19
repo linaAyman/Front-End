@@ -34,5 +34,14 @@
     border-radius: 8px;
     isolation: isolate;
     box-sizing: border-box;
-    
+
+}
+.card-body{
+    height:100px;
+}
+.btn{
+    display: none;
+}
+.card-body:hover .btn{
+    display: inline;
 }
