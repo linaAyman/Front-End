@@ -12,6 +12,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
+import { fakeBackendProvider } from '../shared/mock-server/mock-server.service';
 
 
 
@@ -26,7 +29,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatMenuModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    SharedModule,
+    HttpClientModule
   ]
 })
 export class AccountMayestroModule { }
