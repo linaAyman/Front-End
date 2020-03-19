@@ -12,12 +12,21 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
-import { fakeBackendProvider } from '../shared/mock-server/mock-server.service';
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 
 
+const config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('2566655633574824')
+  }
+]);
 
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [AccountMayestroComponent, SigninComponent, SignupComponent, HeaderComponent],
@@ -31,7 +40,14 @@ import { fakeBackendProvider } from '../shared/mock-server/mock-server.service';
     MatSelectModule,
     MatRadioModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule
+  ],
+  providers:[
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
   ]
 })
 export class AccountMayestroModule { }
