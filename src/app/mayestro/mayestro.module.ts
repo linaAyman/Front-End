@@ -6,6 +6,7 @@ import { MayestroComponent } from './mayestro.component';
 import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { PlayerComponent } from './player/player.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { PlayerComponent } from './player/player.component';
   imports: [
     CommonModule,
     MayestroRoutingModule,
+    SharedModule
   ]
 })
 export class MayestroModule { }
