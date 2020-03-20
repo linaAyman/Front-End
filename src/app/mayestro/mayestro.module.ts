@@ -11,11 +11,14 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MiniCardViewerComponent } from './mini-card-viewer/mini-card-viewer.component';
 import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { ArtistsComponent } from './artists/artists.component';
+import { PlaylistsComponent } from './playlists/playlists.component';
 
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent],
   imports: [
     MatMenuModule,
     CommonModule,
