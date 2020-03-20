@@ -14,8 +14,8 @@ deploy:
   provider: elasticbeanstalk
   region:   "us-east-2"
   app: "maestrofe"
-  env: "maestrofe-env"
-  bucket_name: "  elasticbeanstalk-us-east-2-496763498997"
+  env: "Maestrofe-env"
+  bucket_name: "elasticbeanstalk-us-east-2-496763498997"
   bucket_path: "maestrofe"
   on:
     branch: master
