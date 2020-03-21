@@ -9,7 +9,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-RUN npm install
+RUN npm install --save core-js@^3
 RUN npm install -g @angular/cli@8.3.5
 
 # add app
