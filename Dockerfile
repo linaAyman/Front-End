@@ -1,24 +1,21 @@
 # base image
-FROM node:alpine as builder
+FROM node:12.2.0 as builder
 
 # set working directory
-WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+WORKDIR '/app'
 
 # install and cache app dependencies
-COPY package.json /app/package.json
-RUN npm install --save core-js@^3
-RUN npm install -g @angular/cli@8.3.5
+COPY package*.json ./
+RUN npm install
+RUN npm install -g @angular/cli@8.3.25
 
 # add app
 COPY . .
 
 #run build
-RUN npm run build
+RUN ng build --prod --output-path=dist
 
 #nginx
 FROM nginx
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
