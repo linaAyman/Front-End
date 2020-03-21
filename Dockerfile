@@ -16,7 +16,7 @@ RUN npm install -g @angular/cli@8.3.5
 COPY . .
 
 #run build
-RUN ng build --prod
+RUN npm run build
 
 #nginx
 FROM nginx
