@@ -11,7 +11,6 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install --save core-js@^3
 RUN npm install -g @angular/cli@8.3.5
-RUN npm install --save-dev @angular-devkit/build-angular@latest
 
 # add app
 COPY . .
