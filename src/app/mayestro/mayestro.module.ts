@@ -17,6 +17,7 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 
 
 
+
 @NgModule({
   declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent],
   imports: [
