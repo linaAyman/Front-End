@@ -1,0 +1,31 @@
+
+
+<div class="main-view">
+    <div class ="row">
+        <div clas="col-6">
+            <div class="playlist-content" >
+                <img src="https://community.spotify.com/t5/image/serverpage/image-id/25294i2836BD1C1A31BDF2/image-size/original?v=mpbl-1&px=-1">
+                <h2 style="color: white; text-align: center;" >Album</h2>
+                
+                <div>
+
+               <a class="nav-link" href="#">Artist</a> 
+                
+                </div>
+                
+                <button class="play-button" (click)=" getAlbum()" type="button" >Play</button> 
+                <br>
+                <button class="like-button"  ><i (click)="like()" [style.-webkit-text-fill-color]="isLiked ? 'rgb(18,18,18)' : 'rgb(25, 206, 88)' " [style.color]="isLiked ? 'white' : 'rgb(25, 206, 88)' " class="fa fa-heart"></i></button>
+                <button class="more-button" type="button">...</button>
+                <p style="text-align: center; color: white">date </p>
+            </div>
+        
+        </div>
+        <div class="col-6">
+            <app-song></app-song>
+        </div>
+    </div>
+</div>
+
+
+
