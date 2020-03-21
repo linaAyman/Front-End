@@ -1,0 +1,23 @@
+language: generic 
+sudo: required
+services:
+  - docker
+
+
+before_install:
+  - docker build -t lina/docker-maestrofe -f Dockerfile.dev . 
+
+script:
+  - docker run -e CI=true lina/docker-maestrofe
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region:   "us-east-2"
+  app: "maestrofe"
+  env: "Maestrofe-env"
+  bucket_name: "elasticbeanstalk-us-east-2-496763498997"
+  bucket_path: "maestrofe"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
