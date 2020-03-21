@@ -1,0 +1,40 @@
+.buttons{
+    margin-top: 16px;
+    margin-bottom: 30px;
+}
+
+.artist-container{
+    background-color:  #121212;
+    width: 100%;
+    height: 100%;
+}
+.Root {
+    background-color:  #121212;
+    -webkit-transition: none .5s cubic-bezier(.3,0,.4,1);
+    transition: none .5s cubic-bezier(.3,0,.4,1);
+    -webkit-transition-property: background;
+    transition-property: background;
+    min-height: 100vh;
+}
+
+.e234ba97490a4755608d45716b32a1df-scss {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -.005em;
+    font-weight: var(--glue-font-weight-black);
+    color: #fff;
+    text-transform: none;
+}
+._09de7f5685fbf244f783483fedae7419-scss {
+    text-align: left;
+}
+._70aef60cb99a7cbe780a28b62977a811-scss {
+    display: inline-block;
+}
+._137ec408b14ac4ea5aec6ded3d95f328-scss {
+    margin: 0 8px 0 0;
+}
+._51da7332811699-scss {
+    margin-top: 16px;
+    margin-bottom: 30px;
+}
