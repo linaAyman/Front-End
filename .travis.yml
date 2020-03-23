@@ -1,23 +1,27 @@
-language: generic 
+language: generic
 sudo: required
 services:
   - docker
 
+branches:
+  only:
+    - master  
 
 before_install:
-  - docker build -t lina/docker-maestrofe -f Dockerfile.dev . 
+  - docker build -t lina/docker-devmaestrofe -f Dockerfile.dev . 
 
 script:
+  - docker run -e CI=true lina/docker-devmaestrofe
+
+after_success:
+  - ssh -i testaws.pem ubuntu@ec2-3-17-150-160.us-east-2.compute.amazonaws.com
+  - docker build -t lina/docker-maestrofe .
   - docker run -e CI=true lina/docker-maestrofe
-deploy:
-  edge: true
-  provider: elasticbeanstalk
-  region:   "us-east-2"
-  app: "maestrofe"
-  env: "Maestrofe-env"
-  bucket_name: "elasticbeanstalk-us-east-2-496763498997"
-  bucket_path: "maestrofe"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY  
+
+notifications:
+  email:
+    recipients:
+     - linaayman99@gmail.com
+     - ahmhelmhalm@gmail.com
+    on_success: change
+    on_failure: always
