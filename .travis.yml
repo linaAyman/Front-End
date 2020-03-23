@@ -14,7 +14,7 @@ script:
   - docker run -e CI=true lina/docker-devmaestrofe
 
 after_success:
-  - ssh -i testaws.pem ubuntu@ec2-3-17-150-160.us-east-2.compute.amazonaws.com yes
+  - ssh -o "StrictHostKeyChecking=no" testaws.pem ubuntu@ec2-3-17-150-160.us-east-2.compute.amazonaws.com
   - docker build -t lina/docker-maestrofe .
   - docker run -e CI=true lina/docker-maestrofe
 
