@@ -1,0 +1,28 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+branches:
+  only:
+    - master  
+
+before_install:
+  - docker build -t lina/docker-devmaestrofe -f Dockerfile.dev . 
+
+script:
+  - docker run -e CI=true lina/docker-devmaestrofe
+
+after_success:
+  - chmod 400 testaws.pem
+  - ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i testaws.pem ubuntu@ec2-3-17-150-160.us-east-2.compute.amazonaws.com
+  - docker build -t lina/docker-maestrofe .
+  - docker run -e CI=true lina/docker-maestrofe
+
+notifications:
+  email:
+    recipients:
+     - linaayman99@gmail.com
+     - ahmhelmhalm@gmail.com
+    on_success: change
+    on_failure: always
