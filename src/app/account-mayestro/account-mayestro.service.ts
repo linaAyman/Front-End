@@ -13,7 +13,7 @@ export class AccountMayestroService {
   constructor(private http:HttpClient,private auth:AuthService) { }
 
   login(user){
-    return this.http.post(this.auth.URL+'/users/login',user).pipe(map((res:any)=>{
+    return this.http.post(this.auth.URL+'/user/login',user).pipe(map((res:any)=>{
       this.auth.token=res.token
       localStorage.setItem('token',res.token)
     }))

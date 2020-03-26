@@ -50,6 +50,7 @@ export class MockServerService implements HttpInterceptor {
 
     }
     function login(){
+      console.log("object");
       const {email , password}=body
       let user=users.find(x=>(x.email===email || x.name===email) &&  x.password===password)
       if (!user) return error('Incorrect username or password.')

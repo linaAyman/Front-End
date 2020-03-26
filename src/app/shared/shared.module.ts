@@ -8,7 +8,7 @@ import { fakeBackendProvider } from './mock-server/mock-server.service';
 
 @NgModule({
   declarations: [],
-  providers:[AuthService,fakeBackendProvider],
+  providers:[fakeBackendProvider],
   imports: [
     CommonModule,
     HttpClientModule

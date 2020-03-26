@@ -14,6 +14,7 @@ export class SigninComponent implements OnInit {
   constructor(private accService:AccountMayestroService,private authService: AuthService) { }
 
   ngOnInit() {
+    
     this.authService.authState.subscribe((user) => {
       this.user = user;
       console.log(this.user);
@@ -27,7 +28,7 @@ export class SigninComponent implements OnInit {
       console.log("object");
     },err=>{
       console.log(err);
-      // this.errMsg='Incorrect username or password.'
+      this.errMsg='Incorrect username or password.'
     })
   }
 
