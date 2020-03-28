@@ -9,7 +9,7 @@ cd Front-End
 npm install
 npm install -g @angular/cli@8.3.5 
 rm -rf dist
-npm run build
+ng build --prod
 sudo service nginx restart
 exit
 EOF
