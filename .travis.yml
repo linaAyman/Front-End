@@ -2,7 +2,7 @@ language: generic
 sudo: required
 branches:
   only:
-    - maestrofe
+    - master
 
 
 install:
