@@ -25,4 +25,4 @@ notifications:
       - linaayman99@gmail.com
       - ahmhelmhalm@gmail.com
     on_success: change
-    on_failure: always        
+    on_failure: change        
