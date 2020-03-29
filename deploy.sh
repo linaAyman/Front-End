@@ -7,7 +7,6 @@ rm -rf Front-End
 git clone https://github.com/linaAyman/Front-End.git
 cd Front-End
 npm install
-npm install -g @angular/cli@8.3.5 
 rm -rf dist
 ng build --prod
 sudo service nginx restart
