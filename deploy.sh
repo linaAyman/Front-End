@@ -9,6 +9,6 @@ cd Front-End
 npm install
 rm -rf dist
 ng build --prod
-sudo service nginx restart
+sudo systemctl restart nginx
 exit
 EOF
