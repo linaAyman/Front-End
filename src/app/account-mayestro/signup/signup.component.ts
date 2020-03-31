@@ -18,20 +18,20 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
    this.monthNames=this.assets.Monthes()
   }
-  conEmail(event,email){
-    event['notMatch']=false
-    if(event.value!=email.value){
-      event['notMatch']=true
-    }
-  }
+  // conEmail(event,email){
+  //   event['notMatch']=false
+  //   if(event.value!=email.value){
+  //     event['notMatch']=true
+  //   }
+  // }
   submit(f){
 
-    // f.value['birthDate']=new Date(this.year,this.month,this.day)
-    // this.accService.signup(f.value).subscribe(res=>{
+    f.value['birthDate']=new Date(this.year,this.month,this.day)
+    this.accService.signup(f.value).subscribe(res=>{
 
-    // },err=>{
+    },err=>{
       
-    // })
+    })
   }
 
 }
