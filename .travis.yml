@@ -1,28 +1,28 @@
-language: generic
+language: generic 
 sudo: required
-services:
-  - docker
-
 branches:
   only:
-    - master  
+    - master
 
-before_install:
-  - docker build -t lina/docker-devmaestrofe -f Dockerfile.dev . 
 
-script:
-  - docker run -e CI=true lina/docker-devmaestrofe
+install:
+  - npm install
+  - npm install -g @angular/cli@8.3.5
 
-after_success:
+before_deploy:
   - chmod 400 testaws.pem
-  - ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i testaws.pem ubuntu@ec2-3-17-150-160.us-east-2.compute.amazonaws.com
-  - docker build -t lina/docker-maestrofe .
-  - docker run -e CI=true lina/docker-maestrofe
+  - eval "$(ssh-agent -s)"
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: bash deploy.sh
+  on:
+    branch: master
 
 notifications:
   email:
     recipients:
-     - linaayman99@gmail.com
-     - ahmhelmhalm@gmail.com
+      - linaayman99@gmail.com
+      - ahmhelmhalm@gmail.com
     on_success: change
-    on_failure: always
+    on_failure: change        
