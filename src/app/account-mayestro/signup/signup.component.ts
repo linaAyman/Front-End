@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
   // }
   submit(f){
 
-    f.value['birthDate']=new Date(this.year,this.month,this.day)
+    f.value['birthDate']=new Date(this.Year,this.Month,this.Day)
     this.accService.signup(f.value).subscribe(res=>{
 
     },err=>{
