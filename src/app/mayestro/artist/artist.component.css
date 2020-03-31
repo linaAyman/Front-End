@@ -1,30 +1,61 @@
-.buttons{
+.buttonContainer{
     margin-top: 16px;
     margin-bottom: 30px;
+    margin-right: 15px;
 }
+
+.button-scss{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 1.76px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    border-radius: 500px;
+    color: #fff;
+    -webkit-transition: all 33ms cubic-bezier(.3,0,0,1);
+    transition: all 33ms cubic-bezier(.3,0,0,1);
+    will-change: transform;
+    white-space: nowrap;
+    padding: 8px 34px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.b{
+    background-color: #1db954;
+}
+
+.b:hover{
+    color:rgb(29, 235, 101) ;
+}
+
+.b:active {
+    background-color: rgb(29, 235, 101);
+  }
 
 .artist-container{
     background-color:  #121212;
-    width: 100%;
     height: 100%;
+    grid-area: main-view;
+    width: 100%;
+    position: relative;
 }
 .Root {
+    /* padding-top: 100px; */
+    
     background-color:  #121212;
-    -webkit-transition: none .5s cubic-bezier(.3,0,.4,1);
+    /* -webkit-transition: none .5s cubic-bezier(.3,0,.4,1);
     transition: none .5s cubic-bezier(.3,0,.4,1);
     -webkit-transition-property: background;
     transition-property: background;
-    min-height: 100vh;
+    min-height: 100vh; */
 }
 
-.e234ba97490a4755608d45716b32a1df-scss {
-    font-size: 48px;
-    line-height: 56px;
-    letter-spacing: -.005em;
-    font-weight: var(--glue-font-weight-black);
-    color: #fff;
-    text-transform: none;
-}
+
+
 ._09de7f5685fbf244f783483fedae7419-scss {
     text-align: left;
 }
@@ -38,3 +69,117 @@
     margin-top: 16px;
     margin-bottom: 30px;
 }
+
+
+.spancontent{
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: .015em;
+    font-weight: var(--glue-font-weight-normal);
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: #fff;
+    opacity: .6;
+    padding-top: 100px;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.HeaderStyle {
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-size: cover;
+    background-position: 50%;
+  
+
+    /* content: ""; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color:  #121212;
+
+    /* background: -webkit-gradient(linear,left top,left bottom,color-stop(-30%,transparent),to(#121212));
+    background: linear-gradient(transparent -30%,#121212); */
+    
+}
+
+.contentSpacing {
+    padding: 0 32px;
+    margin: 0;
+    max-width: 1955px;
+}
+
+.spancontent {
+    padding: 0 32px;
+    margin: 0;
+    max-width: 1955px;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: .015em;
+    font-weight: var(--glue-font-weight-normal);
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: #fff;
+    opacity: .6;
+    padding-top: 100px;
+    display: block;
+    margin-bottom: 1em;
+}
+
+
+
+.ArtistName {
+    /* padding-top: 100px; */
+    /* font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -.005em;
+    font-weight: var(--glue-font-weight-black);
+    color: #fff;
+    text-transform: none; */
+    font-size: 72px;
+    line-height: 82px;
+    letter-spacing: -.005em;
+    font-weight: var(--glue-font-weight-black);
+    color: #fff;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    /* font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif; */
+    --glue-font-weight-normal: 400;
+    --glue-font-weight-bold: 700;
+    --glue-font-weight-black: 900;
+}
+
+
+
+body{
+  height: auto;
+}
+
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+.bg-1{
+    
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+    /* background-color:  #121212; */
+    /* background: linear-gradient(
+        rgb(123, 126, 128),
+        rgba(12,12,12))
+    ,url('https://i.scdn.co/image/aa0fdc95dc7f12d95c3c67e31872cf5ed74af71b') ; */
+    background: linear-gradient(to top, #121212,70%, transparent), url("https://i.scdn.co/image/c2fc7bf2aadbcdc07820307800a16d1acd83d057") no-repeat center; 
+    color: #ffffff;
+}
+
