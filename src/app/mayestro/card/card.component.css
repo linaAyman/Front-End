@@ -34,6 +34,7 @@
     border-radius: 8px;
     isolation: isolate;
     box-sizing: border-box;
+    background-color: #b3b3b3;
 
 }
 .card-body{

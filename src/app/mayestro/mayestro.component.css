@@ -16,19 +16,31 @@
     height: 75px;   
 
 }
+.test{
+    background-color: rgb(18, 18, 18);
+    /* margin-bottom: 0;
+    padding-bottom: 0; */
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
 
 .router{
+    background-color: rgb(18, 18, 18);
     z-index: -1;
     max-width: 85%;
     width: 100%;
     margin: 0;
-    height: 650px;
+    /* height: 650px; */
     padding-top: 60px; 
     margin-left: 228px;
     padding-left: 18px;
-    overflow-x: auto; 
-    text-align: justify;
+    /* margin-bottom: 10%; */
 }
+
 
 .side{
     z-index: 2;
@@ -44,6 +56,7 @@
     min-height: 85%;
 }
 .headd{
+    background-color: rgb(18, 18, 18);
     z-index: 1;
     top: 0;
     width: 100%;
@@ -56,6 +69,7 @@
     justify-content: start;
     background-color: rgba(0,0,0,.8);
 }
+
 
 .bla{
     font-family: Verdana,sans-serif;
