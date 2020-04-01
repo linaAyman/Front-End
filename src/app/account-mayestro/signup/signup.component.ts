@@ -8,9 +8,9 @@ import { AccountMayestroService } from '../account-mayestro.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  day
-  month
-  year
+  Day
+  Month
+  Year
   monthNames
 
   constructor(private assets:AssetsService,private accService:AccountMayestroService ) { }
@@ -18,8 +18,15 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
    this.monthNames=this.assets.Monthes()
   }
+  // conEmail(event,email){
+  //   event['notMatch']=false
+  //   if(event.value!=email.value){
+  //     event['notMatch']=true
+  //   }
+  // }
   submit(f){
-    f.value['birthDate']=new Date(this.year,this.month,this.day)
+
+    f.value['birthDate']=new Date(this.Year,this.Month,this.Day)
     this.accService.signup(f.value).subscribe(res=>{
 
     },err=>{

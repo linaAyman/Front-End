@@ -38,6 +38,7 @@
     padding-top: 60px; 
     margin-left: 228px;
     padding-left: 18px;
+    overflow: hidden;
     /* margin-bottom: 10%; */
 }
 
@@ -73,10 +74,10 @@
 
 .bla{
     font-family: Verdana,sans-serif;
-line-height: 1.5;
-color: #000!important;
-box-sizing: inherit;
-opacity: 0.60;
-font-size: 12px!important;
-text-align: center!important;
+    line-height: 1.5;
+    color: #000!important;
+    box-sizing: inherit;
+    opacity: 0.60;
+    font-size: 12px!important;
+    text-align: center!important;
 }

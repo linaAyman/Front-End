@@ -35,8 +35,8 @@ export class MockServerService implements HttpInterceptor {
                 return login();
             case url.endsWith('/user') && method === 'POST':
                 return signup();
-        //     case url.endsWith('/users/authenticate') && method === 'POST':
-        //         return authenticate();
+            case url.endsWith('/home/most-popular') && method === 'GET':
+                return mostPopular();
         //     case url.endsWith('/users') && method === 'GET':
         //         return getUsers();
         //     case url.match(/\/users\/\d+$/) && method === 'GET':
@@ -50,6 +50,7 @@ export class MockServerService implements HttpInterceptor {
 
     }
     function login(){
+      console.log("object");
       const {email , password}=body
       let user=users.find(x=>(x.email===email || x.name===email) &&  x.password===password)
       if (!user) return error('Incorrect username or password.')
@@ -85,6 +86,58 @@ export class MockServerService implements HttpInterceptor {
 
       }
       
+    }
+    function mostPopular(){
+      const categories={
+        ID: "12345",
+        name: "Most popular playLists",
+        description: "",
+        playlists: [
+          {
+            ID: "1",
+            name: "test1",
+            description: "test1 test1 test1 test1 test1 test1 test1 ",
+            imgUrl:
+              "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+          },
+          {
+            ID: "2",
+            name: "test2",
+            description: "test2 test2 test2 test2 test2 test2 test2 ",
+            imgUrl:
+              "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+          },
+          {
+            ID: "3",
+            name: "test3",
+            description: "test3 test3 test3 test3 test3 test3 test3 ",
+            imgUrl:
+              "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+          },
+          {
+            ID: "4",
+            name: "test4",
+            description: "test4 test4 test4 test4 test4 test4 test4 ",
+            imgUrl:
+              "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+          },
+          {
+            ID:"5",
+            name: "test5",
+            description: "test5 test5 test5 test5 test5 test5 test5 ",
+            imgUrl:
+              "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+          },
+          {
+            ID: "6",
+            name: "test6",
+            description: "test6 test6 test6 test6 test6 test6 test6 ",
+            imgUrl:
+              "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+          }
+        ]
+      };
+      return ok(categories);
     }
     // helper functions
 

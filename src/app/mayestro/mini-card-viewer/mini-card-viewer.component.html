@@ -1,19 +1,22 @@
 <div class="container">
     <div class="row m-0 txt">
-        <h2>Recommended radio</h2>
+        <h2>{{category.name}}</h2>
     </div>
     <div class="row m-0 txt">
-        <p class= "testing">Non-stop music based on your favorite songs and artists.</p>
+        <p class= "testing">{{category.description}}
+        </p>
         <a class="seeall" href='#'>SEE ALL</a>
     </div>
     
     <div class="row px-4 txt">
+        <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let p of category.playlists" >
+            <app-card [playlist]="p"></app-card>
+        </div>
+        <!-- <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
         <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
         <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
         <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
-        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
-        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
-        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
+        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div> -->
     </div>
     
 </div>

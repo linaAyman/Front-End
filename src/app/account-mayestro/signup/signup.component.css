@@ -72,6 +72,12 @@ h5,h4{
     font-size: .9375em;
     text-align: left;
 }
+.share{
+    color: #88898c;
+    display: block;
+    font-size: .75em;
+    text-align: left;
+}
 .notice{
     text-align: center;
     font-size: .75em;

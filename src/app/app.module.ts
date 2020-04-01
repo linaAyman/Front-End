@@ -21,8 +21,7 @@ import { MystroService } from './mayestro/mystro.service';
   ],
   bootstrap: [AppComponent],
   providers:[
-    fakeBackendProvider,
-    MystroService
+    fakeBackendProvider
   ]
 })
 export class AppModule { }
