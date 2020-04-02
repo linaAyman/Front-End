@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistComponent implements OnInit {
 
-  constructor() { }
+  myLabel:String;
+  constructor() { 
+  }
 
   ngOnInit() {
+    this.myLabel="Follow";
+  }
+  Follow() {
+    this.myLabel = 'unfollow';
   }
 
 }
