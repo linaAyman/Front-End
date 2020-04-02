@@ -1,7 +1,6 @@
 .buttonContainer{
     margin-top: 16px;
     margin-bottom: 30px;
-    margin-right: 15px;
 }
 
 .button-scss{
@@ -18,6 +17,7 @@
     will-change: transform;
     white-space: nowrap;
     padding: 8px 34px;
+    margin-right: 15px;
     display: inline-block;
     cursor: pointer;
     text-align: center;
@@ -43,18 +43,16 @@
     width: 100%;
     position: relative;
 }
-.Root {
-    /* padding-top: 100px; */
-    
-    background-color:  #121212;
-    /* -webkit-transition: none .5s cubic-bezier(.3,0,.4,1);
-    transition: none .5s cubic-bezier(.3,0,.4,1);
+.root {
+ 
+    background-color:  #121212 !important;
+    position: relative;
+    padding-bottom: 75px;
+    /* transition: none .5s cubic-bezier(.3,0,.4,1);
     -webkit-transition-property: background;
-    transition-property: background;
-    min-height: 100vh; */
+    transition-property: background; */
+    /* min-height: 100vh; */
 }
-
-
 
 ._09de7f5685fbf244f783483fedae7419-scss {
     text-align: left;
@@ -65,26 +63,48 @@
 ._137ec408b14ac4ea5aec6ded3d95f328-scss {
     margin: 0 8px 0 0;
 }
-._51da7332811699-scss {
-    margin-top: 16px;
-    margin-bottom: 30px;
-}
 
-
-.spancontent{
-    font-size: 11px;
-    line-height: 16px;
-    letter-spacing: .015em;
-    font-weight: var(--glue-font-weight-normal);
-    color: #b3b3b3;
-    text-transform: uppercase;
-    letter-spacing: .16em;
+.moreButton{
+    background: transparent;
+    border: 0;
     color: #fff;
-    opacity: .6;
-    padding-top: 100px;
-    display: block;
-    margin-bottom: 1em;
+    padding: 0;
+    height: 48px;
+    width: 48px;
 }
+
+.spoticon-ellipsis-24
+{margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+
+    font-family: glue1-spoticon;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: inherit;
+    vertical-align: bottom;
+    display: inline-block;
+    text-decoration: inherit;
+}
+
+.uc{
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    border: 0;
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: lowercase;
+}
+
+
 
 .HeaderStyle {
     position: relative;
@@ -93,8 +113,8 @@
     align-items: center;
     background-size: cover;
     background-position: 50%;
-  
-
+    
+    
     /* content: ""; */
     position: absolute;
     top: 0;
@@ -102,22 +122,23 @@
     left: 0;
     bottom: 0;
     background-color:  #121212;
-
+    
     /* background: -webkit-gradient(linear,left top,left bottom,color-stop(-30%,transparent),to(#121212));
     background: linear-gradient(transparent -30%,#121212); */
     
 }
 
 .contentSpacing {
-    padding: 0 32px;
+    /* padding: 0 32px;
     margin: 0;
-    max-width: 1955px;
+    max-width: 2200px; */
+    max-height: 273px;
+    position: relative;
 }
 
+
 .spancontent {
-    padding: 0 32px;
-    margin: 0;
-    max-width: 1955px;
+   
     font-size: 11px;
     line-height: 16px;
     letter-spacing: .015em;
@@ -130,6 +151,8 @@
     padding-top: 100px;
     display: block;
     margin-bottom: 1em;
+    margin-left: 11px;
+
 }
 
 
@@ -159,11 +182,12 @@
 
 body{
   height: auto;
+  background-color: #121212;
 }
 
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
 .bg-1{
@@ -174,12 +198,18 @@ body{
     background-size: cover;
     -o-background-size: cover;
     height:100%;
-    /* background-color:  #121212; */
-    /* background: linear-gradient(
-        rgb(123, 126, 128),
-        rgba(12,12,12))
-    ,url('https://i.scdn.co/image/aa0fdc95dc7f12d95c3c67e31872cf5ed74af71b') ; */
+    background-color:  #121212;
     background: linear-gradient(to top, #121212,70%, transparent), url("https://i.scdn.co/image/c2fc7bf2aadbcdc07820307800a16d1acd83d057") no-repeat center; 
     color: #ffffff;
+    padding-left:24px;
 }
 
+
+.artist-albums, .artist-appears-on, .artist-compilations, .artist-music, .artist-singles {
+    /* overflow: hidden; */
+    background-color:  #121212;
+}
+
+.ap{
+    background-color: red;
+}

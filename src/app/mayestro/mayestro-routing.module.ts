@@ -3,6 +3,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MayestroComponent } from './mayestro.component';
 import { HomeComponent } from './home/home.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   children: [ 
     {path:'',pathMatch:'full',redirectTo:'home'},
     { path: 'artist', component: ArtistComponent },
-    {path:'home',component:HomeComponent}
+    {path:'home',component:HomeComponent},
+    {path:'playlist',component:PlaylistComponent}
   ]}
 ];
 
