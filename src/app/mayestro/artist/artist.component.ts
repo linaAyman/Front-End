@@ -7,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistComponent implements OnInit {
 
-  myLabel:String;
+  isfollowed=true;
   constructor() { 
   }
 
   ngOnInit() {
-    this.myLabel="Follow";
+    
   }
-  Follow() {
-    this.myLabel = 'unfollow';
+  
+  Follow()
+  {
+    
+    if(this.isfollowed==true)
+       this.isfollowed=false;
+    else this.isfollowed=true;
   }
 
 }

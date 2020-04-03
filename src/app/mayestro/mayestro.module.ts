@@ -14,9 +14,11 @@ import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { SongComponent } from './song/song.component';
+import { ArtistSongComponent } from './artist-song/artist-song.component';
+import { ArtistCardComponent } from './artist-card/artist-card.component';
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent,ArtistComponent, PlaylistComponent,SongComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent,ArtistComponent, PlaylistComponent,SongComponent, ArtistSongComponent, ArtistCardComponent],
   imports: [
     MatMenuModule,
     CommonModule,

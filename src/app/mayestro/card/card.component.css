@@ -41,6 +41,7 @@
 }
 .btn{
     display: none;
+    
 }
 .card-body:hover .btn{
     display: inline;

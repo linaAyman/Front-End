@@ -1,136 +1,97 @@
-<div class="root">
-    <div >
-             
-        <div class="container-fluid bg-1" >
-            <span class="spancontent" > 9,854,235 Monthly Listeners</span>
-            <h1 class="ArtistName" dir="auto">Artist Name</h1>
-            <div class="buttonContainer ">
-    
-                <button class="button-scss b"  type="button">PLAY</button>
-                <button pButton type="button" [attr.label]="myLabel" (click)="Follow()" class="button-scss" style="background-color: transparent; border: 2px solid #fff;" type="button">{{myLabel}}</button>
-                <div  style="display: inline;">
-                    <button type="button" title="More" class="moreButton">
-                        ...
-                    </button>
-                </div>
-            </div>
-            <nav>
-            
-                <li style="display: inline-block;">
-                    <a aria-current="page" class="uc " style="background-color: #333;"  >Overview</a>
-                </li>
-                <li style="display: inline-block;">
-                    <a class="uc" >Related Artists</a>
-                </li>
-                <li style="display: inline-block;">
-                    <a class="uc">About</a>
-                </li>
+    <div class="root">
+        <div >
+                
+            <div class="container-fluid bg-1" >
+                <span class="spancontent" > 9,854,235 Monthly Listeners</span>
+                <h1 class="ArtistName" dir="auto">Artist Name</h1>
+                <div class="buttonContainer ">
         
-            </nav>
+                    <button class="button-scss b"  type="button">PLAY</button>
+                    <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isfollowed ? 'white':'#1fa14d' " type="button"  (click)="Follow()" >{{isfollowed?'Follow':'unFollow'}}</button>
+                    <div  style="display: inline;">
+                        <button type="button" title="More" class="moreButton">
+                            ...
+                        </button>
+                    </div>
+                </div>
+                <nav>
+                
+                    <li style="display: inline-block;">
+                        <a aria-current="page" class="uc " style="background-color: #333;"  >Overview</a>
+                    </li>
+                    <li style="display: inline-block;">
+                        <a class="uc" >Related Artists</a>
+                    </li>
+                    <li style="display: inline-block;">
+                        <a class="uc">About</a>
+                    </li>
             
+                </nav>
+                
+            </div>
+                
         </div>
-            
-    </div>
-    
-    <div class="artist-songs">
-        <div class="artisit-popular">
-            <h1 style=" font-size: 28px; font-weight: 700; color: #fff;">Popular</h1>
-            <div class="paylist-pox">
-                <!-- song div -->
-                <div   class="song-box" style="display: inline-block;">
-                   
-                    <div class="music-icon" style="display: inline-block;">
-                        <p style="font-size: 24px;color: gray;"> &#9834; </p>
-                    </div>
-                    <div class="song-image" style="display: inline-block;">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273f2248cf6dad1d6c062587249" style=" width: 50px;
-                        height: 50px;">
-                    </div>
-                    <div class="song-name" style="display: inline-block;">
-                        <p>Song Name</p>
-                    </div>
-                    <div  style="display: inline-block;">
-                        <button class="song-more-btn" >
-                            ...
-                        </button>
-                    </div>
-                    <div class="song-time" style="display: inline-block;">
-                        <p style="color: gray; font-size: 16px;">time</p>
-                    </div>
-                    
-                </div>
-                <div   class="song-box" style="display: inline-block;">
-                   
-                    <div class="music-icon" style="display: inline-block;">
-                        <p style="font-size: 24px;color: gray;"> &#9834; </p>
-                    </div>
-                    <div class="song-image" style="display: inline-block;">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273f2248cf6dad1d6c062587249" style=" width: 50px;
-                        height: 50px;">
-                    </div>
-                    <div class="song-name" style="display: inline-block;">
-                        <p>Song Name</p>
-                    </div>
-                    <div  style="display: inline-block;">
-                        <button class="song-more-btn" >
-                            ...
-                        </button>
-                    </div>
-                    <div class="song-time" style="display: inline-block;">
-                        <p style="color: gray;">time</p>
-                    </div>
-                    
-                </div>
-                <div   class="song-box" style="display: inline-block;">
-                   
-                    <div class="music-icon" style="display: inline-block;">
-                        <p style="font-size: 24px;color: gray;"> &#9834; </p>
-                    </div>
-                    <div class="song-image" style="display: inline-block;">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273f2248cf6dad1d6c062587249" style=" width: 50px;
-                        height: 50px;">
-                    </div>
-                    <div class="song-name" style="display: inline-block;">
-                        <p>Song Name</p>
-                    </div>
-                    <div  style="display: inline-block;">
-                        <button class="song-more-btn" >
-                            ...
-                        </button>
-                    </div>
-                    <div class="song-time" style="display: inline-block;">
-                        <p style="color: gray;">time</p>
-                    </div>
-                    
-                </div>
-                <div   class="song-box" style="display: inline-block;">
-                   
-                    <div class="music-icon" style="display: inline-block;">
-                        <p style="font-size: 24px;color: gray;"> &#9834; </p>
-                    </div>
-                    <div class="song-image" style="display: inline-block;">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273f2248cf6dad1d6c062587249" style=" width: 50px;
-                        height: 50px;">
-                    </div>
-                    <div class="song-name" style="display: inline-block;">
-                        <p>Song Name</p>
-                    </div>
-                    <div  style="display: inline-block;">
-                        <button class="song-more-btn" >
-                            ...
-                        </button>
-                    </div>
-                    <div class="song-time" style="display: inline-block;">
-                        <p style="color: gray;">time</p>
-                    </div>
-                    
+        
+        <div class="artist-songs">
+            <div class="artist-popular">
+                <h1 style=" font-size: 28px; font-weight: 700; color: #fff;">Popular</h1>
+                <div class="paylist-pox">
+                    <!-- song div -->
+                    <app-artist-song></app-artist-song>
+                    <app-artist-song></app-artist-song>
+                    <app-artist-song></app-artist-song>
+                    <app-artist-song></app-artist-song>
+                    <app-artist-song></app-artist-song>
                 </div>
             </div>
-        </div>          
-        <!-- 
-        <div>
-            <h1>HHHHHHH</h1>
-        </div> -->
-   </div>
+            <div class="artist-albums" >
+                <h1 style=" font-size: 28px; font-weight: 700; color: #fff; padding-bottom: 16px;">Albums</h1>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <div class="text-center"><button class=" showmore-btn  ">SHOW MORE <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
+            </div>
+            <div class="artist-albums" >
+                <h1 style=" font-size: 28px; font-weight: 700; color: #fff;padding-bottom: 16px;">Singles and EPs</h1>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <div class="text-center"><button class=" showmore-btn  ">SHOW MORE <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
+            </div>
+            <div class="artist-albums" >
+                <h1 style=" font-size: 28px; font-weight: 700; color: #fff;padding-bottom: 16px;">Appears On</h1>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <app-artist-card></app-artist-card>
+                <div class="text-center"><button class=" showmore-btn  ">SHOW MORE <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
+            </div>
+    </div>
 
-</div>
+    </div>
