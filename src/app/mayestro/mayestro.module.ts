@@ -16,11 +16,13 @@ import { PlaylistComponent } from './playlist/playlist.component';
 import { SongComponent } from './song/song.component';
 import { ArtistSongComponent } from './artist-song/artist-song.component';
 import { ArtistCardComponent } from './artist-card/artist-card.component';
+import { ArtistModule } from './artist/artist.module';
 
 @NgModule({
   declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent,ArtistComponent, PlaylistComponent,SongComponent, ArtistSongComponent, ArtistCardComponent],
   imports: [
     MatMenuModule,
+    ArtistModule,
     CommonModule,
     MayestroRoutingModule,
     SharedModule

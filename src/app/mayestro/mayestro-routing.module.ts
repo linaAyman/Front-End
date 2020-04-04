@@ -1,4 +1,3 @@
-import { ArtistComponent } from './artist/artist.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MayestroComponent } from './mayestro.component';
@@ -11,9 +10,9 @@ const routes: Routes = [
   component: MayestroComponent, // base template component
   children: [ 
     {path:'',pathMatch:'full',redirectTo:'home'},
-    { path: 'artist', component: ArtistComponent },
     {path:'home',component:HomeComponent},
-    {path:'playlist',component:PlaylistComponent}
+    {path:'playlist',component:PlaylistComponent},
+    {path:'artist',loadChildren: () => import(`./artist/artist.module`).then(m => m.ArtistModule) }
   ]}
 ];
 
