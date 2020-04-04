@@ -1,24 +1,24 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { Location } from '@angular/common';
-
-
+import { Component, OnInit, OnChanges } from "@angular/core";
+import { Location } from "@angular/common";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"]
 })
-export class HeaderComponent implements OnInit,OnChanges {
-
-  constructor(private loc:Location) {
-    loc.onUrlChange((res,state)=>{
-      console.log(res);
-    })
-   }
+export class HeaderComponent implements OnInit, OnChanges {
+  constructor(private loc: Location) {
+    // console.log(loc.getState());
+  }
 
   ngOnInit() {
-  }
-  ngOnChanges(){
+    this.loc.onUrlChange((res, state) => {
+      console.log(res);
+    });
   }
 
+  back() {
+    this.loc.back();
+  }
+  ngOnChanges() {}
 }
