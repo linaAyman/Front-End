@@ -7,8 +7,7 @@ rm -rf Front-End
 git clone https://github.com/linaAyman/Front-End.git
 cd Front-End
 npm install
-rm -rf dist
-ng build --prod
+ng build --aot=false
 sudo systemctl restart nginx
 exit
 EOF
