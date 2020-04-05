@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { fakeBackendProvider } from './mock-server/mock-server.service';
+import { PlayerService } from '../mayestro/player.service';
+
 
 
 
 @NgModule({
   declarations: [],
-  providers:[AuthService,fakeBackendProvider],
+  providers:[AuthService,PlayerService],
   imports: [
     CommonModule,
     HttpClientModule

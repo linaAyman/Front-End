@@ -12,28 +12,28 @@
           <i class="fa fa-chevron-right"></i>
         </a>
       </li>
+
 <div *ngIf="router.url!=='/mayestro/home'">
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink='yourlibrary/playlists'>Playlists</a>
-        </li>
-    
-        <li class="nav-item">
-        <a class="nav-link" routerLink='yourlibrary/artist'>Artists</a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link"routerLink='yourlibrary/album'>Albums</a>
-       </li>
-    
+  <div class="d-flex flex-row bd-highlight mb-list ">
+    <div class="p-2 bd-highlight">
+      <a class="nav-link" routerLink='yourlibrary/playlists'>Playlists</a>
     </div>
-  
 
-
+    <div class="p-2 bd-highlight">
+      <a class="nav-link" routerLink='yourlibrary/artist'>Artists</a>
+    </div>
+    
+    <div class="p-2 bd-highlight album">
+      <a class="nav-link"routerLink='yourlibrary/album'>Albums</a>
+    </div>
+    
+  </div>
+</div>
 <div *ngIf="router.url==='/mayestro/home'">
       <li class="nav-link floatingRight col-11">
           <button type="button" class="btn upgradeButton floatingRight" >Upgrade
           </button>
+         
       </li>
     </div>
       <li class="nav-link col-12">

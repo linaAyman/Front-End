@@ -14,9 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
-
-
-
+import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent],
@@ -24,7 +22,12 @@ import { PlaylistsComponent } from './playlists/playlists.component';
     MatMenuModule,
     CommonModule,
     MayestroRoutingModule,
-    SharedModule
+    SharedModule,
+    MatSliderModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
   ]
+
 })
 export class MayestroModule { }

@@ -1,5 +1,64 @@
+<div class="container">
+    <button class="likebutton" (click)="like()"  title="Save to your Liked Songs"  [style.-webkit-text-fill-color]="isliked ? 'rgb(105,105,105)' : 'rgb(25,206,88)'"[style.color]="isliked ? 'whitesmoke' : 'rgb(25,206,88)'" >
+        <i class="fa fa-heart" ></i>
+    </button>
+    <audio ></audio>
+    <div class="btn-group">
+    <button class="shuffle" title="Enable shuffle" (click)="shuffle()">
+        <span class="fa fa-random">
+          
+            </span>
+    </button>
+    <button  class="back" (click)="Previous()" title="Previous">
+        <i class="fa fa-step-backward">
+            
+        </i>
+    </button>  
+    <button class="play" (click)="play()"  *ngIf="player">
+        <i class="fa fa-play-circle"></i>       
+      </button>
+      <button class="pause" (click)="pause()" *ngIf="!player">
+        <i class="fa fa-pause-circle">
+        </i>
+      </button>
+    
+    <button  class="forward" (click)="Next()" title="Next">
+        <i class="fa fa-step-forward">
+           
+        </i>
+    </button> 
+    <button class="repeat" (click)="repeat()" *ngIf="!repeated">
 
-<button class="likebutton" (click)="like()"  title="Save to your Liked Songs"  [style.-webkit-text-fill-color]="isliked ? 'rgb(105,105,105)' : 'rgb(25,206,88)'"[style.color]="isliked ? 'whitesmoke' : 'rgb(25,206,88)'" data-dismiss="alert" aria-label="Close" >
-    <i class="fa fa-heart" ></i>
+        <i class="fa fa-repeat">
+          
+        </i>
+    </button>
 
-</button>
+    <button class="repeat" (click)="repeat()" *ngIf="repeated" >
+
+    <i class="fa fa-repeat-1">
+     
+    </i>
+     </button>
+    </div>
+    <mat-slider>
+        <li (change)="setPos(this.value)"> </li>
+    </mat-slider>
+    
+    <mat-slider class="sound" >
+        <li (change)="volume(this.value)"> </li>
+    </mat-slider>
+    <button class="volume" (click)="mute()" *ngIf="!soundon" > 
+        <span class="material-icons">
+            volume_up
+            </span>
+    </button>
+
+    <button class="volumeoff" (click)="mute()" *ngIf="soundon" >
+        <span class="material-icons">
+            volume_off
+            </span>
+    </button>
+
+   
+</div>
