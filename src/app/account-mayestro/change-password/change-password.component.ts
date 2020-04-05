@@ -12,8 +12,5 @@ export class ChangePasswordComponent implements OnInit {
 
   constructor(private auth: AuthService) {}
 
-  ngOnInit() {
-    console.log(this.auth.isLoggedIn());
-    console.log(this.auth.currentUser);
-  }
+  ngOnInit() {}
 }
