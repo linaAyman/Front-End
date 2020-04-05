@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   bootstrap: [AppComponent],
   providers:[
-    fakeBackendProvider
+//     fakeBackendProvider
   ]
 })
 export class AppModule { }
