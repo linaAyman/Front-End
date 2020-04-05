@@ -11,7 +11,7 @@ export class AuthService {
   /**
    * server URL
    */
-  URL = "";
+  URL = "http://3.137.69.49:3000";
 
   constructor() {}
 
