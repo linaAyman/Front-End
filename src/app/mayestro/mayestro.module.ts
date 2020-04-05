@@ -22,6 +22,7 @@ import { HomeComponent } from "./home/home.component";
     CardComponent,
     HomeComponent
   ],
+
   imports: [MatMenuModule, CommonModule, MayestroRoutingModule, SharedModule]
 })
 export class MayestroModule {}

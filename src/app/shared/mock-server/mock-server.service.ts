@@ -139,7 +139,7 @@ export class MockServerService implements HttpInterceptor {
 
     function idFromUrl() {
       const urlParts = url.split("/");
-      return parseInt(urlParts[urlParts.length - 1]);
+      return urlParts[urlParts.length - 1];
     }
   }
 }
