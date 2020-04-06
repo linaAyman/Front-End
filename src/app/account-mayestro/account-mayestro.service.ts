@@ -42,4 +42,21 @@ export class AccountMayestroService {
   checkEmailExist(email) {
     return this.http.get(`${this.auth.URL}/user/mailExist/${email}`);
   }
+
+  forgetPassword(email) {
+    return this.http.get(`${this.auth.URL}/user/forgetPassword/${email}`);
+  }
+
+  resetPassword(pass, hash) {
+    return this.http.post(
+      `${this.auth.URL}/user/resetPassword?id=${hash}`,
+      pass
+    );
+  }
+
+  changePassword(pass) {
+    return this.http.post(`${this.auth.URL}/user/changePassword`, pass, {
+      headers: { token: localStorage.getItem("token") }
+    });
+  }
 }

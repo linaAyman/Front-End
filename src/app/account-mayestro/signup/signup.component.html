@@ -30,7 +30,7 @@
       <div class="col-12">
         <mat-form-field class="w-100">
           <mat-label>confirm Email</mat-label>
-          <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" matInput ngModel
+          <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" matInput [(ngModel)]='ConfirmEmail'
             [ngModelOptions]="{standalone: true}" #confirmEmail="ngModel">
           <mat-error *ngIf="confirmEmail.errors">
             <span *ngIf="confirmEmail.errors.required">Please enter your email.</span>
@@ -133,7 +133,8 @@
       </p>
     </div>
     <div class="row px-5">
-      <button type="submit" class="col-12 mb-2 signup-btn btn custom-btn  text-white">sign upp</button>
+      <button type="submit" [disabled]="invalid(f)" class="col-12 mb-2 signup-btn btn custom-btn  text-white">sign
+        upp</button>
     </div>
   </form>
   <div class="row d-block text-center ">

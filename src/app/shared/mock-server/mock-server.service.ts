@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { JwtHelper } from "angular2-jwt";
 import {
   HttpRequest,
   HttpResponse,
@@ -7,7 +8,7 @@ import {
   HttpInterceptor,
   HTTP_INTERCEPTORS
 } from "@angular/common/http";
-import { Observable, of, throwError } from "rxjs";
+import { Observable, of, throwError, from } from "rxjs";
 import {
   delay,
   mergeMap,
@@ -19,10 +20,12 @@ import {
 @Injectable()
 export class MockServerService implements HttpInterceptor {
   users: any;
+  hashId = [];
 
   constructor() {
     this.users = [
       {
+        _id: "1234567890",
         email: "ahmed@gmail.com",
         password: "12345678",
         name: "Ahmed Helmy",
@@ -34,8 +37,10 @@ export class MockServerService implements HttpInterceptor {
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
+    let hashId = this.hashId;
     const { url, method, headers, body } = request;
 
+    console.log(url);
     // wrap in delayed observable to simulate server api call
     return of(null)
       .pipe(mergeMap(handleRoute))
@@ -53,8 +58,14 @@ export class MockServerService implements HttpInterceptor {
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
         ) && method === "GET":
           return checkEmail();
-        //     case url.endsWith('/users') && method === 'GET':
-        //         return getUsers();
+        case url.match(
+          /\/user\/forgetPassword\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+        ) && method === "GET":
+          return forgetPassword();
+        case url.match(/\/user\/resetPassword\?id=\S+$/) && method === "POST":
+          return resetPassword();
+        case url.endsWith("/user/changePassword") && method == "POST":
+          return changePassword();
         //     case url.match(/\/users\/\d+$/) && method === 'DELETE':
         //         return deleteUser();
         //     default:
@@ -74,7 +85,6 @@ export class MockServerService implements HttpInterceptor {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
       });
     }
-
     function signup() {
       console.log(body);
       let { email, password, name, gender, birthDate } = body;
@@ -92,7 +102,9 @@ export class MockServerService implements HttpInterceptor {
       if (email && password && name && gender && birthDate) {
         let user = users.find(x => x.email === email);
         if (user) return error("We're sorry, that email is taken.");
+        const _id = Math.floor(Math.random() * 100000);
         user = {
+          _id,
           email,
           password,
           name,
@@ -112,6 +124,46 @@ export class MockServerService implements HttpInterceptor {
       const user = users.find(user => user.email === email);
       return user ? error("user Exist") : ok();
     }
+    function forgetPassword() {
+      const email = idFromUrl();
+      let user = users.find(user => user.email === email);
+      if (user) {
+        const hash = String(Math.floor(Math.random() * 100000000000));
+        const _id = user._id;
+        hashId.push({ hash, _id });
+        console.log(hashId);
+        return ok({ hash });
+      }
+      return error("no user");
+    }
+    function resetPassword() {
+      const { newPassword, confirmedPassword } = body;
+      if (newPassword !== confirmedPassword)
+        return error("passwords not match");
+      const hash = url.split("=")[1];
+      console.log(hashId, hash);
+      const checkHashExists = hashId.find(h => h.hash == hash);
+      if (checkHashExists) {
+        const user = users.find(user => user._id === checkHashExists._id);
+        user.password = newPassword;
+        console.log(users);
+        return ok();
+      }
+      return error("no hash key matchs");
+    }
+    function changePassword() {
+      if (!isLoggedIn()) return unauthorized();
+      const { oldPassword, newPassword, confirmedPassword } = body;
+      const token = dataFromToken();
+      console.log(token);
+      const user = users.find(user => user._id === token._id);
+      if (user.password !== oldPassword)
+        return error("enter correct old password");
+      if (newPassword === oldPassword)
+        return error("please enter another password");
+      user.password = newPassword;
+      return ok();
+    }
 
     // helper functions
 
@@ -124,10 +176,14 @@ export class MockServerService implements HttpInterceptor {
       return throwError({ status: 401, error: { message: "Unauthorised" } });
     }
 
+    function dataFromToken() {
+      const jwt = new JwtHelper();
+      return jwt.decodeToken(headers.get("token"));
+    }
+
     function error(message) {
       console.log("errMock");
       return throwError({ error: { message } });
-      // return throwError(new HttpResponse({ status: 400, body: message }));
     }
 
     function isLoggedIn() {

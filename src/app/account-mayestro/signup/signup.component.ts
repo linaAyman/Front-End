@@ -33,6 +33,10 @@ export class SignupComponent implements OnInit {
    *mail error message if its used befor
    */
   mailExist = "";
+  /**
+   * confirmEmail value
+   */
+  ConfirmEmail = "";
 
   /**
    *
@@ -59,10 +63,29 @@ export class SignupComponent implements OnInit {
   }
 
   /**
+   * disabled signup button if validations == false
+   * @param f form value
+   */
+
+  invalid(f) {
+    return !(
+      f.valid &&
+      !this.mailExist &&
+      this.Day <= 31 &&
+      this.Day >= 1 &&
+      this.Year >= 1950 &&
+      this.Year <= 2020 &&
+      this.Month &&
+      f.value.email === this.ConfirmEmail
+    );
+  }
+
+  /**
    * submit method of signup form and send it to server to add user to database
    * @param f form values to send to server
    */
   submit(f) {
+    if (this.invalid(f)) return;
     f.value["birthDate"] = new Date(this.Year, this.Month, this.Day);
     this.accService.signup(f.value).subscribe(
       res => {},
