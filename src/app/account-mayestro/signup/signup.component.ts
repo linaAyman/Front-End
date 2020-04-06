@@ -87,6 +87,7 @@ export class SignupComponent implements OnInit {
   submit(f) {
     if (this.invalid(f)) return;
     f.value["birthDate"] = new Date(this.Year, this.Month, this.Day);
+    console.log(f.value);
     this.accService.signup(f.value).subscribe(
       res => {},
       err => {
