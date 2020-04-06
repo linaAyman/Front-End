@@ -89,7 +89,9 @@ export class SignupComponent implements OnInit {
     f.value["birthDate"] = new Date(this.Year, this.Month, this.Day);
     this.accService.signup(f.value).subscribe(
       res => {},
-      err => {}
+      err => {
+        console.log(err);
+      }
     );
   }
 }

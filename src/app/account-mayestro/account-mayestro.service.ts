@@ -34,6 +34,7 @@ export class AccountMayestroService {
   signup(user) {
     return this.http.post(this.auth.URL + "/user/signup", user).pipe(
       map((res: any) => {
+        console.log("res", res);
         localStorage.setItem("token", res.token);
       })
     );
