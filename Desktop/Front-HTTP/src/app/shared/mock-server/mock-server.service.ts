@@ -6,20 +6,55 @@ import { delay, mergeMap, materialize, dematerialize, map } from 'rxjs/operators
 @Injectable()
 export class MockServerService implements HttpInterceptor {
   users:any
-
+  albums:any
+  tracks:any
   constructor() { 
     this.users=[
       {
         email: "ahmed@gmail.com",
         password: "12345678",
         name: "Ahmed Helmy",
-        gender: "0",
+        gender: "male",
+        country:"Egypt",
         birthDate:"Wed Feb 01 1950 00:00:00 GMT+0200 (Eastern European Standard Time)"
+        
       }
     ]
+    this.albums=[{
+      name:"sahran",
+      _id:1234,
+      releaseDate:"2000-19-1",
+      image:{
+        url:'https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a'
+      },
+      artist:[
+        {
+          name:"amrdiab"
+        }
+      ]
+    }]
+    this.tracks=[{
+      name:"amarain",
+      track_number:1,
+      id:1,
+      duration_ms:2,
+      artists:[{
+        name:"amrdiab"
+      }]},
+      {
+        name:"sahran",
+      track_number:2,
+      id:2,
+      duration_ms:2,
+      artists:[{
+        name:"amrdiab"
+      }]
+     }]
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users=this.users
+    let albums=this.albums
+    let tracks=this.tracks
     const { url, method, headers, body } = request;
 
     // wrap in delayed observable to simulate server api call
@@ -35,6 +70,14 @@ export class MockServerService implements HttpInterceptor {
                 return login();
             case url.endsWith('/user') && method === 'POST':
                 return signup();
+            case url.endsWith('/user') && method === 'GET':
+                return viewuser();
+            case url.endsWith('/user') && method === 'PUT':
+                //return edituser();
+           // case url.match(/\/albums\/\d+$/) && method === 'GET':
+                //return viewalbum();
+            case url.match(/\/albums\/\d+$/) && method === 'GET':
+                return viewtracks();
         //     case url.endsWith('/users/authenticate') && method === 'POST':
         //         return authenticate();
         //     case url.endsWith('/users') && method === 'GET':
@@ -49,6 +92,28 @@ export class MockServerService implements HttpInterceptor {
         }
 
     }
+    
+
+    function viewalbum(){
+      //if(!isLoggedIn()) return unauthorized();
+      const id=idFromUrl();
+      const album = albums.find(al=> al._id === id);
+      if(album) return ok(album);
+      return error("no album found with this id");
+
+    }
+    function viewtracks(){
+      const id=idFromUrl();
+      const album = albums.find(al=> al._id === id);
+      if(album) return ok(tracks);
+      return error("no album found with this id");
+    }
+    function viewuser(){
+      //if(!isLoggedIn()) return unauthorized();
+      return ok(users[0])
+      //return users[0];
+    }
+
     function login(){
       const {email , password}=body
       let user=users.find(x=>(x.email===email || x.name===email) &&  x.password===password)

@@ -14,17 +14,24 @@ import { HomeComponent } from './home/home.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { SongComponent } from './song/song.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TrackComponent } from './track/track.component';
+import { fakeBackendProvider } from '../shared/mock-server/mock-server.service';
+import { MayestroService } from './mayestro.service';
+
 
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, PlaylistComponent, SongComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, PlaylistComponent, SongComponent, TrackComponent],
   imports: [
     MatMenuModule,
     CommonModule,
     MayestroRoutingModule,
     SharedModule,
     HttpClientModule
-  ]
+
+
+  ],
+  providers:[fakeBackendProvider,MayestroService]
 })
 export class MayestroModule { }

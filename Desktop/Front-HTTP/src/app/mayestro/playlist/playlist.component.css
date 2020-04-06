@@ -2,8 +2,8 @@
     position: relative;
     right: 20px;
     width: 1302px;
-    height: 100%;
-    background:rgb(18,18,18);
+    background: repeat-x scroll center top rgb(18,18,18);
+    min-height: 1000px;
   }
   .playlist-content{
  

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { MayestroService } from '../mayestro.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-playlist',
@@ -7,18 +8,34 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./playlist.component.css']
 })
 export class PlaylistComponent implements OnInit {
-  readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
+  
   isLiked=true;
   isPlaying=true;
-  album:any;
-  constructor( private http: HttpClient) {}
+  album:any[];
+  title:string;
+  date:string;
+  artist:string;
+  ID:any;
+  type:any;
+  imageURL:any;
+  constructor( private MayestroService: MayestroService,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.route.params.subscribe(param=>this.ID=param["id"],
+    param=>this.type=param["type"])
+    this.MayestroService.getAlbum(this.ID)
+      .subscribe(
+        (data:any) =>{
+          this.title=(data.name);
+          this.date=(data.releaseDate);
+          this.artist=(data.artist[0].name);
+          this.imageURL=(data.image.url);
+        });
+    
+      
   }
  
-  getAlbum(){
-    this.album=this.http.get('https://jsonplaceholder.typicode.com/albums/id=1/title')
-  }
   like()
   {
     console.log("liked");
