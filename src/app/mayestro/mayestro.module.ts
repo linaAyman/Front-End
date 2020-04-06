@@ -17,6 +17,7 @@ import { SearchComponent } from './search/search.component';
 
 
 
+
 @NgModule({
   declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent],
   imports: [
@@ -26,4 +27,4 @@ import { SearchComponent } from './search/search.component';
     SharedModule
   ]
 })
-export class MayestroModule { }
+export class MayestroModule {}

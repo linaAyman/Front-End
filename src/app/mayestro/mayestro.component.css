@@ -66,11 +66,11 @@
     margin-left: 230px;
     height: 60px;
 }
-.flexnav{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    background-color: rgba(0,0,0,.8);
+.flexnav {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
