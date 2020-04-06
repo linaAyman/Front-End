@@ -28,7 +28,7 @@
 .card{
     display:flex;
     flex-direction: column;
-    background-color: #b3b3b3;
+    background-color: #282828;
     position: relative;
     padding: 20px 20px 16px;
     border-radius: 8px;
