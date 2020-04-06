@@ -9,14 +9,9 @@
     </div>
     
     <div class="row px-4 txt">
-        <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let p of category.playlists" >
-            <app-card [playlist]="p"></app-card>
+        <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let c of cards" >
+            <app-card [card]="c"></app-card>
         </div>
-        <!-- <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
-        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
-        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
-        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div>
-        <div class="col-lg-2 col-md-3 col-sm-4"><app-card></app-card></div> -->
     </div>
     
 </div>

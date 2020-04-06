@@ -1,17 +1,5 @@
 .img{
     flex:60%;
-    --glue-font-weight-normal: 400;
-    --glue-font-weight-bold: 700;
-    --glue-font-weight-black: 900;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: .015em;
-    font-weight: var(--glue-font-weight-normal);
-    color: #b3b3b3;
-    text-transform: none;
-    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -webkit-box-direction: normal;
     user-select: none;
     box-sizing: border-box;
     margin: 0;
@@ -20,8 +8,6 @@
     object-fit: cover;
     object-position: center center;
     display: block;
-    /* height: 150px; */
-    /* width: 80%; */
     position: absolute;
     top: 0;
     left: 0;
@@ -36,6 +22,9 @@
     isolation: isolate;
     box-sizing: border-box;
     min-height: 70%;
+    cursor: pointer;
+    z-index: 5;
+    text-decoration: none;
     
 
 }
@@ -47,7 +36,37 @@
 }
 .btn{
     display: none;
+    background-color: #1db954;
+    border: none;
+    border-radius: 50%;
+    /* height: 50%;
+    width:40%; */
+    flex: 30%;
+    z-index: 7;
+    transform: scale(1.06);
+    transition:all transform 33ms cubic-bezier(.3,0,0,1);
+    right:5%;
+    bottom: 5%;
+    float: right;
 }
-.card-body:hover .btn{
+.ic{
+    color:#fff;
+    object-position: center;
+}
+.card:hover .btn{
     display: inline;
+    position: absolute;
+}
+.btn:hover{
+    transform: scale(1.06);
+}
+.txt{
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    letter-spacing: .24px;
+    overflow: hidden;
+    font-family:Helvetica,Arial,sans-serif;
+
 }

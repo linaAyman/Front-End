@@ -1,9 +1,10 @@
 import { Url } from 'url';
 
 export class ICard{
-    title: string;
+    name: string;
     description: string;
     imgUrl: string;
     ID: string;
+    type:string;
 
 }

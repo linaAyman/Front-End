@@ -1,8 +1,10 @@
 import { IPlaylist } from './playlists.interface';
+import { ICard } from '../card/card.interface';
 
 export class ICategory{
     name: string;
     description: string;
     ID: string;
-    playlists:IPlaylist[];
+    cards:Array<any>;
+    type:string;
 }

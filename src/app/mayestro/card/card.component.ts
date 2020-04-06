@@ -8,12 +8,12 @@ import { IPlaylist } from '../mini-card-viewer/playlists.interface';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() playlist: IPlaylist;
+  @Input() card: ICard;
   
   constructor() { }
 
   ngOnInit() {
-    console.log(this.playlist)
+    console.log(this.card);
   }
 
 }

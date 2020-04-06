@@ -11,8 +11,11 @@
             <i class="fa fa-chevron-right"></i>
           </a>
         </li>
-        <li class="nav-link floatingRight col-11">
-            <button type="button" class="btn upgradeButton floatingRight" >Upgrade
+        <li class="col-4 nav-item" *ngIf="loc.path()==='/mayestro/search'">
+          <input type="text" placeholder="Search.." class="search">
+        </li>
+        <li class="nav-link col-11">
+            <button type="button" class="upgradeButton" >Upgrade
             </button>
         </li>
         <li class="nav-link col-12">
@@ -22,9 +25,9 @@
               User Name
               <i class="fa fa-sort-down usericon-up"></i>
             </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>Account</button>
-              <button mat-menu-item>Log out</button>
+            <mat-menu #menu="matMenu" class="dropdownmenu">
+              <a mat-menu-item class="items">Account</a>
+              <a mat-menu-item class="items">Log out</a>
             </mat-menu>
         </li>
     </ul>

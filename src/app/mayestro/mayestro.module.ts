@@ -12,11 +12,13 @@ import { MiniCardViewerComponent } from './mini-card-viewer/mini-card-viewer.com
 import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
 import { SeeAllComponent } from './see-all/see-all.component';
+import { SearchCardComponent } from './search-card/search-card.component';
+import { SearchComponent } from './search/search.component';
 
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent],
   imports: [
     MatMenuModule,
     CommonModule,
