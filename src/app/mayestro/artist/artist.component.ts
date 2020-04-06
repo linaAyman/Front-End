@@ -15,12 +15,6 @@ export class ArtistComponent implements OnInit {
     
   }
   
-  Follow()
-  {
-    
-    if(this.isfollowed==true)
-       this.isfollowed=false;
-    else this.isfollowed=true;
-  }
+ 
 
 }

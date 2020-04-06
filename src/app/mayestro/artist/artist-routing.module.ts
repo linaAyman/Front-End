@@ -1,3 +1,5 @@
+import { AboutArtistComponent } from './about-artist/about-artist.component';
+
 import { RelatedArtistsComponent } from './related-artists/related-artists.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -11,11 +13,10 @@ const routes: Routes=[
   children: [ 
     {path: '',pathMatch:'full',redirectTo:'artist'},
     {path:'artist' ,component:ArtistComponent},
-    {path:'related',component:RelatedArtistsComponent}
+    {path:'related',component:RelatedArtistsComponent},
+    {path:'about',component:AboutArtistComponent}
   ]}
-  
 ]
-
 
 @NgModule({
   declarations: [],

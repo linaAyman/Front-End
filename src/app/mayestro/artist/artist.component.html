@@ -1,37 +1,5 @@
     <div class="root">
-        <div >
-                
-            <div class="container-fluid bg-1" >
-                <span class="spancontent" > 9,854,235 Monthly Listeners</span>
-                <h1 class="ArtistName" dir="auto">Artist Name</h1>
-                <div class="buttonContainer ">
-        
-                    <button class="button-scss b"  type="button">PLAY</button>
-                    <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isfollowed ? 'white':'#1fa14d' " type="button"  (click)="Follow()" >{{isfollowed?'Follow':'unFollow'}}</button>
-                    <div  style="display: inline;">
-                        <button type="button" title="More" class="moreButton">
-                            ...
-                        </button>
-                    </div>
-                </div>
-                <nav>
-                
-                    <li style="display: inline-block;">
-                        <a aria-current="page" class="uc " style="background-color: #333;"  >Overview</a>
-                    </li>
-                    <li style="display: inline-block;">
-                        <a class="uc" >Related Artists</a>
-                    </li>
-                    <li style="display: inline-block;">
-                        <a class="uc">About</a>
-                    </li>
-            
-                </nav>
-                
-            </div>
-                
-        </div>
-        
+        <app-artist-header></app-artist-header>
         <div class="artist-songs">
             <div class="artist-popular">
                 <h1 style=" font-size: 28px; font-weight: 700; color: #fff;">Popular</h1>
@@ -92,6 +60,6 @@
                 <app-artist-card></app-artist-card>
                 <div class="text-center"><button class=" showmore-btn  ">SHOW MORE <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
             </div>
+        </div>
     </div>
-
-    </div>
+ 
