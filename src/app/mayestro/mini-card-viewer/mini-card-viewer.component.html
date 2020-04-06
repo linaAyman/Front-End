@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="row m-0 txt">
-        <h2>{{category.name}}</h2>
+    <div class="row m-0 ">
+        <a [routerLink]="['/mayestro/home/',category.name]" class="testing catName">{{category.name}}</a>
+        <a class="seeall" [routerLink]="['/mayestro/home/',category.name]">SEE ALL</a>
     </div>
     <div class="row m-0 txt">
-        <p class= "testing">{{category.description}}
+        <p>{{category.description}}
         </p>
-        <a class="seeall" href='#'>SEE ALL</a>
     </div>
     
     <div class="row px-4 txt">
@@ -13,5 +13,4 @@
             <app-card [card]="c"></app-card>
         </div>
     </div>
-    
 </div>

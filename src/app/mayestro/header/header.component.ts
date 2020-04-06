@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { Location } from '@angular/common';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 
 
@@ -9,14 +10,15 @@ import { Location } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit,OnChanges {
-
-  constructor(private loc:Location) {
+  logIn:boolean;
+  constructor(private loc:Location,private auth:AuthService) {
     loc.onUrlChange((res,state)=>{
       console.log(res);
     })
    }
 
   ngOnInit() {
+    
   }
   ngOnChanges(){
   }
