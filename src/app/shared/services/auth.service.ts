@@ -1,6 +1,4 @@
 import { Injectable, OnDestroy, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators/map";
 import { JwtHelper, tokenNotExpired } from "angular2-jwt/angular2-jwt";
 import "rxjs";
 

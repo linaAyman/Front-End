@@ -1,10 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { AccountMayestroService } from "../account-mayestro.service";
-import {
-  AuthService,
-  FacebookLoginProvider,
-  SocialUser
-} from "angularx-social-login";
 
 @Component({
   selector: "app-signin",
@@ -20,7 +15,6 @@ export class SigninComponent implements OnInit {
    * error message that display to user if username or password invalid
    */
   errMsg: string;
-  user: SocialUser;
   /**
    * constructor
    *

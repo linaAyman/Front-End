@@ -14,25 +14,25 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatRadioModule } from "@angular/material/radio";
 import { HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "../shared/shared.module";
-import {
-  SocialLoginModule,
-  AuthServiceConfig,
-  FacebookLoginProvider
-} from "angularx-social-login";
+// import {
+//   SocialLoginModule,
+//   AuthServiceConfig,
+//   FacebookLoginProvider
+// } from "angularx-social-login";
 import { ForgetPasswordComponent } from "./forget-password/forget-password.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 
-const config = new AuthServiceConfig([
-  {
-    id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("2566655633574824")
-  }
-]);
+// const config = new AuthServiceConfig([
+//   {
+//     id: FacebookLoginProvider.PROVIDER_ID,
+//     provider: new FacebookLoginProvider("2566655633574824")
+//   }
+// ]);
 
-export function provideConfig() {
-  return config;
-}
+// export function provideConfig() {
+//   return config;
+// }
 
 @NgModule({
   declarations: [
@@ -54,14 +54,14 @@ export function provideConfig() {
     MatSelectModule,
     MatRadioModule,
     SharedModule,
-    HttpClientModule,
-    SocialLoginModule
-  ],
-  providers: [
-    {
-      provide: AuthServiceConfig,
-      useFactory: provideConfig
-    }
+    HttpClientModule
+    // SocialLoginModule
   ]
+  // providers: [
+  //   {
+  //     provide: AuthServiceConfig,
+  //     useFactory: provideConfig
+  //   }
+  // ]
 })
 export class AccountMayestroModule {}
