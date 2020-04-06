@@ -32,7 +32,7 @@ export class AccountMayestroService {
    * @param user user body
    */
   signup(user) {
-    return this.http.post(this.auth.URL + "/user", user).pipe(
+    return this.http.post(this.auth.URL + "/user/signup", user).pipe(
       map((res: any) => {
         localStorage.setItem("token", res.token);
       })
