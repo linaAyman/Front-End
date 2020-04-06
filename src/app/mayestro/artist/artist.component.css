@@ -2,9 +2,9 @@
  
     background-color:  #121212 !important;
     margin-bottom: 75px;
-    /* width: 100%; */
+    width: 100%;
     /* max-width:  1290px; */
-    width: 1285px;
+    /* width: 1285px; */
 }
 
 body{
@@ -26,10 +26,11 @@ body{
 }
 
 .artist-albums{
-    margin-top: 16px;
-    margin-bottom: 16px;
+    /* margin-top: 16px;
+    margin-bottom: 16px; */
     padding-top: 16px;
     padding-bottom: 16px;
+    padding-right: 24px;
 }
 
 .showmore-btn {

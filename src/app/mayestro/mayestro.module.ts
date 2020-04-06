@@ -15,9 +15,10 @@ import { ArtistSongComponent } from './artist-song/artist-song.component';
 import { ArtistCardComponent } from './artist-card/artist-card.component';
 import { ArtistModule } from './artist/artist.module';
 import {MatTabsModule} from '@angular/material/tabs';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, HomeComponent,ArtistComponent, PlaylistComponent,SongComponent, ArtistSongComponent, ArtistCardComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, HomeComponent,ArtistComponent, PlaylistComponent,SongComponent, ArtistSongComponent, ArtistCardComponent, UserProfileComponent],
   imports: [
     MatMenuModule,
     ArtistModule,

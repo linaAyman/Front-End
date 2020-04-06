@@ -35,6 +35,8 @@ export class MockServerService implements HttpInterceptor {
                 return login();
             case url.endsWith('/user') && method === 'POST':
                 return signup();
+            // case url.endsWith('/artist') && method === 'GET':
+            //     return signup();
         //     case url.endsWith('/users/authenticate') && method === 'POST':
         //         return authenticate();
         //     case url.endsWith('/users') && method === 'GET':
