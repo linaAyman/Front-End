@@ -10,7 +10,7 @@ import { PlayerService } from '../mayestro/player.service';
 
 @NgModule({
   declarations: [],
-  providers:[AuthService,PlayerService],
+  providers:[AuthService,PlayerService,fakeBackendProvider],
   imports: [
     CommonModule,
     HttpClientModule

@@ -19,6 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule
   ],
   bootstrap: [AppComponent],
-  providers:[]
+  providers:[fakeBackendProvider]
 })
 export class AppModule { }

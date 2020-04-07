@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from 'src/app/mayestro/player.service';
-import { ThrowStmt } from '@angular/compiler';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
@@ -9,7 +9,7 @@ import { ThrowStmt } from '@angular/compiler';
  
 
 export class PlayerComponent implements OnInit {
-isliked=false;
+isliked=true;
 isplayed=true;
 muted = false;
 vol=1;
@@ -17,20 +17,50 @@ isActive=true;
 player=true;
 soundon=false;
 repeated=false;
-checkindex;
-tunes = [
-  "/assets/door.mp3",
-  "/assets/bayenhabit.mp3",
-  "/assets/Yetalemo.mp3"
-]
+checkindex=0;
+isrepeated=true;
+isshuffled=true;
+shuffling=false;
+urls:string;
+name:string;
+artist:string;
+array;
+imageURL:any;
 srcnew=0;
-src=this.tunes[this.srcnew];
- x :HTMLAudioElement= new Audio(this.src);
+ x :HTMLAudioElement= new Audio();
+  constructor(public playerservice: PlayerService ,private route: ActivatedRoute) { 
 
-  constructor(public service: PlayerService ) { 
-    // listen to stream state
   }
  
+  ngOnInit() {
+    this.playerservice.getTracks().subscribe( (data:any) =>{
+        this.urls=(data[1].url);
+        this.array=data.length;
+        this.x.src=this.urls;
+        console.log(this.array);
+            })
+    this.x.addEventListener('ended', ()=> {
+ 
+      this.srcnew++;
+      this.x.src=this.urls[this.srcnew];
+      this.play();
+      if(this.urls.length==1)
+      {
+    this.player=true;
+      }
+      if(this.isshuffled==false)
+      {
+        this.random(this.urls);
+        console.log("Shuffle");
+        console.log(this.urls);
+        this.play();
+      }
+    })
+    this.x.addEventListener('load',()=>
+    { 
+      console.log("Loading");
+    })
+  }
   like()
   {
     if(this.isliked==true)
@@ -39,70 +69,78 @@ src=this.tunes[this.srcnew];
     else this.isliked=true;
     
   }  
-  ngOnInit() {
-
+  play(){
+        this.player=false;
+        this.x.play();  
+        console.log("played"); 
+       
   }
-  play() {
-  
-    for(let i = 0; i <= this.tunes.length;i++)
-    {
- if(this.x.played)
- {
-       this.player=false;
-       this.x.play();    
-        console.log("ended");
-       this.x.autoplay=true;
-       this.x.load();
-      }   
-else {
-   this.player=true;
-    this.x.pause();
-    console.log("paused");
-  }
-}
-}
- pause()
- {
-  if(!this.x.paused){
-    this.player=true;
-       this.x.pause();
-       console.log("paused");
+  pause()
+  { 
+     this.player=true;
+      this.x.pause();
+      console.log("paused");
     
-     } else {
-       this.player=false;
-        this.x.play();
-        console.log("played");
-     }
- }
- Next(){
+  }
+
+ next(){
  
- this.checkindex=2;
- if(this.checkindex <= this.tunes.length)
- {
-this.x.pause();
-this.src=this.tunes[1];
-console.log(this.src);
-this.play();
+  this.checkindex=this.checkindex+1;
+  console.log(this.checkindex);
+  if((this.checkindex < this.array) && this.array!=1)
+   {
+    this.x.pause();
+    this.srcnew=this.checkindex;
+    this.playerservice.getTracks().subscribe( (data:any) =>{
+      this.urls=(data[0].url);
+      this.array=data.length;
+      this.x.src=this.urls;
+      console.log(this.array);
+          })
+    this.x.src=this.urls;
+    this.x.load();
+    this.x.play();
  }
+ else {
+    this.checkindex=0;
+    this.srcnew=this.checkindex;
+    this.x.src=this.urls[this.srcnew];
+    this.play();
+      }
+}
+previous(){
+  this.checkindex=this.checkindex-1;
+  if((this.checkindex < this.array) && this.checkindex >= 0 )
+  {
+ this.x.src=this.urls[this.checkindex];
+ this.play();
+console.log(this.checkindex);
+  }
+  else {
+ this.checkindex=this.array-1;
+ console.log(this.checkindex)
+; this.x.src=this.urls[this.checkindex];
+ this.play();
+  }
+}
+mute(){
+  if(this.muted){
+this.soundon=false;
+    this.x.volume=this.vol;
+    this.muted=false;
+
+  } 
+  else {
+    this.soundon=true;
+    this.x.volume = 0;
+    this.muted=true;
+  }
 }
   setPos(pos){
    this.x.currentTime= pos;
 
   }
-  mute(){
-    if(this.muted){
- this.soundon=false;
-      this.x.volume=this.vol;
-      this.muted=false;
-
-    } 
-    else {
-      this.soundon=true;
-      this.x.volume = 0;
-      this.muted=true;
- console.log("mute");
-    }
-  }
+ 
   setvolume(volume)
   {
     this.x.volume=volume;
@@ -111,31 +149,36 @@ this.play();
   repeat(){
     if(this.repeated)
     {
+      this.isrepeated=true;
     this.x.loop=false;
     console.log("notrepeated");
     this.repeated=false;
     }
     else {
+      this.isrepeated=false;
       this.x.loop=true;
       console.log("repeatedone");
       this.repeated=true;
   
     }
   }
-  randomArrayShuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+   random(myarray) {
+    let ctr = myarray.length, temp, index;
+    while (ctr > 0) {
+        index = Math.floor(Math.random() * ctr);
+        ctr--;
+        temp = myarray[ctr];
+        myarray[ctr] = myarray[index];
+        myarray[index] = temp;
     }
-    return array;
-  }
+    return myarray;
+}
   shuffle(){
-  this.randomArrayShuffle(this.tunes);
-  console.log("Shuffle");
+    if(this.isshuffled)
+    {
+  this.isshuffled=false;
+    }
+    else this.isshuffled=true;
   }
 }
 

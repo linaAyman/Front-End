@@ -46,9 +46,12 @@ export class MockServerService implements HttpInterceptor {
         //     default:
         //         // pass through any requests not handled above
                 // return next.handle(request);
+                case url.endsWith('/player/play') && method === 'GET':
+                   return track();
         }
 
     }
+    
     function login(){
       const {email , password}=body
       let user=users.find(x=>(x.email===email || x.name===email) &&  x.password===password)
@@ -84,7 +87,39 @@ export class MockServerService implements HttpInterceptor {
         return ok({token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE'})
 
       }
-      
+    }
+    
+    function track() {
+    const tracks = [
+        {
+            artists: [
+                {
+                    id: "19gmxCK2V3jLMi5fDYyKtS",
+                    name: "Willamette Stone"
+                }
+            ],
+            url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+            image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
+            id: "3JOF9NzQVkUXtCcJbEQuAb",
+            name: "Heart Like Yours",
+            previewUrl: "https://p.scdn.co/mp3-preview/b5fbda2874c09a249989b9570381537e8dee59c1?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
+        },
+        {
+            artists: [
+                {
+                    id: "19gmxCK2V3jLMi5fDYyKtS",
+                    name: "Willamette Stone"
+                }
+            ],
+            url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+            image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
+            id: "3cdyjNKFN0tWP9Z8icNvcf",
+            name: "Never Coming Down",
+            previewUrl: "https://p.scdn.co/mp3-preview/c8628766a22440f0e355d7221caf7a1f0cbe79fb?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
+        }
+        
+      ];
+  return ok(tracks);
     }
     // helper functions
 
@@ -111,7 +146,9 @@ export class MockServerService implements HttpInterceptor {
         return parseInt(urlParts[urlParts.length - 1]);
     }
   }
+ 
 }
+
 export const fakeBackendProvider = {
   // use fake backend in place of Http service for backend-less development
   provide: HTTP_INTERCEPTORS,

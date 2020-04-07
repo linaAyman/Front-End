@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import{Observable} from 'rxjs';
+import { AuthService } from '../shared/services/auth.service';
+import {Observable} from 'rxjs'
 @Injectable({
   providedIn: 'root'
 })
@@ -8,11 +9,10 @@ import{Observable} from 'rxjs';
 export class PlayerService {
   
   URL='http://jsonplaceholder.typicode.com/albums';
-constructor(private http : HttpClient){
+constructor(private http : HttpClient, private auth:AuthService){
 
 }
-  getTrack() {
-    return this.http.get(this.URL);
+  getTracks() {
+    return this.http.get(this.auth.URL+'/player/play');
   }
-  
-}
+ }

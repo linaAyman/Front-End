@@ -1,49 +1,36 @@
 <div class="container">
-    <button class="likebutton" (click)="like()"  title="Save to your Liked Songs"  [style.-webkit-text-fill-color]="isliked ? 'rgb(105,105,105)' : 'rgb(25,206,88)'"[style.color]="isliked ? 'whitesmoke' : 'rgb(25,206,88)'" >
+  <div class="content">
+</div>
+     <button class="likebutton" (click)="like()"  title="Save to your Liked Songs"  [style.-webkit-text-fill-color]="isliked ? 'rgb(105,105,105)' : 'rgb(25,206,88)'"[style.color]="isliked ? 'whitesmoke' : 'rgb(25,206,88)'" >
         <i class="fa fa-heart" ></i>
-    </button>
-    <audio ></audio>
-    <div class="btn-group">
-    <button class="shuffle" title="Enable shuffle" (click)="shuffle()">
-        <span class="fa fa-random">
-          
-            </span>
-    </button>
-    <button  class="back" (click)="Previous()" title="Previous">
-        <i class="fa fa-step-backward">
-            
-        </i>
-    </button>  
-    <button class="play" (click)="play()"  *ngIf="player">
+     </button>
+       <audio ></audio>
+     <div class="btn-group">
+        <button class="shuffle" title="Enable shuffle" (click)="shuffle()"  [style.-webkit-text-fill-color]="isshuffled ? 'black' : 'rgb(25,206,88)'"[style.color]="isshuffled ? 'whitesmoke' : 'rgb(25,206,88)'">
+          <span class="fa fa-random">  </span>
+        </button>
+        <button  class="back" (click)="previous()" title="previous">
+          <i class="fa fa-step-backward"></i>
+        </button>  
+        <button class="play" (click)="play()"  *ngIf="player">
         <i class="fa fa-play-circle"></i>       
-      </button>
+        </button>
       <button class="pause" (click)="pause()" *ngIf="!player">
         <i class="fa fa-pause-circle">
         </i>
       </button>
     
-    <button  class="forward" (click)="Next()" title="Next">
-        <i class="fa fa-step-forward">
-           
-        </i>
-    </button> 
-    <button class="repeat" (click)="repeat()" *ngIf="!repeated">
+       <button  class="forward" (click)="next()" title="next">
+        <i class="fa fa-step-forward"></i>
+        </button> 
+       <button class="repeat" (click)="repeat()" [style.-webkit-text-fill-color]="isrepeated ? 'black' : 'rgb(25,206,88)'"[style.color]="isrepeated ? 'whitesmoke' : 'rgb(25,206,88)'">
 
-        <i class="fa fa-repeat">
-          
-        </i>
-    </button>
-
-    <button class="repeat" (click)="repeat()" *ngIf="repeated" >
-
-    <i class="fa fa-repeat-1">
-     
-    </i>
-     </button>
+        <i class="fa fa-repeat"></i>
+        </button>
     </div>
-    <mat-slider>
+     <mat-slider>
         <li (change)="setPos(this.value)"> </li>
-    </mat-slider>
+     </mat-slider>
     
     <mat-slider class="sound" >
         <li (change)="volume(this.value)"> </li>
@@ -59,6 +46,4 @@
             volume_off
             </span>
     </button>
-
-   
 </div>
