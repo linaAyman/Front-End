@@ -30,4 +30,4 @@ import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule} from '@
   ]
 
 })
-export class MayestroModule { }
+export class MayestroModule {}

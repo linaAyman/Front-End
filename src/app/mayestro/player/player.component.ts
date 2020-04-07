@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { PlayerService } from 'src/app/mayestro/player.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-player',
-  templateUrl: './player.component.html',
-  styleUrls: ['./player.component.css']
+  selector: "app-player",
+  templateUrl: "./player.component.html",
+  styleUrls: ["./player.component.css"]
 })
  
 
@@ -92,7 +92,7 @@ srcnew=0;
     this.x.pause();
     this.srcnew=this.checkindex;
     this.playerservice.getTracks().subscribe( (data:any) =>{
-      this.urls=(data[0].url);
+      this.urls=data[this.srcnew].url;
       this.array=data.length;
       this.x.src=this.urls;
       console.log(this.array);
