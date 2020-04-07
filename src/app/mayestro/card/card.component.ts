@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
+import { ICard } from './card.interface';
+import { IPlaylist } from '../mini-card-viewer/playlists.interface';
 
 @Component({
   selector: "app-card",
@@ -6,7 +8,12 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./card.component.css"]
 })
 export class CardComponent implements OnInit {
-  constructor() {}
+  @Input() card: ICard;
+  
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.card);
+  }
+
 }

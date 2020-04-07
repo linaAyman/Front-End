@@ -1,0 +1,30 @@
+.playlist{
+    background: rgb(18,18,18);
+    position: relative;
+    top: 100px;
+    min-height:auto; 
+}
+.track{
+ color: white;
+ height: 70px;
+ padding: 10px 10px;
+}
+
+.track:hover{
+    background-color:rgb(61, 60, 60);
+    
+}
+.more-button{
+    font-size: 30px;
+    background-color: rgb(18,18,18);
+    border:rgb(18,18,18);
+    color:white;
+    width: 48px;
+    height: 48px;
+    line-height: 48px ;
+  }
+
+
+.track:hover .more-button{
+    background-color:rgb(61, 60, 60);
+}

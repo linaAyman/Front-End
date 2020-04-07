@@ -1,0 +1,67 @@
+{
+    "category": {
+        "playlists": [
+            {
+                "description": "Some Comfort Tracks to relax",
+                "id": "4qrimFUz8KFC8W6WrDiDnd",
+                "image": "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+                "name": "Comfort Zone"
+            },
+            {
+                "description": "Relax your Mind",
+                "id": "4qrimFUz8KFC8W6WrDiDne",
+                "image": "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+                "name": "Relaxtion"
+            },
+            {
+                "description": "get a Peacful Mind with our playlist",
+                "id": "4qrimFUz8KFC8W6WrDiDnf",
+                "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                "name": "Peacful Mind"
+            },
+            {
+                "description": "Take A Rest",
+                "id": "4qrimFUz8KFC8W6WrDiDnf",
+                "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                "name": "Rest"
+            },
+            {
+                "description": "Make a good and Sweet Moments",
+                "id": "4qrimFUz8KFC8W6WrDiDng",
+                "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                "name": "Sweet Moments"
+            },
+            {
+                "description": "Good hours to spend with music",
+                "id": "4qrimFUz8KFC8W6WrDiDnh",
+                "image": "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+                "name": "Sweet Moments"
+            },
+            {
+                "description": "Time to chill out with perfect songs",
+                "id": "4qrimFUz8KFC8W6WrDiDni",
+                "image": "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+                "name": "chill songs"
+            },
+            {
+                "description": "get yourself some energy",
+                "id": "4qrimFUz8KFC8W6WrDiDnj",
+                "image": "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+                "name": "Energy"
+            },
+            {
+                "description": "get yourself some energy",
+                "id": "4qrimFUz8KFC8W6WrDiDnh",
+                "image": "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+                "name": "Energy"
+            },
+            {
+                "description": "New Songs Exclusive Happy and chill",
+                "id": "4qrimFUz8KFC8W6WrDiDma",
+                "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                "name": "Moments"
+            }
+        ],
+        "name": "Chill"
+    }
+}

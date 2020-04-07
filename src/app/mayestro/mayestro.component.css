@@ -1,5 +1,5 @@
 .player{
-    z-index: 3;
+    z-index: 9;
     width:100%;
     display: flex;
     line-height: 1.5;
@@ -13,26 +13,35 @@
     bottom: 0;
     flex-direction: row;
     height: 75px;   
-background-color: rgb(105,105,105);
+    background-color: rgb(105,105,105);
+}
+.test {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 .router {
-  z-index: -1;
+  /* background-color: rgb(18, 18, 18); */
+  z-index: 0;
   max-width: 85%;
   width: 100%;
   margin: 0;
-  height: 650px;
-  padding-bottom: 70px;
+  /* height: 650px; */
   padding-top: 60px;
   margin-left: 228px;
-  padding-left: 18px;
-  overflow: visible;
-  overflow-y: auto;
-  text-align: justify;
+  padding-left: 0;
+  overflow: hidden;
+  margin-top: 60px;
+
+  /* margin-bottom: 10%; */
 }
 
 .side {
-  z-index: 2;
+  z-index: 8;
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.8);
@@ -43,12 +52,15 @@ background-color: rgb(105,105,105);
   right: 0;
   position: fixed;
   min-height: 85%;
+  min-width: 230px;
+  overflow-y: hidden;
 }
 .headd {
-  z-index: 1;
+  background-color: rgb(18, 18, 18);
+  z-index: 7;
   top: 0;
   width: 100%;
-  margin-left: 230px;
+  padding-left: 230px;
   height: 60px;
 }
 .flexnav {
