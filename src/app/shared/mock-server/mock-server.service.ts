@@ -324,7 +324,10 @@ export class MockServerService implements HttpInterceptor {
       if (newPassword === oldPassword)
         return error("please enter another password");
       user.password = newPassword;
-      return ok();
+      return ok({
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
+      });
     }
     function mostPopular() {
       const categories = {

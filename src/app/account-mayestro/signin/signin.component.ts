@@ -54,7 +54,7 @@ export class SigninComponent implements OnInit {
     if (this.invalid(f)) return;
     this.accService.login(f.value).subscribe(
       res => {
-        this.router.navigate(["/mayestro"]);
+        this.router.navigate(["/open.maestro/overview"]);
       },
       err => {
         console.log(err);

@@ -1,21 +1,22 @@
-nav{
-    /* position: fixed; */
-    /* width: 82%; */
-    background-color: rgb(18,18,18);
-    box-sizing: border-box;
-    top:0;
-    right:0;
-    color: #b3b3b3;
-    margin: 0px;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
-    grid-area: main-view;
-    z-index: 2;
-    display: inline-flex;
-    display: flex;
-    align-items: baseline;
-    padding-bottom: 10px;
+nav {
+  /* position: fixed; */
+  /* width: 82%; */
+  background-color: rgb(18, 18, 18);
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  color: #b3b3b3;
+  margin: 0px;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  grid-area: main-view;
+  z-index: 2;
+  display: inline-flex;
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 10px;
+  max-height: 60px;
 }
 
 .navright {
@@ -267,15 +268,15 @@ nav{
 .btnEnd {
   width: 30%;
 }
-a{
+a {
   color: white;
   text-align: center;
-  font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
-margin-top: 10px;
-
+  font-family: spotify-circular, spotify-circular-cyrillic,
+    spotify-circular-arabic, spotify-circular-hebrew, Helvetica Neue, Helvetica,
+    Arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+  margin-top: 10px;
 }
-   
 
-.library{
-margin-right: 380px;
+.library {
+  margin-right: 380px;
 }

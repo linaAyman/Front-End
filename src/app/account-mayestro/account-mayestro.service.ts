@@ -34,7 +34,6 @@ export class AccountMayestroService {
   signup(user) {
     return this.http.post(this.auth.URL + "/user/signup", user).pipe(
       map((res: any) => {
-        console.log("res", res);
         localStorage.setItem("token", res.token);
       })
     );
@@ -53,10 +52,13 @@ export class AccountMayestroService {
   }
 
   resetPassword(pass, hash) {
-    return this.http.post(
-      `${this.auth.URL}/user/resetPassword?id=${hash}`,
-      pass
-    );
+    return this.http
+      .post(`${this.auth.URL}/user/resetPassword?id=${hash}`, pass)
+      .pipe(
+        map((res: any) => {
+          localStorage.setItem("token", res.token);
+        })
+      );
   }
 
   changePassword(pass) {

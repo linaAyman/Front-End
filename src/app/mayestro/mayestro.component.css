@@ -1,19 +1,19 @@
-.player{
-    z-index: 9;
-    width:100%;
-    display: flex;
-    line-height: 1.5;
-    box-sizing: inherit;
-    position: fixed;
-    padding: 0;
-    margin:0;
-    border: 0;
-    right:0;
-    left:0;
-    bottom: 0;
-    flex-direction: row;
-    height: 75px;   
-    background-color: rgb(105,105,105);
+.player {
+  z-index: 9;
+  width: 100%;
+  display: flex;
+  line-height: 1.5;
+  box-sizing: inherit;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  flex-direction: row;
+  height: 75px;
+  background-color: rgb(105, 105, 105);
 }
 .test {
   margin: 0;

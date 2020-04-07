@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AssetsService } from "src/app/shared/assets/assets.service";
 import { AccountMayestroService } from "../account-mayestro.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-signup",
@@ -45,7 +45,8 @@ export class SignupComponent implements OnInit {
    */
   constructor(
     private assets: AssetsService,
-    private accService: AccountMayestroService
+    private accService: AccountMayestroService,
+    private route: Router
   ) {}
 
   /**
@@ -75,7 +76,7 @@ export class SignupComponent implements OnInit {
       this.Day >= 1 &&
       this.Year >= 1950 &&
       this.Year <= 2020 &&
-      this.Month &&
+      this.Month > -1 &&
       f.value.email === this.ConfirmEmail
     );
   }
@@ -87,9 +88,10 @@ export class SignupComponent implements OnInit {
   submit(f) {
     if (this.invalid(f)) return;
     f.value["birthDate"] = new Date(this.Year, this.Month, this.Day);
-    console.log(f.value);
     this.accService.signup(f.value).subscribe(
-      res => {},
+      res => {
+        this.route.navigate(["/open.mayestro/overview"]);
+      },
       err => {
         console.log(err);
       }
