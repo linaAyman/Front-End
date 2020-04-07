@@ -1,0 +1,78 @@
+{
+    "popularPlaylists": {
+        "popularPlaylists": [
+            {
+                "type": "playlist",
+                "description": "get a Peacful Mind with our playlist",
+                "id": "4qrimFUz8KFC8W6WrDiDnf",
+                "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                "name": "Peacful Mind"
+            },
+            {
+                "type": "playlist",
+                "description": "May be Happy now",
+                "id": "4qrimFUz8KFC8W6WrDiDmf",
+                "image": "https://i.scdn.co/image/ab67616d00001e0205559264ebef3889709826cf",
+                "name": "HAPPY PERSON"
+            },
+            {
+                "type": "playlist",
+                "description": "New Songs Exclusive Happy and chill",
+                "id": "4qrimFUz8KFC8W6WrDiDma",
+                "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                "name": "Moments"
+            },
+            {
+                "type": "playlist",
+                "description": "do some excerise",
+                "id": "4qrimFUz8KFC8W6WrDiDme",
+                "image": "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
+                "name": "Sport Music"
+            },
+            {
+                "type": "playlist",
+                "description": "Take A Rest",
+                "id": "4qrimFUz8KFC8W6WrDiDnf",
+                "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                "name": "Rest"
+            },
+            {
+                "type": "playlist",
+                "description": "get yourself some energy",
+                "id": "4qrimFUz8KFC8W6WrDiDnh",
+                "image": "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+                "name": "Energy"
+            },
+            {
+                "type": "playlist",
+                "description": "Some Comfort Tracks to relax",
+                "id": "4qrimFUz8KFC8W6WrDiDnd",
+                "image": "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+                "name": "Comfort Zone"
+            },
+            {
+                "type": "playlist",
+                "description": "New Songs Mood Adjust ",
+                "id": "4qrimFUz8KFC8W6WrDiDmb",
+                "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                "name": "Keep Up"
+            },
+            {
+                "type": "playlist",
+                "description": "Happy and Workout and Chill",
+                "id": "4qrimFUz8KFC8W6WrDiDmc",
+                "image": "https://i.scdn.co/image/ab67616d00001e0213480e8127119dcb882eb53d",
+                "name": "Happy days"
+            },
+            {
+                "type": "playlist",
+                "description": "playlist from the including all songs in if i stay movie",
+                "id": "4qrimQUz8KFC8W6WrDiDnc",
+                "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                "name": "If i stay(soundtrack)"
+            }
+        ],
+        "description": "Most popular around world",
+        "name": "Most Popular Playlists"
+    }
+}
