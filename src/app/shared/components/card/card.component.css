@@ -1,29 +1,6 @@
-.img{
-    --glue-font-weight-normal: 400;
-    --glue-font-weight-bold: 700;
-    --glue-font-weight-black: 900;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: .015em;
-    font-weight: var(--glue-font-weight-normal);
-    color: #b3b3b3;
-    text-transform: none;
-    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -webkit-box-direction: normal;
-    user-select: none;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+img {
+  height: 150px;
+  width: 100%;
 }
 .card{
     display:flex;
@@ -36,13 +13,12 @@
     box-sizing: border-box;
 
 }
-.card-body{
-    height:100px;
+.card-body {
+  height: 100px;
 }
-.btn{
-    display: none;
-    
+.btn {
+  display: none;
 }
-.card-body:hover .btn{
-    display: inline;
+.card-body:hover .btn {
+  display: inline;
 }

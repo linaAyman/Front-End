@@ -6,12 +6,13 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { fakeBackendProvider } from './mock-server/mock-server.service';
 import { CardComponent } from './components/card/card.component';
+import { HomeArtistCardComponent } from './components/home-artist-card/home-artist-card.component';
 
 
 
 
 @NgModule({
-  declarations: [CardComponent,ArtistHeaderComponent,MiniCardViewerComponent],
+  declarations: [CardComponent,MiniCardViewerComponent, HomeArtistCardComponent],
   providers:[AuthService,fakeBackendProvider],
   imports: [
     CommonModule,
@@ -20,9 +21,9 @@ import { CardComponent } from './components/card/card.component';
   ],
   exports:[
     CardComponent,
-    ArtistHeaderComponent,
-    MiniCardViewerComponent
+    MiniCardViewerComponent,
+    HomeArtistCardComponent
     
   ]
 })
-export class SharedModule { }
+export class SharedModule {}

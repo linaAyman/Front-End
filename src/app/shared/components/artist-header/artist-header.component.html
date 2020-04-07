@@ -4,7 +4,7 @@
         <h1 class="ArtistName" dir="auto">Artist Name</h1>
         <div class="buttonContainer ">
             
-            <button class="button-scss b"  type="button">PLAY</button>
+            <button class="button-scss b"  type="button" (click)=PLay()>{{ispalyed?'Play':'Pause'}}</button>
             <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isfollowed ? 'white':'#1fa14d' " type="button"  (click)="Follow()" >{{isfollowed?'Follow':'unFollow'}}</button>
             <div  style="display: inline;">
                 <button type="button" title="More" class="moreButton">...</button>
@@ -18,16 +18,15 @@
         <nav>
             
             <li style="display: inline-block;">
-                <a  href="#" aria-current="page" class="uc " style="background-color: #333;"  >Overview</a>
+                <a  [routerLink]="['overview']" aria-current="page" class="uc " style="background-color: #333;"  >Overview</a>
             </li>
             <li style="display: inline-block;">
-                <a  href="http://localhost:4200/mayestro/related" class="uc" >Related Artists</a>
+                <a  [routerLink]="['related']" class="uc" style="cursor: pointer;">Related Artists</a>
             </li>
             <li style="display: inline-block;">
-                <a  href="http://localhost:4200/mayestro/about" class="uc">About</a>
+                <a  [routerLink]="['about']" class="uc">About</a>
             </li>
             
-        </nav>
-        
+        </nav>   
     </div>       
 </div>

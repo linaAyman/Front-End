@@ -8,6 +8,7 @@ WORKDIR '/app'
 COPY package*.json ./
 RUN npm install
 RUN npm install -g @angular/cli@8.3.25
+RUN npm install --save-dev @angular-devkit/build-angular
 
 # add app
 COPY . .

@@ -1,23 +1,28 @@
 language: generic 
 sudo: required
-services:
-  - docker
+branches:
+  only:
+    - master
 
 
-before_install:
-  - docker build -t lina/docker-maestrofe -f Dockerfile.dev . 
+install:
+  - npm install
+  - npm install -g @angular/cli@8.3.5
 
-script:
-  - docker run -e CI=true lina/docker-maestrofe
+before_deploy:
+  - chmod 400 testaws.pem
+  - eval "$(ssh-agent -s)"
 deploy:
-  edge: true
-  provider: elasticbeanstalk
-  region:   "us-east-2"
-  app: "maestrofe"
-  env: "Maestrofe-env"
-  bucket_name: "elasticbeanstalk-us-east-2-496763498997"
-  bucket_path: "maestrofe"
+  provider: script
+  skip_cleanup: true
+  script: bash deploy.sh
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY  
+
+notifications:
+  email:
+    recipients:
+      - linaayman99@gmail.com
+      - ahmhelmhalm@gmail.com
+    on_success: change
+    on_failure: change        
