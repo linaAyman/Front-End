@@ -621,9 +621,11 @@ export class MockServerService implements HttpInterceptor {
                     "name": "Moments"
                 }
             ],
-            "name": "Chill"
+          
+          name: "Chill"
         }
-    }
+       
+      }
     return ok(category);
     }
     // helper functions
