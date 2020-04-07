@@ -7,7 +7,7 @@
     -o-background-size: cover;
     height:100%;
     background-color:  #121212;
-    background: linear-gradient(to top, #121212,70%, transparent), url("https://i.scdn.co/image/c2fc7bf2aadbcdc07820307800a16d1acd83d057") no-repeat center; 
+    background: linear-gradient(to top, #121212,70%, transparent),  url("https://i.scdn.co/image/c2fc7bf2aadbcdc07820307800a16d1acd83d057") no-repeat center; 
     color: #ffffff;
     padding-left:24px;
 }
@@ -38,7 +38,7 @@
 .ArtistName {
     font-size: 72px;
     line-height: 82px;
-    letter-spacing: -.005em;
+    letter-spacing: 3px;
     font-weight: var(--glue-font-weight-black);
     color: #fff;
     text-transform: none;

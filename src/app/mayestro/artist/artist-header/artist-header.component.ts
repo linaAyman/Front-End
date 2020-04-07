@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { MaystroService } from './../../maystro.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Iartist } from '../artist.interface';
 
 @Component({
   selector: 'app-artist-header',
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class ArtistHeaderComponent implements OnInit {
   isfollowed=true;
   ispalyed=true;
-  constructor() { }
+  @Input() artist:Iartist
+  constructor( private maysrtoService:MaystroService) { }
 
   ngOnInit() {
+    this.maysrtoService.getArtist(123).subscribe((res:any)=>{
+      res.forEach((art:any) => {
+        
+      });
+    })
+
   }
 
   Follow()

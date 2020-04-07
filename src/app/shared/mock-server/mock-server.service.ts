@@ -53,8 +53,15 @@ export class MockServerService implements HttpInterceptor {
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
         ) && method === "GET":
           return checkEmail();
-        case url.match(/\/user\/S+$/) && method === "GET":
+        case url.match(/\/artists\/S+$/) && method === "GET":
           return artist();
+
+        case url.match(/\/artists\/S+$/) && method === "GET":
+          return artist();
+        // case url.match(/\/artists\/S+$/\) && method === "GET":
+        //   return artist();
+
+        // /artists/{id}/albums
 
         
         // case url.endsWith("/artists/{id}") && method === 'GET':
@@ -122,24 +129,24 @@ export class MockServerService implements HttpInterceptor {
     function artist(){
       if(!isLoggedIn()) return unauthorized()
       const artists=[{
-        "followers" : [ {
-          "total" : 5
+        followers : [ {
+          total : 5
         } ],
-        "Images" : [ {
-          "URL" : "https://cdn.ome.lt/9LBvp96wbthUZEMZqrzdnioAMYk=/fit-in/837x500/smart/uploads/conteudo/fotos/Adeleheader.jpg"
+        Images : [ {
+          URL : "https://cdn.ome.lt/9LBvp96wbthUZEMZqrzdnioAMYk=/fit-in/837x500/smart/uploads/conteudo/fotos/Adeleheader.jpg"
         }],
-        "name" : "adele",
-        "artistID" : "123"
+        name : "adele",
+        artistID : "123"
         },
         {
-          "followers" : [ {
-            "total" : 10 
+          followers : [ {
+            total : 10 
           } ],
-          "Images" : [ {
-            "URL" : "https://thevintagevines.files.wordpress.com/2015/01/bfxi4ifcmaa2vwq.jpg"
+          Images : [ {
+            URL : "https://thevintagevines.files.wordpress.com/2015/01/bfxi4ifcmaa2vwq.jpg"
           }],
-          "name" : "Ed Sheeran ",
-          "artistID" : "154"
+          name : "Ed Sheeran ",
+          artistID : "154"
         }
       ]
       
