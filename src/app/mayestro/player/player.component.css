@@ -132,22 +132,22 @@ border-spacing: 0rem;
   cursor: pointer;
 }
 .volume {
-  margin-top: -5px;
+  margin-top: 20px;
   right:40px;
   background-color: rgb(105,105,105);
   border: rgb(105,105,105);
   outline: none;
-  margin-left: 430px;
+  margin-left: 600px;
   color: black;
   
 }
 .volumeoff{
-  margin-top: -5px;
+  margin-top: 20px;
   right:40px;
   background-color: rgb(105,105,105);
   border: rgb(105,105,105);
   outline: none;
-  margin-left: 430px;
+  margin-left: 600px;
   color: black;
 
 }

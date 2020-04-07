@@ -21,7 +21,7 @@ import {
 export class MockServerService implements HttpInterceptor {
   users: any;
   hashId = [];
-
+  mytracks :any;
   constructor() {
     this.users = [
       {
@@ -33,11 +33,40 @@ export class MockServerService implements HttpInterceptor {
         birthDate:
           "Wed Feb 01 1950 00:00:00 GMT+0200 (Eastern European Standard Time)"
       }
-    ];
-  }
+    ]
+        this.mytracks = [
+    
+      {
+        artists: [
+            {
+                id: "19gmxCK2V3jLMi5fDYyKtS",
+                name: "Willamette Stone"
+            }
+        ],
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+        image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
+        id: "3JOF9NzQVkUXtCcJbEQuAb",
+        name: "Heart Like Yours",
+        previewUrl: "https://p.scdn.co/mp3-preview/b5fbda2874c09a249989b9570381537e8dee59c1?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
+    },
+    {
+        artists: [
+            {
+                id: "19gmxCK2V3jLMi5fDYyKtS",
+                name: "Willamette Stone"
+            }
+        ],
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+        image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
+        id: "3cdyjNKFN0tWP9Z8icNvcf",
+        name: "Never Coming Down",
+        previewUrl: "https://p.scdn.co/mp3-preview/c8628766a22440f0e355d7221caf7a1f0cbe79fb?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
+    }]
+      }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
     let hashId = this.hashId;
+    let mytracks = this.mytracks;
     const { url, method, headers, body } = request;
 
     console.log(url);
@@ -71,8 +100,8 @@ export class MockServerService implements HttpInterceptor {
         //     default:
         //         // pass through any requests not handled above
                 // return next.handle(request);
-                case url.endsWith('/player/play') && method === 'GET':
-                   return track();
+                case url.match(/\/playlist\/\S+\/tracks$/) && method === 'GET':
+                  return tracks();
         }
 
     }
@@ -162,38 +191,16 @@ export class MockServerService implements HttpInterceptor {
       user.password = newPassword;
       return ok();
     }
-    function track() {
-      const tracks = [
-          {
-              artists: [
-                  {
-                      id: "19gmxCK2V3jLMi5fDYyKtS",
-                      name: "Willamette Stone"
-                  }
-              ],
-              url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
-              image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
-              id: "3JOF9NzQVkUXtCcJbEQuAb",
-              name: "Heart Like Yours",
-              previewUrl: "https://p.scdn.co/mp3-preview/b5fbda2874c09a249989b9570381537e8dee59c1?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
-          },
-          {
-              artists: [
-                  {
-                      id: "19gmxCK2V3jLMi5fDYyKtS",
-                      name: "Willamette Stone"
-                  }
-              ],
-              url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
-              image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
-              id: "3cdyjNKFN0tWP9Z8icNvcf",
-              name: "Never Coming Down",
-              previewUrl: "https://p.scdn.co/mp3-preview/c8628766a22440f0e355d7221caf7a1f0cbe79fb?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
-          }
-          
-        ];
-    return ok(tracks);
-      }
+    function tracks()
+    {
+   const id = url.split('/')[url.length-2];
+ const track = mytracks.find(tr=> tr._id === id);
+ if(track) return ok(track);
+ return error("no track found with this id");
+    }
+ 
+         
+
     // helper functions
 
     function ok(body?) {

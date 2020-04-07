@@ -1,6 +1,10 @@
 <div class="container">
   <div class="content">
+    <li *ngFor='let track of tracks'>
+      {{ track.name }}
+    </li>
 </div>
+ 
      <button class="likebutton" (click)="like()"  title="Save to your Liked Songs"  [style.-webkit-text-fill-color]="isliked ? 'rgb(105,105,105)' : 'rgb(25,206,88)'"[style.color]="isliked ? 'whitesmoke' : 'rgb(25,206,88)'" >
         <i class="fa fa-heart" ></i>
      </button>
@@ -28,13 +32,6 @@
         <i class="fa fa-repeat"></i>
         </button>
     </div>
-     <mat-slider>
-        <li (change)="setPos(this.value)"> </li>
-     </mat-slider>
-    
-    <mat-slider class="sound" >
-        <li (change)="volume(this.value)"> </li>
-    </mat-slider>
     <button class="volume" (click)="mute()" *ngIf="!soundon" > 
         <span class="material-icons">
             volume_up

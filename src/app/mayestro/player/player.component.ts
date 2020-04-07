@@ -26,6 +26,7 @@ name:string;
 artist:string;
 array;
 imageURL:any;
+ID:any;
 srcnew=0;
  x :HTMLAudioElement= new Audio();
   constructor(public playerservice: PlayerService ,private route: ActivatedRoute) { 
@@ -33,11 +34,12 @@ srcnew=0;
   }
  
   ngOnInit() {
-    this.playerservice.getTracks().subscribe( (data:any) =>{
-        this.urls=(data[1].url);
+    this.route.params.subscribe(param=>this.ID=param["id"])
+    this.playerservice.getTracks(this.ID).subscribe( (data:any) =>{
+        this.urls=(data.url);
         this.array=data.length;
-        this.x.src=this.urls;
         console.log(this.array);
+        this.x.src=this.urls;
             })
     this.x.addEventListener('ended', ()=> {
  
@@ -91,7 +93,7 @@ srcnew=0;
    {
     this.x.pause();
     this.srcnew=this.checkindex;
-    this.playerservice.getTracks().subscribe( (data:any) =>{
+    this.playerservice.getTracks(this.ID).subscribe( (data:any) =>{
       this.urls=data[this.srcnew].url;
       this.array=data.length;
       this.x.src=this.urls;

@@ -1,13 +1,13 @@
 import { Component, OnInit, OnChanges } from "@angular/core";
 import { Location } from "@angular/common";
-
+import{Router}from '@angular/router'
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  constructor(private loc: Location) {
+  constructor(private loc: Location,public router: Router) {
     // console.log(loc.getState());
   }
 
