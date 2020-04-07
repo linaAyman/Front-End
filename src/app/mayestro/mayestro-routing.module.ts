@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: "home", component: HomeComponent },
       { path: "player", component: PlayerComponent },
       { path: "side", component: SideBarComponent },
-      { path: "seeAll", component: SeeAllComponent },
+      { path: "seeAll/:name", component: SeeAllComponent },
       { path: "search", component: SearchComponent },
       { path: "playlist/:id/:type", component: PlaylistComponent },
       { path: "yourlibrary/playlists", component: PlaylistsComponent },

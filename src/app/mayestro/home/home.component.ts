@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MystroService } from '../mystro.service';
-import { IPlaylist } from '../mini-card-viewer/playlists.interface';
 import { ICategory } from '../mini-card-viewer/category.interface';
-import { ICard } from '../card/card.interface';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { MayestroService } from '../mayestro.service';
 
 
 @Component({
@@ -15,12 +12,12 @@ export class HomeComponent implements OnInit {
   categories:Array<ICategory>=[];
   c:ICategory;
   // playlists=Array<IPlaylist>;
-  constructor(private mystro:MystroService) {
+  constructor(private mystro:MayestroService) {
 
   }
 
   ngOnInit() {
-    this.mystro.getMostPopular().subscribe((res:any)=>{
+    this.mystro.getHome().subscribe((res:any)=>{
       res.Home.forEach((ctg:any)=>{
        let cards,type:any;
         if(ctg['albums']){
@@ -37,7 +34,7 @@ export class HomeComponent implements OnInit {
         }
         const category: ICategory={
           name:ctg.name,
-          ID: ctg.ID,
+          ID: ctg.id,
           type,
           description:ctg.description,
           cards

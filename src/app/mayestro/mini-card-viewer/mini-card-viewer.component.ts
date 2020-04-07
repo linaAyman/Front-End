@@ -22,7 +22,11 @@ export class MiniCardViewerComponent implements OnInit {
         desc=card.description;
       }
       else if(this.category.type=="albums"){
-        desc=card.artist_name;
+        desc='';
+        card.artists.forEach(art=>{
+          desc+=art.name+','
+        })
+        desc=desc.slice(0,desc.length-1)
       }
       else if(this.category.type=="artists"){
         desc=card.artist_name;
@@ -30,8 +34,8 @@ export class MiniCardViewerComponent implements OnInit {
       const crd:ICard={
         name:card.name,
         description:desc,
-        imgUrl:card.imgUrl,
-        ID:card.ID,
+        imgUrl:card.image,
+        ID:card.id,
         type:card.type
       }
       this.cards.push(crd);
