@@ -1,72 +1,47 @@
 <nav class="navbar top  navbar-expand">
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
-        <li class="nav-item">
-          <a  (click)="loc.back()" class="nav-link backicon">
-            <i class="fa fa-chevron-left backicon1"></i>
-            </a>
-        </li>
-        <li class="nav-item">
-          <a (click)="loc.forward()" class="nav-link backicon" >
-            <i class="fa fa-chevron-right"></i>
-          </a>
-        </li>
-        <!-- <li class="col-4 nav-item" *ngIf="loc.path()==='/mayestro/search'">
+      <li class="nav-item">
+        <a (click)="loc.back()" class="nav-link backicon">
+          <i class="fa fa-chevron-left backicon1"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a (click)="loc.forward()" class="nav-link backicon">
+          <i class="fa fa-chevron-right"></i>
+        </a>
+      </li>
+      <li class="col-4 nav-item" *ngIf="loc.path()==='/mayestro/search'">
+        <input type="text" placeholder="Search.." class="search">
+      </li>
+    </ul>
+
+
+    <ul class="navbar-nav btnEnd">
+      <li class="nav-link">
+        <button type="button" class="signup" *ngIf="!(auth.isLoggedIn());else upgrade">SIGN UP</button>
+        <ng-template #upgrade>
+          <button type="button" class="upgradeButton">Upgrade
+          </button>
+        </ng-template>
+      </li>
+      <li class="nav-link">
+        <button type=" button" class="login" *ngIf="!(auth.isLoggedIn());else user">LOG IN</button>
+        <ng-template #user>
+          <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">
+            <i class="fa fa-user usericon"></i>
+            {{auth.currentUser.name}}
+            <i class="fa fa-sort-down usericon-up"></i>
+          </button>
+          <mat-menu #menu="matMenu" class="dropdownmenu">
+            <a mat-menu-item class="items">Account</a>
+            <a mat-menu-item class="items">Log out</a>
+          </mat-menu>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- <li class="col-4 nav-item" *ngIf="loc.path()==='/mayestro/search'">
           <input type="text" placeholder="Search.." class="search">
         </li> -->
-        <li class="nav-link col-11" >
-            <button type="button" class="upgradeButton" >Upgrade
-            </button>
-        </li>
-        <li class="nav-link col-12">  
-            <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">
-              <i class="fa fa-user usericon"></i>
-              User Name
-              <i class="fa fa-sort-down usericon-up" ></i>
-            </button>
-            <mat-menu #menu="matMenu" class="dropdownmenu">
-              <a mat-menu-item class="items">Account</a>
-              <a mat-menu-item class="items">Log out</a>
-            </mat-menu>
-        </li>
-        <!-- <li class="col-11">
-          <button type="button" class="signup"*ngIf="!(this.auth.isLoggedIn())" >SIGN UP</button>
-        </li>
-        <li class="col-11">
-          <button type="button" class="login"*ngIf="!(this.auth.isLoggedIn())" >LOG IN</button>
-        </li> -->
-      
-    </ul>
-  
-  </nav>
-<!-- 
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a (click)="loc.back()" class="nav-link backicon">
-        <i class="fa fa-chevron-left backicon1"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a (click)="loc.forward()" class="nav-link backicon">
-        <i class="fa fa-chevron-right"></i>
-      </a>
-    </li>
-    <li class="nav-link floatingRight col-11">
-      <button type="button" class="btn upgradeButton floatingRight">Upgrade
-      </button>
-    </li>
-    <li class="nav-link col-12">
-
-      <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">
-        <i class="fa fa-user usericon"></i>
-        User Name
-        <i class="fa fa-sort-down usericon-up"></i>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Account</button>
-        <button mat-menu-item>Log out</button>
-      </mat-menu>
-    </li>
-  </ul> -->
-
-  <!-- *ngIf="this.auth.isLoggedIn()"  -->
-  <!-- *ngIf="auth.isLoggedIn()" -->
