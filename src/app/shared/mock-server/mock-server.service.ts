@@ -24,6 +24,7 @@ export class MockServerService implements HttpInterceptor {
   albums:any
   tracks:any
   playlists:any
+  mytracks :any;
   constructor() {
 
     this.users = [
@@ -37,7 +38,7 @@ export class MockServerService implements HttpInterceptor {
           "Wed Feb 01 1999 00:00:00 GMT+0200 (Eastern European Standard Time)",
           image:"https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a",
         country:"Egypt"
-      }
+      } 
     ];
     this.playlists=[{
       totalTracks:2,
@@ -84,13 +85,49 @@ export class MockServerService implements HttpInterceptor {
         name:"amrdiab"
       }]
      }]
-  }
+  
+
+  this.mytracks = [
+    
+    {
+      artists: [
+          {
+              id: "19gmxCK2V3jLMi5fDYyKtS",
+              name: "Willamette Stone"
+          }
+      ],
+      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+      image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
+      id: "3JOF9NzQVkUXtCcJbEQuAb",
+      name: "Heart Like Yours",
+      previewUrl: "https://p.scdn.co/mp3-preview/b5fbda2874c09a249989b9570381537e8dee59c1?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
+  },
+  {
+      artists: [
+          {
+              id: "19gmxCK2V3jLMi5fDYyKtS",
+              name: "Willamette Stone"
+          }
+      ],
+      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+      image: "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
+      id: "3cdyjNKFN0tWP9Z8icNvcf",
+      name: "Never Coming Down",
+      previewUrl: "https://p.scdn.co/mp3-preview/c8628766a22440f0e355d7221caf7a1f0cbe79fb?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
+  },
+  {
+    id: '4qrimQUz8KFC8W6WrDiDnc'
+
+    }
+  ]}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
     let hashId = this.hashId;
     let albums=this.albums;
     let tracks=this.tracks;
     let playlists=this.playlists;
+    let mytracks = this.mytracks;
+    
     const { url, method, headers, body } = request;
    
     console.log(url);
@@ -135,7 +172,8 @@ export class MockServerService implements HttpInterceptor {
           return resetPassword();
         case url.endsWith("/user/changePassword") && method == "POST":
           return changePassword();
-       
+          case url.match(/\/playlist\/\S+\/tracks$/) && method === 'GET':
+            return track();
         //     case url.endsWith('/users/authenticate') && method === 'POST':
         //         return authenticate();
         //     case url.endsWith('/users') && method === 'GET':
@@ -184,17 +222,12 @@ export class MockServerService implements HttpInterceptor {
       //if(!isLoggedIn()) return unauthorized();
       return ok(users[0]);
     }
-    function login() {
-      console.log("object");
-      const { email, password } = body;
-      let user = users.find(
-        x => (x.email === email || x.name === email) && x.password === password
-      );
-      if (!user) return error("Incorrect username or password.");
-      return ok({
-        token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
-      });
+    
+    function login(){
+      const {email , password}=body
+      let user=users.find(x=>(x.email===email || x.name===email) &&  x.password===password)
+      if (!user) return error('Incorrect username or password.')
+      return ok({token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE'})
     }
     function signup() {
       console.log(body);
@@ -595,6 +628,13 @@ export class MockServerService implements HttpInterceptor {
     }
     // helper functions
 
+    function track() {
+      const id = url.split('/')[url.length-2];
+      const track = mytracks.find(tr=> tr._id === id);
+      if(track) return ok(track);
+      return error("no track found with this id");
+    }
+
     function ok(body?) {
       console.log("successMock");
       return of(new HttpResponse({ status: 200, body }));
@@ -626,7 +666,9 @@ export class MockServerService implements HttpInterceptor {
       return urlParts[urlParts.length - 1];
     }
   }
+ 
 }
+
 export const fakeBackendProvider = {
   // use fake backend in place of Http service for backend-less development
   provide: HTTP_INTERCEPTORS,

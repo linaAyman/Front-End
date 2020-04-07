@@ -1,5 +1,5 @@
 .flexnav{
-    display: flex;
+    direction: flex;
     flex-direction: column;
     justify-content: start;
     background-color: rgba(0,0,0,.8);
@@ -61,6 +61,3 @@
     margin: 8px var(--left-sidebar-padding-right) 8px var(--left-sidebar-padding-left);
     /* border-color: #282828; */
 }
-
-
-

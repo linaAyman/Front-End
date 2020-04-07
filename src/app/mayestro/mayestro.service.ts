@@ -25,7 +25,7 @@ export class MayestroService {
   getHome(){
     return this.httpClient.get(this.auth.URL+'/home');
   }
-  getHome(name){
+  getSeeAll(name){
     return this.httpClient.get(this.auth.URL+`/home/${name}`);
   }
 }
