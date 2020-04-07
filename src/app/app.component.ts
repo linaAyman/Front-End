@@ -6,5 +6,5 @@ import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "Mayestro";
+  title = 'Maestro';
 }

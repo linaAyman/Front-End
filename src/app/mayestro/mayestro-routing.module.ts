@@ -8,6 +8,9 @@ import { SeeAllComponent } from "./see-all/see-all.component";
 import { SearchCardComponent } from "./search-card/search-card.component";
 import { SearchComponent } from "./search/search.component";
 import { PlaylistComponent } from "./playlist/playlist.component";
+import { PlaylistsComponent } from "./playlists/playlists.component";
+import { ArtistsComponent } from "./artists/artists.component";
+import { AlbumsComponent } from "./albums/albums.component";
 
 const routes: Routes = [
   {
@@ -20,7 +23,10 @@ const routes: Routes = [
       { path: "side", component: SideBarComponent },
       { path: "seeAll", component: SeeAllComponent },
       { path: "search", component: SearchComponent },
-      { path: "playlist/:id/:type", component: PlaylistComponent }
+      { path: "playlist/:id/:type", component: PlaylistComponent },
+      { path: "yourlibrary/playlists", component: PlaylistsComponent },
+      { path: "yourlibrary/artist", component: ArtistsComponent },
+      { path: "yourlibrary/album", component: AlbumsComponent }
     ]
   }
 ];
