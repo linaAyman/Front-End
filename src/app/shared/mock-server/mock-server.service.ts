@@ -21,11 +21,10 @@ import {
 export class MockServerService implements HttpInterceptor {
   users: any;
   hashId = [];
-  albums:any
-  tracks:any
-  playlists:any
+  albums: any;
+  tracks: any;
+  playlists: any;
   constructor() {
-
     this.users = [
       {
         _id: "1234567890",
@@ -35,64 +34,80 @@ export class MockServerService implements HttpInterceptor {
         gender: "male",
         birthDate:
           "Wed Feb 01 1999 00:00:00 GMT+0200 (Eastern European Standard Time)",
-          image:"https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a",
-        country:"Egypt"
+        image:
+          "https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a",
+        country: "Egypt"
       }
     ];
-    this.playlists=[{
-      totalTracks:2,
-      name:"top 20",
-      _id:"1234",
-      releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
-      image:{
-        url:'https://i4.aroq.com/3/2016-12-15-10-59-top20toplist_cropped_90.jpg'
-      },
-      owner:[
-        {
-          name:"me"
-        }
-      ]
-    }];
-    this.albums=[{
-      totalTracks:2,
-      name:"sahran",
-      _id:"1234",
-      releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
-      image:{
-        url:'https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a'
-      },
-      artist:[
-        {
-          name:"amrdiab"
-        }
-      ]
-    }];
-    this.tracks=[{
-      name:"amarain",
-      trackNumber:1,
-      id:1,
-      duration:2,
-      artists:[{
-        name:"amrdiab"
-      }]},
+    this.playlists = [
       {
-        name:"sahran",
-      trackNumber:2,
-      id:2,
-      duration:2,
-      artists:[{
-        name:"amrdiab"
-      }]
-     }]
+        totalTracks: 2,
+        name: "top 20",
+        _id: "1234",
+        releaseDate:
+          "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+        image: {
+          url:
+            "https://i4.aroq.com/3/2016-12-15-10-59-top20toplist_cropped_90.jpg"
+        },
+        owner: [
+          {
+            name: "me"
+          }
+        ]
+      }
+    ];
+    this.albums = [
+      {
+        totalTracks: 2,
+        name: "sahran",
+        _id: "1234",
+        releaseDate:
+          "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+        image: {
+          url:
+            "https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a"
+        },
+        artist: [
+          {
+            name: "amrdiab"
+          }
+        ]
+      }
+    ];
+    this.tracks = [
+      {
+        name: "amarain",
+        trackNumber: 1,
+        id: 1,
+        duration: 2,
+        artists: [
+          {
+            name: "amrdiab"
+          }
+        ]
+      },
+      {
+        name: "sahran",
+        trackNumber: 2,
+        id: 2,
+        duration: 2,
+        artists: [
+          {
+            name: "amrdiab"
+          }
+        ]
+      }
+    ];
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
     let hashId = this.hashId;
-    let albums=this.albums;
-    let tracks=this.tracks;
-    let playlists=this.playlists;
+    let albums = this.albums;
+    let tracks = this.tracks;
+    let playlists = this.playlists;
     const { url, method, headers, body } = request;
-   
+
     console.log(url);
     // wrap in delayed observable to simulate server api call
     return of(null)
@@ -105,9 +120,9 @@ export class MockServerService implements HttpInterceptor {
       switch (true) {
         case url.endsWith("/user/login") && method === "POST":
           return login();
-        case url.endsWith("/user") && method === "POST":
+        case url.endsWith("/user/signup") && method === "POST":
           return signup();
-        case url.endsWith('/home/most-popular') && method === 'GET':
+        case url.endsWith("/home/most-popular") && method === "GET":
           return mostPopular();
         case url.match(
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
@@ -115,25 +130,25 @@ export class MockServerService implements HttpInterceptor {
           return checkEmail();
         case url.match(
           /\/user\/forgetPassword\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-          ) && method === "GET":
+        ) && method === "GET":
           return forgetPassword();
-          case url.match(/\/albums\/\S+$/) && method ==='GET':
-            return viewalbum();
-          case url.match(/\/albums\/\S+\/tracks$/) && method === 'GET':
-            return viewtracks();
-          case url.match(/\/playlist\/\S+$/) && method === 'GET':
-            return viewplaylist();
-          case url.match(/\/playlist\/\S+\/tracks$/) && method === 'GET':
-            return viewtracks();
-          case url.endsWith('/user/profile') && method === 'GET':
-            return viewuser();
-        case url.endsWith('/user/editprofile') && method === 'PUT':
-            return edituser();
+        case url.match(/\/albums\/\S+$/) && method === "GET":
+          return viewalbum();
+        case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
+          return viewtracks();
+        case url.match(/\/playlist\/\S+$/) && method === "GET":
+          return viewplaylist();
+        case url.match(/\/playlist\/\S+\/tracks$/) && method === "GET":
+          return viewtracks();
+        case url.endsWith("/user/profile") && method === "GET":
+          return viewuser();
+        case url.endsWith("/user/editprofile") && method === "PUT":
+          return edituser();
         case url.match(/\/user\/resetPassword\?id=\S+$/) && method === "POST":
           return resetPassword();
         case url.endsWith("/user/changePassword") && method == "POST":
           return changePassword();
-       
+
         //     case url.endsWith('/users/authenticate') && method === 'POST':
         //         return authenticate();
         //     case url.endsWith('/users') && method === 'GET':
@@ -144,41 +159,40 @@ export class MockServerService implements HttpInterceptor {
         //         return deleteUser();
         //     default:
         //         // pass through any requests not handled above
-                // return next.handle(request);
-        }
-
+        // return next.handle(request);
+      }
     }
-    
-    function viewplaylist(){
-      console.log("album")
-      const id=idFromUrl();
-      const playlist = playlists.find(al=> al._id === id);
-      if(playlist) return ok(playlist);
+
+    function viewplaylist() {
+      console.log("album");
+      const id = idFromUrl();
+      const playlist = playlists.find(al => al._id === id);
+      if (playlist) return ok(playlist);
       return error("no album found with this id");
-
     }
 
-    function viewalbum(){
-      console.log("her")
-      const id=idFromUrl();
-      const album = albums.find(al=> al._id === id);
-      if(album) return ok(album);
+    function viewalbum() {
+      console.log("her");
+      const id = idFromUrl();
+      const album = albums.find(al => al._id === id);
+      if (album) return ok(album);
       return error("no album found with this id");
-
     }
-    function edituser(){
+    function edituser() {
       //if(!isLoggedIn()) return unauthorized();
-      
-      return ok({token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE'})
-      
+
+      return ok({
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
+      });
     }
-    function viewtracks(){
-      const id=idFromUrl();
-      const album = albums.find(al=> al._id === id);
-      if(album) return ok(tracks);
+    function viewtracks() {
+      const id = idFromUrl();
+      const album = albums.find(al => al._id === id);
+      if (album) return ok(tracks);
       return error("no album found with this id");
     }
-    function viewuser(){
+    function viewuser() {
       //if(!isLoggedIn()) return unauthorized();
       return ok(users[0]);
     }
@@ -264,7 +278,6 @@ export class MockServerService implements HttpInterceptor {
       if (!isLoggedIn()) return unauthorized();
       const { oldPassword, newPassword, confirmedPassword } = body;
       const token = dataFromToken();
-      console.log(token);
       const user = users.find(user => user._id === token._id);
       if (user.password !== oldPassword)
         return error("enter correct old password");
@@ -273,124 +286,124 @@ export class MockServerService implements HttpInterceptor {
       user.password = newPassword;
       return ok();
     }
-    function mostPopular(){
-      const categories={
-        Home:
-            [{
-                ID: "12345",
-                name: "Most popular playLists",
-                description: "",
-                type: "playlists",
-                playlists: [
-                  {
-                    ID: "1",
-                    name: "test1",
-                    description: "test1 test1 test1 test1 test1 test1 test1 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "2",
-                    name: "test2",
-                    description: "test2 test2 test2 test2 test2 test2 test2 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "3",
-                    name: "test3",
-                    description: "test3 test3 test3 test3 test3 test3 test3 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "4",
-                    name: "test4",
-                    description: "test4 test4 test4 test4 test4 test4 test4 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID:"5",
-                    name: "test5",
-                    description: "test5 test5 test5 test5 test5 test5 test5 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "6",
-                    name: "test6",
-                    description: "test6 test6 test6 test6 test6 test6 test6 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  }
-                ]
-            }
-            ,{
-                ID: "1234567",
-                name: "Most popular Albums",
-                description: "Albums blablabla",
-                type: "albums",
-                albums: [
-                  {
-                    ID: "7",
-                    name: "Album1",
-                    artist_name: "Hamaki",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "8",
-                    name: "Album2",
-                    artist_name: "Amr Diab",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "9",
-                    name: "Album3",
-                    artist_name: "Charlie Puth",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "10",
-                    name: "Album4",
-                    artist_name: "ColdPlay",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID:"11",
-                    name: "Album5",
-                    artist_name: "Frank Sinatra",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "12",
-                    name: "Album6",
-                    artist_name: "Rihanna",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  }
-                ]
-            }
+    function mostPopular() {
+      const categories = {
+        Home: [
+          {
+            ID: "12345",
+            name: "Most popular playLists",
+            description: "",
+            type: "playlists",
+            playlists: [
+              {
+                ID: "1",
+                name: "test1",
+                description: "test1 test1 test1 test1 test1 test1 test1 ",
+                type: "playlist",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "2",
+                name: "test2",
+                description: "test2 test2 test2 test2 test2 test2 test2 ",
+                type: "playlist",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "3",
+                name: "test3",
+                description: "test3 test3 test3 test3 test3 test3 test3 ",
+                type: "playlist",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "4",
+                name: "test4",
+                description: "test4 test4 test4 test4 test4 test4 test4 ",
+                type: "playlist",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "5",
+                name: "test5",
+                description: "test5 test5 test5 test5 test5 test5 test5 ",
+                type: "playlist",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "6",
+                name: "test6",
+                description: "test6 test6 test6 test6 test6 test6 test6 ",
+                type: "playlist",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              }
+            ]
+          },
+          {
+            ID: "1234567",
+            name: "Most popular Albums",
+            description: "Albums blablabla",
+            type: "albums",
+            albums: [
+              {
+                ID: "7",
+                name: "Album1",
+                artist_name: "Hamaki",
+                type: "album",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "8",
+                name: "Album2",
+                artist_name: "Amr Diab",
+                type: "album",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "9",
+                name: "Album3",
+                artist_name: "Charlie Puth",
+                type: "album",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "10",
+                name: "Album4",
+                artist_name: "ColdPlay",
+                type: "album",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "11",
+                name: "Album5",
+                artist_name: "Frank Sinatra",
+                type: "album",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              },
+              {
+                ID: "12",
+                name: "Album6",
+                artist_name: "Rihanna",
+                type: "album",
+                imgUrl:
+                  "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
+              }
+            ]
+          }
         ]
-    }
-     
+      };
+
       return ok(categories);
     }
     // helper functions
