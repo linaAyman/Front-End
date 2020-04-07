@@ -54,8 +54,10 @@ export class MockServerService implements HttpInterceptor {
           return login();
         case url.endsWith("/user") && method === "POST":
           return signup();
-        case url.endsWith('/home/most-popular') && method === 'GET':
+        case url.endsWith('/home') && method === 'GET':
           return mostPopular();
+        case url.endsWith('/home/Chill') && method === 'GET':
+          return category();
         case url.match(
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
         ) && method === "GET":
@@ -164,123 +166,320 @@ export class MockServerService implements HttpInterceptor {
     }
     function mostPopular(){
       const categories={
-        Home:
-            [{
-                ID: "12345",
-                name: "Most popular playLists",
-                description: "",
-                type: "playlists",
-                playlists: [
-                  {
-                    ID: "1",
-                    name: "test1",
-                    description: "test1 test1 test1 test1 test1 test1 test1 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "2",
-                    name: "test2",
-                    description: "test2 test2 test2 test2 test2 test2 test2 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "3",
-                    name: "test3",
-                    description: "test3 test3 test3 test3 test3 test3 test3 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "4",
-                    name: "test4",
-                    description: "test4 test4 test4 test4 test4 test4 test4 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID:"5",
-                    name: "test5",
-                    description: "test5 test5 test5 test5 test5 test5 test5 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "6",
-                    name: "test6",
-                    description: "test6 test6 test6 test6 test6 test6 test6 ",
-                    type:"playlist",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  }
-                ]
-            }
-            ,{
-                ID: "1234567",
-                name: "Most popular Albums",
-                description: "Albums blablabla",
-                type: "albums",
-                albums: [
-                  {
-                    ID: "7",
-                    name: "Album1",
-                    artist_name: "Hamaki",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "8",
-                    name: "Album2",
-                    artist_name: "Amr Diab",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "9",
-                    name: "Album3",
-                    artist_name: "Charlie Puth",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "10",
-                    name: "Album4",
-                    artist_name: "ColdPlay",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID:"11",
-                    name: "Album5",
-                    artist_name: "Frank Sinatra",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  },
-                  {
-                    ID: "12",
-                    name: "Album6",
-                    artist_name: "Rihanna",
-                    type:"album",
-                    imgUrl:
-                      "https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba"
-                  }
-                ]
+        "Home": [
+            {
+                "playlists": [
+                    {
+                        "type": "playlist",
+                        "description": "Some Comfort Tracks to relax",
+                        "id": "4qrimFUz8KFC8W6WrDiDnd",
+                        "image": "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+                        "name": "Comfort Zone"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Relax your Mind",
+                        "id": "4qrimFUz8KFC8W6WrDiDne",
+                        "image": "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+                        "name": "Relaxtion"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "get a Peacful Mind with our playlist",
+                        "id": "4qrimFUz8KFC8W6WrDiDnf",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                        "name": "Peacful Mind"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Take A Rest",
+                        "id": "4qrimFUz8KFC8W6WrDiDnf",
+                        "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                        "name": "Rest"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Make a good and Sweet Moments",
+                        "id": "4qrimFUz8KFC8W6WrDiDng",
+                        "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                        "name": "Sweet Moments"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Good hours to spend with music",
+                        "id": "4qrimFUz8KFC8W6WrDiDnh",
+                        "image": "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+                        "name": "Sweet Moments"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Time to chill out with perfect songs",
+                        "id": "4qrimFUz8KFC8W6WrDiDni",
+                        "image": "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+                        "name": "chill songs"
+                    }
+                ],
+                "name": "Chill"
+            },
+            {
+                "playlists": [
+                    {
+                        "type": "playlist",
+                        "description": "New Songs Exclusive Happy and chill",
+                        "id": "4qrimFUz8KFC8W6WrDiDma",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                        "name": "Moments"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "get yourself some energy",
+                        "id": "4qrimFUz8KFC8W6WrDiDnj",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+                        "name": "Energy"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Time to chill out with perfect songs",
+                        "id": "4qrimFUz8KFC8W6WrDiDni",
+                        "image": "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+                        "name": "chill songs"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "May be Happy now",
+                        "id": "4qrimFUz8KFC8W6WrDiDmf",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0205559264ebef3889709826cf",
+                        "name": "HAPPY PERSON"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "do some excerise",
+                        "id": "4qrimFUz8KFC8W6WrDiDme",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
+                        "name": "Sport Music"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "New Songs Mood Adjust ",
+                        "id": "4qrimFUz8KFC8W6WrDiDmb",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                        "name": "Keep Up"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "playlist from the including all songs in if i stay movie",
+                        "id": "4qrimQUz8KFC8W6WrDiDnc",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                        "name": "If i stay(soundtrack)"
+                    }
+                ],
+                "name": "WorkOut"
+            },
+            {
+                "playlists": [
+                    {
+                        "type": "playlist",
+                        "description": "New Songs Mood Adjust ",
+                        "id": "4qrimFUz8KFC8W6WrDiDmb",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                        "name": "Keep Up"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "do some excerise",
+                        "id": "4qrimFUz8KFC8W6WrDiDme",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
+                        "name": "Sport Music"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "get yourself some energy",
+                        "id": "4qrimFUz8KFC8W6WrDiDnj",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+                        "name": "Energy"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Some Comfort Tracks to relax",
+                        "id": "4qrimFUz8KFC8W6WrDiDnd",
+                        "image": "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+                        "name": "Comfort Zone"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "playlist Exclusive Amr Diab",
+                        "id": "4qrimFUz8KFC8W6WrDiDnc",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                        "name": "New Songs Amr Diab"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Relax your Mind",
+                        "id": "4qrimFUz8KFC8W6WrDiDne",
+                        "image": "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+                        "name": "Relaxtion"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "get yourself some energy",
+                        "id": "4qrimFUz8KFC8W6WrDiDnh",
+                        "image": "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+                        "name": "Energy"
+                    }
+                ],
+                "name": "Happy"
+            },
+            {
+                "playlists": [
+                    {
+                        "type": "playlist",
+                        "description": "get a Peacful Mind with our playlist",
+                        "id": "4qrimFUz8KFC8W6WrDiDnf",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                        "name": "Peacful Mind"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "May be Happy now",
+                        "id": "4qrimFUz8KFC8W6WrDiDmf",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0205559264ebef3889709826cf",
+                        "name": "HAPPY PERSON"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "New Songs Exclusive Happy and chill",
+                        "id": "4qrimFUz8KFC8W6WrDiDma",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                        "name": "Moments"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "do some excerise",
+                        "id": "4qrimFUz8KFC8W6WrDiDme",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
+                        "name": "Sport Music"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "Take A Rest",
+                        "id": "4qrimFUz8KFC8W6WrDiDnf",
+                        "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                        "name": "Rest"
+                    },
+                    {
+                        "type": "playlist",
+                        "description": "get yourself some energy",
+                        "id": "4qrimFUz8KFC8W6WrDiDnh",
+                        "image": "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+                        "name": "Energy"
+                    }
+                ],
+                "description": "Most popular around world",
+                "name": "Most Popular Playlists"
+            },
+            {
+                "albums": [
+                    {
+                        "artists": [
+                            {
+                                "id": "7H55rcKCfwqkyDFH9wpKM6",
+                                "name": "Christina Perri"
+                            }
+                        ],
+                        "type": "album",
+                        "id": "3xl0OvcSlc9Mwe5ToaFtD3",
+                        "image": "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
+                        "name": "songs for carmella: lullabies & sing-a-longs"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "id": "04gDigrS5kc9YWfZHwBETP",
+                                "name": "Marron 5"
+                            }
+                        ],
+                        "type": "album",
+                        "id": "75iQSBSaztFIAun9qLLCnb",
+                        "image": "https://i.scdn.co/image/ab67616d00001e0234ce9a9dde9c057225509276",
+                        "name": "Girls Like You (feat. Cardi B)"
+                    }
+                ],
+                "description": "Newest Albums Released with your artits",
+                "name": "Released Albums"
             }
         ]
     }
-     
       return ok(categories);
+    }
+
+    function category(){
+      const category={
+        "category": {
+            "playlists": [
+                {
+                    "description": "Some Comfort Tracks to relax",
+                    "id": "4qrimFUz8KFC8W6WrDiDnd",
+                    "image": "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+                    "name": "Comfort Zone"
+                },
+                {
+                    "description": "Relax your Mind",
+                    "id": "4qrimFUz8KFC8W6WrDiDne",
+                    "image": "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+                    "name": "Relaxtion"
+                },
+                {
+                    "description": "get a Peacful Mind with our playlist",
+                    "id": "4qrimFUz8KFC8W6WrDiDnf",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+                    "name": "Peacful Mind"
+                },
+                {
+                    "description": "Take A Rest",
+                    "id": "4qrimFUz8KFC8W6WrDiDnf",
+                    "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                    "name": "Rest"
+                },
+                {
+                    "description": "Make a good and Sweet Moments",
+                    "id": "4qrimFUz8KFC8W6WrDiDng",
+                    "image": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+                    "name": "Sweet Moments"
+                },
+                {
+                    "description": "Good hours to spend with music",
+                    "id": "4qrimFUz8KFC8W6WrDiDnh",
+                    "image": "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+                    "name": "Sweet Moments"
+                },
+                {
+                    "description": "Time to chill out with perfect songs",
+                    "id": "4qrimFUz8KFC8W6WrDiDni",
+                    "image": "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+                    "name": "chill songs"
+                },
+                {
+                    "description": "get yourself some energy",
+                    "id": "4qrimFUz8KFC8W6WrDiDnj",
+                    "image": "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+                    "name": "Energy"
+                },
+                {
+                    "description": "get yourself some energy",
+                    "id": "4qrimFUz8KFC8W6WrDiDnh",
+                    "image": "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+                    "name": "Energy"
+                },
+                {
+                    "description": "New Songs Exclusive Happy and chill",
+                    "id": "4qrimFUz8KFC8W6WrDiDma",
+                    "image": "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+                    "name": "Moments"
+                }
+            ],
+            "name": "Chill"
+        }
+    }
     }
     // helper functions
 

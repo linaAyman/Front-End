@@ -16,7 +16,7 @@ export class MystroService {
     // return this.http.get(this.url);
   }
 
-  getMostPopular(){
-    return this.http.get(this.auth.URL+'/home/most-popular');
+  getHome(){
+    return this.http.get(this.auth.URL+'/home');
   }
 }

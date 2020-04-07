@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mystro.getMostPopular().subscribe((res:any)=>{
+    this.mystro.getHome().subscribe((res:any)=>{
       res.Home.forEach((ctg:any)=>{
        let cards,type:any;
         if(ctg['albums']){
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
         }
         const category: ICategory={
           name:ctg.name,
-          ID: ctg.ID,
+          ID: ctg.id,
           type,
           description:ctg.description,
           cards

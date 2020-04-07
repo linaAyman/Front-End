@@ -1,6 +1,6 @@
 <div class="row m-0 ">
-    <a [routerLink]="['/mayestro/home/',category.name]" class="testing catName">{{category.name}}</a>
-    <a class="seeall" [routerLink]="['/mayestro/home/',category.name]">SEE ALL</a>
+    <a [routerLink]="['/mayestro/home/seeAll/',category.name]" class="testing catName">{{category.name}}</a>
+    <a class="seeall" [routerLink]="['/mayestro/home/seeAll/',category.name]">SEE ALL</a>
 </div>
 <div class="row m-0 txt">
     <p>{{category.description}}
@@ -8,7 +8,7 @@
 </div>
 
 <div class="row px-4 txt">
-    <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let c of cards">
+    <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let c of cards |slice:0:6">
         <app-card [card]="c"></app-card>
     </div>
 </div>

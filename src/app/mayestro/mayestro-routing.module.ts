@@ -17,7 +17,7 @@ const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'player',component:PlayerComponent},
     {path:'side',component:SideBarComponent},
-    {path:'seeAll',component:SeeAllComponent},
+    {path:'home/seeAll/:name',component:SeeAllComponent},
     {path:'search',component:SearchComponent}
     
   ]}
