@@ -610,14 +610,14 @@ export class MockServerService implements HttpInterceptor {
                 type: "artist",
                 id: "3xl0OvcSlc9Mwe5ToaFtD3",
                 image:
-                  "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
+                  "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
                 name: "Amr Diab"
               },
               {
                 type: "artist",
                 id: "75iQSBSaztFIAun9qLLCnb",
                 image:
-                  "https://i.scdn.co/image/ab67616d00001e0234ce9a9dde9c057225509276",
+                  "https://i.scdn.co/image/ab67616d0000b2732b737b0411be58583293e17e",
                 name: "Tamer Hosni"
               }
             ],
