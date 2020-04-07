@@ -13,6 +13,7 @@ import { ArtistsComponent } from "./artists/artists.component";
 import { AlbumsComponent } from "./albums/albums.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { from } from "rxjs";
+import { NotFoundComponent } from "../shared/components/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -29,12 +30,14 @@ const routes: Routes = [
       { path: "yourlibrary/playlists", component: PlaylistsComponent },
       { path: "yourlibrary/artist", component: ArtistsComponent },
       { path: "yourlibrary/album", component: AlbumsComponent },
+
       {
         path: "artist/:id",
         loadChildren: () =>
           import(`./artist/artist.module`).then(m => m.ArtistModule)
       },
-      { path: "profile", component: UserProfileComponent }
+      { path: "profile", component: UserProfileComponent },
+      { path: "**", component: NotFoundComponent }
     ]
   }
 ];

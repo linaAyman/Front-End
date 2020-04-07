@@ -41,8 +41,7 @@
         </ng-template>
       </li>
       <li class="nav-link">
-        <button routerLink="/account.mayestro/login" type=" button" class="login"
-          *ngIf="!(auth.isLoggedIn());else user">LOG
+        <button routerLink="/account.mayestro" type=" button" class="login" *ngIf="!(auth.isLoggedIn());else user">LOG
           IN</button>
         <ng-template #user>
           <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">
