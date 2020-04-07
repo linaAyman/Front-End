@@ -93,12 +93,6 @@ srcnew=0;
    {
     this.x.pause();
     this.srcnew=this.checkindex;
-    this.playerservice.getTracks(this.ID).subscribe( (data:any) =>{
-      this.urls=data[this.srcnew].url;
-      this.array=data.length;
-      this.x.src=this.urls;
-      console.log(this.array);
-          })
     this.x.src=this.urls;
     this.x.load();
     this.x.play();
