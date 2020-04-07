@@ -34,11 +34,10 @@ srcnew=0;
   }
  
   ngOnInit() {
-    this.route.params.subscribe(param=>this.ID=param["id"])
+    
     this.playerservice.getTracks(this.ID).subscribe( (data:any) =>{
-        this.urls=(data.url);
-        this.array=data.length;
-        console.log(this.array);
+      this.urls=data.url;
+        console.log(data.length);
         this.x.src=this.urls;
             })
     this.x.addEventListener('ended', ()=> {
