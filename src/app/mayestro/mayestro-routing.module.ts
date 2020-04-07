@@ -7,6 +7,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { SeeAllComponent } from './see-all/see-all.component';
 import { SearchCardComponent } from './search-card/search-card.component';
 import { SearchComponent } from './search/search.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 
 const routes: Routes = [
@@ -17,8 +18,9 @@ const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'player',component:PlayerComponent},
     {path:'side',component:SideBarComponent},
-    {path:'home/seeAll/:name',component:SeeAllComponent},
-    {path:'search',component:SearchComponent}
+    {path:'home/seeAll:name',component:SeeAllComponent},
+    {path:'search',component:SearchComponent},
+    {path:'playlist/:id/:type',component:PlaylistComponent}
     
   ]}
 ];

@@ -21,25 +21,78 @@ import {
 export class MockServerService implements HttpInterceptor {
   users: any;
   hashId = [];
-
+  albums:any
+  tracks:any
+  playlists:any
   constructor() {
+
     this.users = [
       {
         _id: "1234567890",
         email: "ahmed@gmail.com",
         password: "12345678",
         name: "Ahmed Helmy",
-        gender: "0",
+        gender: "male",
         birthDate:
-          "Wed Feb 01 1950 00:00:00 GMT+0200 (Eastern European Standard Time)"
+          "Wed Feb 01 1999 00:00:00 GMT+0200 (Eastern European Standard Time)",
+          image:"https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a",
+        country:"Egypt"
       }
     ];
+    this.playlists=[{
+      totalTracks:2,
+      name:"top 20",
+      _id:"1234",
+      releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      image:{
+        url:'https://i4.aroq.com/3/2016-12-15-10-59-top20toplist_cropped_90.jpg'
+      },
+      owner:[
+        {
+          name:"me"
+        }
+      ]
+    }];
+    this.albums=[{
+      totalTracks:2,
+      name:"sahran",
+      _id:"1234",
+      releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      image:{
+        url:'https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a'
+      },
+      artist:[
+        {
+          name:"amrdiab"
+        }
+      ]
+    }];
+    this.tracks=[{
+      name:"amarain",
+      trackNumber:1,
+      id:1,
+      duration:2,
+      artists:[{
+        name:"amrdiab"
+      }]},
+      {
+        name:"sahran",
+      trackNumber:2,
+      id:2,
+      duration:2,
+      artists:[{
+        name:"amrdiab"
+      }]
+     }]
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
     let hashId = this.hashId;
+    let albums=this.albums;
+    let tracks=this.tracks;
+    let playlists=this.playlists;
     const { url, method, headers, body } = request;
-
+   
     console.log(url);
     // wrap in delayed observable to simulate server api call
     return of(null)
@@ -66,12 +119,70 @@ export class MockServerService implements HttpInterceptor {
           /\/user\/forgetPassword\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
           ) && method === "GET":
           return forgetPassword();
+          case url.match(/\/albums\/\S+$/) && method ==='GET':
+            return viewalbum();
+          case url.match(/\/albums\/\S+\/tracks$/) && method === 'GET':
+            return viewtracks();
+          case url.match(/\/playlist\/\S+$/) && method === 'GET':
+            return viewplaylist();
+          case url.match(/\/playlist\/\S+\/tracks$/) && method === 'GET':
+            return viewtracks();
+          case url.endsWith('/user/profile') && method === 'GET':
+            return viewuser();
+        case url.endsWith('/user/editprofile') && method === 'PUT':
+            return edituser();
         case url.match(/\/user\/resetPassword\?id=\S+$/) && method === "POST":
           return resetPassword();
         case url.endsWith("/user/changePassword") && method == "POST":
           return changePassword();
+       
+        //     case url.endsWith('/users/authenticate') && method === 'POST':
+        //         return authenticate();
+        //     case url.endsWith('/users') && method === 'GET':
+        //         return getUsers();
+        //     case url.match(/\/users\/\d+$/) && method === 'GET':
+        //         return getUserById();
+        //     case url.match(/\/users\/\d+$/) && method === 'DELETE':
+        //         return deleteUser();
+        //     default:
+        //         // pass through any requests not handled above
+                // return next.handle(request);
+        }
 
-      }
+    }
+    
+    function viewplaylist(){
+      console.log("album")
+      const id=idFromUrl();
+      const playlist = playlists.find(al=> al._id === id);
+      if(playlist) return ok(playlist);
+      return error("no album found with this id");
+
+    }
+
+    function viewalbum(){
+      console.log("her")
+      const id=idFromUrl();
+      const album = albums.find(al=> al._id === id);
+      if(album) return ok(album);
+      return error("no album found with this id");
+
+    }
+    function edituser(){
+      //if(!isLoggedIn()) return unauthorized();
+      
+      return ok({token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE'})
+      
+    }
+    function viewtracks(){
+      const id=idFromUrl();
+      const album = albums.find(al=> al._id === id);
+      if(album) return ok(tracks);
+      return error("no album found with this id");
+    }
+    function viewuser(){
+      //if(!isLoggedIn()) return unauthorized();
+      return ok(users[0]);
     }
     function login() {
       console.log("object");
