@@ -8,6 +8,19 @@
             <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isfollowed ? 'white':'#1fa14d' " type="button"  (click)="Follow()" >{{isfollowed?'Follow':'unFollow'}}</button>
             <div  style="display: inline;">
                 <button type="button" title="More" class="moreButton">...</button>
+
+                <!-- <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">
+                    <i class="fa fa-user usericon"></i>
+                    ...
+                    <i class="fa fa-sort-down usericon-up" ></i>
+                </button>
+                  <mat-menu #menu="matMenu" class="dropdownmenu">
+                    <a mat-menu-item class="items">Start Radio</a>
+                    <a mat-menu-item class="items">Follow</a>
+                    <a mat-menu-item class="items">Copy Artist Link</a>
+                    <a mat-menu-item class="items">Open In Desktop App</a>
+                  </mat-menu> -->
+                  
                 <div class="dropdown-content">
                     <a href="#">Link 1</a>
                     <a href="#">Link 2</a>
