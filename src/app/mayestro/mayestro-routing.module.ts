@@ -11,6 +11,8 @@ import { PlaylistComponent } from "./playlist/playlist.component";
 import { PlaylistsComponent } from "./playlists/playlists.component";
 import { ArtistsComponent } from "./artists/artists.component";
 import { AlbumsComponent } from "./albums/albums.component";
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {
@@ -26,7 +28,9 @@ const routes: Routes = [
       { path: "playlist/:id/:type", component: PlaylistComponent },
       { path: "yourlibrary/playlists", component: PlaylistsComponent },
       { path: "yourlibrary/artist", component: ArtistsComponent },
-      { path: "yourlibrary/album", component: AlbumsComponent }
+      { path: "yourlibrary/album", component: AlbumsComponent },
+      {path:'artist',loadChildren: () => import(`./artist/artist.module`).then(m => m.ArtistModule) },
+      {path:'profile',component:UserProfileComponent}
     ]
   }
 ];

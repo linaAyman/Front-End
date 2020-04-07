@@ -446,6 +446,32 @@ export class MockServerService implements HttpInterceptor {
 
       return ok(categories);
     }
+
+    
+  // function artist(){
+  //   if(!isLoggedIn()) return unauthorized()
+  //   const artists=[{
+  //     followers : [ {
+  //       total : 5
+  //     } ],
+  //     Images : [ {
+  //       URL : "https://cdn.ome.lt/9LBvp96wbthUZEMZqrzdnioAMYk=/fit-in/837x500/smart/uploads/conteudo/fotos/Adeleheader.jpg"
+  //     }],
+  //     name : "adele",
+  //     artistID : "123"
+  //     },
+  //     {
+  //       followers : [ {
+  //         total : 10 
+  //       } ],
+  //       Images : [ {
+  //         URL : "https://thevintagevines.files.wordpress.com/2015/01/bfxi4ifcmaa2vwq.jpg"
+  //       }],
+  //       name : "Ed Sheeran ",
+  //       artistID : "154"
+  //     }
+  //   ]
+  //   }
     function track() {
       const id = url.split("/")[url.length - 2];
       const track = mytracks.find(tr => tr._id === id);

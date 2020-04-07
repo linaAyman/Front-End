@@ -1,3 +1,4 @@
+import { HomeArtistCardComponent } from './home-artist-card/home-artist-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MayestroRoutingModule } from './mayestro-routing.module';
@@ -19,11 +20,12 @@ import { AlbumsComponent } from './albums/albums.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule} from '@angular/material';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent,UserProfileComponent],
   imports: [
     MatMenuModule,
     CommonModule,
@@ -33,6 +35,9 @@ import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule} from '@
     MatFormFieldModule,
     MatIconModule,
     MatInputModule
+  ],
+  exports:[
+  
   ]
 })
 export class MayestroModule {}
