@@ -262,7 +262,7 @@ nav {
   outline: none;
 }
 .navbar-nav {
-  width: 100%;
+  width: 80%;
   max-width: 1500px;
 }
 .btnEnd {
@@ -278,5 +278,4 @@ a {
 }
 
 .library {
-  margin-right: 380px;
 }
