@@ -46,9 +46,6 @@
     border-bottom-color: rgb(40,40,40);
     border-bottom-width: 1px;
     border-bottom-style: inset;
-    --glue-font-weight-normal: 400;
-   --glue-font-weight-bold: 700;
-    --glue-font-weight-black: 900;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: .015em;
@@ -59,12 +56,6 @@
     -webkit-font-smoothing: antialiased;
     user-select: none;
     cursor: default;
-    /* --left-sidebar-item-height: 32px;
-    --left-sidebar-padding-left: 0px;
-    --left-sidebar-padding-right: 0px;
-    --left-sidebar-item-pill-horizontal-padding: 2px;
-    --left-sidebar-item-indentation-width: 30px;
-    --left-sidebar-edit-input-height: 26px; */
     -webkit-box-direction: normal;
     box-sizing: border-box;
     margin: 8px var(--left-sidebar-padding-right) 8px var(--left-sidebar-padding-left);

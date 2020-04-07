@@ -3,7 +3,6 @@ import { MystroService } from '../mystro.service';
 import { IPlaylist } from '../mini-card-viewer/playlists.interface';
 import { ICategory } from '../mini-card-viewer/category.interface';
 import { ICard } from '../card/card.interface';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 
 @Component({
