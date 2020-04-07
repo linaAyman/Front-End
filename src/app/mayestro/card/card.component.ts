@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ICard } from './card.interface';
-import { IPlaylist } from '../mini-card-viewer/playlists.interface';
+import { Component, OnInit, Input } from "@angular/core";
+import { ICard } from "./card.interface";
+import { IPlaylist } from "../mini-card-viewer/playlists.interface";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-card",
@@ -9,14 +10,13 @@ import { IPlaylist } from '../mini-card-viewer/playlists.interface';
 })
 export class CardComponent implements OnInit {
   @Input() card: ICard;
-  
-  constructor() { }
 
-  
+  constructor(private router: Router) {}
 
   ngOnInit() {
     // console.log(this.card);
-
   }
-
+  navigate() {
+    this.router.navigate([["/playlist", this.card.ID, this.card.type]]);
+  }
 }

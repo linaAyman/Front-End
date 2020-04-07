@@ -30,7 +30,7 @@ const routes: Routes = [
       { path: "yourlibrary/artist", component: ArtistsComponent },
       { path: "yourlibrary/album", component: AlbumsComponent },
       {
-        path: "artist",
+        path: "artist/:id",
         loadChildren: () =>
           import(`./artist/artist.module`).then(m => m.ArtistModule)
       },
