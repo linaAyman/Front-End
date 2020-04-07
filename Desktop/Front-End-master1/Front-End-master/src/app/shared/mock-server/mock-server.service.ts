@@ -35,13 +35,14 @@ export class MockServerService implements HttpInterceptor {
         gender: "male",
         birthDate:
           "Wed Feb 01 1999 00:00:00 GMT+0200 (Eastern European Standard Time)",
-          image:"https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a"
+          image:"https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a",
+        country:"Egypt"
       }
     ];
     this.playlists=[{
       totalTracks:2,
       name:"top 20",
-      _id:1234,
+      _id:"1234",
       releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
       image:{
         url:'https://i4.aroq.com/3/2016-12-15-10-59-top20toplist_cropped_90.jpg'
@@ -55,7 +56,7 @@ export class MockServerService implements HttpInterceptor {
     this.albums=[{
       totalTracks:2,
       name:"sahran",
-      _id:1234,
+      _id:"1234",
       releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
       image:{
         url:'https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a'
@@ -149,7 +150,7 @@ export class MockServerService implements HttpInterceptor {
     }
     
     function viewplaylist(){
-      
+      console.log("album")
       const id=idFromUrl();
       const playlist = playlists.find(al=> al._id === id);
       if(playlist) return ok(playlist);
@@ -158,7 +159,7 @@ export class MockServerService implements HttpInterceptor {
     }
 
     function viewalbum(){
-      
+      console.log("her")
       const id=idFromUrl();
       const album = albums.find(al=> al._id === id);
       if(album) return ok(album);

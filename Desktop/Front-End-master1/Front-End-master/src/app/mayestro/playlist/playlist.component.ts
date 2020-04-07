@@ -28,7 +28,7 @@ export class PlaylistComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param=>this.id=param["id"])
     this.route.params.subscribe(param=>this.type=param["type"])
-   
+    
     if(this.type=="album"){
       this.MayestroService.getAlbum(this.id)
       .subscribe(
@@ -41,7 +41,7 @@ export class PlaylistComponent implements OnInit {
           this.date=new Date(this.date);
           this.year=this.date.getFullYear();
         });
-    }
+      }
     if(this.type=="playlist"){
       this.MayestroService.getPlaylist(this.id)
       .subscribe(

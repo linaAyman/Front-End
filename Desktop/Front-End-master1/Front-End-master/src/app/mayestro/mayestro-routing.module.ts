@@ -20,7 +20,7 @@ const routes: Routes = [
     {path:'side',component:SideBarComponent},
     {path:'seeAll',component:SeeAllComponent},
     {path:'search',component:SearchComponent},
-    {path:'playlist/:id/:album',component:PlaylistComponent}
+    {path:'playlist/:id/:type',component:PlaylistComponent}
     
   ]}
 ];
