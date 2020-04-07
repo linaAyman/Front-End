@@ -49,42 +49,26 @@ export class MockServerService implements HttpInterceptor {
       .pipe(dematerialize());
 
     function handleRoute() {
-<<<<<<< HEAD
-        switch (true) {
-            case url.endsWith('/user/login') && method === 'POST':
-                return login();
-            case url.endsWith('/user') && method === 'POST':
-                return signup();
-            case url.endsWith('/home/most-popular') && method === 'GET':
-                return mostPopular();
-        //     case url.endsWith('/users') && method === 'GET':
-        //         return getUsers();
-        //     case url.match(/\/users\/\d+$/) && method === 'GET':
-        //         return getUserById();
-=======
       switch (true) {
         case url.endsWith("/user/login") && method === "POST":
           return login();
         case url.endsWith("/user") && method === "POST":
           return signup();
+        case url.endsWith('/home/most-popular') && method === 'GET':
+          return mostPopular();
         case url.match(
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
         ) && method === "GET":
           return checkEmail();
         case url.match(
           /\/user\/forgetPassword\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-        ) && method === "GET":
+          ) && method === "GET":
           return forgetPassword();
         case url.match(/\/user\/resetPassword\?id=\S+$/) && method === "POST":
           return resetPassword();
         case url.endsWith("/user/changePassword") && method == "POST":
           return changePassword();
->>>>>>> b3fa07236d2ffb7021c2a48c21d4e5df7836ff98
-        //     case url.match(/\/users\/\d+$/) && method === 'DELETE':
-        //         return deleteUser();
-        //     default:
-        //         // pass through any requests not handled above
-        // return next.handle(request);
+
       }
     }
     function login() {
@@ -178,7 +162,6 @@ export class MockServerService implements HttpInterceptor {
       user.password = newPassword;
       return ok();
     }
-<<<<<<< HEAD
     function mostPopular(){
       const categories={
         Home:
@@ -299,9 +282,6 @@ export class MockServerService implements HttpInterceptor {
      
       return ok(categories);
     }
-=======
-
->>>>>>> b3fa07236d2ffb7021c2a48c21d4e5df7836ff98
     // helper functions
 
     function ok(body?) {

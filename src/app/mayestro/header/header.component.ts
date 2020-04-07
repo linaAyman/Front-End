@@ -10,14 +10,19 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  constructor(private loc: Location) {
+  logIn:boolean;
+  constructor(private loc: Location,private auth:AuthService) {
     // console.log(loc.getState());
   }
 
+  loggedIn(){
+    return this.auth.isLoggedIn();
+  }
   ngOnInit() {
     this.loc.onUrlChange((res, state) => {
       console.log(res);
     });
+    this.logIn=this.auth.isLoggedIn();
   }
 
   back() {

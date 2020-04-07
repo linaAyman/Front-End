@@ -33,6 +33,7 @@
     color: rgb(18,18,18);
     color: #b3b3b3;
     font-family:Helvetica,Arial,sans-serif;
+    word-break: break-all;
 }
 .btn{
     display: none;
@@ -68,5 +69,9 @@
     letter-spacing: .24px;
     overflow: hidden;
     font-family:Helvetica,Arial,sans-serif;
+
+}
+.description{
+    word-break: break-all;
 
 }
