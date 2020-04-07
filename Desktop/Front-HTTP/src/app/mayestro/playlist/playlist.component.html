@@ -5,19 +5,15 @@
         <div clas="col-6">
             <div class="playlist-content" >
                 <img style="height: 237px; width: 207px;" src={{imageURL}}>
-                <h2 style="color: white; text-align: center;" >{{title}}</h2>
+                <h2 style="color: white; text-align: center; width: 207px;" >{{title}}</h2>
                 
-                <div>
-
-               <a class="nav-link"  style="color: rgb(245, 245, 245);" href="#">{{artist}}</a> 
-                
-                </div>
+               <a class="nav-link"  style=" color: rgb(245, 245, 245); width: 207px;" href="#">{{artist}}</a> 
                 
                 <button class="play-button"  type="button" >Play</button> 
                 <br>
                 <button class="like-button"  ><i (click)="like()" [style.-webkit-text-fill-color]="isLiked ? 'rgb(18,18,18)' : 'rgb(25, 206, 88)' " [style.color]="isLiked ? 'white' : 'rgb(25, 206, 88)' " class="fa fa-heart"></i></button>
                 <button class="more-button" type="button">...</button>
-                <p style="text-align: center; color: white">{{date}} </p>
+                <p style="text-align: center; color: white">{{year}} - {{tracks}}  songs</p>
             </div>
         
         </div>

@@ -8,6 +8,7 @@ export class MockServerService implements HttpInterceptor {
   users:any
   albums:any
   tracks:any
+  playlists:any
   constructor() { 
     this.users=[
       {
@@ -16,14 +17,30 @@ export class MockServerService implements HttpInterceptor {
         name: "Ahmed Helmy",
         gender: "male",
         country:"Egypt",
-        birthDate:"Wed Feb 01 1950 00:00:00 GMT+0200 (Eastern European Standard Time)"
+        birthDate:"Wed May 01 1999 00:00:00 GMT+0200 (Eastern European Standard Time)",
+        image:"https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a"
         
       }
     ]
+    this.playlists=[{
+      totalTracks:2,
+      name:"top 20",
+      _id:1234,
+      releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      image:{
+        url:'https://i4.aroq.com/3/2016-12-15-10-59-top20toplist_cropped_90.jpg'
+      },
+      owner:[
+        {
+          name:"me"
+        }
+      ]
+    }]
     this.albums=[{
+      totalTracks:2,
       name:"sahran",
       _id:1234,
-      releaseDate:"2000-19-1",
+      releaseDate:"Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
       image:{
         url:'https://i.scdn.co/image/ab67616d0000b2738b989426c336c1d1cf89502a'
       },
@@ -35,17 +52,17 @@ export class MockServerService implements HttpInterceptor {
     }]
     this.tracks=[{
       name:"amarain",
-      track_number:1,
+      trackNumber:1,
       id:1,
-      duration_ms:2,
+      duration:2,
       artists:[{
         name:"amrdiab"
       }]},
       {
         name:"sahran",
-      track_number:2,
+      trackNumber:2,
       id:2,
-      duration_ms:2,
+      duration:2,
       artists:[{
         name:"amrdiab"
       }]
@@ -55,6 +72,7 @@ export class MockServerService implements HttpInterceptor {
     let users=this.users
     let albums=this.albums
     let tracks=this.tracks
+    let playlists=this.playlists
     const { url, method, headers, body } = request;
 
     // wrap in delayed observable to simulate server api call
@@ -70,13 +88,17 @@ export class MockServerService implements HttpInterceptor {
                 return login();
             case url.endsWith('/user') && method === 'POST':
                 return signup();
-            case url.endsWith('/user') && method === 'GET':
+            case url.endsWith('/user/profile') && method === 'GET':
                 return viewuser();
-            case url.endsWith('/user') && method === 'PUT':
-                //return edituser();
-           // case url.match(/\/albums\/\d+$/) && method === 'GET':
-                //return viewalbum();
-            case url.match(/\/albums\/\d+$/) && method === 'GET':
+            case url.endsWith('/user/editprofile') && method === 'PUT':
+                return edituser();
+            case url.match(/\/albums\/\S+$/) && method === 'GET':
+                return viewalbum();
+            case url.match(/\/albums\/\S+\/tracks$/) && method === 'GET':
+                return viewtracks();
+            case url.match(/\/playlist\/\S+$/) && method === 'GET':
+              return viewplaylist();
+            case url.match(/\/playlist\/\S+\/tracks$/) && method === 'GET':
                 return viewtracks();
         //     case url.endsWith('/users/authenticate') && method === 'POST':
         //         return authenticate();
@@ -93,14 +115,28 @@ export class MockServerService implements HttpInterceptor {
 
     }
     
+    function viewplaylist(){
+      
+      const id=idFromUrl();
+      const playlist = playlists.find(al=> al._id === id);
+      if(playlist) return ok(playlist);
+      return error("no album found with this id");
+
+    }
 
     function viewalbum(){
-      //if(!isLoggedIn()) return unauthorized();
+      
       const id=idFromUrl();
       const album = albums.find(al=> al._id === id);
       if(album) return ok(album);
       return error("no album found with this id");
 
+    }
+    function edituser(){
+      //if(!isLoggedIn()) return unauthorized();
+      
+      return ok({token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE'})
+      
     }
     function viewtracks(){
       const id=idFromUrl();
@@ -110,8 +146,7 @@ export class MockServerService implements HttpInterceptor {
     }
     function viewuser(){
       //if(!isLoggedIn()) return unauthorized();
-      return ok(users[0])
-      //return users[0];
+      return ok(users[0]);
     }
 
     function login(){

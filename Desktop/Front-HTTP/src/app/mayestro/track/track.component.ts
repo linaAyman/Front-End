@@ -11,18 +11,28 @@ export class TrackComponent implements OnInit {
   songs:any[]
   isPlaying=false;
   ID:any;
-  type:string;
+  Type:string;
   constructor(private service: MayestroService, private route: ActivatedRoute) { }
 
   
   ngOnInit() {
     this.route.params.subscribe(param=>this.ID=param["id"],
-    param=>this.type=param["type"])
-    this.service.getTracks(this.ID)
-    .subscribe(
-      (data:any[]) =>{
-        this.songs=data;
-      });
+    param=>this.Type=param["type"])
+    if(this.Type=="album"){
+      this.service.getTracks(this.ID)
+      .subscribe(
+        (data:any[]) =>{
+          this.songs=data;
+        });
+    }
+    if(this.Type=="playlist"){
+      this.service.getPlaylistTracks(this.ID)
+      .subscribe(
+        (data:any[]) =>{
+          this.songs=data;
+        });
+    }
+    
   }
   play()
   {

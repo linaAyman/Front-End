@@ -8,32 +8,54 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./playlist.component.css']
 })
 export class PlaylistComponent implements OnInit {
+  day
+  month
+  year
   
   isLiked=true;
   isPlaying=true;
   album:any[];
   title:string;
-  date:string;
+  date: Date;
   artist:string;
   ID:any;
-  type:any;
+  Type:any;
   imageURL:any;
+  tracks:number;
   constructor( private MayestroService: MayestroService,
     private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.params.subscribe(param=>this.ID=param["id"],
-    param=>this.type=param["type"])
-    this.MayestroService.getAlbum(this.ID)
+    this.route.params.subscribe(param=>this.ID=param["id"])
+    this.route.params.subscribe(param=>this.Type=param["type"])
+   
+    if(this.Type=="album"){
+      this.MayestroService.getAlbum(this.ID)
       .subscribe(
         (data:any) =>{
           this.title=(data.name);
           this.date=(data.releaseDate);
           this.artist=(data.artist[0].name);
           this.imageURL=(data.image.url);
+          this.tracks=(data.totalTracks);
+          this.date=new Date(this.date);
+          this.year=this.date.getFullYear();
         });
-    
-      
+    }
+    if(this.Type=="playlist"){
+      this.MayestroService.getPlaylist(this.ID)
+      .subscribe(
+        (data:any) =>{
+          this.title=(data.name);
+          this.date=(data.releaseDate);
+          this.artist=(data.owner[0].name);
+          this.imageURL=(data.image.url);
+          this.tracks=(data.totalTracks);
+          this.date=new Date(this.date);
+          this.year=this.date.getFullYear();
+        });
+    }
+     
   }
  
   like()

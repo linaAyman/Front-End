@@ -11,7 +11,7 @@ const routes: Routes = [
   children: [
     {path:'',pathMatch:'full',redirectTo:'home'},
     {path:'home',component:HomeComponent},
-    {path:'playlist/:id',component:PlaylistComponent}
+    {path:'playlist/:id/:type',component:PlaylistComponent}
     
   ]}
 ];
