@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AccountMayestroService } from "../account-mayestro.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-signin",
@@ -21,7 +22,8 @@ export class SigninComponent implements OnInit {
    * @param accService account service that include login requests
    */
   constructor(
-    private accService: AccountMayestroService // private authService: AuthService
+    private accService: AccountMayestroService, // private authService: AuthService
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -52,7 +54,7 @@ export class SigninComponent implements OnInit {
     if (this.invalid(f)) return;
     this.accService.login(f.value).subscribe(
       res => {
-        console.log("object");
+        this.router.navigate(["/mayestro"]);
       },
       err => {
         console.log(err);

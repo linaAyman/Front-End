@@ -19,14 +19,17 @@
 
     <ul class="navbar-nav btnEnd">
       <li class="nav-link">
-        <button type="button" class="signup" *ngIf="!(auth.isLoggedIn());else upgrade">SIGN UP</button>
+        <button routerLink="/account.mayestro/signup" type="button" class="signup"
+          *ngIf="!(auth.isLoggedIn());else upgrade">SIGN UP</button>
         <ng-template #upgrade>
           <button type="button" class="upgradeButton">Upgrade
           </button>
         </ng-template>
       </li>
       <li class="nav-link">
-        <button type=" button" class="login" *ngIf="!(auth.isLoggedIn());else user">LOG IN</button>
+        <button routerLink="/account.mayestro/login" type=" button" class="login"
+          *ngIf="!(auth.isLoggedIn());else user">LOG
+          IN</button>
         <ng-template #user>
           <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">
             <i class="fa fa-user usericon"></i>
@@ -35,7 +38,7 @@
           </button>
           <mat-menu #menu="matMenu" class="dropdownmenu">
             <a mat-menu-item class="items">Account</a>
-            <a mat-menu-item class="items">Log out</a>
+            <a (click)="acc.logout()" mat-menu-item class="items">Log out</a>
           </mat-menu>
         </ng-template>
       </li>
