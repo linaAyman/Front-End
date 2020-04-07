@@ -40,6 +40,10 @@ export class AccountMayestroService {
     );
   }
 
+  logout() {
+    localStorage.removeItem("token");
+  }
+
   checkEmailExist(email) {
     return this.http.get(`${this.auth.URL}/user/mailExist/${email}`);
   }
