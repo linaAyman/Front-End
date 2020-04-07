@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MystroService } from '../mystro.service';
-import { IPlaylist } from '../mini-card-viewer/playlists.interface';
 import { ICategory } from '../mini-card-viewer/category.interface';
-import { ICard } from '../card/card.interface';
+import { MayestroService } from '../mayestro.service';
 
 
 @Component({
@@ -14,7 +12,7 @@ export class HomeComponent implements OnInit {
   categories:Array<ICategory>=[];
   c:ICategory;
   // playlists=Array<IPlaylist>;
-  constructor(private mystro:MystroService) {
+  constructor(private mystro:MayestroService) {
 
   }
 

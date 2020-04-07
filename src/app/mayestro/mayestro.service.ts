@@ -22,5 +22,10 @@ export class MayestroService {
   getPlaylistTracks(id){
     return this.httpClient.get(this.auth.URL+`/playlist/${id}/tracks`);
   }
-  
+  getHome(){
+    return this.httpClient.get(this.auth.URL+'/home');
+  }
+  getHome(name){
+    return this.httpClient.get(this.auth.URL+`/home/${name}`);
+  }
 }

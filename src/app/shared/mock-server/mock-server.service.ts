@@ -108,9 +108,9 @@ export class MockServerService implements HttpInterceptor {
         case url.endsWith("/user") && method === "POST":
           return signup();
         case url.endsWith('/home') && method === 'GET':
-          return mostPopular();
-        case url.endsWith('/home/Chill') && method === 'GET':
-          return category();
+          return home();
+        case url.match(/\/home\/\S+$/) && method === 'GET':
+          return seeAll();
         case url.match(
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
         ) && method === "GET":
@@ -275,7 +275,7 @@ export class MockServerService implements HttpInterceptor {
       user.password = newPassword;
       return ok();
     }
-    function mostPopular(){
+    function home(){
       const categories={
         "Home": [
             {
@@ -523,7 +523,7 @@ export class MockServerService implements HttpInterceptor {
       return ok(categories);
     }
 
-    function category(){
+    function seeAll(){
       const category={
         "category": {
             "playlists": [
@@ -591,6 +591,7 @@ export class MockServerService implements HttpInterceptor {
             "name": "Chill"
         }
     }
+    return ok(category);
     }
     // helper functions
 
