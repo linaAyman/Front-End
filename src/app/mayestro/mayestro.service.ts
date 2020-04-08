@@ -1,31 +1,31 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../shared/services/auth.service';
-
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { AuthService } from "../shared/services/auth.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class MayestroService {
-  id:any;
-  constructor(private httpClient: HttpClient, private auth:AuthService) { }
+  id: any;
+  constructor(private httpClient: HttpClient, private auth: AuthService) {}
 
-  getAlbum(id){
-    return this.httpClient.get(this.auth.URL+`/albums/${id}`);
+  getAlbum(id) {
+    return this.httpClient.get(this.auth.URL + `/albums/${id}`);
   }
-  getTracks(id){
-    return this.httpClient.get(this.auth.URL+`/albums/${id}/tracks`);
+  getTracks(id) {
+    console.log("aaaa");
+    return this.httpClient.get(this.auth.URL + `/albums/${id}/tracks`);
   }
-  getPlaylist(id){
-    return this.httpClient.get(this.auth.URL+`/playlist/${id}`);
+  getPlaylist(id) {
+    return this.httpClient.get(this.auth.URL + `/playlist/${id}`);
   }
-  getPlaylistTracks(id){
-    return this.httpClient.get(this.auth.URL+`/playlist/${id}/tracks`);
+  getPlaylistTracks(id) {
+    return this.httpClient.get(this.auth.URL + `/playlist/1234/tracks`);
   }
-  getHome(){
-    return this.httpClient.get(this.auth.URL+'/home');
+  getHome() {
+    return this.httpClient.get(this.auth.URL + "/home");
   }
-  getSeeAll(name){
-    return this.httpClient.get(this.auth.URL+`/home/${name}`);
+  getSeeAll(name) {
+    return this.httpClient.get(this.auth.URL + `/home/'${name}'`);
   }
 }
