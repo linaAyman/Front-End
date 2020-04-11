@@ -62,6 +62,9 @@ srcnew=0;
       console.log("Loading");
     })
   }
+  /**
+   * to toggle the like button color based on the button click
+   */
   like()
   {
     if(this.isliked==true)
@@ -70,12 +73,18 @@ srcnew=0;
     else this.isliked=true;
     
   }  
+   /**
+   * to play the audio based on the play button click
+   */
   play(){
         this.player=false;
         this.x.play();  
         console.log("played"); 
        
   }
+   /**
+   * to pause the audio based on the pause button click
+   */
   pause()
   { 
      this.player=true;
@@ -83,7 +92,10 @@ srcnew=0;
       console.log("paused");
     
   }
-
+ /**
+   * to play the next audio based on the next button click 
+   * when it comes to the last element in array and next button is clicked it begins again to play the first audio 
+   */
  next(){
  
   this.checkindex=this.checkindex+1;
@@ -103,6 +115,10 @@ srcnew=0;
     this.play();
       }
 }
+ /**
+   * to play the previous audio based on the previous button click
+   * when it comes to the first element in array and previous button is click it begins again to play the last audio 
+   */
 previous(){
   this.checkindex=this.checkindex-1;
   if((this.checkindex < this.array) && this.checkindex >= 0 )
@@ -118,6 +134,9 @@ console.log(this.checkindex);
  this.play();
   }
 }
+/**
+ * to mute the audio
+ */
 mute(){
   if(this.muted){
 this.soundon=false;
@@ -131,16 +150,26 @@ this.soundon=false;
     this.muted=true;
   }
 }
+/**
+ * change time position according to slider 
+ * @param pos 
+ */
   setPos(pos){
    this.x.currentTime= pos;
 
   }
- 
+ /**
+  * set volume range 
+  * @param volume
+  */
   setvolume(volume)
   {
     this.x.volume=volume;
     this.vol=volume;
   }
+  /**
+ * to repeat the audio based on repeat button click and toggle the color
+ */
   repeat(){
     if(this.repeated)
     {
@@ -157,6 +186,10 @@ this.soundon=false;
   
     }
   }
+   /**
+ * to randomize the array of urls  
+ * @param myarray
+ */
    random(myarray) {
     let ctr = myarray.length, temp, index;
     while (ctr > 0) {
@@ -168,6 +201,9 @@ this.soundon=false;
     }
     return myarray;
 }
+/**
+ *  toggle the shuffle button color 
+ */
   shuffle(){
     if(this.isshuffled)
     {
