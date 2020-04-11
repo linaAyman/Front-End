@@ -226,10 +226,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SideBarComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/TrackComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">TrackComponent</a>
-                                            </li>
-                                            <li class="link">
                                                 <a href="components/UserProfileComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">UserProfileComponent</a>
                                             </li>
@@ -277,6 +273,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/SidebarComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SidebarComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/TrackComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">TrackComponent</a>
                                             </li>
                                         </ul>
                                     </li>
