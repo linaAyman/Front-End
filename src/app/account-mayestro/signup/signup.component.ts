@@ -56,6 +56,10 @@ export class SignupComponent implements OnInit {
     this.monthNames = this.assets.Monthes();
   }
 
+  /**
+   * check if user email used befor or not
+   * @param email user email
+   */
   checkEmail(email) {
     this.accService.checkEmailExist(email).subscribe(
       res => (this.mailExist = ""),
@@ -67,7 +71,6 @@ export class SignupComponent implements OnInit {
    * disabled signup button if validations == false
    * @param f form value
    */
-
   invalid(f) {
     return !(
       f.valid &&

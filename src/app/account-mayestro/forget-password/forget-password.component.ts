@@ -7,15 +7,38 @@ import { AccountMayestroService } from "../account-mayestro.service";
   styleUrls: ["./forget-password.component.css"]
 })
 export class ForgetPasswordComponent implements OnInit {
+  /**
+   * user email
+   */
   Email: string;
+
+  /**
+   * boolean to change to another page if email sended
+   */
   reset = false;
+
+  /**
+   * to display error message if email dose not exist
+   */
   errMessage = false;
+
+  /**
+   * hash to test mock server
+   */
   hash = "";
 
+  /**
+   *
+   * @param accService account service
+   */
   constructor(private accService: AccountMayestroService) {}
 
   ngOnInit() {}
 
+  /**
+   * send user email to server
+   * @param email user email
+   */
   send(email) {
     if (email.invalid) return;
     this.accService.forgetPassword(email.value).subscribe(
