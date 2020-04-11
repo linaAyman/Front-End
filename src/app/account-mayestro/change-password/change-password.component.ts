@@ -1,11 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 import { AccountMayestroService } from "../account-mayestro.service";
 
+/**
+ * component decorator
+ */
 @Component({
   selector: "app-change-password",
   templateUrl: "./change-password.component.html",
   styleUrls: ["./change-password.component.css"]
 })
+
+/**
+ * change password component
+ */
 export class ChangePasswordComponent implements OnInit {
   /**
    * message to show to user after submit
@@ -23,6 +30,9 @@ export class ChangePasswordComponent implements OnInit {
    */
   constructor(private accService: AccountMayestroService) {}
 
+  /**
+   * @ignore
+   */
   ngOnInit() {}
 
   /**

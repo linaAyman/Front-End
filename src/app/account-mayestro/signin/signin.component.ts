@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { AccountMayestroService } from "../account-mayestro.service";
 import { Router } from "@angular/router";
 
+/**
+ * component decorator
+ */
 @Component({
   selector: "app-signin",
   templateUrl: "./signin.component.html",
@@ -26,6 +29,9 @@ export class SigninComponent implements OnInit {
     private router: Router
   ) {}
 
+  /**
+   * @ignore
+   */
   ngOnInit() {
     // this.authService.authState.subscribe(user => {
     //   this.user = user;

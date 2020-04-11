@@ -3,6 +3,9 @@ import { AssetsService } from "src/app/shared/assets/assets.service";
 import { AccountMayestroService } from "../account-mayestro.service";
 import { ActivatedRoute, Router } from "@angular/router";
 
+/**
+ * component decoretor
+ */
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.component.html",
@@ -42,6 +45,7 @@ export class SignupComponent implements OnInit {
    *
    * @param assets assets service that include helper method to generat array of MonthNames
    * @param accService account service that send requests to server
+   * @param route router object
    */
   constructor(
     private assets: AssetsService,
