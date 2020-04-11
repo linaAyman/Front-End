@@ -10,6 +10,10 @@ import 'rxjs'
 export class UserService {
   
   constructor(private httpClinet: HttpClient,private auth:AuthService) { }
+  /**
+   * 
+   * method that gets user data
+   */
   getUsername(){
     return this.httpClinet.get(this.auth.URL+'/user/profile',{
       headers: { token: localStorage.getItem("token") }
@@ -35,6 +39,12 @@ export class UserService {
       headers: { token: localStorage.getItem("token") }
     });  
   }
+
+  /**
+   * methode that edits user data
+   * 
+   * @param user user body 
+   */
   UpdateUser(user:any){
    return this.httpClinet.put(this.auth.URL+'/user/editprofile',user).pipe(
     map((res: any) => {
