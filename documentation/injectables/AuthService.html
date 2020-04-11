@@ -59,6 +59,13 @@
             <code>src/app/shared/services/auth.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>service decorator</p>
+
+            </p>
 
 
 
@@ -118,24 +125,6 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/services/auth.service.ts:12</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
             <section>
     
@@ -164,17 +153,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/shared/services/auth.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/shared/services/auth.service.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>check if user logged in or not</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean</p>
 
                     </div>
                 </td>
@@ -212,7 +209,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/services/auth.service.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/services/auth.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -247,9 +244,18 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/services/auth.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/services/auth.service.ts:37</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>property of current user to get data from token</p>
+</div>
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -262,20 +268,38 @@
 import { JwtHelper, tokenNotExpired } from &quot;angular2-jwt/angular2-jwt&quot;;
 import &quot;rxjs&quot;;
 
+/**
+ * service decorator
+ */
 @Injectable({
   providedIn: &quot;root&quot;
 })
+/**
+ * authentication service
+ */
 export class AuthService {
   /**
    * server URL
    */
   URL &#x3D; &quot;http://3.137.69.49:3000&quot;;
 
+  /**
+   * @ignore
+   */
   constructor() {}
 
+  /**
+   * check if user logged in or not
+   * @returns boolean
+   */
   isLoggedIn() {
     return tokenNotExpired(&quot;token&quot;);
   }
+
+  /**
+   * property of current user to get data from token
+   * @returns user from token
+   */
   get currentUser() {
     const jwt &#x3D; new JwtHelper();
     const user &#x3D; jwt.decodeToken(localStorage.getItem(&quot;token&quot;));

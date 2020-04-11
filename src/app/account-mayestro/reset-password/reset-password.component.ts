@@ -3,11 +3,18 @@ import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs/Observable";
 import { AccountMayestroService } from "../account-mayestro.service";
 
+/**
+ * component decorator
+ */
 @Component({
   selector: "app-reset-password",
   templateUrl: "./reset-password.component.html",
   styleUrls: ["./reset-password.component.css"]
 })
+
+/**
+ * reset password component
+ */
 export class ResetPasswordComponent implements OnInit {
   /**
    * hash key

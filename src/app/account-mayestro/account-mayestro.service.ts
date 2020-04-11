@@ -5,9 +5,16 @@ import { map } from "rxjs/operators/map";
 import "rxjs";
 import { Observable } from "rxjs";
 
+/**
+ * service decorator
+ */
 @Injectable({
   providedIn: "root"
 })
+
+/**
+ * account mayestro service to handle all module requests
+ */
 export class AccountMayestroService {
   /**
    *

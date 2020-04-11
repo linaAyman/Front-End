@@ -1,11 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 import { AccountMayestroService } from "../account-mayestro.service";
 
+/**
+ * component decorator
+ */
 @Component({
   selector: "app-forget-password",
   templateUrl: "./forget-password.component.html",
   styleUrls: ["./forget-password.component.css"]
 })
+
+/**
+ * forget password component
+ */
 export class ForgetPasswordComponent implements OnInit {
   /**
    * user email
@@ -33,6 +40,9 @@ export class ForgetPasswordComponent implements OnInit {
    */
   constructor(private accService: AccountMayestroService) {}
 
+  /**
+   * @ignore
+   */
   ngOnInit() {}
 
   /**
