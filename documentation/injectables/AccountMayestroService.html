@@ -76,10 +76,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#changePassword">changePassword</a>
+                            </li>
+                            <li>
                                 <a href="#checkEmailExist">checkEmailExist</a>
                             </li>
                             <li>
+                                <a href="#forgetPassword">forgetPassword</a>
+                            </li>
+                            <li>
                                 <a href="#login">login</a>
+                            </li>
+                            <li>
+                                <a href="#logout">logout</a>
+                            </li>
+                            <li>
+                                <a href="#resetPassword">resetPassword</a>
                             </li>
                             <li>
                                 <a href="#signup">signup</a>
@@ -107,7 +119,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -175,6 +187,79 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                        <b>
+                            changePassword
+                        </b>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changePassword(pass)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>send to server passwords to change password</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pass</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new and old passwords</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="checkEmailExist"></a>
                     <span class="name">
                         <b>
@@ -193,14 +278,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:54</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>send to server to check if email exist or not in signup</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -209,6 +296,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -220,6 +308,83 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>user email</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgetPassword"></a>
+                    <span class="name">
+                        <b>
+                            forgetPassword
+                        </b>
+                        <a href="#forgetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>forgetPassword(email)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>send email to server to reset his password</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>user email</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -259,8 +424,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -314,6 +479,133 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <b>
+                            logout
+                        </b>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>logout and remove token</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                        <b>
+                            resetPassword
+                        </b>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetPassword(pass, hash)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>send new password to server</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pass</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new password</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>hash</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>hash key that came from server</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="signup"></a>
                     <span class="name">
                         <b>
@@ -332,8 +624,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/account-mayestro/account-mayestro.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -394,6 +686,7 @@ import { AuthService } from &quot;../shared/services/auth.service&quot;;
 import { HttpClient } from &quot;@angular/common/http&quot;;
 import { map } from &quot;rxjs/operators/map&quot;;
 import &quot;rxjs&quot;;
+import { Observable } from &quot;rxjs&quot;;
 
 @Injectable({
   providedIn: &quot;root&quot;
@@ -423,15 +716,59 @@ export class AccountMayestroService {
    * @param user user body
    */
   signup(user) {
-    return this.http.post(this.auth.URL + &quot;/user&quot;, user).pipe(
+    return this.http.post(this.auth.URL + &quot;/user/signup&quot;, user).pipe(
       map((res: any) &#x3D;&gt; {
         localStorage.setItem(&quot;token&quot;, res.token);
       })
     );
   }
 
+  /**
+   * logout and remove token
+   */
+  logout() {
+    localStorage.removeItem(&quot;token&quot;);
+  }
+
+  /**
+   * send to server to check if email exist or not in signup
+   * @param email user email
+   */
   checkEmailExist(email) {
     return this.http.get(&#x60;${this.auth.URL}/user/mailExist/${email}&#x60;);
+  }
+
+  /**
+   * send email to server to reset his password
+   * @param email user email
+   */
+  forgetPassword(email) {
+    return this.http.get(&#x60;${this.auth.URL}/user/forgetPassword/${email}&#x60;);
+  }
+
+  /**
+   * send new password to server
+   * @param pass new password
+   * @param hash hash key that came from server
+   */
+  resetPassword(pass, hash): Observable&lt;any&gt; {
+    return this.http
+      .post(&#x60;${this.auth.URL}/user/resetPassword?id&#x3D;${hash}&#x60;, pass)
+      .pipe(
+        map((res: any) &#x3D;&gt; {
+          localStorage.setItem(&quot;token&quot;, res.token);
+        })
+      );
+  }
+
+  /**
+   * send to server passwords to change password
+   * @param pass new and old passwords
+   */
+  changePassword(pass) {
+    return this.http.post(&#x60;${this.auth.URL}/user/changePassword&#x60;, pass, {
+      headers: { token: localStorage.getItem(&quot;token&quot;) }
+    });
   }
 }
 </code></pre>

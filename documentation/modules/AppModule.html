@@ -192,32 +192,29 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
-import { NgModule } from &#x27;@angular/core&#x27;;
-import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
-import { AppComponent } from &#x27;./app.component&#x27;;
-import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
-import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
-import { fakeBackendProvider } from &#x27;./shared/mock-server/mock-server.service&#x27;;
-import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrowserModule } from &quot;@angular/platform-browser&quot;;
+import { NgModule } from &quot;@angular/core&quot;;
+import { AppRoutingModule } from &quot;./app-routing.module&quot;;
+import { AppComponent } from &quot;./app.component&quot;;
+import { HttpClientModule } from &quot;@angular/common/http&quot;;
+import { ReactiveFormsModule } from &quot;@angular/forms&quot;;
+import { fakeBackendProvider } from &quot;./shared/mock-server/mock-server.service&quot;;
+import { BrowserAnimationsModule } from &quot;@angular/platform-browser/animations&quot;;
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  bootstrap: [AppComponent],
-  providers:[
-    fakeBackendProvider
-  ]
+  providers:[fakeBackendProvider],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 </code></pre>
     </div>
 </div>

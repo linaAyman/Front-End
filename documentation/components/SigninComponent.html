@@ -132,9 +132,6 @@
                             <li>
                                 <a href="#errMsg">errMsg</a>
                             </li>
-                            <li>
-                                <a href="#user">user</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -148,10 +145,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#invalid">invalid</a>
                             </li>
                             <li>
-                                <a href="#signInWithFB">signInWithFB</a>
+                                <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
                                 <a href="#submit">submit</a>
@@ -174,12 +171,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(accService: <a href="../injectables/AccountMayestroService.html">AccountMayestroService</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+<code>constructor(accService: <a href="../injectables/AccountMayestroService.html">AccountMayestroService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -216,10 +213,10 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>authService</td>
+                                                        <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -227,8 +224,6 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>facebook authentication service</p>
-</code>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -253,6 +248,79 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="invalid"></a>
+                    <span class="name">
+                        <b>
+                            invalid
+                        </b>
+                        <a href="#invalid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>invalid(f)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>disabeld login button if form invalid</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>f</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>form object</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -271,47 +339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:35</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signInWithFB"></a>
-                    <span class="name">
-                        <b>
-                            signInWithFB
-                        </b>
-                        <a href="#signInWithFB"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>signInWithFB()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -349,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -426,7 +455,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -439,33 +468,6 @@
 
             </tbody>
         </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="user"></a>
-                        <span class="name">
-                            <b>
-                            user</b>
-                            <a href="#user"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>SocialUser</code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/account-mayestro/signin/signin.component.ts:23</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
 </section>
 
 </div>
@@ -474,11 +476,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
 import { AccountMayestroService } from &quot;../account-mayestro.service&quot;;
-import {
-  AuthService,
-  FacebookLoginProvider,
-  SocialUser
-} from &quot;angularx-social-login&quot;;
+import { Router } from &quot;@angular/router&quot;;
 
 @Component({
   selector: &quot;app-signin&quot;,
@@ -494,27 +492,33 @@ export class SigninComponent implements OnInit {
    * error message that display to user if username or password invalid
    */
   errMsg: string;
-  user: SocialUser;
   /**
    * constructor
    *
    * @param accService account service that include login requests
-   * @param authService facebook authentication service
    */
   constructor(
-    private accService: AccountMayestroService,
-    private authService: AuthService
+    private accService: AccountMayestroService, // private authService: AuthService
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.authService.authState.subscribe(user &#x3D;&gt; {
-      this.user &#x3D; user;
-      console.log(this.user);
-      this.authService.signOut();
-    });
+    // this.authService.authState.subscribe(user &#x3D;&gt; {
+    //   this.user &#x3D; user;
+    //   console.log(this.user);
+    //   this.authService.signOut();
+    // });
   }
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  // signInWithFB(): void {
+  //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  // }
+
+  /**
+   * disabeld login button if form invalid
+   * @param f form object
+   */
+  invalid(f) {
+    return f.invalid;
   }
 
   /**
@@ -523,9 +527,10 @@ export class SigninComponent implements OnInit {
    * @param f form values to send to server
    */
   submit(f) {
+    if (this.invalid(f)) return;
     this.accService.login(f.value).subscribe(
       res &#x3D;&gt; {
-        console.log(&quot;object&quot;);
+        this.router.navigate([&quot;/open.mayestro/overview&quot;]);
       },
       err &#x3D;&gt; {
         console.log(err);
@@ -546,7 +551,7 @@ export class SigninComponent implements OnInit {
     &lt;p class&#x3D;&quot;col-12 mb-0 text-white&quot;&gt;{{errMsg}}&lt;/p&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;row&quot;&gt;
-    &lt;button (click)&#x3D;&quot;signInWithFB()&quot; class&#x3D;&quot;col-12 mb-2 facebook-btn custom-btn btn text-white&quot;&gt;&lt;i
+    &lt;button (click)&#x3D;&quot;signInWithFB()&quot; disabled class&#x3D;&quot;col-12 mb-2 facebook-btn custom-btn btn text-white&quot;&gt;&lt;i
         class&#x3D;&quot;fa fa-facebook&quot;&gt;&lt;/i&gt; continue with facebook&lt;/button&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;row text-center&quot;&gt;
@@ -583,7 +588,8 @@ export class SigninComponent implements OnInit {
         &lt;mat-checkbox class&#x3D;&quot; w-100 mt-2&quot;&gt;&lt;span class&#x3D;&quot;remember&quot;&gt;Remember me!&lt;/span&gt;&lt;/mat-checkbox&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;col-lg-6 col-sm-12&quot;&gt;
-        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;login-btn w-100 custom-btn btn text-white float-right&quot;&gt;login&lt;/button&gt;
+        &lt;button type&#x3D;&quot;submit&quot; [disabled]&#x3D;&#x27;invalid(f)&#x27;
+          class&#x3D;&quot;login-btn w-100 custom-btn btn text-white float-right&quot;&gt;login&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/form&gt;
@@ -743,8 +749,8 @@ p{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="signin container">  <div class="row">    <h5 class="col-12 text-center h5 mb-3">To continue, log in to Spotify.</h5>  </div>  <div *ngIf=\'errMsg\' class="row alert alert-danger bg-danger">    <p class="col-12 mb-0 text-white">{{errMsg}}</p>  </div>  <div class="row">    <button (click)="signInWithFB()" class="col-12 mb-2 facebook-btn custom-btn btn text-white"><i        class="fa fa-facebook"></i> continue with facebook</button>  </div>  <div class="row text-center">    <h3 class="col-12 or h3 font-weight-bold">OR</h3>  </div>  <form #f="ngForm" class="form-group d-block" (ngSubmit)="submit(f)">    <div class="row">      <div class="col-12">        <mat-form-field class="w-100">          <mat-label>Email or username</mat-label>          <input type="text" matInput ngModel required name="email" #email="ngModel">          <mat-error *ngIf="email.errors">            <span *ngIf="email.errors.required">Please enter your email.</span>          </mat-error>        </mat-form-field>      </div>    </div>    <div class="row">      <div class="col-12">        <mat-form-field class="w-100">          <mat-label>password</mat-label>          <input type="password" matInput required minlength="8" maxlength="80" ngModel name="password"            #password="ngModel">          <mat-error *ngIf="password.errors">            <span *ngIf="password.errors.required">Enter a password to continue.</span>            <span *ngIf="password.errors.minlength">Your password is too short.</span>            <span *ngIf="password.errors.maxlength">Your password is too long.</span>          </mat-error>        </mat-form-field>      </div>    </div>    <div class="row">      <div class="col-lg-6 col-sm-12">        <mat-checkbox class=" w-100 mt-2"><span class="remember">Remember me!</span></mat-checkbox>      </div>      <div class="col-lg-6 col-sm-12">        <button type="submit" class="login-btn w-100 custom-btn btn text-white float-right">login</button>      </div>    </div>  </form>  <div class="row text-center pb-3">    <a class="col-12 forgot-password" routerLink=\'/account.mayestro/forget-password\'>Forgot your password?</a>  </div>  <hr>  <div class="row pt-3">    <h4 class="font-weight-bolder m-auto">Don\'t have an account?</h4>  </div>  <div class="row pt-4">    <a [routerLink]="[\'/account.mayestro/signup\']" class="col-12 mb-2 custom-btn signub-btn btn">      sign up for mayestro</a>  </div>  <hr>  <div class="row">    <p>If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree to Spotify\'s      <a class="imp-text" target="_blank" href="https://www.spotify.com/eg-en/legal/end-user-agreement/plain/">Terms &        Conditions</a> and <a class="imp-text" target="_blank"        href="https://www.spotify.com/eg-en/legal/privacy-policy/plain/">Privacy Policy.</a></p>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
+        var COMPONENT_TEMPLATE = '<div><div class="signin container">  <div class="row">    <h5 class="col-12 text-center h5 mb-3">To continue, log in to Spotify.</h5>  </div>  <div *ngIf=\'errMsg\' class="row alert alert-danger bg-danger">    <p class="col-12 mb-0 text-white">{{errMsg}}</p>  </div>  <div class="row">    <button (click)="signInWithFB()" disabled class="col-12 mb-2 facebook-btn custom-btn btn text-white"><i        class="fa fa-facebook"></i> continue with facebook</button>  </div>  <div class="row text-center">    <h3 class="col-12 or h3 font-weight-bold">OR</h3>  </div>  <form #f="ngForm" class="form-group d-block" (ngSubmit)="submit(f)">    <div class="row">      <div class="col-12">        <mat-form-field class="w-100">          <mat-label>Email or username</mat-label>          <input type="text" matInput ngModel required name="email" #email="ngModel">          <mat-error *ngIf="email.errors">            <span *ngIf="email.errors.required">Please enter your email.</span>          </mat-error>        </mat-form-field>      </div>    </div>    <div class="row">      <div class="col-12">        <mat-form-field class="w-100">          <mat-label>password</mat-label>          <input type="password" matInput required minlength="8" maxlength="80" ngModel name="password"            #password="ngModel">          <mat-error *ngIf="password.errors">            <span *ngIf="password.errors.required">Enter a password to continue.</span>            <span *ngIf="password.errors.minlength">Your password is too short.</span>            <span *ngIf="password.errors.maxlength">Your password is too long.</span>          </mat-error>        </mat-form-field>      </div>    </div>    <div class="row">      <div class="col-lg-6 col-sm-12">        <mat-checkbox class=" w-100 mt-2"><span class="remember">Remember me!</span></mat-checkbox>      </div>      <div class="col-lg-6 col-sm-12">        <button type="submit" [disabled]=\'invalid(f)\'          class="login-btn w-100 custom-btn btn text-white float-right">login</button>      </div>    </div>  </form>  <div class="row text-center pb-3">    <a class="col-12 forgot-password" routerLink=\'/account.mayestro/forget-password\'>Forgot your password?</a>  </div>  <hr>  <div class="row pt-3">    <h4 class="font-weight-bolder m-auto">Don\'t have an account?</h4>  </div>  <div class="row pt-4">    <a [routerLink]="[\'/account.mayestro/signup\']" class="col-12 mb-2 custom-btn signub-btn btn">      sign up for mayestro</a>  </div>  <hr>  <div class="row">    <p>If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree to Spotify\'s      <a class="imp-text" target="_blank" href="https://www.spotify.com/eg-en/legal/end-user-agreement/plain/">Terms &        Conditions</a> and <a class="imp-text" target="_blank"        href="https://www.spotify.com/eg-en/legal/privacy-policy/plain/">Privacy Policy.</a></p>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SigninComponent'};
 </script>
