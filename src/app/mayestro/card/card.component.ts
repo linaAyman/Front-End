@@ -16,6 +16,9 @@ export class CardComponent implements OnInit {
   ngOnInit() {
     // console.log(this.card);
   }
+  /** 
+   * Testing the routings (forgot to delete. It will be deleted in the next phase)
+   */
   navigate() {
     this.router.navigate([["/playlist", this.card.ID, this.card.type]]);
   }

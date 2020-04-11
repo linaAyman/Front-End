@@ -18,6 +18,13 @@ export class SeeAllComponent implements OnInit {
   cardsArray: Array<any>;
   constructor(private route: ActivatedRoute, private mystro: MayestroService) {}
 
+
+  /** 
+   *   get the current category name
+   *   call getSeeAll method to get the data from the server
+   *   filter each category into playlists/albums/artists
+   *   push filtered data into the cards array
+   */
   ngOnInit() {
     this.route.params.subscribe(p => {
       this.requestSeeAll = p["name"];
@@ -28,10 +35,12 @@ export class SeeAllComponent implements OnInit {
         if (res.category.playlists) {
           this.cardsArray = res.category.playlists;
           this.category.type = "playlists";
-        } else if (res.category.albums) {
+        } 
+        else if (res.category.albums) {
           this.cardsArray = res.category.albums;
           this.category.type = "albums";
-        } else if (res.category.artists) {
+        } 
+        else if (res.category.artists) {
           this.cardsArray = res.category.artists;
           this.category.type = "artists";
         }
@@ -39,13 +48,15 @@ export class SeeAllComponent implements OnInit {
           let desc: string;
           if (this.category.type == "playlists") {
             desc = crd.description;
-          } else if (this.category.type == "albums") {
+          } 
+          else if (this.category.type == "albums") {
             desc = "";
             crd.artists.forEach(art => {
               desc += art.name + ",";
             });
             desc = desc.slice(0, desc.length - 1);
-          } else if (this.category.type == "artists") {
+          }
+           else if (this.category.type == "artists") {
             desc = crd.artist_name;
           }
           const c: ICard = {

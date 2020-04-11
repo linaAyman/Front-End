@@ -14,7 +14,10 @@ export class MiniCardViewerComponent implements OnInit {
   cards:Array<ICard>=[];
   constructor() { }
 
-
+/** 
+ *  assign each playlist/album/artist into the cards array.
+ * Filter the description of each card based on the card type.
+*/
   ngOnInit() {
     this.category.cards.forEach((card)=>{
       let desc:string;

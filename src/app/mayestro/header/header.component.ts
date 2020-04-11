@@ -21,9 +21,16 @@ export class HeaderComponent implements OnInit, OnChanges {
     // console.log(loc.getState());
   }
   
+  /** 
+   * Check if the user is logged in or not
+   */
   loggedIn() {
     return this.auth.isLoggedIn();
   }
+
+  /**
+   * assign the logIn boolean to isLoggedIn property of AuthService
+   */
   ngOnInit() {
     this.loc.onUrlChange((res, state) => {
       console.log(res);
@@ -31,6 +38,9 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.logIn = this.auth.isLoggedIn();
   }
 
+  /**
+   * Testing the location class
+   */
   back() {
     this.loc.back();
   }

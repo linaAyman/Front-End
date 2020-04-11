@@ -39,9 +39,17 @@ export class MayestroService {
   getPlaylistTracks(id) {
     return this.httpClient.get(this.auth.URL + `/playlist/1234/tracks`);
   }
+
+  /**
+   * get home categories
+   */
   getHome() {
     return this.httpClient.get(this.auth.URL + "/home");
   }
+  /**
+   * gets a category by its name
+   * @param name category name
+   */
   getSeeAll(name) {
     return this.httpClient.get(this.auth.URL + `/home/'${name}'`);
   }

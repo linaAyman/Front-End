@@ -16,7 +16,11 @@ export class HomeComponent implements OnInit {
 
   }
 
+/**
+ * get categories from the server,then pushing each category in categories array based on their type
+ */
   ngOnInit() {
+    
     this.mystro.getHome().subscribe((res:any)=>{
       res.Home.forEach((ctg:any)=>{
        let cards,type:any;
