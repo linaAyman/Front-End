@@ -11,16 +11,20 @@ export class ArtistHeaderComponent implements OnInit {
   isfollowed=true;
   ispalyed=true;
   @Input() artist:Iartist
-  constructor( private maysrtoService:MaystroService) { }
+  constructor( ) { }
 
   ngOnInit() {
-    this.maysrtoService.getArtist(123).subscribe((res:any)=>{
-      res.forEach((art:any) => {
+    // this.maysrtoService.getArtist(123).subscribe((res:any)=>{
+    //   res.forEach((art:any) => {
         
-      });
-    })
+    //   });
+    // })
 
   }
+
+  /**
+   * change follow button label
+   */
 
   Follow()
   {
@@ -28,6 +32,11 @@ export class ArtistHeaderComponent implements OnInit {
        this.isfollowed=false;
     else this.isfollowed=true;
   }
+
+  /**
+   * change play button label 
+   */
+
   PLay(){
     
     if(this.ispalyed==true)

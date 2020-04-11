@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArtistOverviewComponent } from './artist-overview.component';
+// import { ArtistOverviewComponent } from './artist-overview.component';
 
-describe('ArtistOverviewComponent', () => {
-  let component: ArtistOverviewComponent;
-  let fixture: ComponentFixture<ArtistOverviewComponent>;
+// describe('ArtistOverviewComponent', () => {
+//   let component: ArtistOverviewComponent;
+//   let fixture: ComponentFixture<ArtistOverviewComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ArtistOverviewComponent ]
-    })
-    .compileComponents();
-  }));
+//   beforeEach(async(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [ ArtistOverviewComponent ]
+//     })
+//     .compileComponents();
+//   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ArtistOverviewComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(ArtistOverviewComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
