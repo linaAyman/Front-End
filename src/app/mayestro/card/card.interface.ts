@@ -1,5 +1,7 @@
 
-
+/**
+ * Card Interface 
+ */
 export class ICard{
     name: string;
     description: string;

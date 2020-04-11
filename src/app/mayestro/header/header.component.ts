@@ -8,13 +8,19 @@ import{Router}from '@angular/router'
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })
+/**
+ * Header Cmponent class
+ */
 export class HeaderComponent implements OnInit, OnChanges {
   logIn: boolean;
   constructor(
-   
+   /**  loc property of type Location */
     private loc: Location,
+    /** auth proterty of type AuthService */
     private auth: AuthService,
+    /** Injecting AccountMayestroService */
     private acc: AccountMayestroService,
+    /** Injecting router class */
     public router: Router
     )
   {

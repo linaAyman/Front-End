@@ -8,13 +8,18 @@ import { ICard } from "../card/card.interface";
   templateUrl: "./see-all.component.html",
   styleUrls: ["./see-all.component.css"]
 })
+/** See All Component class */
 export class SeeAllComponent implements OnInit {
+  /** properity represents the name of the category */
   requestSeeAll: string;
+  /** category object includes the name and type of the current category */
   category = {
     type: "",
     name: ""
   };
+  /** Cards array of type ICard */
   cards: Array<ICard> = [];
+  /** array of type any */
   cardsArray: Array<any>;
   constructor(private route: ActivatedRoute, private mystro: MayestroService) {}
 

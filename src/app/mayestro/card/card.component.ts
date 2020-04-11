@@ -8,7 +8,11 @@ import { Router } from "@angular/router";
   templateUrl: "./card.component.html",
   styleUrls: ["./card.component.css"]
 })
+/** Card Component class */
 export class CardComponent implements OnInit {
+  /** 
+   * Input of type card
+   */
   @Input() card: ICard;
 
   constructor(private router: Router) {}

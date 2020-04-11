@@ -8,10 +8,13 @@ import { MayestroService } from '../mayestro.service';
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"]
 })
+/** Hoe Component class */
 export class HomeComponent implements OnInit {
+  /** categories array of type ICategory interface */
   categories:Array<ICategory>=[];
+  /** category of tyoe ICategory */
   c:ICategory;
-  // playlists=Array<IPlaylist>;
+  
   constructor(private mystro:MayestroService) {
 
   }
