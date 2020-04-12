@@ -27,6 +27,6 @@ import { UserService } from './user.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers:[fakeBackendProvider,UserService]
+//   providers:[fakeBackendProvider,UserService]
 })
 export class OpenMayestroModule { }
