@@ -76,6 +76,16 @@ import { MayestroComponent } from &quot;./mayestro.component&quot;;
 import { HomeComponent } from &quot;./home/home.component&quot;;
 import { PlayerComponent } from &quot;./player/player.component&quot;;
 import { SideBarComponent } from &quot;./side-bar/side-bar.component&quot;;
+import { SeeAllComponent } from &quot;./see-all/see-all.component&quot;;
+import { SearchCardComponent } from &quot;./search-card/search-card.component&quot;;
+import { SearchComponent } from &quot;./search/search.component&quot;;
+import { PlaylistComponent } from &quot;./playlist/playlist.component&quot;;
+import { PlaylistsComponent } from &quot;./playlists/playlists.component&quot;;
+import { ArtistsComponent } from &quot;./artists/artists.component&quot;;
+import { AlbumsComponent } from &quot;./albums/albums.component&quot;;
+import { UserProfileComponent } from &quot;./user-profile/user-profile.component&quot;;
+import { from } from &quot;rxjs&quot;;
+import { NotFoundComponent } from &quot;../shared/components/not-found/not-found.component&quot;;
 
 const routes: Routes &#x3D; [
   {
@@ -85,7 +95,21 @@ const routes: Routes &#x3D; [
       { path: &quot;&quot;, pathMatch: &quot;full&quot;, redirectTo: &quot;home&quot; },
       { path: &quot;home&quot;, component: HomeComponent },
       { path: &quot;player&quot;, component: PlayerComponent },
-      { path: &quot;side&quot;, component: SideBarComponent }
+      { path: &quot;side&quot;, component: SideBarComponent },
+      { path: &quot;seeall/:name&quot;, component: SeeAllComponent },
+      { path: &quot;search&quot;, component: SearchComponent },
+      { path: &quot;playlist/:id/:type&quot;, component: PlaylistComponent },
+      { path: &quot;yourlibrary/playlists&quot;, component: PlaylistsComponent },
+      { path: &quot;yourlibrary/artist&quot;, component: ArtistsComponent },
+      { path: &quot;yourlibrary/album&quot;, component: AlbumsComponent },
+
+      {
+        path: &quot;artist/:id&quot;,
+        loadChildren: () &#x3D;&gt;
+          &quot;import(&#x60;./artist/artist.module&#x60;).then(m &#x3D;&gt; m.ArtistModule)&quot;
+      },
+      { path: &quot;profile&quot;, component: UserProfileComponent },
+      { path: &quot;**&quot;, component: NotFoundComponent }
     ]
   }
 ];

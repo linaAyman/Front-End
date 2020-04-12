@@ -16,10 +16,14 @@ import { TrackComponent } from './track/track.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { fakeBackendProvider } from '../shared/mock-server/mock-server.service';
 import { UserService } from './user.service';
+import { PremiumComponent } from './premium/premium.component';
+import { GetPremiumComponent } from './get-premium/get-premium.component';
+import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
+import { GetPremiumHeaderComponent } from './get-premium/get-premium-header/get-premium-header.component';
 
 
 @NgModule({
-  declarations: [OpenMayestroComponent, HeaderComponent, FooterComponent, OverviewComponent, NotificationComponent, ProfileComponent, SetDevicePasswordComponent, SidebarComponent, ChangePasswordComponent, TrackComponent],
+  declarations: [OpenMayestroComponent, HeaderComponent, FooterComponent, OverviewComponent, NotificationComponent, ProfileComponent, SetDevicePasswordComponent, SidebarComponent, ChangePasswordComponent, TrackComponent, PremiumComponent, GetPremiumComponent, ChangePlanComponent,GetPremiumHeaderComponent],
   imports: [
     CommonModule,
     OpenMayestroRoutingModule,

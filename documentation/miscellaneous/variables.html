@@ -58,7 +58,7 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#config" title="src/app/account-mayestro/account-mayestro.module.ts"><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../account-mayestro.module.ts)</a>
+                            <a href="#categories" title="src/app/testock.json/test.ts"><b>categories</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
                         </li>
                         <li>
                             <a href="#context" title="src/test.ts"><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
@@ -82,28 +82,133 @@
     </table>
 </section>
 
-    <h3>src/app/account-mayestro/account-mayestro.module.ts</h3>
+    <h3>src/app/testock.json/test.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="config"></a>
+                        <a name="categories"></a>
                         <span class="name">
                             <b>
-                            config</b>
-                            <a href="#config"><span class="icon ion-ios-link"></span></a>
+                            categories</b>
+                            <a href="#categories"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new AuthServiceConfig([
-  {
-    id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider(&quot;2566655633574824&quot;)
-  }
-])</code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    Home:
+        [{
+            ID: &quot;12345&quot;,
+            name: &quot;Most popular playLists&quot;,
+            description: &quot;&quot;,
+            type: &quot;Playlists&quot;,
+            playlists: [
+              {
+                ID: &quot;1&quot;,
+                name: &quot;test1&quot;,
+                description: &quot;test1 test1 test1 test1 test1 test1 test1 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;2&quot;,
+                name: &quot;test2&quot;,
+                description: &quot;test2 test2 test2 test2 test2 test2 test2 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;3&quot;,
+                name: &quot;test3&quot;,
+                description: &quot;test3 test3 test3 test3 test3 test3 test3 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;4&quot;,
+                name: &quot;test4&quot;,
+                description: &quot;test4 test4 test4 test4 test4 test4 test4 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID:&quot;5&quot;,
+                name: &quot;test5&quot;,
+                description: &quot;test5 test5 test5 test5 test5 test5 test5 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;6&quot;,
+                name: &quot;test6&quot;,
+                description: &quot;test6 test6 test6 test6 test6 test6 test6 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              }
+            ]
+        }
+        ,{
+            ID: &quot;1234567&quot;,
+            name: &quot;Most popular Albums&quot;,
+            description: &quot;Albums blablabla&quot;,
+            type: &quot;Albums&quot;,
+            albums: [
+              {
+                ID: &quot;7&quot;,
+                name: &quot;Album1&quot;,
+                artist_name: &quot;test1 test1 test1 test1 test1 test1 test1 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;8&quot;,
+                name: &quot;Album2&quot;,
+                artist_name: &quot;test2 test2 test2 test2 test2 test2 test2 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;9&quot;,
+                name: &quot;Album3&quot;,
+                artist_name: &quot;test3 test3 test3 test3 test3 test3 test3 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;10&quot;,
+                name: &quot;Album4&quot;,
+                artist_name: &quot;test4 test4 test4 test4 test4 test4 test4 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID:&quot;11&quot;,
+                name: &quot;Album5&quot;,
+                artist_name: &quot;test5 test5 test5 test5 test5 test5 test5 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              },
+              {
+                ID: &quot;12&quot;,
+                name: &quot;Album6&quot;,
+                artist_name: &quot;test6 test6 test6 test6 test6 test6 test6 &quot;,
+                imgUrl:
+                  &quot;https://i.scdn.co/image/ab67706f00000002aa93fe4e8c2d24fc62556cba&quot;
+              }
+            ]
+        }
+
+    ]
+}</code>
                         </td>
                     </tr>
 

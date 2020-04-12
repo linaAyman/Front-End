@@ -237,19 +237,20 @@ export class MayestroComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-0&quot;&gt;
-        &lt;div class&#x3D;&quot;side&quot; &gt;
-            &lt;app-side-bar &gt;&lt;/app-side-bar&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;position-fixed headd&quot;&gt;
-            &lt;app-header&gt;&lt;/app-header&gt;
-        &lt;/div&gt;
-        &lt;section class&#x3D;&quot; position-relative p-0&quot;&gt;
-            &lt;div class&#x3D;&quot;container  router &quot;&gt;
-                &lt;router-outlet &gt;&lt;/router-outlet&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-0 test&quot; style&#x3D;&quot;background-color: #121212;&quot;&gt;
+    &lt;div class&#x3D;&quot;side&quot;&gt;
+        &lt;app-side-bar&gt;&lt;/app-side-bar&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;position-fixed headd&quot;&gt;
+        &lt;app-header&gt;&lt;/app-header&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;test&quot;&gt;
+        &lt;section class&#x3D;&quot; position-relative  p-0&quot;&gt;
+            &lt;div class&#x3D;&quot;container p-0 router&quot;&gt;
+                &lt;router-outlet&gt;&lt;/router-outlet&gt;
             &lt;/div&gt;
         &lt;/section&gt;
-        &lt;footer class&#x3D;&quot;player  bg-danger&quot;&gt;
+        &lt;footer class&#x3D;&quot;player &quot;&gt;
             &lt;app-player&gt;&lt;/app-player&gt;
         &lt;/footer&gt;
 &lt;/div&gt;</code></pre>
@@ -260,7 +261,7 @@ export class MayestroComponent implements OnInit {
                     <code>./mayestro.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.player {
-  z-index: 3;
+  z-index: 9;
   width: 100%;
   display: flex;
   line-height: 1.5;
@@ -274,25 +275,35 @@ export class MayestroComponent implements OnInit {
   bottom: 0;
   flex-direction: row;
   height: 75px;
+  background-color: rgb(105, 105, 105);
+}
+.test {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 .router {
-  z-index: -1;
+  /* background-color: rgb(18, 18, 18); */
+  z-index: 0;
   max-width: 85%;
   width: 100%;
   margin: 0;
-  height: 650px;
-  padding-bottom: 70px;
+  /* height: 650px; */
   padding-top: 60px;
   margin-left: 228px;
-  padding-left: 18px;
-  overflow: visible;
-  overflow-y: auto;
-  text-align: justify;
+  padding-left: 0;
+  overflow: hidden;
+  margin-top: 60px;
+
+  /* margin-bottom: 10%; */
 }
 
 .side {
-  z-index: 2;
+  z-index: 8;
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.8);
@@ -303,29 +314,32 @@ export class MayestroComponent implements OnInit {
   right: 0;
   position: fixed;
   min-height: 85%;
+  min-width: 230px;
+  overflow-y: hidden;
 }
 .headd {
-  z-index: 1;
+  background-color: rgb(18, 18, 18);
+  z-index: 7;
   top: 0;
   width: 100%;
-  margin-left: 230px;
+  padding-left: 230px;
   height: 60px;
 }
 .flexnav {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 .bla {
   font-family: Verdana, sans-serif;
   line-height: 1.5;
-  color: #000 !important;
+  color: #000;
   box-sizing: inherit;
   opacity: 0.6;
-  font-size: 12px !important;
-  text-align: center !important;
+  font-size: 12px;
+  text-align: center;
 }
 </code></pre>
     </div>
@@ -355,8 +369,8 @@ export class MayestroComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-0">        <div class="side" >            <app-side-bar ></app-side-bar>        </div>        <div class="position-fixed headd">            <app-header></app-header>        </div>        <section class=" position-relative p-0">            <div class="container  router ">                <router-outlet ></router-outlet>            </div>        </section>        <footer class="player  bg-danger">            <app-player></app-player>        </footer></div></div>'
-    var COMPONENTS = [{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
+        var COMPONENT_TEMPLATE = '<div><div class="p-0 test" style="background-color: #121212;">    <div class="side">        <app-side-bar></app-side-bar>    </div>    <div class="position-fixed headd">        <app-header></app-header>    </div>    <div class="test">        <section class=" position-relative  p-0">            <div class="container p-0 router">                <router-outlet></router-outlet>            </div>        </section>        <footer class="player ">            <app-player></app-player>        </footer></div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MayestroComponent'};
 </script>

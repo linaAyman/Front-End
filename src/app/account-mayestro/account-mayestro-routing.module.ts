@@ -1,3 +1,4 @@
+import { GetPremiumComponent } from './get-premium/get-premium.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AccountMayestroComponent } from "./account-mayestro.component";
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: "reset-password/:hashKey", component: ResetPasswordComponent },
       { path: "forget-password", component: ForgetPasswordComponent },
       { path: "change-password", component: ChangePasswordComponent },
+      { path:"getpremium",component:GetPremiumComponent},
       { path: "**", redirectTo: "login" }
     ]
   }

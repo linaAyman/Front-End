@@ -70,25 +70,43 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
-import { OpenMayestroComponent } from &#x27;./open-mayestro.component&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangePlanComponent } from &#x27;./get-premium/change-plan/change-plan.component&#x27;;
+import { GetPremiumComponent } from &#x27;./get-premium/get-premium.component&#x27;;
+import { PremiumComponent } from &#x27;./premium/premium.component&#x27;;
+import { NgModule } from &quot;@angular/core&quot;;
+import { Routes, RouterModule } from &quot;@angular/router&quot;;
+import { OpenMayestroComponent } from &quot;./open-mayestro.component&quot;;
+import { OverviewComponent } from &quot;./overview/overview.component&quot;;
+import { ProfileComponent } from &quot;./profile/profile.component&quot;;
+import { NotificationComponent } from &quot;./notification/notification.component&quot;;
+import { SetDevicePasswordComponent } from &quot;./set-device-password/set-device-password.component&quot;;
+import { ChangePasswordComponent } from &quot;./change-password/change-password.component&quot;;
+import { NotFoundComponent } from &quot;../shared/components/not-found/not-found.component&quot;;
 
 const routes: Routes &#x3D; [
-  {path:&#x27;&#x27;,
-  component:OpenMayestroComponent,
-  children:[
-    
-  ]
-}
+  {
+    path: &quot;&quot;,
+    component: OpenMayestroComponent,
+    children: [
+      { path: &quot;&quot;, pathMatch: &quot;full&quot;, redirectTo: &quot;overview&quot; },
+      { path: &quot;overview&quot;, component: OverviewComponent },
+      { path: &quot;notification&quot;, component: NotificationComponent },
+      { path: &quot;profile&quot;, component: ProfileComponent },
+      { path: &quot;set-device-password&quot;, component: SetDevicePasswordComponent },
+      { path: &quot;change-password&quot;, component: ChangePasswordComponent },
+      { path: &quot;premium&quot;,component: PremiumComponent},
+      { path:&quot;getpremium&quot; , component:GetPremiumComponent},
+      { path:&quot;changeplan&quot;,component:ChangePlanComponent},
+      { path: &quot;**&quot;, component: NotFoundComponent }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class OpenMayestroRoutingModule { }
+export class OpenMayestroRoutingModule {}
 </code></pre>
     </div>
 </div>

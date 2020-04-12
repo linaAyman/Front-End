@@ -272,7 +272,10 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangePlanComponent } from &#x27;./get-premium/change-plan/change-plan.component&#x27;;
+import { GetPremiumHeaderComponent } from &#x27;./get-premium/get-premium-header/get-premium-header.component&#x27;;
+import { GetPremiumComponent } from &#x27;./get-premium/get-premium.component&#x27;;
+import { NgModule } from &quot;@angular/core&quot;;
 import { CommonModule } from &quot;@angular/common&quot;;
 import { FormsModule } from &quot;@angular/forms&quot;;
 
@@ -288,25 +291,25 @@ import { MatSelectModule } from &quot;@angular/material/select&quot;;
 import { MatRadioModule } from &quot;@angular/material/radio&quot;;
 import { HttpClientModule } from &quot;@angular/common/http&quot;;
 import { SharedModule } from &quot;../shared/shared.module&quot;;
-import {
-  SocialLoginModule,
-  AuthServiceConfig,
-  FacebookLoginProvider
-} from &quot;angularx-social-login&quot;;
+// import {
+//   SocialLoginModule,
+//   AuthServiceConfig,
+//   FacebookLoginProvider
+// } from &quot;angularx-social-login&quot;;
 import { ForgetPasswordComponent } from &quot;./forget-password/forget-password.component&quot;;
 import { ChangePasswordComponent } from &quot;./change-password/change-password.component&quot;;
 import { ResetPasswordComponent } from &quot;./reset-password/reset-password.component&quot;;
 
-const config &#x3D; new AuthServiceConfig([
-  {
-    id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider(&quot;2566655633574824&quot;)
-  }
-]);
+// const config &#x3D; new AuthServiceConfig([
+//   {
+//     id: FacebookLoginProvider.PROVIDER_ID,
+//     provider: new FacebookLoginProvider(&quot;2566655633574824&quot;)
+//   }
+// ]);
 
-export function provideConfig() {
-  return config;
-}
+// export function provideConfig() {
+//   return config;
+// }
 
 @NgModule({
   declarations: [
@@ -317,6 +320,9 @@ export function provideConfig() {
     ForgetPasswordComponent,
     ChangePasswordComponent,
     ResetPasswordComponent
+    // GetPremiumComponent,
+    // GetPremiumHeaderComponent,
+    // ChangePlanComponent
   ],
   imports: [
     CommonModule,
@@ -328,15 +334,15 @@ export function provideConfig() {
     MatSelectModule,
     MatRadioModule,
     SharedModule,
-    HttpClientModule,
-    SocialLoginModule
-  ],
-  providers: [
-    {
-      provide: AuthServiceConfig,
-      useFactory: provideConfig
-    }
+    HttpClientModule
+    // SocialLoginModule
   ]
+  // providers: [
+  //   {
+  //     provide: AuthServiceConfig,
+  //     useFactory: provideConfig
+  //   }
+  // ]
 })
 export class AccountMayestroModule {}
 </code></pre>
