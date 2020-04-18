@@ -1,6 +1,6 @@
-import { MaystroService } from './../../maystro.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { Iartist } from '../artist.interface';
+import { ActivatedRoute } from '@angular/router';
+import { MayestroService } from '../../mayestro.service';
 
 @Component({
   selector: 'app-artist-header',
@@ -10,15 +10,38 @@ import { Iartist } from '../artist.interface';
 export class ArtistHeaderComponent implements OnInit {
   isfollowed=true;
   ispalyed=true;
-  @Input() artist:Iartist
-  constructor() { }
-  //  private maysrtoService:MaystroService
+  artistinfo={
+    name:'',
+    id:'',
+    img:''
+  };
+  id: any;
+  MayestroService: any;
+  
+ 
+  constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
+  
   ngOnInit() {
     // this.maysrtoService.getArtist(123).subscribe((res:any)=>{
     //   res.forEach((art:any) => {
         
     //   });
     // })
+    this.route.params.subscribe(param => {
+      this.id = param["id"];
+    console.log( param["id"]);
+    console.log( this.id);
+
+    });
+    this.MayestroService.getArtist(this.id).subscribe((res: any) => {
+      
+      this.artistinfo.id=res.artistID;
+      this.artistinfo.img=res.Images[0].URL;
+      this.artistinfo.name=res.name;
+      
+      console.log(res);
+    });
+    console.log(this.artistinfo.name)
 
   }
 

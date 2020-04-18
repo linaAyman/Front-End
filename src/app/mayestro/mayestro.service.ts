@@ -28,4 +28,7 @@ export class MayestroService {
   getSeeAll(name){
     return this.httpClient.get(this.auth.URL+`/home/${name}`);
   }
+  getArtist(id){
+    return this.httpClient.get(this.auth.URL+`/artist/${id}`);
+  }
 }

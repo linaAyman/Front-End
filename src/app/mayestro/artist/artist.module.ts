@@ -18,6 +18,7 @@ import { ArtistComponent } from './artist.component';
     CommonModule,
     ArtistRoutingModule,
     SharedModule
+
   ]
 
 })

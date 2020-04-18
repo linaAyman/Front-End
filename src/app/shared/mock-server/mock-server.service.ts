@@ -175,6 +175,8 @@ export class MockServerService implements HttpInterceptor {
           return forgetPassword();
         case url.match(/\/albums\/\S+$/) && method === "GET":
           return viewalbum();
+        case url.match(/\/artists\/\S+$/) && method === "GET":
+          return viewartist();
         case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
           return viewtracks();
         case url.match(/\/playlist\/\S+$/) && method === "GET":
@@ -709,6 +711,36 @@ export class MockServerService implements HttpInterceptor {
         }
       };
       return ok(category);
+    }
+
+    function viewartist(){
+      const artists=[{
+        followers : [ {
+          total : 5
+        } ],
+        Images : [ {
+          URL : "https://cdn.ome.lt/9LBvp96wbthUZEMZqrzdnioAMYk=/fit-in/837x500/smart/uploads/conteudo/fotos/Adeleheader.jpg"
+        }],
+        name : "adele",
+        artistID : "123"
+        },
+        {
+          followers : [ {
+            total : 10 
+          } ],
+          Images : [ {
+            URL : "https://thevintagevines.files.wordpress.com/2015/01/bfxi4ifcmaa2vwq.jpg"
+          }],
+          name : "Ed Sheeran ",
+          artistID : "154"
+        }
+      ]
+
+      const artistid = url.split("/")[url.length - 2];
+      const artist = artists.find(tr => tr.artistID === artistid);
+      if (artist) return ok(artist);
+      return error("no artist found with this id");      
+
     }
     // helper functions
 
