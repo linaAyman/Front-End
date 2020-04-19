@@ -21,7 +21,7 @@ export class MiniCardViewerComponent implements OnInit {
  * Filter the description of each card based on the card type.
 */
   ngOnInit() {
-    this.category.cards.forEach((card)=>{
+    this.category.cards.forEach(card=>{
       let desc:string;
       if(this.category.type=="playlists"){
         desc=card.description;

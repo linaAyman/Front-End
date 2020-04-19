@@ -5,7 +5,7 @@ import { HomeComponent } from "./home/home.component";
 import { PlayerComponent } from "./player/player.component";
 import { SideBarComponent } from "./side-bar/side-bar.component";
 import { SeeAllComponent } from "./see-all/see-all.component";
-import { SearchCardComponent } from "./search-card/search-card.component";
+import { SearchCardComponent } from "./search/search-card/search-card.component";
 import { SearchComponent } from "./search/search.component";
 import { PlaylistComponent } from "./playlist/playlist.component";
 import { PlaylistsComponent } from "./playlists/playlists.component";

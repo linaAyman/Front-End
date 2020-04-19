@@ -1,0 +1,19 @@
+.text{
+    color: #fff;
+    font-size: 28px;
+    line-height: 1.6;
+    font-weight: 600;
+    letter-spacing: -.36px;
+    display: inline;
+    white-space: nowrap;
+    margin-left: 3%;
+    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+    flex: 1 0 80%;
+}
+.in{
+    display: inline-block;
+}
+.h{
+    display: inline-flex;
+    width: 100%;
+}

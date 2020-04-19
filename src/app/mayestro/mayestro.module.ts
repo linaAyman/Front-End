@@ -12,7 +12,7 @@ import { MiniCardViewerComponent } from './mini-card-viewer/mini-card-viewer.com
 import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
 import { SeeAllComponent } from './see-all/see-all.component';
-import { SearchCardComponent } from './search-card/search-card.component';
+import { SearchCardComponent } from './search/search-card/search-card.component';
 import { SearchComponent } from './search/search.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { TrackComponent } from './track/track.component';
@@ -21,11 +21,13 @@ import { ArtistsComponent } from './artists/artists.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule} from '@angular/material';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TopResultComponent } from './search/top-result/top-result.component';
+import { SongsComponent } from './search/songs/songs.component';
 
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent,UserProfileComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent,UserProfileComponent, TopResultComponent, SongsComponent],
   imports: [
     MatMenuModule,
     CommonModule,
