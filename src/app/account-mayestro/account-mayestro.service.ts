@@ -91,7 +91,7 @@ export class AccountMayestroService {
    */
   changePassword(pass) {
     return this.http.post(`${this.auth.URL}/user/changePassword`, pass, {
-      headers: { token: localStorage.getItem("token") }
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     });
   }
 }

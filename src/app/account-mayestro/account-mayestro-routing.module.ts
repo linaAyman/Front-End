@@ -6,6 +6,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { ForgetPasswordComponent } from "./forget-password/forget-password.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
+import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: "reset-password/:hashKey", component: ResetPasswordComponent },
       { path: "forget-password", component: ForgetPasswordComponent },
       { path: "change-password", component: ChangePasswordComponent },
+      { path: "privacy-and-policy", component: PrivacyPolicyComponent },
       { path: "**", redirectTo: "login" }
     ]
   }
