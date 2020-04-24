@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { IASong } from './artist-song.interface';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-artist-song',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistSongComponent implements OnInit {
   isPlaying=false;
+  @Input() song: IASong;
   constructor() { }
 
   ngOnInit() {

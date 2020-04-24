@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,HostBinding  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MayestroService } from '../../mayestro.service';
 
@@ -13,38 +13,38 @@ export class ArtistHeaderComponent implements OnInit {
   artistinfo={
     name:'',
     id:'',
-    img:''
+    img:'',
+    followers:''
   };
   id: any;
-  MayestroService: any;
-  
+  imgurl:any;
  
   constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
   
   ngOnInit() {
-    // this.maysrtoService.getArtist(123).subscribe((res:any)=>{
-    //   res.forEach((art:any) => {
-        
-    //   });
-    // })
+
     this.route.params.subscribe(param => {
       this.id = param["id"];
-    console.log( param["id"]);
-    console.log( this.id);
 
     });
-    this.MayestroService.getArtist(this.id).subscribe((res: any) => {
-      
-      this.artistinfo.id=res.artistID;
-      this.artistinfo.img=res.Images[0].URL;
+    this.mystro.getArtist(this.id).subscribe((res: any) => {
+      this.artistinfo.id=res.id;
       this.artistinfo.name=res.name;
-      
-      console.log(res);
+      this.artistinfo.img=res.image;
+      this.isfollowed=res.isFollowed;
+      // res.forEach(element => {
+      //   if(this.id==element.artistID){
+      //     this.artistinfo.name=element.name;
+      //     this.artistinfo.id=element.artistID;
+      //     this.artistinfo.img=element.Images[0].URL;
+      //     this.artistinfo.followers=element.followers[0].total;
+      //   }
+      // });
     });
-    console.log(this.artistinfo.name)
+    
+    
 
   }
-
   /**   
    * change follow button label
    */
@@ -67,4 +67,8 @@ export class ArtistHeaderComponent implements OnInit {
     else this.ispalyed=true;
   }
 
+  // @HostBinding('style.backgroundImage')
+  //  getBackgroundImageUrl() {
+  //    document.getElementById("backimg").style.backgroundImage = "url('this.artistinfo.img')";
+  // }
 }

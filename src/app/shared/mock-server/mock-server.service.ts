@@ -175,8 +175,19 @@ export class MockServerService implements HttpInterceptor {
           return forgetPassword();
         case url.match(/\/albums\/\S+$/) && method === "GET":
           return viewalbum();
+        case url.match(/\/artists\/\S+\/about$/) && method === "GET":
+          return viewaboutartist();
+        case url.match(/\/artists\/\S+\/top-tracks$/) && method === "GET":
+          return artisttop();
+        case url.match(/\/artists\/\S+\/albums$/) && method === "GET":
+          return artistAlbums();
+        case url.match(/\/artists\/\S+\/singles$/) && method === "GET":
+          return artistSingles();
+        case url.match(/\/artists\/\S+\/related-artists$/) && method === "GET":
+          return relatedartists();
         case url.match(/\/artists\/\S+$/) && method === "GET":
           return viewartist();
+
         case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
           return viewtracks();
         case url.match(/\/playlist\/\S+$/) && method === "GET":
@@ -714,34 +725,303 @@ export class MockServerService implements HttpInterceptor {
     }
 
     function viewartist(){
-      const artists=[{
-        followers : [ {
-          total : 5
-        } ],
-        Images : [ {
-          URL : "https://cdn.ome.lt/9LBvp96wbthUZEMZqrzdnioAMYk=/fit-in/837x500/smart/uploads/conteudo/fotos/Adeleheader.jpg"
-        }],
-        name : "adele",
-        artistID : "123"
-        },
-        {
-          followers : [ {
-            total : 10 
-          } ],
-          Images : [ {
-            URL : "https://thevintagevines.files.wordpress.com/2015/01/bfxi4ifcmaa2vwq.jpg"
-          }],
-          name : "Ed Sheeran ",
-          artistID : "154"
-        }
-      ]
-
-      const artistid = url.split("/")[url.length - 2];
-      const artist = artists.find(tr => tr.artistID === artistid);
-      if (artist) return ok(artist);
-      return error("no artist found with this id");      
+      const artists={
+          id: "3xl0OvcSlc9Mwe5ToaFtD3",
+          type: "Artist",
+          name: "Amr Diab",
+          isFollowed: true,
+          image: "https://i.scdn.co/image/5ac491f3bf789a7a1491b20de5e83006e0ef2ba0"
+        }    
+      console.log("viewArtist")
+      return ok(artists) ; 
 
     }
+    function viewaboutartist(){
+      const info={about : "Amr Diab is a pop singer and songwriter from Egypt. He has won a record seven World Music Awards to date, and is considered the all-time best-selling musical artist from the Middle East. He is the creator of his own genre; he calls his meld of Arabic harmony and Western rhythms 'Mediterranean Music,' and it has influenced many subsequent artists."} 
+      console.log("viewAboutArtist")
+      return ok(info);
+    }
+
+    function artisttop() {
+      const artistTracks={
+        tracks:[{
+          image:"https://i.scdn.co/image/ab67616d0000b273d352e68d3f9ef21f6d167a96",
+          duration:5,
+          name:"Nour Eloyon",
+          isLiked: true,
+          id:"123",
+          Url:"lmskmdlkm"
+        },
+        {
+          image:"https://i.scdn.co/image/ab67616d0000b273d352e68d3f9ef21f6d167a96",
+          duration:4,
+          name:"Kamaren",
+          isLiked: true,
+          id:"123",
+          Url:"lmskmdlkm"
+        },{
+          image:"https://i.scdn.co/image/ab67616d0000b273d352e68d3f9ef21f6d167a96",
+          duration:3,
+          name:"Tamali maak",
+          isLiked: true,
+          id:"123",
+          Url:"lmskmdlkm"
+        },
+        {
+          image:"https://i.scdn.co/image/ab67616d0000b273d352e68d3f9ef21f6d167a96",
+          duration:2,
+          name:"Bayen Habeit",
+          isLiked: true,
+          id:"123",
+          Url:"lmskmdlkm"
+        },
+        {
+          image:"https://i.scdn.co/image/ab67616d0000b273d352e68d3f9ef21f6d167a96",
+          duration:4,
+          name:"Alby Etmannah",
+          isLiked: true,
+          id:"123",
+          Url:"lmskmdlkm"
+        }]
+      }
+      return ok(artistTracks)
+    }
+
+    function artistAlbums(){
+      const artistAlbums={
+        albums:[
+          {
+          id: "1234",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "Sahran",
+          totalTracks: 10
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla1",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla2",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla3",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla4",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla5",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla6",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla7",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla8",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla9",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla10",
+          totalTracks: 8
+          },
+          {
+          id: "1235",
+          image: "https://i1.sndcdn.com/artworks-000685259938-at3rot-t500x500.jpg",
+          name: "BlaBla11",
+          totalTracks: 8
+          }
+        ]
+      }
+      return ok(artistAlbums)
+    }
+
+    function artistSingles(){
+      const singles={
+        tracks: [
+          {
+            name: "name 1",
+            id: "1234",
+            image: "https://i.scdn.co/image/ab67616d0000b27322f6db77466f8b64009eeef7",
+            duration: 5,
+            isLiked: true
+          },
+          {
+            name: "name 2",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 3",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 4",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 5",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 6",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 7",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 8",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 9",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 10",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 11",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          },
+          {
+            name: "name 12",
+            id: "124",
+            image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+            duration: 3,
+            isLiked: true
+          }
+        ]
+      }
+      return ok(singles)
+    }
+
+    function relatedartists(){
+      const related={
+        artists: [
+          {
+            name: "Tamer",
+            id: "548",
+            image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
+            type: "Artist"
+          },
+          {
+          name: "Assala",
+            id: "48",
+            image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
+            type: "Artist"
+          }, 
+          {
+            name: "Tamer",
+            id: "548",
+            image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
+            type: "Artist"
+          },  
+          {
+            name: "Assala",
+              id: "48",
+              image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
+              type: "Artist"
+          },
+          {
+            name: "Tamer",
+            id: "548",
+            image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
+            type: "Artist"
+          },  
+          {
+            name: "Assala",
+              id: "48",
+              image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
+              type: "Artist"
+          },
+          {
+            name: "Tamer",
+            id: "548",
+            image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
+            type: "Artist"
+          },
+          {
+            name: "Assala",
+              id: "48",
+              image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
+              type: "Artist"
+          },
+          {
+            name: "Tamer",
+            id: "548",
+            image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
+            type: "Artist"
+          },
+        ]
+      }
+      return ok(related)
+    }
+
+
     // helper functions
 
     function track() {

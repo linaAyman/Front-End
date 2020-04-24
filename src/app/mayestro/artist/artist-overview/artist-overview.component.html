@@ -2,94 +2,37 @@
 <div class="artist-songs">
     <div class="artist-popular">
         <h1 style=" font-size: 28px; font-weight: 700; color: #fff;">Popular</h1>
-        <div class="paylist-pox">
+        <div class="paylist-pox"  *ngFor="let s of Songs">
             <!-- song div -->
-            <app-artist-song></app-artist-song>
-            <app-artist-song></app-artist-song>
-            <app-artist-song></app-artist-song>
-            <app-artist-song></app-artist-song>
-            <app-artist-song></app-artist-song>
+            <app-artist-song [song]="s"></app-artist-song>
         </div>
     </div>
     <div class="artist-albums" >
         <h1 style=" font-size: 28px; font-weight: 700; color: #fff; padding-bottom: 16px;">Albums</h1>
-        <!-- <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card>
-        <app-artist-card></app-artist-card> -->
-
-        <div class="row px-1">
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            
-        </div>
-        <div class="row  px-1">
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            
+    
+        <div class="row px-1"  >
+            <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let a of albums"><app-artist-card [acard]="a"></app-artist-card></div>    
         </div>
 
         <div class="text-center"><button class=" showmore-btn  ">SHOW MORE <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
     </div>
+
     <div class="artist-albums" >
         <h1 style=" font-size: 28px; font-weight: 700; color: #fff;padding-bottom: 16px;">Singles and EPs</h1>
          <div class="row px-1">
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            
-        </div>
-        <div class="row px-1">
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            
-        </div>
+            <div class="col-lg-2 col-md-3 col-sm-4"  *ngFor="let si of singles"><app-artist-card [acard]="si"></app-artist-card></div>
 
+        </div>
         <div class="text-center"><button class=" showmore-btn  ">SHOW MORE <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
     </div>
+
     <div class="artist-albums" >
         <h1 style=" font-size: 28px; font-weight: 700; color: #fff;padding-bottom: 16px;">Appears On</h1>
          <div class="row px-1">
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
+            <div class="col-lg-2 col-md-3 col-sm-4"  *ngFor="let a of albums"><app-artist-card [acard]="a"></app-artist-card></div>
             
         </div>
-        <div class="row px-1">
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            <div class="col-lg-2 col-md-3 col-sm-4"><app-artist-card></app-artist-card></div>
-            
-        </div>
+    
         <div class="text-center"><button class=" showmore-btn  ">SHOW MORE <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
     </div>
 </div>

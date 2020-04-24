@@ -20,7 +20,6 @@
     color: #fff;
     text-transform: none;
     text-align: center;
-    
   }
 
  .btn{
@@ -33,5 +32,10 @@
     
 }
 .card-container:hover .btn{
-    visibility: visible;  
+    visibility: visible; 
+  
+}
+
+a:hover{
+    text-decoration: none; 
 }

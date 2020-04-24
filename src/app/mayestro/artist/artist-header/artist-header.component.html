@@ -1,7 +1,9 @@
 <div  >            
     
-    <div class="container-fluid bg-1" style="background: linear-gradient(to top, #121212,70%, transparent),  url(https://i.scdn.co/image/c2fc7bf2aadbcdc07820307800a16d1acd83d057) no-repeat center; " >
-        <span class="spancontent" > 9,854,235 Monthly Listeners</span>
+    <div class="container-fluid bg-1" 
+    *ngIf= "artistinfo" [ngStyle] ="{'background':' linear-gradient(to top, #121212,70%, transparent),url('+ artistinfo.img +') no-repeat center'}" >
+ 
+        <span class="spancontent" >449,856  Monthly Listeners</span>
         <h1 class="ArtistName"   >{{artistinfo.name}}</h1>
         <div class="buttonContainer ">
             

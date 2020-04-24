@@ -1,3 +1,4 @@
+import { CardComponent } from './../card/card.component';
 import { ArtistSongComponent } from './artist-song/artist-song.component';
 import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';

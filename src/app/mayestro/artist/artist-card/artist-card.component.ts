@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IACard } from './artist-card.interface';
 
 @Component({
   selector: 'app-artist-card',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artist-card.component.css']
 })
 export class ArtistCardComponent implements OnInit {
-
+  @Input() acard: IACard;
   constructor() { }
 
   ngOnInit() {
