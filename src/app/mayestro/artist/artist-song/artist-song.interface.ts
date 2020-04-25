@@ -1,6 +1,6 @@
 import { Time } from '@angular/common';
 
-export class IASong{
+export interface IASong{
     name: string;
     duration:Time;
     image:string;

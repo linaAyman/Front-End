@@ -1,6 +1,7 @@
 import { ArtistService } from './../artist.service';
 import { Component, OnInit, Input,HostBinding  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap, combineLatest } from 'rxjs/operators';
 
 @Component({
   selector: 'app-artist-header',
@@ -22,25 +23,27 @@ export class ArtistHeaderComponent implements OnInit {
   
   ngOnInit() {
 
-    this.route.params.subscribe(param => {
-      this.id = param["id"];
-
-    });
-    this.artist.getArtist(this.id).subscribe((res: any) => {
-
-      this.artistInfo.id=res.id;
-      this.artistInfo.name=res.name;
-      this.artistInfo.img=res.image;
-      this.isFollowed=res.isFollowed;
-      
-    });
+    this.route.params.pipe(
+      switchMap(param=>{
+        this.id=param['id']
+        return this.artist.getArtist(this.id)
+       
+      })
+      )
+      .subscribe((comp:any)=>{
+       
+        this.artistInfo.id=comp.id;
+        this.artistInfo.name=comp.name;
+        this.artistInfo.img=comp.image;
+        this.isFollowed=comp.isFollowed;
+      });
   }
 
   /**
    * change follow button label
    */
 
-  Follow()
+  follow()
   {
     if(this.isFollowed==true)
        this.isFollowed=false;
@@ -51,7 +54,7 @@ export class ArtistHeaderComponent implements OnInit {
    * change play button label 
    */
 
-  PLay(){
+  pLay(){
     
     if(this.isPalyed==true)
        this.isPalyed=false;

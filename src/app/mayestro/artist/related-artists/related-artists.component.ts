@@ -3,6 +3,7 @@ import { ICard } from './../../card/card.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MayestroService } from '../../mayestro.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-related-artists',
@@ -15,25 +16,26 @@ export class RelatedArtistsComponent implements OnInit {
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(param => {
-      this.id = param["id"];
-
-    });
-
-    this.artist.getRelatedArtists(this.id).subscribe((res: any) => {
-      
-      res.artists.forEach((element:any) => {
-        const card:ICard={
-          name: element.name,
-          description: "Artist",
-          imgUrl:element.image,
-          ID: element.id,
-          type:element.type
-        }
-        this.relaredArray.push(card);
+    
+    this.route.params.pipe(
+      switchMap(param=>{
+        this.id=param['id']
+        return this.artist.getRelatedArtists(this.id)
+       
+      })
+      )
+      .subscribe((comp:any)=>{
+        comp.artists.forEach((element:any) => {
+          const card:ICard={
+            name: element.name,
+            description: "Artist",
+            imgUrl:element.image,
+            ID: element.id,
+            type:element.type
+          }
+          this.relaredArray.push(card);
+        });
       });
-  
-    });
 
   }
 

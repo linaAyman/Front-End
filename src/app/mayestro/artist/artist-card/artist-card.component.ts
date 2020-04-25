@@ -7,7 +7,7 @@ import { IACard } from './artist-card.interface';
   styleUrls: ['./artist-card.component.css']
 })
 export class ArtistCardComponent implements OnInit {
-  @Input() acard: IACard;
+  @Input() aCard: IACard;
   constructor() { }
 
   ngOnInit() {

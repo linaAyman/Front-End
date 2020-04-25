@@ -2,7 +2,13 @@ import { ICard } from './../card/card.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MayestroService } from '../mayestro.service';
-import { tick } from '@angular/core/testing';
+import "rxjs";
+// import "rxjs-compat/add/observable/combineLatest"
+// import "rxjs-compat/add/operator/switchMap"
+// import { Observable } from 'rxjs';
+import {combineLatest} from "rxjs";
+import {switchMap} from "rxjs/operators";
+
 
 @Component({
   selector: 'app-user-profile',
@@ -21,17 +27,21 @@ export class UserProfileComponent implements OnInit {
   constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(p=>{
-      this.id=p['id'];
+   
+    this.route.params.pipe(
+    switchMap(param=>{
+      this.id=param['id']
+      return combineLatest([
+        this.mystro.getUser(this.id),
+        this.mystro.getUserPLaylist(this.id)
+      ]); 
     })
-
-    this.mystro.getUser(this.id).subscribe((res:any)=>{
-      this.user.name=res.name;
-      this.user.image=res.image;
-    })
-
-    this.mystro.getUserPLaylist(this.id).subscribe((res:any)=>{
-      res.playlists.forEach(element => {
+    )
+    .subscribe((comp:any)=>{
+      this.user.name=comp[0].name;
+      this.user.image=comp[0].image;
+     
+      comp[1].playlists.forEach(element => {
         const card:ICard={
           name: element.name,
           description: element.description,
@@ -42,7 +52,7 @@ export class UserProfileComponent implements OnInit {
         this.playListArray.push(card);
       }
       );
-    })
+    });
 
   }
 

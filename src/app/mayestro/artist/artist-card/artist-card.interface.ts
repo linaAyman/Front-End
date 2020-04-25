@@ -1,6 +1,6 @@
 import { Time } from '@angular/common';
 
-export class IACard{
+export interface IACard{
     id: string;
     image: string;
     name: string;
