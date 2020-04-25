@@ -1,6 +1,6 @@
+import { ArtistService } from './../artist.service';
 import { Component, OnInit, Input,HostBinding  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MayestroService } from '../../mayestro.service';
 
 @Component({
   selector: 'app-artist-header',
@@ -8,18 +8,17 @@ import { MayestroService } from '../../mayestro.service';
   styleUrls: ['./artist-header.component.css']
 })
 export class ArtistHeaderComponent implements OnInit {
-  isfollowed=true;
-  ispalyed=true;
-  artistinfo={
+  isFollowed=true;
+  isPalyed=true;
+  artistInfo={
     name:'',
     id:'',
     img:'',
     followers:''
   };
   id: any;
-  imgurl:any;
  
-  constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
+  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
   
   ngOnInit() {
 
@@ -27,19 +26,13 @@ export class ArtistHeaderComponent implements OnInit {
       this.id = param["id"];
 
     });
-    this.mystro.getArtist(this.id).subscribe((res: any) => {
-      this.artistinfo.id=res.id;
-      this.artistinfo.name=res.name;
-      this.artistinfo.img=res.image;
-      this.isfollowed=res.isFollowed;
-      // res.forEach(element => {
-      //   if(this.id==element.artistID){
-      //     this.artistinfo.name=element.name;
-      //     this.artistinfo.id=element.artistID;
-      //     this.artistinfo.img=element.Images[0].URL;
-      //     this.artistinfo.followers=element.followers[0].total;
-      //   }
-      // });
+    this.artist.getArtist(this.id).subscribe((res: any) => {
+
+      this.artistInfo.id=res.id;
+      this.artistInfo.name=res.name;
+      this.artistInfo.img=res.image;
+      this.isFollowed=res.isFollowed;
+      
     });
     
     
@@ -51,9 +44,9 @@ export class ArtistHeaderComponent implements OnInit {
 
   Follow()
   {
-    if(this.isfollowed==true)
-       this.isfollowed=false;
-    else this.isfollowed=true;
+    if(this.isFollowed==true)
+       this.isFollowed=false;
+    else this.isFollowed=true;
   }
 
   /**
@@ -62,9 +55,9 @@ export class ArtistHeaderComponent implements OnInit {
 
   PLay(){
     
-    if(this.ispalyed==true)
-       this.ispalyed=false;
-    else this.ispalyed=true;
+    if(this.isPalyed==true)
+       this.isPalyed=false;
+    else this.isPalyed=true;
   }
 
   // @HostBinding('style.backgroundImage')

@@ -1,3 +1,4 @@
+import { ArtistService } from './../artist.service';
 import { NotificationComponent } from './../../../open-mayestro/notification/notification.component';
 import { IASong } from './../artist-song/artist-song.interface';
 import { Component, OnInit } from '@angular/core';
@@ -11,17 +12,17 @@ import { IACard } from '../artist-card/artist-card.interface';
   styleUrls: ['./artist-overview.component.css']
 })
 export class ArtistOverviewComponent implements OnInit {
-  Songs:Array<IASong>=[];
+  songs:Array<IASong>=[];
   albums:Array<IACard>=[];
   singles:Array<IACard>=[];
   id:any;
-  constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
+  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.id = param["id"];
     });
-    this.mystro.getArtistTopTracks(this.id).subscribe((res: any) => {
+    this.artist.getArtistTopTracks(this.id).subscribe((res: any) => {
       res.tracks.forEach((element:any) => {
         const song:IASong={
           name: element.name,
@@ -31,11 +32,11 @@ export class ArtistOverviewComponent implements OnInit {
           id:element.id,
           url:element.url
         }
-        this.Songs.push(song)
+        this.songs.push(song)
       });
     });
 
-    this.mystro.getArtistAlbums(this.id).subscribe((res:any)=>{
+    this.artist.getArtistAlbums(this.id).subscribe((res:any)=>{
       res.albums.forEach((element:any) => {
         const album:IACard={
           name: element.name,
@@ -50,7 +51,7 @@ export class ArtistOverviewComponent implements OnInit {
 
     })
 
-    this.mystro.getArtistSingles(this.id).subscribe((res:any)=>{
+    this.artist.getArtistSingles(this.id).subscribe((res:any)=>{
    
       res.tracks.forEach((element:any) => {
         const single:IACard={

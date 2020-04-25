@@ -1,14 +1,14 @@
 <div  >            
     
     <div class="container-fluid bg-1" 
-    *ngIf= "artistinfo" [ngStyle] ="{'background':' linear-gradient(to top, #121212,70%, transparent),url('+ artistinfo.img +') no-repeat center'}" >
+    *ngIf= "artistInfo" [ngStyle] ="{'background':' linear-gradient(to top, #121212,70%, transparent),url('+ artistInfo.img +') no-repeat center'}" >
  
         <span class="spancontent" >449,856  Monthly Listeners</span>
-        <h1 class="ArtistName"   >{{artistinfo.name}}</h1>
+        <h1 class="ArtistName"   >{{artistInfo.name}}</h1>
         <div class="buttonContainer ">
             
-            <button class="button-scss b"  type="button" (click)=PLay()>{{ispalyed?'Play':'Pause'}}</button>
-            <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isfollowed ? 'white':'#1fa14d' " type="button"  (click)="Follow()" >{{isfollowed?'Follow':'unFollow'}}</button>
+            <button class="button-scss b"  type="button" (click)=PLay()>{{isPalyed?'Play':'Pause'}}</button>
+            <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? 'white':'#1fa14d' " type="button"  (click)="Follow()" >{{isFollowed?'Follow':'unFollow'}}</button>
             <div  style="display: inline;">
                 <button type="button" title="More" class="moreButton">...</button>
 

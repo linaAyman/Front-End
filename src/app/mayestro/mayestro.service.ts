@@ -28,24 +28,7 @@ export class MayestroService {
   getSeeAll(name){
     return this.httpClient.get(this.auth.URL+`/home/${name}`);
   }
-  getArtist(id){
-    return this.httpClient.get(this.auth.URL+`/artists/${id}`);
-  }
-  getAboutArtist(id){
-    return this.httpClient.get(this.auth.URL+`/artists/${id}/about`);
-  }
-  getArtistTopTracks(id){
-    return this.httpClient.get(this.auth.URL+`/artists/${id}/top-tracks`)
-  }
-  getArtistAlbums(id){
-    return this.httpClient.get(this.auth.URL+`/artists/${id}/albums`)
-  }
-  getArtistSingles(id){
-    return this.httpClient.get(this.auth.URL+`/artists/${id}/singles`)
-  }
-  getRelatedArtists(id){
-    return this.httpClient.get(this.auth.URL+`/artists/${id}/related-artists`)
-  }
+  
   getUser(id){
     return this.httpClient.get(this.auth.URL+`/users/${id}`)
   }

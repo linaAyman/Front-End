@@ -17,17 +17,15 @@ export class UserProfileComponent implements OnInit {
     name:""
   };
   image:any;
-  playlistarray:Array<ICard>=[];
+  playListArray:Array<ICard>=[];
   constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
 
   ngOnInit() {
     this.route.params.subscribe(p=>{
       this.id=p['id'];
-   
     })
 
     this.mystro.getUser(this.id).subscribe((res:any)=>{
-     
       this.user.name=res.name;
       this.user.image=res.image;
     })
@@ -41,7 +39,7 @@ export class UserProfileComponent implements OnInit {
           ID: element.id,
           type:"playlists"
         }
-        this.playlistarray.push(card);
+        this.playListArray.push(card);
       }
       );
     })

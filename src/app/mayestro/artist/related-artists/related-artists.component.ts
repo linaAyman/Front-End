@@ -1,3 +1,4 @@
+import { ArtistService } from './../artist.service';
 import { ICard } from './../../card/card.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +12,7 @@ import { MayestroService } from '../../mayestro.service';
 export class RelatedArtistsComponent implements OnInit {
  id:any;
  relaredArray:Array<ICard>=[];
-  constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
+  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
   ngOnInit() {
     this.route.params.subscribe(param => {
@@ -19,7 +20,7 @@ export class RelatedArtistsComponent implements OnInit {
 
     });
 
-    this.mystro.getRelatedArtists(this.id).subscribe((res: any) => {
+    this.artist.getRelatedArtists(this.id).subscribe((res: any) => {
       
       res.artists.forEach((element:any) => {
         const card:ICard={
