@@ -121,6 +121,23 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#artistInfo">artistInfo</a>
+                            </li>
+                            <li>
+                                <a href="#id">id</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -151,15 +168,57 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, artist: <a href="../injectables/ArtistService.html">ArtistService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:13</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>artist</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArtistService.html" target="_self" >ArtistService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -195,8 +254,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -213,12 +272,75 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="artistInfo"></a>
+                        <span class="name">
+                            <b>
+                            artistInfo</b>
+                            <a href="#artistInfo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <span class="name">
+                            <b>
+                            id</b>
+                            <a href="#id"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ArtistService } from &#x27;./../artist.service&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { MayestroService } from &#x27;../../mayestro.service&#x27;;
 
 @Component({
   selector: &#x27;app-about-artist&#x27;,
@@ -226,10 +348,18 @@
   styleUrls: [&#x27;./about-artist.component.css&#x27;]
 })
 export class AboutArtistComponent implements OnInit {
-
-  constructor() { }
+  artistInfo:any;
+  id:any;
+  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(param &#x3D;&gt; {
+      this.id &#x3D; param[&quot;id&quot;];
+    });
+    
+    this.artist.getAboutArtist(this.id).subscribe((res:any)&#x3D;&gt;{
+      this.artistInfo&#x3D;res.about;
+    })
   }
 
 }
@@ -240,15 +370,10 @@ export class AboutArtistComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;margin-bottom:70px&quot;&gt;
     &lt;!-- &lt;app-artist-header&gt;&lt;/app-artist-header&gt; --&gt;
     &lt;div style&#x3D;&quot; margin: 24px,8px; padding-left: 24px; color: white;&quot;&gt;
-        &lt;div class&#x3D;&quot;row&quot; &gt;
+        &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top: -20px;&quot;&gt;
             &lt;div class&#x3D;&quot;col-8&quot; style&#x3D;&quot;padding-right: 50px;&quot; &gt;
-              &lt;h2 style&#x3D;&quot;height: 11px;&quot;&gt;Biography&lt;/h2&gt;
-              &lt;p class&#x3D;&quot;spancontent&quot;&gt;London is the most populous city in the United Kingdom,
-              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,
-              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,
-              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,
-              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,
-              with a metropolitan area of over 13 million inhabitants.&lt;/p&gt;
+              &lt;h2 style&#x3D;&quot;height: 11px; &quot;&gt;Biography&lt;/h2&gt;
+              &lt;p class&#x3D;&quot;spancontent&quot;&gt;{{artistInfo}}&lt;/p&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;col-sm-2&quot;&gt;
               &lt;h2 style&#x3D;&quot;height: 11px; &quot;&gt;Where people listen&lt;/h2&gt;
@@ -322,8 +447,8 @@ export class AboutArtistComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="margin-bottom:70px">    <!-- <app-artist-header></app-artist-header> -->    <div style=" margin: 24px,8px; padding-left: 24px; color: white;">        <div class="row" >            <div class="col-8" style="padding-right: 50px;" >              <h2 style="height: 11px;">Biography</h2>              <p class="spancontent">London is the most populous city in the United Kingdom,              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,              with a metropolitan area of over 13 million inhabitants.London is the most populous city in the United Kingdom,              with a metropolitan area of over 13 million inhabitants.</p>            </div>            <div class="col-sm-2">              <h2 style="height: 11px; ">Where people listen</h2>              <div style=" margin-top: 32px; margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>                                     </div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+        var COMPONENT_TEMPLATE = '<div><div style="margin-bottom:70px">    <!-- <app-artist-header></app-artist-header> -->    <div style=" margin: 24px,8px; padding-left: 24px; color: white;">        <div class="row" style="margin-top: -20px;">            <div class="col-8" style="padding-right: 50px;" >              <h2 style="height: 11px; ">Biography</h2>              <p class="spancontent">{{artistInfo}}</p>            </div>            <div class="col-sm-2">              <h2 style="height: 11px; ">Where people listen</h2>              <div style=" margin-top: 32px; margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>                                     </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AboutArtistComponent'};
 </script>

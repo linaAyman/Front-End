@@ -24,6 +24,11 @@ export class ProfileComponent implements OnInit {
   log(x){
     console.log(x);
   }
+  /**
+   * submit function to get input to edit user's data
+   * 
+   * @param f form value to send to server
+   */
   submit(f){
     if(f.dirty){
       this.email=f.value.email;
@@ -43,7 +48,9 @@ export class ProfileComponent implements OnInit {
   constructor(private service:UserService,private assets:AssetsService) { 
    
   }
-
+/**
+ * contains functions of http requests to get user data 
+ */
   ngOnInit() {
     this.days=this.assets.days();
     this.months=this.assets.months();

@@ -201,7 +201,6 @@ import { ReactiveFormsModule } from &quot;@angular/forms&quot;;
 import { fakeBackendProvider } from &quot;./shared/mock-server/mock-server.service&quot;;
 import { BrowserAnimationsModule } from &quot;@angular/platform-browser/animations&quot;;
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -209,7 +208,7 @@ import { BrowserAnimationsModule } from &quot;@angular/platform-browser/animatio
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers:[fakeBackendProvider],
   bootstrap: [AppComponent]

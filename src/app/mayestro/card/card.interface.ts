@@ -1,5 +1,7 @@
-import { Url } from 'url';
 
+/**
+ * Card Interface 
+ */
 export class ICard{
     name: string;
     description: string;

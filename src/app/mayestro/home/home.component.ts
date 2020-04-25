@@ -8,15 +8,22 @@ import { MayestroService } from '../mayestro.service';
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"]
 })
+/** Hoe Component class */
 export class HomeComponent implements OnInit {
+  /** categories array of type ICategory interface */
   categories:Array<ICategory>=[];
+  /** category of tyoe ICategory */
   c:ICategory;
-  // playlists=Array<IPlaylist>;
+  
   constructor(private mystro:MayestroService) {
 
   }
 
+/**
+ * get categories from the server,then pushing each category in categories array based on their type
+ */
   ngOnInit() {
+    
     this.mystro.getHome().subscribe((res:any)=>{
       res.Home.forEach((ctg:any)=>{
        let cards,type:any;

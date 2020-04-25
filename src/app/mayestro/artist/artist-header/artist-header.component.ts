@@ -34,11 +34,9 @@ export class ArtistHeaderComponent implements OnInit {
       this.isFollowed=res.isFollowed;
       
     });
-    
-    
-
   }
-  /**   
+
+  /**
    * change follow button label
    */
 
@@ -50,8 +48,8 @@ export class ArtistHeaderComponent implements OnInit {
   }
 
   /**
-   *change play button label 
-  */
+   * change play button label 
+   */
 
   PLay(){
     

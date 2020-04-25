@@ -3,6 +3,9 @@ import { AssetsService } from "src/app/shared/assets/assets.service";
 import { AccountMayestroService } from "../account-mayestro.service";
 import { ActivatedRoute, Router } from "@angular/router";
 
+/**
+ * component decoretor
+ */
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.component.html",
@@ -42,6 +45,7 @@ export class SignupComponent implements OnInit {
    *
    * @param assets assets service that include helper method to generat array of MonthNames
    * @param accService account service that send requests to server
+   * @param route router object
    */
   constructor(
     private assets: AssetsService,
@@ -56,6 +60,10 @@ export class SignupComponent implements OnInit {
     this.monthNames = this.assets.Monthes();
   }
 
+  /**
+   * check if user email used befor or not
+   * @param email user email
+   */
   checkEmail(email) {
     this.accService.checkEmailExist(email).subscribe(
       res => (this.mailExist = ""),
@@ -67,7 +75,6 @@ export class SignupComponent implements OnInit {
    * disabled signup button if validations == false
    * @param f form value
    */
-
   invalid(f) {
     return !(
       f.valid &&

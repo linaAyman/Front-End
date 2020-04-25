@@ -22,10 +22,1347 @@ export class MockServerService implements HttpInterceptor {
   users: any;
   hashId = [];
   albums: any;
-  tracks: any;
   playlists: any;
   mytracks: any;
+  categories: any;
   constructor() {
+    this.categories = {
+      Home: [
+        {
+          playlists: [
+            {
+              type: "playlist",
+              description: "Some Comfort Tracks to relax",
+              id: "4qrimFUz8KFC8W6WrDiDnd",
+              image:
+                "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+              name: "Comfort Zone",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "Relax your Mind",
+              id: "4qrimFUz8KFC8W6WrDiDne",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+              name: "Relaxtion",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "get a Peacful Mind with our playlist",
+              id: "4qrimFUz8KFC8W6WrDiDnf",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+              name: "Peacful Mind",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "Take A Rest",
+              id: "4qrimFUz8KFC8W6WrDiDnf",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+              name: "Rest",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "Make a good and Sweet Moments",
+              id: "4qrimFUz8KFC8W6WrDiDng",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+              name: "Sweet Moments",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "Good hours to spend with music",
+              id: "4qrimFUz8KFC8W6WrDiDnh",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+              name: "Sweet Moments",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "Time to chill out with perfect songs",
+              id: "4qrimFUz8KFC8W6WrDiDni",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+              name: "chill songs",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "get yourself some energy",
+              id: "4qrimFUz8KFC8W6WrDiDnj",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+              name: "Energy",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "get yourself some energy",
+              id: "4qrimFUz8KFC8W6WrDiDnh",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+              name: "Energy",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "playlist",
+              description: "New Songs Exclusive Happy and chill",
+              id: "4qrimFUz8KFC8W6WrDiDma",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+              name: "Moments",
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          name: "Chill"
+        },
+        {
+          playlists: [
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "New Songs Exclusive Happy and chill",
+              id: "4qrimFUz8KFC8W6WrDiDma",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+              name: "Moments"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "get yourself some energy",
+              id: "4qrimFUz8KFC8W6WrDiDnj",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+              name: "Energy"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "Time to chill out with perfect songs",
+              id: "4qrimFUz8KFC8W6WrDiDni",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+              name: "chill songs"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "May be Happy now",
+              id: "4qrimFUz8KFC8W6WrDiDmf",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0205559264ebef3889709826cf",
+              name: "HAPPY PERSON"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "do some excerise",
+              id: "4qrimFUz8KFC8W6WrDiDme",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
+              name: "Sport Music"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "New Songs Mood Adjust ",
+              id: "4qrimFUz8KFC8W6WrDiDmb",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+              name: "Keep Up"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description:
+                "playlist from the including all songs in if i stay movie",
+              id: "4qrimQUz8KFC8W6WrDiDnc",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+              name: "If i stay(soundtrack)"
+            }
+          ],
+          name: "WorkOut"
+        },
+        {
+          playlists: [
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "New Songs Mood Adjust ",
+              id: "4qrimFUz8KFC8W6WrDiDmb",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+              name: "Keep Up"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "do some excerise",
+              id: "4qrimFUz8KFC8W6WrDiDme",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
+              name: "Sport Music"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "get yourself some energy",
+              id: "4qrimFUz8KFC8W6WrDiDnj",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+              name: "Energy"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "Some Comfort Tracks to relax",
+              id: "4qrimFUz8KFC8W6WrDiDnd",
+              image:
+                "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+              name: "Comfort Zone"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "playlist Exclusive Amr Diab",
+              id: "4qrimFUz8KFC8W6WrDiDnc",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+              name: "New Songs Amr Diab"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "Relax your Mind",
+              id: "4qrimFUz8KFC8W6WrDiDne",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+              name: "Relaxtion"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "get yourself some energy",
+              id: "4qrimFUz8KFC8W6WrDiDnh",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+              name: "Energy"
+            }
+          ],
+          name: "Happy"
+        },
+        {
+          playlists: [
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "get a Peacful Mind with our playlist",
+              id: "4qrimFUz8KFC8W6WrDiDnf",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
+              name: "Peacful Mind"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "May be Happy now",
+              id: "4qrimFUz8KFC8W6WrDiDmf",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0205559264ebef3889709826cf",
+              name: "HAPPY PERSON"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "New Songs Exclusive Happy and chill",
+              id: "4qrimFUz8KFC8W6WrDiDma",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
+              name: "Moments"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "do some excerise",
+              id: "4qrimFUz8KFC8W6WrDiDme",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
+              name: "Sport Music"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "Take A Rest",
+              id: "4qrimFUz8KFC8W6WrDiDnf",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+              name: "Rest"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              owner: [
+                {
+                  name: "me"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              type: "playlist",
+              description: "get yourself some energy",
+              id: "4qrimFUz8KFC8W6WrDiDnh",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
+              name: "Energy"
+            }
+          ],
+          description: "Most popular around world",
+          name: "Most Popular Playlists"
+        },
+        {
+          albums: [
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              artists: [
+                {
+                  id: "7H55rcKCfwqkyDFH9wpKM6",
+                  name: "Christina Perri"
+                }
+              ],
+              type: "album",
+              id: "3xl0OvcSlc9Mwe5ToaFtD3",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
+              name: "songs for carmella: lullabies & sing-a-longs"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              artist: [
+                {
+                  name: "amrdiab"
+                }
+              ],
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              artists: [
+                {
+                  id: "04gDigrS5kc9YWfZHwBETP",
+                  name: "Marron 5"
+                }
+              ],
+              type: "album",
+              id: "75iQSBSaztFIAun9qLLCnb",
+              image:
+                "https://i.scdn.co/image/ab67616d00001e0234ce9a9dde9c057225509276",
+              name: "Girls Like You (feat. Cardi B)"
+            }
+          ],
+          description: "Newest Albums Released with your artits",
+          name: "Released Albums"
+        },
+        {
+          artists: [
+            {
+              type: "artist",
+              id: "3xl0OvcSlc9Mwe5ToaFtD3",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+              name: "Amr Diab"
+            },
+            {
+              type: "artist",
+              id: "75iQSBSaztFIAun9qLLCnb",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b2732b737b0411be58583293e17e",
+              name: "Tamer Hosni"
+            }
+          ],
+          description: "Artists",
+          name: "popular Artists"
+        }
+      ]
+    };
     this.users = [
       {
         _id: "1234567890",
@@ -55,6 +1392,30 @@ export class MockServerService implements HttpInterceptor {
           {
             name: "me"
           }
+        ],
+        tracks: [
+          {
+            name: "amarain",
+            trackNumber: 1,
+            id: 1,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          },
+          {
+            name: "sahran",
+            trackNumber: 2,
+            id: 2,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          }
         ]
       }
     ];
@@ -73,34 +1434,33 @@ export class MockServerService implements HttpInterceptor {
           {
             name: "amrdiab"
           }
+        ],
+        tracks: [
+          {
+            name: "amarain",
+            trackNumber: 1,
+            id: 1,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          },
+          {
+            name: "sahran",
+            trackNumber: 2,
+            id: 2,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          }
         ]
       }
     ];
-    this.tracks = [
-      {
-        name: "amarain",
-        trackNumber: 1,
-        id: 1,
-        duration: 2,
-        artists: [
-          {
-            name: "amrdiab"
-          }
-        ]
-      },
-      {
-        name: "sahran",
-        trackNumber: 2,
-        id: 2,
-        duration: 2,
-        artists: [
-          {
-            name: "amrdiab"
-          }
-        ]
-      }
-    ];
-
     this.mytracks = [
       {
         artists: [
@@ -141,13 +1501,12 @@ export class MockServerService implements HttpInterceptor {
     let users = this.users;
     let hashId = this.hashId;
     let albums = this.albums;
-    let tracks = this.tracks;
     let playlists = this.playlists;
     let mytracks = this.mytracks;
+    let categories = this.categories;
 
     const { url, method, headers, body } = request;
 
-    console.log(url);
     // wrap in delayed observable to simulate server api call
     return of(null)
       .pipe(mergeMap(handleRoute))
@@ -163,7 +1522,7 @@ export class MockServerService implements HttpInterceptor {
           return signup();
         case url.endsWith("/home") && method === "GET":
           return home();
-        case url.match(/\/home\/\S+$/) && method === "GET":
+        case url.match(/\/home\/[\S\s]+$/) && method === "GET":
           return seeAll();
         case url.match(
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
@@ -173,6 +1532,8 @@ export class MockServerService implements HttpInterceptor {
           /\/user\/forgetPassword\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
         ) && method === "GET":
           return forgetPassword();
+        case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
+          return viewtracks();
         case url.match(/\/albums\/\S+$/) && method === "GET":
           return viewalbum();
         case url.match(/\/artists\/\S+\/about$/) && method === "GET":
@@ -192,12 +1553,11 @@ export class MockServerService implements HttpInterceptor {
         case url.match(/\/users\/\S+$/) && method === "GET":
           return getUser();
          
-        case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
+        // case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
+        case url.match(/\/playlist\/\S+\/tracks$/) && method === "GET":
           return viewtracks();
         case url.match(/\/playlist\/\S+$/) && method === "GET":
           return viewplaylist();
-        case url.match(/\/playlist\/\S+\/tracks$/) && method === "GET":
-          return viewtracks();
         case url.endsWith("/user/profile") && method === "GET":
           return viewuser();
         case url.endsWith("/user/editprofile") && method === "PUT":
@@ -208,35 +1568,37 @@ export class MockServerService implements HttpInterceptor {
           return changePassword();
         case url.match(/\/playlist\/\S+\/tracks$/) && method === "GET":
           return track();
-        //     case url.endsWith('/users/authenticate') && method === 'POST':
-        //         return authenticate();
-        //     case url.endsWith('/users') && method === 'GET':
-        //         return getUsers();
-        //     case url.match(/\/users\/\d+$/) && method === 'GET':
-        //         return getUserById();
-        //     case url.match(/\/users\/\d+$/) && method === 'DELETE':
-        //         return deleteUser();
-        //     default:
-        //         // pass through any requests not handled above
-        // return next.handle(request);
       }
     }
 
     function viewplaylist() {
-      console.log("album");
       const id = idFromUrl();
-      const playlist = playlists.find(al => al._id === id);
+      let playlist;
+      categories.Home.forEach(cat => {
+        if (cat.playlists) {
+          cat.playlists.forEach(pl => {
+            if (pl.id === id) playlist = pl;
+          });
+        }
+      });
       if (playlist) return ok(playlist);
-      return error("no album found with this id");
+      return error("no playlist found with this id");
     }
 
     function viewalbum() {
-      console.log("her");
       const id = idFromUrl();
-      const album = albums.find(al => al._id === id);
+      let album;
+      categories.Home.forEach(cat => {
+        if (cat.albums) {
+          cat.albums.forEach(pl => {
+            if (pl.id === id) album = pl;
+          });
+        }
+      });
       if (album) return ok(album);
       return error("no album found with this id");
     }
+
     function edituser() {
       //if(!isLoggedIn()) return unauthorized();
 
@@ -245,12 +1607,22 @@ export class MockServerService implements HttpInterceptor {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
       });
     }
+
     function viewtracks() {
-      const id = idFromUrl();
-      const album = albums.find(al => al._id === id);
-      if (album) return ok(tracks);
-      return error("no album found with this id");
+      const idUrl = url.split("/");
+      const type = idUrl[idUrl.length - 3];
+      const id = idUrl[idUrl.length - 2];
+      if (type === "albums") {
+        const album = albums.find(al => al._id === id);
+        if (album) return ok(album.tracks);
+        return error("no album found with this idd");
+      } else {
+        const playlist = playlists.find(al => al._id === id);
+        if (playlist) return ok(playlist.tracks);
+        return error("no playlist found with this idd");
+      }
     }
+
     function viewuser() {
       //if(!isLoggedIn()) return unauthorized();
       return ok(users[0]);
@@ -267,8 +1639,8 @@ export class MockServerService implements HttpInterceptor {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
       });
     }
+
     function signup() {
-      console.log(body);
       let { email, password, name, gender, birthDate } = body;
       switch (gender) {
         case 0:
@@ -300,12 +1672,14 @@ export class MockServerService implements HttpInterceptor {
         });
       }
     }
+
     function checkEmail() {
       const urlSplit = url.split("/");
       const email = urlSplit[urlSplit.length - 1];
       const user = users.find(user => user.email === email);
       return user ? error("user Exist") : ok();
     }
+
     function forgetPassword() {
       const email = idFromUrl();
       let user = users.find(user => user.email === email);
@@ -313,22 +1687,20 @@ export class MockServerService implements HttpInterceptor {
         const hash = String(Math.floor(Math.random() * 100000000000));
         const _id = user._id;
         hashId.push({ hash, _id });
-        console.log(hashId);
         return ok({ hash });
       }
       return error("no user");
     }
+
     function resetPassword() {
       const { newPassword, confirmedPassword } = body;
       if (newPassword !== confirmedPassword)
         return error("passwords not match");
       const hash = url.split("=")[1];
-      console.log(hashId, hash);
       const checkHashExists = hashId.find(h => h.hash == hash);
       if (checkHashExists) {
         const user = users.find(user => user._id === checkHashExists._id);
         user.password = newPassword;
-        console.log(users);
         return ok({
           token:
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
@@ -336,6 +1708,7 @@ export class MockServerService implements HttpInterceptor {
       }
       return error("no hash key matchs");
     }
+
     function changePassword() {
       if (!isLoggedIn()) return unauthorized();
       const { oldPassword, newPassword, confirmedPassword } = body;
@@ -348,384 +1721,17 @@ export class MockServerService implements HttpInterceptor {
       user.password = newPassword;
       return ok();
     }
+
     function home() {
-      const categories = {
-        Home: [
-          {
-            playlists: [
-              {
-                type: "playlist",
-                description: "Some Comfort Tracks to relax",
-                id: "4qrimFUz8KFC8W6WrDiDnd",
-                image:
-                  "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
-                name: "Comfort Zone"
-              },
-              {
-                type: "playlist",
-                description: "Relax your Mind",
-                id: "4qrimFUz8KFC8W6WrDiDne",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
-                name: "Relaxtion"
-              },
-              {
-                type: "playlist",
-                description: "get a Peacful Mind with our playlist",
-                id: "4qrimFUz8KFC8W6WrDiDnf",
-                image:
-                  "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
-                name: "Peacful Mind"
-              },
-              {
-                type: "playlist",
-                description: "Take A Rest",
-                id: "4qrimFUz8KFC8W6WrDiDnf",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
-                name: "Rest"
-              },
-              {
-                type: "playlist",
-                description: "Make a good and Sweet Moments",
-                id: "4qrimFUz8KFC8W6WrDiDng",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
-                name: "Sweet Moments"
-              },
-              {
-                type: "playlist",
-                description: "Good hours to spend with music",
-                id: "4qrimFUz8KFC8W6WrDiDnh",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-                name: "Sweet Moments"
-              },
-              {
-                type: "playlist",
-                description: "Time to chill out with perfect songs",
-                id: "4qrimFUz8KFC8W6WrDiDni",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-                name: "chill songs"
-              }
-            ],
-            name: "Chill"
-          },
-          {
-            playlists: [
-              {
-                type: "playlist",
-                description: "New Songs Exclusive Happy and chill",
-                id: "4qrimFUz8KFC8W6WrDiDma",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
-                name: "Moments"
-              },
-              {
-                type: "playlist",
-                description: "get yourself some energy",
-                id: "4qrimFUz8KFC8W6WrDiDnj",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
-                name: "Energy"
-              },
-              {
-                type: "playlist",
-                description: "Time to chill out with perfect songs",
-                id: "4qrimFUz8KFC8W6WrDiDni",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-                name: "chill songs"
-              },
-              {
-                type: "playlist",
-                description: "May be Happy now",
-                id: "4qrimFUz8KFC8W6WrDiDmf",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0205559264ebef3889709826cf",
-                name: "HAPPY PERSON"
-              },
-              {
-                type: "playlist",
-                description: "do some excerise",
-                id: "4qrimFUz8KFC8W6WrDiDme",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
-                name: "Sport Music"
-              },
-              {
-                type: "playlist",
-                description: "New Songs Mood Adjust ",
-                id: "4qrimFUz8KFC8W6WrDiDmb",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
-                name: "Keep Up"
-              },
-              {
-                type: "playlist",
-                description:
-                  "playlist from the including all songs in if i stay movie",
-                id: "4qrimQUz8KFC8W6WrDiDnc",
-                image:
-                  "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
-                name: "If i stay(soundtrack)"
-              }
-            ],
-            name: "WorkOut"
-          },
-          {
-            playlists: [
-              {
-                type: "playlist",
-                description: "New Songs Mood Adjust ",
-                id: "4qrimFUz8KFC8W6WrDiDmb",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
-                name: "Keep Up"
-              },
-              {
-                type: "playlist",
-                description: "do some excerise",
-                id: "4qrimFUz8KFC8W6WrDiDme",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
-                name: "Sport Music"
-              },
-              {
-                type: "playlist",
-                description: "get yourself some energy",
-                id: "4qrimFUz8KFC8W6WrDiDnj",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
-                name: "Energy"
-              },
-              {
-                type: "playlist",
-                description: "Some Comfort Tracks to relax",
-                id: "4qrimFUz8KFC8W6WrDiDnd",
-                image:
-                  "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
-                name: "Comfort Zone"
-              },
-              {
-                type: "playlist",
-                description: "playlist Exclusive Amr Diab",
-                id: "4qrimFUz8KFC8W6WrDiDnc",
-                image:
-                  "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
-                name: "New Songs Amr Diab"
-              },
-              {
-                type: "playlist",
-                description: "Relax your Mind",
-                id: "4qrimFUz8KFC8W6WrDiDne",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
-                name: "Relaxtion"
-              },
-              {
-                type: "playlist",
-                description: "get yourself some energy",
-                id: "4qrimFUz8KFC8W6WrDiDnh",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
-                name: "Energy"
-              }
-            ],
-            name: "Happy"
-          },
-          {
-            playlists: [
-              {
-                type: "playlist",
-                description: "get a Peacful Mind with our playlist",
-                id: "4qrimFUz8KFC8W6WrDiDnf",
-                image:
-                  "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
-                name: "Peacful Mind"
-              },
-              {
-                type: "playlist",
-                description: "May be Happy now",
-                id: "4qrimFUz8KFC8W6WrDiDmf",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0205559264ebef3889709826cf",
-                name: "HAPPY PERSON"
-              },
-              {
-                type: "playlist",
-                description: "New Songs Exclusive Happy and chill",
-                id: "4qrimFUz8KFC8W6WrDiDma",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
-                name: "Moments"
-              },
-              {
-                type: "playlist",
-                description: "do some excerise",
-                id: "4qrimFUz8KFC8W6WrDiDme",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0241e9614560815b11c1ca543d",
-                name: "Sport Music"
-              },
-              {
-                type: "playlist",
-                description: "Take A Rest",
-                id: "4qrimFUz8KFC8W6WrDiDnf",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
-                name: "Rest"
-              },
-              {
-                type: "playlist",
-                description: "get yourself some energy",
-                id: "4qrimFUz8KFC8W6WrDiDnh",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
-                name: "Energy"
-              }
-            ],
-            description: "Most popular around world",
-            name: "Most Popular Playlists"
-          },
-          {
-            albums: [
-              {
-                artists: [
-                  {
-                    id: "7H55rcKCfwqkyDFH9wpKM6",
-                    name: "Christina Perri"
-                  }
-                ],
-                type: "album",
-                id: "3xl0OvcSlc9Mwe5ToaFtD3",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
-                name: "songs for carmella: lullabies & sing-a-longs"
-              },
-              {
-                artists: [
-                  {
-                    id: "04gDigrS5kc9YWfZHwBETP",
-                    name: "Marron 5"
-                  }
-                ],
-                type: "album",
-                id: "75iQSBSaztFIAun9qLLCnb",
-                image:
-                  "https://i.scdn.co/image/ab67616d00001e0234ce9a9dde9c057225509276",
-                name: "Girls Like You (feat. Cardi B)"
-              }
-            ],
-            description: "Newest Albums Released with your artits",
-            name: "Released Albums"
-          },
-          {
-            artists: [
-              {
-                type: "artist",
-                id: "3xl0OvcSlc9Mwe5ToaFtD3",
-                image:
-                  "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
-                name: "Amr Diab"
-              },
-              {
-                type: "artist",
-                id: "75iQSBSaztFIAun9qLLCnb",
-                image:
-                  "https://i.scdn.co/image/ab67616d0000b2732b737b0411be58583293e17e",
-                name: "Tamer Hosni"
-              }
-            ],
-            description: "Artists",
-            name: "popular Artists"
-          }
-        ]
-      };
       return ok(categories);
     }
 
     function seeAll() {
-      const category = {
-        category: {
-          playlists: [
-            {
-              description: "Some Comfort Tracks to relax",
-              id: "4qrimFUz8KFC8W6WrDiDnd",
-              image:
-                "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
-              name: "Comfort Zone"
-            },
-            {
-              description: "Relax your Mind",
-              id: "4qrimFUz8KFC8W6WrDiDne",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
-              name: "Relaxtion"
-            },
-            {
-              description: "get a Peacful Mind with our playlist",
-              id: "4qrimFUz8KFC8W6WrDiDnf",
-              image:
-                "https://i.scdn.co/image/ab67616d0000b273c7cd431638fcd90523df85c3",
-              name: "Peacful Mind"
-            },
-            {
-              description: "Take A Rest",
-              id: "4qrimFUz8KFC8W6WrDiDnf",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
-              name: "Rest"
-            },
-            {
-              description: "Make a good and Sweet Moments",
-              id: "4qrimFUz8KFC8W6WrDiDng",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
-              name: "Sweet Moments"
-            },
-            {
-              description: "Good hours to spend with music",
-              id: "4qrimFUz8KFC8W6WrDiDnh",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-              name: "Sweet Moments"
-            },
-            {
-              description: "Time to chill out with perfect songs",
-              id: "4qrimFUz8KFC8W6WrDiDni",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-              name: "chill songs"
-            },
-            {
-              description: "get yourself some energy",
-              id: "4qrimFUz8KFC8W6WrDiDnj",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
-              name: "Energy"
-            },
-            {
-              description: "get yourself some energy",
-              id: "4qrimFUz8KFC8W6WrDiDnh",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e023b52eca47232bedfbb5e9443",
-              name: "Energy"
-            },
-            {
-              description: "New Songs Exclusive Happy and chill",
-              id: "4qrimFUz8KFC8W6WrDiDma",
-              image:
-                "https://i.scdn.co/image/ab67616d00001e0225ba01b18a41bcc562209e42",
-              name: "Moments"
-            }
-          ],
-
-          name: "Chill"
-        }
-      };
-      return ok(category);
+      const name = idFromUrl()
+        .split("%20")
+        .join(" ");
+      let cat = categories.Home.find(cat => `'${cat.name}'` == name);
+      return ok({ category: cat });
     }
 
     function viewartist(){
@@ -1109,6 +2115,7 @@ export class MockServerService implements HttpInterceptor {
       if (track) return ok(track);
       return error("no track found with this id");
     }
+    // helper functions
 
     function ok(body?) {
       console.log("successMock");

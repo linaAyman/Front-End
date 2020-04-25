@@ -15,7 +15,9 @@ export class OverviewComponent implements OnInit {
   month
   year
   constructor(private service:UserService) { }
-
+/**
+ * contains functions of http requests to get user data 
+ */
   ngOnInit() {
     this.service.getEmail()
     .subscribe(

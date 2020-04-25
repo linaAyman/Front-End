@@ -25,6 +25,7 @@ import { SharedModule } from "../shared/shared.module";
 import { ForgetPasswordComponent } from "./forget-password/forget-password.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -45,10 +46,8 @@ import { ResetPasswordComponent } from "./reset-password/reset-password.componen
     HeaderComponent,
     ForgetPasswordComponent,
     ChangePasswordComponent,
-    ResetPasswordComponent
-    // GetPremiumComponent,
-    // GetPremiumHeaderComponent,
-    // ChangePlanComponent
+    ResetPasswordComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     CommonModule,

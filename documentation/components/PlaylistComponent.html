@@ -160,6 +160,9 @@
                                 <a href="#title">title</a>
                             </li>
                             <li>
+                                <a href="#totalTracks">totalTracks</a>
+                            </li>
+                            <li>
                                 <a href="#tracks">tracks</a>
                             </li>
                             <li>
@@ -212,7 +215,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -293,14 +296,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:72</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>function to change state of playlist to liked or not</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -332,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:31</a></div>
                 </td>
             </tr>
 
@@ -371,14 +376,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:80</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>function to change state of song to liked or not</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -654,11 +661,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="tracks"></a>
+                        <a name="totalTracks"></a>
                         <span class="name">
                             <b>
-                            tracks</b>
-                            <a href="#tracks"><span class="icon ion-ios-link"></span></a>
+                            totalTracks</b>
+                            <a href="#totalTracks"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -671,6 +678,27 @@
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tracks"></a>
+                        <span class="name">
+                            <b>
+                            tracks</b>
+                            <a href="#tracks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/mayestro/playlist/playlist.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -754,47 +782,62 @@ export class PlaylistComponent implements OnInit {
   id: any;
   type: any;
   imageURL: any;
-  tracks: number;
+  totalTracks: number;
+  tracks: [];
   constructor(
     private MayestroService: MayestroService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(param &#x3D;&gt; (this.id &#x3D; param[&quot;id&quot;]));
     this.route.params.subscribe(param &#x3D;&gt; {
-      this.type &#x3D; param[&quot;type&quot;];
-      if (this.type &#x3D;&#x3D; &quot;album&quot;) {
-        this.MayestroService.getAlbum(this.id).subscribe((data: any) &#x3D;&gt; {
-          this.title &#x3D; data.name;
-          this.date &#x3D; data.releaseDate;
-          this.artist &#x3D; data.artist[0].name;
-          this.imageURL &#x3D; data.image.url;
-          this.tracks &#x3D; data.totalTracks;
-          this.date &#x3D; new Date(this.date);
-          this.year &#x3D; this.date.getFullYear();
-        });
-      }
-      if (this.type &#x3D;&#x3D; &quot;playlist&quot;) {
-        this.MayestroService.getPlaylist(this.id).subscribe((data: any) &#x3D;&gt; {
-          this.title &#x3D; data.name;
-          this.date &#x3D; data.releaseDate;
-          this.artist &#x3D; data.owner[0].name;
-          this.imageURL &#x3D; data.image.url;
-          this.tracks &#x3D; data.totalTracks;
-          this.date &#x3D; new Date(this.date);
-          this.year &#x3D; this.date.getFullYear();
-        });
-      }
+      this.id &#x3D; param[&quot;id&quot;];
+      this.route.params.subscribe(param &#x3D;&gt; {
+        this.type &#x3D; param[&quot;type&quot;];
+        if (this.type &#x3D;&#x3D; &quot;album&quot;) {
+          this.MayestroService.getAlbum(this.id).subscribe((data: any) &#x3D;&gt; {
+            this.title &#x3D; data.name;
+            this.date &#x3D; data.releaseDate;
+            this.artist &#x3D; data.artists[0].name;
+            this.imageURL &#x3D; data.image;
+            this.totalTracks &#x3D; data.totalTracks;
+            this.date &#x3D; new Date(this.date);
+            this.year &#x3D; this.date.getFullYear();
+            this.MayestroService.getTracks(this.id).subscribe((res: any) &#x3D;&gt; {
+              this.tracks &#x3D; res;
+            });
+          });
+        }
+        if (this.type &#x3D;&#x3D; &quot;playlist&quot;) {
+          this.MayestroService.getPlaylist(this.id).subscribe((data: any) &#x3D;&gt; {
+            this.title &#x3D; data.name;
+            this.date &#x3D; data.releaseDate;
+            this.artist &#x3D; data.owner[0].name;
+            this.imageURL &#x3D; data.image;
+            this.totalTracks &#x3D; data.totalTracks;
+            this.date &#x3D; new Date(this.date);
+            this.year &#x3D; this.date.getFullYear();
+            this.MayestroService.getPlaylistTracks(this.id).subscribe(
+              (res: any) &#x3D;&gt; {
+                this.tracks &#x3D; res;
+              }
+            );
+          });
+        }
+      });
     });
   }
-
+/**
+ * function to change state of playlist to liked or not
+ */
   like() {
     console.log(&quot;liked&quot;);
     if (this.isLiked &#x3D;&#x3D; true) this.isLiked &#x3D; false;
     else this.isLiked &#x3D; true;
   }
-
+/**
+ * function to change state of song to liked or not
+ */
   play() {
     console.log(&quot;playing&quot;);
     if (this.isPlaying &#x3D;&#x3D; true) this.isPlaying &#x3D; false;
@@ -820,7 +863,7 @@ export class PlaylistComponent implements OnInit {
                         [style.-webkit-text-fill-color]&#x3D;&quot;isLiked ? &#x27;rgb(18,18,18)&#x27; : &#x27;rgb(25, 206, 88)&#x27; &quot;
                         [style.color]&#x3D;&quot;isLiked ? &#x27;white&#x27; : &#x27;rgb(25, 206, 88)&#x27; &quot; class&#x3D;&quot;fa fa-heart&quot;&gt;&lt;/i&gt;&lt;/button&gt;
                 &lt;button class&#x3D;&quot;more-button&quot; type&#x3D;&quot;button&quot;&gt;...&lt;/button&gt;
-                &lt;p style&#x3D;&quot;text-align: center; color: white&quot;&gt;{{year}} - {{tracks}} songs&lt;/p&gt;
+                &lt;p style&#x3D;&quot;text-align: center; color: white&quot;&gt;{{year}} - {{totalTracks}} songs&lt;/p&gt;
             &lt;/div&gt;
 
         &lt;/div&gt;
@@ -927,8 +970,8 @@ i {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="main-view">    <div class="row">        <div clas="col-6">            <div class="playlist-content">                <img style="height: 237px; width: 207px;" src={{imageURL}}>                <h2 style="color: white; text-align: center; width: 207px;">{{title}}</h2>                <a class="nav-link" style=" color: rgb(245, 245, 245); width: 207px;" href="#">{{artist}}</a>                <button class="play-button" type="button">Play</button>                <br>                <button class="like-button"><i (click)="like()"                        [style.-webkit-text-fill-color]="isLiked ? \'rgb(18,18,18)\' : \'rgb(25, 206, 88)\' "                        [style.color]="isLiked ? \'white\' : \'rgb(25, 206, 88)\' " class="fa fa-heart"></i></button>                <button class="more-button" type="button">...</button>                <p style="text-align: center; color: white">{{year}} - {{tracks}} songs</p>            </div>        </div>        <div class="col-6">            <app-track></app-track>            <div style="height: 75px;"></div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+        var COMPONENT_TEMPLATE = '<div><div class="main-view">    <div class="row">        <div clas="col-6">            <div class="playlist-content">                <img style="height: 237px; width: 207px;" src={{imageURL}}>                <h2 style="color: white; text-align: center; width: 207px;">{{title}}</h2>                <a class="nav-link" style=" color: rgb(245, 245, 245); width: 207px;" href="#">{{artist}}</a>                <button class="play-button" type="button">Play</button>                <br>                <button class="like-button"><i (click)="like()"                        [style.-webkit-text-fill-color]="isLiked ? \'rgb(18,18,18)\' : \'rgb(25, 206, 88)\' "                        [style.color]="isLiked ? \'white\' : \'rgb(25, 206, 88)\' " class="fa fa-heart"></i></button>                <button class="more-button" type="button">...</button>                <p style="text-align: center; color: white">{{year}} - {{totalTracks}} songs</p>            </div>        </div>        <div class="col-6">            <app-track></app-track>            <div style="height: 75px;"></div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PlaylistComponent'};
 </script>

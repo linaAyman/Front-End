@@ -79,6 +79,7 @@ import { SignupComponent } from &quot;./signup/signup.component&quot;;
 import { ForgetPasswordComponent } from &quot;./forget-password/forget-password.component&quot;;
 import { ResetPasswordComponent } from &quot;./reset-password/reset-password.component&quot;;
 import { ChangePasswordComponent } from &quot;./change-password/change-password.component&quot;;
+import { PrivacyPolicyComponent } from &quot;./privacy-policy/privacy-policy.component&quot;;
 
 const routes: Routes &#x3D; [
   {
@@ -92,7 +93,7 @@ const routes: Routes &#x3D; [
       { path: &quot;reset-password/:hashKey&quot;, component: ResetPasswordComponent },
       { path: &quot;forget-password&quot;, component: ForgetPasswordComponent },
       { path: &quot;change-password&quot;, component: ChangePasswordComponent },
-      { path:&quot;getpremium&quot;,component:GetPremiumComponent},
+      { path: &quot;privacy-and-policy&quot;, component: PrivacyPolicyComponent },
       { path: &quot;**&quot;, redirectTo: &quot;login&quot; }
     ]
   }

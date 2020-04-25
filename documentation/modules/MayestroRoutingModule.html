@@ -108,7 +108,7 @@ const routes: Routes &#x3D; [
         loadChildren: () &#x3D;&gt;
           &quot;import(&#x60;./artist/artist.module&#x60;).then(m &#x3D;&gt; m.ArtistModule)&quot;
       },
-      { path: &quot;profile&quot;, component: UserProfileComponent },
+      { path: &quot;profile/:id&quot;, component: UserProfileComponent },
       { path: &quot;**&quot;, component: NotFoundComponent }
     ]
   }

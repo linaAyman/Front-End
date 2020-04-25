@@ -107,6 +107,12 @@
                             <li>
                                 <a href="#getTracks">getTracks</a>
                             </li>
+                            <li>
+                                <a href="#getUser">getUser</a>
+                            </li>
+                            <li>
+                                <a href="#getUserPLaylist">getUserPLaylist</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -130,7 +136,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/mayestro/mayestro.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/mayestro/mayestro.service.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -207,14 +213,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:15</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>gets an album </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -223,6 +231,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -234,6 +243,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>album id</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -273,14 +286,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:46</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>get home categories</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -312,14 +327,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:31</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>gets a playlist </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -328,6 +345,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -339,6 +357,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>playlist id</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -378,8 +400,227 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>gets tacks of a playlist </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>playlist id</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSeeAll"></a>
+                    <span class="name">
+                        <b>
+                            getSeeAll
+                        </b>
+                        <a href="#getSeeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSeeAll(name)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>gets a category by its name</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>category name</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTracks"></a>
+                    <span class="name">
+                        <b>
+                            getTracks
+                        </b>
+                        <a href="#getTracks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTracks(id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="22"
                             class="link-to-prism">src/app/mayestro/mayestro.service.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>gets tacks of an album </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>album id</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUser"></a>
+                    <span class="name">
+                        <b>
+                            getUser
+                        </b>
+                        <a href="#getUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUser(id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:57</a></div>
                 </td>
             </tr>
 
@@ -426,92 +667,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getSeeAll"></a>
+                    <a name="getUserPLaylist"></a>
                     <span class="name">
                         <b>
-                            getSeeAll
+                            getUserPLaylist
                         </b>
-                        <a href="#getSeeAll"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getUserPLaylist"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getSeeAll(name)</code>
+<code>getUserPLaylist(id)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:28</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>name</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getTracks"></a>
-                    <span class="name">
-                        <b>
-                            getTracks
-                        </b>
-                        <a href="#getTracks"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getTracks(id)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/mayestro/mayestro.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -580,7 +755,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/mayestro/mayestro.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/mayestro/mayestro.service.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -593,35 +768,67 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { AuthService } from &#x27;../shared/services/auth.service&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { HttpClient } from &quot;@angular/common/http&quot;;
+import { AuthService } from &quot;../shared/services/auth.service&quot;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &quot;root&quot;
 })
 export class MayestroService {
-  id:any;
-  constructor(private httpClient: HttpClient, private auth:AuthService) { }
+  id: any;
+  constructor(private httpClient: HttpClient, private auth: AuthService) {}
+ /**
+  * gets an album 
+  * @param id  album id
+  */
+  getAlbum(id) {
+    return this.httpClient.get(this.auth.URL + &#x60;/albums/${id}&#x60;);
+  }
+  /**
+  * gets tacks of an album 
+  * @param id  album id
+  */
+  getTracks(id) {
+    console.log(&quot;aaaa&quot;);
+    return this.httpClient.get(this.auth.URL + &#x60;/albums/${id}/tracks&#x60;);
+  }
 
-  getAlbum(id){
-    return this.httpClient.get(this.auth.URL+&#x60;/albums/${id}&#x60;);
+   /**
+  * gets a playlist 
+  * @param id  playlist id
+  */
+  getPlaylist(id) {
+    return this.httpClient.get(this.auth.URL + &#x60;/playlist/${id}&#x60;);
   }
-  getTracks(id){
-    return this.httpClient.get(this.auth.URL+&#x60;/albums/${id}/tracks&#x60;);
+
+  /**
+  * gets tacks of a playlist 
+  * @param id  playlist id
+  */
+  getPlaylistTracks(id) {
+    return this.httpClient.get(this.auth.URL + &#x60;/playlist/1234/tracks&#x60;);
   }
-  getPlaylist(id){
-    return this.httpClient.get(this.auth.URL+&#x60;/playlist/${id}&#x60;);
+
+  /**
+   * get home categories
+   */
+  getHome() {
+    return this.httpClient.get(this.auth.URL + &quot;/home&quot;);
   }
-  getPlaylistTracks(id){
-    return this.httpClient.get(this.auth.URL+&#x60;/playlist/${id}/tracks&#x60;);
+  /**
+   * gets a category by its name
+   * @param name category name
+   */
+  getSeeAll(name) {
+    return this.httpClient.get(this.auth.URL + &#x60;/home/&#x27;${name}&#x27;&#x60;);
   }
-  getHome(){
-    return this.httpClient.get(this.auth.URL+&#x27;/home&#x27;);
+  
+  getUser(id){
+    return this.httpClient.get(this.auth.URL+&#x60;/users/${id}&#x60;)
   }
-  getSeeAll(name){
-    return this.httpClient.get(this.auth.URL+&#x60;/home/${name}&#x60;);
+  getUserPLaylist(id){
+    return this.httpClient.get(this.auth.URL+&#x60;/users/${id}/playlists&#x60;)
   }
 }
 </code></pre>

@@ -8,22 +8,35 @@ import{Router}from '@angular/router'
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })
+/**
+ * Header Cmponent class
+ */
 export class HeaderComponent implements OnInit, OnChanges {
   logIn: boolean;
   constructor(
-   
+   /**  loc property of type Location */
     private loc: Location,
+    /** auth proterty of type AuthService */
     private auth: AuthService,
+    /** Injecting AccountMayestroService */
     private acc: AccountMayestroService,
+    /** Injecting router class */
     public router: Router
     )
   {
     // console.log(loc.getState());
   }
   
+  /** 
+   * Check if the user is logged in or not
+   */
   loggedIn() {
     return this.auth.isLoggedIn();
   }
+
+  /**
+   * assign the logIn boolean to isLoggedIn property of AuthService
+   */
   ngOnInit() {
     this.loc.onUrlChange((res, state) => {
       console.log(res);
@@ -31,6 +44,9 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.logIn = this.auth.isLoggedIn();
   }
 
+  /**
+   * Testing the location class
+   */
   back() {
     this.loc.back();
   }

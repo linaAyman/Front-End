@@ -179,7 +179,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -260,14 +260,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>get the current category name
+call getSeeAll method to get the data from the server
+filter each category into playlists/albums/artists
+push filtered data into the cards array</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -308,10 +313,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Cards array of type ICard </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -335,10 +346,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:23</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>array of type any </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -363,17 +380,23 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-  type:&quot;&quot;,
-  name:&quot;&quot;
-}</code>
+    type: &quot;&quot;,
+    name: &quot;&quot;
+  }</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:16</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>category object includes the name and type of the current category </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -397,10 +420,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/mayestro/see-all/see-all.component.ts:14</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>properity represents the name of the category </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -410,80 +439,85 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { MayestroService } from &#x27;../mayestro.service&#x27;;
-import { ICard } from &#x27;../card/card.interface&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &quot;@angular/core&quot;;
+import { ActivatedRoute } from &quot;@angular/router&quot;;
+import { MayestroService } from &quot;../mayestro.service&quot;;
+import { ICard } from &quot;../card/card.interface&quot;;
 
 @Component({
-  selector: &#x27;app-see-all&#x27;,
-  templateUrl: &#x27;./see-all.component.html&#x27;,
-  styleUrls: [&#x27;./see-all.component.css&#x27;]
+  selector: &quot;app-see-all&quot;,
+  templateUrl: &quot;./see-all.component.html&quot;,
+  styleUrls: [&quot;./see-all.component.css&quot;]
 })
+/** See All Component class */
 export class SeeAllComponent implements OnInit {
-requestSeeAll:string;
-category&#x3D;{
-  type:&quot;&quot;,
-  name:&quot;&quot;
-}
-cards:Array&lt;ICard&gt;&#x3D;[];
-cardsArray:Array&lt;any&gt;;
-  constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
+  /** properity represents the name of the category */
+  requestSeeAll: string;
+  /** category object includes the name and type of the current category */
+  category &#x3D; {
+    type: &quot;&quot;,
+    name: &quot;&quot;
+  };
+  /** Cards array of type ICard */
+  cards: Array&lt;ICard&gt; &#x3D; [];
+  /** array of type any */
+  cardsArray: Array&lt;any&gt;;
+  constructor(private route: ActivatedRoute, private mystro: MayestroService) {}
 
+
+  /** 
+   *   get the current category name
+   *   call getSeeAll method to get the data from the server
+   *   filter each category into playlists/albums/artists
+   *   push filtered data into the cards array
+   */
   ngOnInit() {
-    this.route.params.subscribe(p&#x3D;&gt;{
-      this.requestSeeAll&#x3D;p[&#x27;name&#x27;];
-      console.log(p[&#x27;name&#x27;]);
+    this.route.params.subscribe(p &#x3D;&gt; {
+      this.requestSeeAll &#x3D; p[&quot;name&quot;];
+      console.log(p[&quot;name&quot;]);
       console.log(this.requestSeeAll);
-    })
-    this.mystro.getSeeAll(this.requestSeeAll).subscribe((res:any)&#x3D;&gt;{
-      this.category.name&#x3D;res.category.name;
-      if(res.category.playlists){
-        // console.log(res.category.playlists)
-        this.cardsArray&#x3D;res.category.playlists;
-        // console.log(this.cardsArray)
-        this.category.type&#x3D;&quot;playlists&quot;;
-      }
-     else if(res.category.albums){
-      this.cardsArray&#x3D;res.category.albums;
-      this.category.type&#x3D;&quot;albums&quot;;
-     }
-     else if(res.category.artists){
-      this.cardsArray&#x3D;res.category.artists;
-      this.category.type&#x3D;&quot;artists&quot;;
-     }
-
-     console.log(this.cardsArray)
-    this.cardsArray.forEach((crd:any)&#x3D;&gt;{
-      console.log(crd)
-      let desc:string;
-      if(this.category.type&#x3D;&#x3D;&quot;playlists&quot;){
-        desc&#x3D;crd.description;
-      }
-      else if(this.category.type&#x3D;&#x3D;&quot;albums&quot;){
-        desc&#x3D;&#x27;&#x27;;
-        crd.artists.forEach(art&#x3D;&gt;{
-          desc+&#x3D;art.name+&#x27;,&#x27;
-        })
-        desc&#x3D;desc.slice(0,desc.length-1)
-      }
-      else if(this.category.type&#x3D;&#x3D;&quot;artists&quot;){
-        desc&#x3D;crd.artist_name;
-      }
-      const c:ICard&#x3D;{
-        name:crd.name,
-        description:desc,
-        imgUrl:crd.image,
-        ID:crd.id,
-        type:crd.type
-      }
-      this.cards.push(c);
-    })
-    console.log(this.cards)
+      this.mystro.getSeeAll(this.requestSeeAll).subscribe((res: any) &#x3D;&gt; {
+        this.category.name &#x3D; res.category.name;
+        if (res.category.playlists) {
+          this.cardsArray &#x3D; res.category.playlists;
+          this.category.type &#x3D; &quot;playlists&quot;;
+        } 
+        else if (res.category.albums) {
+          this.cardsArray &#x3D; res.category.albums;
+          this.category.type &#x3D; &quot;albums&quot;;
+        } 
+        else if (res.category.artists) {
+          this.cardsArray &#x3D; res.category.artists;
+          this.category.type &#x3D; &quot;artists&quot;;
+        }
+        this.cardsArray.forEach((crd: any) &#x3D;&gt; {
+          let desc: string;
+          if (this.category.type &#x3D;&#x3D; &quot;playlists&quot;) {
+            desc &#x3D; crd.description;
+          } 
+          else if (this.category.type &#x3D;&#x3D; &quot;albums&quot;) {
+            desc &#x3D; &quot;&quot;;
+            crd.artists.forEach(art &#x3D;&gt; {
+              desc +&#x3D; art.name + &quot;,&quot;;
+            });
+            desc &#x3D; desc.slice(0, desc.length - 1);
+          }
+           else if (this.category.type &#x3D;&#x3D; &quot;artists&quot;) {
+            desc &#x3D; crd.artist_name;
+          }
+          const c: ICard &#x3D; {
+            name: crd.name,
+            description: desc,
+            imgUrl: crd.image,
+            ID: crd.id,
+            type: crd.type
+          };
+          this.cards.push(c);
+        });
+        console.log(this.cards);
+      });
     });
-    
   }
-
 }
 </code></pre>
     </div>
@@ -568,7 +602,7 @@ cardsArray:Array&lt;any&gt;;
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="row m-5">    <div  class="catName">{{category.name}}</div></div><div class="px-4 txt">    <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let c of cards">        <app-card [card]="c"></app-card>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SeeAllComponent'};
 </script>

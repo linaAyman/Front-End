@@ -7,14 +7,19 @@ import { ICard } from '../card/card.interface';
   templateUrl: "./mini-card-viewer.component.html",
   styleUrls: ["./mini-card-viewer.component.css"]
 })
+/** Mini-Card-Viewer class */
 export class MiniCardViewerComponent implements OnInit {
  
-
+/**Input if type ICategory */
   @Input() category: ICategory;
+/** cards array of type ICard */
   cards:Array<ICard>=[];
   constructor() { }
 
-
+/** 
+ *  assign each playlist/album/artist into the cards array.
+ * Filter the description of each card based on the card type.
+*/
   ngOnInit() {
     this.category.cards.forEach((card)=>{
       let desc:string;
