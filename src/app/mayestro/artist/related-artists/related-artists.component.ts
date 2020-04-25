@@ -12,7 +12,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class RelatedArtistsComponent implements OnInit {
  id:any;
- relaredArray:Array<ICard>=[];
+ relatedArray:Array<ICard>=[];
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class RelatedArtistsComponent implements OnInit {
             ID: element.id,
             type:element.type
           }
-          this.relaredArray.push(card);
+          this.relatedArray.push(card);
         });
       });
 
