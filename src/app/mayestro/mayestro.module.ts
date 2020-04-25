@@ -37,7 +37,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     MatInputModule
   ],
   exports:[
-  
+    CardComponent
   ]
 })
 export class MayestroModule {}

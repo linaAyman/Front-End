@@ -31,7 +31,7 @@ export class ArtistOverviewComponent implements OnInit {
           id:element.id,
           url:element.url
         }
-   
+        this.Songs.push(song)
       });
     });
 

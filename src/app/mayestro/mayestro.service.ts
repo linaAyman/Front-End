@@ -46,4 +46,10 @@ export class MayestroService {
   getRelatedArtists(id){
     return this.httpClient.get(this.auth.URL+`/artists/${id}/related-artists`)
   }
+  getUser(id){
+    return this.httpClient.get(this.auth.URL+`/users/${id}`)
+  }
+  getUserPLaylist(id){
+    return this.httpClient.get(this.auth.URL+`/users/${id}/playlists`)
+  }
 }

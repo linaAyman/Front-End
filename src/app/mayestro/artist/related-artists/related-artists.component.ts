@@ -16,23 +16,22 @@ export class RelatedArtistsComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.id = param["id"];
-    console.log( param["id"]);
-    console.log( this.id);
+
     });
 
     this.mystro.getRelatedArtists(this.id).subscribe((res: any) => {
-      console.log("realated res");
-      console.log(res)
+      
       res.artists.forEach((element:any) => {
         const card:ICard={
           name: element.name,
-          description: "",
-          imgUrl:element.imgage,
+          description: "Artist",
+          imgUrl:element.image,
           ID: element.id,
           type:element.type
         }
         this.relaredArray.push(card);
       });
+  
     });
 
   }

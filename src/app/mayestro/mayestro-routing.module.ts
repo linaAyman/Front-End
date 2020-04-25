@@ -36,7 +36,7 @@ const routes: Routes = [
         loadChildren: () =>
           import(`./artist/artist.module`).then(m => m.ArtistModule)
       },
-      { path: "profile", component: UserProfileComponent },
+      { path: "profile/:id", component: UserProfileComponent },
       { path: "**", component: NotFoundComponent }
     ]
   }

@@ -187,7 +187,11 @@ export class MockServerService implements HttpInterceptor {
           return relatedartists();
         case url.match(/\/artists\/\S+$/) && method === "GET":
           return viewartist();
-
+        case url.match(/\/users\/\S+\/playlists$/) && method === "GET":
+          return getUserPLaylist();
+        case url.match(/\/users\/\S+$/) && method === "GET":
+          return getUser();
+         
         case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
           return viewtracks();
         case url.match(/\/playlist\/\S+$/) && method === "GET":
@@ -966,62 +970,137 @@ export class MockServerService implements HttpInterceptor {
             name: "Tamer",
             id: "548",
             image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
-            type: "Artist"
+            type: "artist"
           },
           {
           name: "Assala",
             id: "48",
             image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
-            type: "Artist"
+            type: "artist"
           }, 
           {
             name: "Tamer",
             id: "548",
             image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
-            type: "Artist"
+            type: "artist"
           },  
           {
             name: "Assala",
               id: "48",
               image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
-              type: "Artist"
+              type: "artist"
           },
           {
             name: "Tamer",
             id: "548",
             image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
-            type: "Artist"
+            type: "artist"
           },  
           {
             name: "Assala",
               id: "48",
               image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
-              type: "Artist"
+              type: "artist"
           },
           {
             name: "Tamer",
             id: "548",
             image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
-            type: "Artist"
+            type: "artist"
           },
           {
             name: "Assala",
               id: "48",
               image: "https://static.arageek.com/wp-content/uploads/2017/09/Assala-Nasri.jpeg",
-              type: "Artist"
+              type: "artist"
           },
           {
             name: "Tamer",
             id: "548",
             image: "https://cdns-images.dzcdn.net/images/artist/b9f98ef37f48689fd196bfeac4266a68/500x500.jpg",
-            type: "Artist"
+            type: "artist"
           },
         ]
       }
       return ok(related)
     }
 
-
+    function getUser(){
+      const user ={
+        followersCount: 0,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8oDIkGmHQwugDVW0WKOvBjJdfJGDIgr7Ys7Y-18BDflD3DfoI&usqp=CAU",
+        isPremium: true,
+        _id: "123",
+        name: "mohsen",
+  
+      }
+      return ok (user)
+    }
+    
+    function getUserPLaylist(){
+      const userplaylist={
+        playlists: [
+          {
+            name: "playList1",
+            id: "1",
+            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+            owner: "samir",
+            description: "blabla",
+            followersCount: 30
+          },
+          {
+            name: "playList2",
+            id: "2",
+            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+            owner: "samir",
+            description: "blabla2",
+            followersCount: 30
+          },
+          {
+            name: "playList3",
+            id: "3",
+            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+            owner: "samir",
+            description: "blabla3",
+            followersCount: 30
+          },
+          {
+            name: "playList4",
+            id: "4",
+            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+            owner: "samir",
+            description: "blabla4",
+            followersCount: 30
+          },
+          {
+            name: "playList5",
+            id: "5",
+            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+            owner: "samir",
+            description: "blabla5",
+            followersCount: 30
+          },
+          {
+            name: "playList6",
+            id: "6",
+            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+            owner: "samir",
+            description: "blabla6",
+            followersCount: 30
+          },
+          {
+            name: "playList7",
+            id: "7",
+            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
+            owner: "samir",
+            description: "blabla7",
+            followersCount: 30
+          }
+        ],
+        totalPlaylists: 7
+      }
+      return ok(userplaylist)
+    }
     // helper functions
 
     function track() {
