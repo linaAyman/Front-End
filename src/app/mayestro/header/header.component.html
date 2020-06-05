@@ -36,7 +36,7 @@
         <button routerLink="/account.mayestro/signup" type="button" class="signup"
           *ngIf="!(auth.isLoggedIn());else upgrade">SIGN UP</button>
         <ng-template #upgrade>
-          <button type="button" class="upgradeButton">Upgrade
+          <button routerLink="/open.mayestro/premium" type="button" class="upgradeButton">Upgrade
           </button>
         </ng-template>
       </li>

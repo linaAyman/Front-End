@@ -17,9 +17,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { fakeBackendProvider } from "../shared/mock-server/mock-server.service";
 import { UserService } from "./user.service";
 import { PremiumComponent } from './premium/premium.component';
-import { GetPremiumComponent } from '../account-mayestro/get-premium/get-premium.component';
-import { ChangePlanComponent } from '../account-mayestro/get-premium/change-plan/change-plan.component';
-import { GetPremiumHeaderComponent } from '../account-mayestro/get-premium/get-premium-header/get-premium-header.component';
+import { GetPremiumComponent } from './get-premium/get-premium.component';
+import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
+import { GetPremiumHeaderComponent } from './get-premium/get-premium-header/get-premium-header.component';
 
 @NgModule({
   declarations: [

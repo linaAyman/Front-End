@@ -1,26 +1,39 @@
 import { ArtistService } from './../artist.service';
-import { NotificationComponent } from './../../../open-mayestro/notification/notification.component';
 import { IASong } from './../artist-song/artist-song.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MayestroService } from '../../mayestro.service';
 import { IACard } from '../artist-card/artist-card.interface';
 import { switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
-import { ICard } from '../../card/card.interface';
 
 @Component({
   selector: 'app-artist-overview',
   templateUrl: './artist-overview.component.html',
   styleUrls: ['./artist-overview.component.css']
 })
+
+/**
+ * Artist overview component
+ */
 export class ArtistOverviewComponent implements OnInit {
+  /**
+   * array of sonsgs of type ISong
+   */
   songs:Array<IASong>=[];
+  /**
+   * array of albums of type IACard
+   */
   albums:Array<IACard>=[];
+  /**
+   * array of singles of type IACard
+  */
   singles:Array<IACard>=[];
   id:any;
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
+  /**
+   * get data(artist singles,songs,albums) from the server and push it to the arrays(singles,albums,songs)
+   */
   ngOnInit() {
     
     this.route.params.pipe(

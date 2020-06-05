@@ -2,7 +2,7 @@
 <div class="artist-songs">
     <div class="artist-popular">
         <h1 style=" font-size: 28px; font-weight: 700; color: #fff;">Popular</h1>
-        <div class="paylist-pox"  *ngFor="let s of songs">
+        <div class="paylist-pox" style="padding-left: 15px;"  *ngFor="let s of songs">
             <!-- song div -->
             <app-artist-song [song]="s"></app-artist-song>
         </div>

@@ -25,17 +25,19 @@
  .btn{
     visibility: hidden;
     color: white;
-    transform: translate(30px, -190px);
+    transform: translate(50%, -220%);
     background: transparent;
-    font-size: 80px;
+    font-size: 70px;
     border: none;
     
 }
-.card-container:hover .btn{
+.card:hover .btn{
     visibility: visible; 
-  
 }
 
 a:hover{
     text-decoration: none; 
+}
+.card{
+    background: #121212;
 }

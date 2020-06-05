@@ -1,4 +1,3 @@
-import { GetPremiumComponent } from './get-premium/get-premium.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AccountMayestroComponent } from "./account-mayestro.component";

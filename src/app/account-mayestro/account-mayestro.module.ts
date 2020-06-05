@@ -1,6 +1,3 @@
-import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
-import { GetPremiumHeaderComponent } from './get-premium/get-premium-header/get-premium-header.component';
-import { GetPremiumComponent } from './get-premium/get-premium.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";

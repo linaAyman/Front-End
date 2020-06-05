@@ -1,8 +1,18 @@
-<div class="card-container">
+<!-- <div class="card-container">
     <a class="a" [routerLink]="['/mayestro/playlist',aCard.id,album]" > 
         <img [src]="aCard.image" style="width: 100%;">
         <div class="card-body">
             <p class="album-name">{{aCard.name}} </p> 
+            <button class="btn fa">&#xf01d;</button>
+        </div>
+    </a>
+</div> -->
+
+<div class="card mb-4">
+    <a class="a" [routerLink]="['/mayestro/playlist',aCard.id,album]" >
+        <img [src]="aCard.image" style="width: 100%;" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="album-name card-text">{{aCard.name}} </p> 
             <button class="btn fa">&#xf01d;</button>
         </div>
     </a>
