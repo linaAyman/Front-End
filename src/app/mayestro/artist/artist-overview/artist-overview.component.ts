@@ -24,11 +24,21 @@ export class ArtistOverviewComponent implements OnInit {
    * array of albums of type IACard
    */
   albums:Array<IACard>=[];
+  moreAlbums:Array<IACard>=[];
   /**
    * array of singles of type IACard
   */
   singles:Array<IACard>=[];
+  /**
+   * array of Appears on of type IACard
+  */
+  appearsOn:Array<IACard>=[];
   id:any;
+  /**
+   * boolean if there it more button
+   */
+  more=true;
+  
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
   /**
@@ -42,12 +52,15 @@ export class ArtistOverviewComponent implements OnInit {
         return combineLatest([
           this.artist.getArtistTopTracks(this.id),
           this.artist.getArtistAlbums(this.id),
-          this.artist.getArtistSingles(this.id)
+          // this.artist.getMoreAlbums(this.id),
+          this.artist.getArtistSingles(this.id),
+          this.artist.getAppearsOn(this.id)
         ]); 
       })
       )
       .subscribe((comp:any)=>{
-
+        console.log("hhhhhhh")
+        console.log(comp[3])
         comp[0].tracks.forEach((element:any) => {
           const song:IASong={
             name: element.name,
@@ -66,10 +79,22 @@ export class ArtistOverviewComponent implements OnInit {
             image:element.image,
             isLiked:false,
             id:element.id,
-            totalTracks:element.totalTracks
+            totalTracks:element.totalTracks,
+            type:"album"
           }
           this.albums.push(album);
         });
+        // comp[2].albums.forEach((element:any) => {
+        //   const album:IACard={
+        //     name: element.name,
+        //     duration:0,
+        //     image:element.image,
+        //     isLiked:false,
+        //     id:element.id,
+        //     totalTracks:element.totalTracks
+        //   }
+        //   this.moreAlbums.push(album);
+        // });
         comp[2].tracks.forEach((element:any) => {
           const single:IACard={
             name: element.name,
@@ -77,13 +102,32 @@ export class ArtistOverviewComponent implements OnInit {
             image:element.image,
             isLiked:element.isLiked,
             id:element.id,
-            totalTracks:0
+            totalTracks:0,
+            type:"album"
           }
           this.singles.push(single);
         });
+        comp[3].albums.forEach((element:any) => {
+          const appearOn:IACard={
+            name: element.name,
+            duration:element.duration,
+            image:element.image,
+            isLiked:element.isLiked,
+            id:element.id,
+            totalTracks:0,
+            type:"album"
+          }
+          this.appearsOn.push(appearOn);
+        });
       });
-  
+   
+  }
 
+  moreFunc(){
+    if(this.albums.length<12)
+      this.more=false;
+    else 
+      this.more=true;
   }
 
 }

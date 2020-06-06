@@ -9,11 +9,12 @@
 </div> -->
 
 <div class="card mb-4">
-    <a class="a" [routerLink]="['/mayestro/playlist',aCard.id,album]" >
+    <a class="a" [routerLink]="['/mayestro/playlist',aCard.id,aCard.type]" >
         <img [src]="aCard.image" style="width: 100%;" class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="album-name card-text">{{aCard.name}} </p> 
-            <button class="btn fa">&#xf01d;</button>
-        </div>
     </a>
+    <div class="card-body">
+        <p class="album-name card-text">{{aCard.name}} </p> 
+        <button class="btn fa">&#xf01d;</button>
+    </div>
+   
 </div>

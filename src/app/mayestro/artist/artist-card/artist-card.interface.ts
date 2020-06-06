@@ -7,4 +7,5 @@ export interface IACard{
     totalTracks: number;
     duration: number;
     isLiked: boolean;
+    type:string;
 }
