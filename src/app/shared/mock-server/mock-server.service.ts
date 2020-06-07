@@ -1296,6 +1296,46 @@ export class MockServerService implements HttpInterceptor {
               totalTracks: 2,
               releaseDate:
                 "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              artists: [
+                {
+                  id: "3xl0OvcSlc9Mwe5ToaFtD3",
+                  name: "Amr Diab"
+                }
+              ],
+              type: "album",
+              id: "3xl0OvcSlc9Mwe5ToaFtD23",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+              name: "Sahran"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
               artist: [
                 {
                   name: "amrdiab"
@@ -1474,6 +1514,21 @@ export class MockServerService implements HttpInterceptor {
           "https://i.scdn.co/image/ab67616d00001e0219ab0403aa0de6ee32b101ff",
         id: "3JOF9NzQVkUXtCcJbEQuAb",
         name: "Heart Like Yours",
+        previewUrl:
+          "https://p.scdn.co/mp3-preview/b5fbda2874c09a249989b9570381537e8dee59c1?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
+      },
+      {
+        artists: [
+          {
+            id: "3xl0OvcSlc9Mwe5ToaFtD3",
+            name: "Amr Diab"
+          }
+        ],
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+        image:
+          "https://i.scdn.co/image/ab67616d0000b273d352e68d3f9ef21f6d167a96",
+        id: "3JOF9NzQVkUXtCcJbEQuAbm",
+        name: "Nour Eloyon",
         previewUrl:
           "https://p.scdn.co/mp3-preview/b5fbda2874c09a249989b9570381537e8dee59c1?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"
       },
@@ -1767,8 +1822,9 @@ export class MockServerService implements HttpInterceptor {
           duration:5,
           name:"Nour Eloyon",
           isLiked: true,
-          id:"123",
-          Url:"lmskmdlkm"
+          id:"3JOF9NzQVkUXtCcJbEQuAbm",
+          Url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+          artist:"Amr Diab"
         },
         {
           image:"https://i.scdn.co/image/ab67616d0000b2732a37edda69e67266f05a9753",
@@ -1776,14 +1832,16 @@ export class MockServerService implements HttpInterceptor {
           name:"Tamali Maak",
           isLiked: true,
           id:"123",
-          Url:"lmskmdlkm"
+          Url:"lmskmdlkm",
+          artist:"Amr Diab"
         },{
           image:"https://i.scdn.co/image/ab67616d0000b2737e6e6d8ffdd9597a96ab019e",
           duration:3,
           name:"Leily Nahary",
           isLiked: true,
           id:"123",
-          Url:"lmskmdlkm"
+          Url:"lmskmdlkm",
+          artist:"Amr Diab"
         },
         {
           image:"https://i.scdn.co/image/ab67616d0000b2737c607f5d6a8f657998ad9936",
@@ -1791,7 +1849,8 @@ export class MockServerService implements HttpInterceptor {
           name:"Alby Etmannah",
           isLiked: true,
           id:"123",
-          Url:"lmskmdlkm"
+          Url:"lmskmdlkm",
+          artist:"Amr Diab"
         },
         {
           image:"https://i.scdn.co/image/ab67616d0000b273b4df726e2f184eacb95261a9",
@@ -1799,7 +1858,8 @@ export class MockServerService implements HttpInterceptor {
           name:"Bayen Habeit",
           isLiked: true,
           id:"123",
-          Url:"lmskmdlkm"
+          Url:"lmskmdlkm",
+          artist:"Amr Diab"
         }]
       }
       return ok(artistTracks)
@@ -1809,7 +1869,7 @@ export class MockServerService implements HttpInterceptor {
       const artistAlbums={
         albums:[
           {
-          id: "3xl0OvcSlc9Mwe5ToaFtD3",
+          id: "3xl0OvcSlc9Mwe5ToaFtD23",
           image: "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
           name: "Sahran",
           totalTracks: 10
@@ -2287,26 +2347,27 @@ export class MockServerService implements HttpInterceptor {
           image: "https://i.scdn.co/image/ab67616d0000b273882481de49abcf9f0f4c22b2",
           name: "Kane Stin Akri",
           totalTracks: 8
-          },
-          {
-          id: "1235",
-          image: "https://i.scdn.co/image/ab67616d0000b273d5bd978a5480ac35e2062b3c",
-          name: "Arabia",
-          totalTracks: 8
-          },
-          {
-          id: "1235",
-          image: "https://i.scdn.co/image/ab67616d0000b27309c55944c20f92f247db1c19",
-          name: "Arabic Rainbow",
-          totalTracks: 8
-          },
-          {
-          id: "1235",
-          image: "https://i.scdn.co/image/ab67616d0000b2733bfe53ed764afff780b3c6e4",
-          name: "Alem Kalby",
-          totalTracks: 8
-          },
-          {
+          }
+          // ,
+          // {
+          // id: "1235",
+          // image: "https://i.scdn.co/image/ab67616d0000b273d5bd978a5480ac35e2062b3c",
+          // name: "Arabia",
+          // totalTracks: 8
+          // },
+          // {
+          // id: "1235",
+          // image: "https://i.scdn.co/image/ab67616d0000b27309c55944c20f92f247db1c19",
+          // name: "Arabic Rainbow",
+          // totalTracks: 8
+          // },
+          // {
+          // id: "1235",
+          // image: "https://i.scdn.co/image/ab67616d0000b2733bfe53ed764afff780b3c6e4",
+          // name: "Alem Kalby",
+          // totalTracks: 8
+          // },
+          ,{
           id: "1235",
           image: "https://i.scdn.co/image/ab67616d0000b2734861e6bc90711f6aab9f714f",
           name: "Aktar Wahed",
@@ -2496,7 +2557,7 @@ export class MockServerService implements HttpInterceptor {
         image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8oDIkGmHQwugDVW0WKOvBjJdfJGDIgr7Ys7Y-18BDflD3DfoI&usqp=CAU",
         isPremium: true,
         _id: "123",
-        name: "mohsen",
+        name: "Mohsen",
   
       }
       return ok (user)
@@ -2507,57 +2568,57 @@ export class MockServerService implements HttpInterceptor {
         playlists: [
           {
             name: "playList1",
-            id: "1",
-            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-            owner: "samir",
+            id: "4qrimFUz8KFC8W6WrDiDnd",
+            image: "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+            owner: "Mohsen",
             description: "blabla",
             followersCount: 30
           },
           {
             name: "playList2",
-            id: "2",
-            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-            owner: "samir",
+            id: "4qrimFUz8KFC8W6WrDiDne",
+            image: "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+            owner: "Mohsen",
             description: "blabla2",
             followersCount: 30
           },
           {
             name: "playList3",
-            id: "3",
-            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-            owner: "samir",
+            id: "4qrimFUz8KFC8W6WrDiDnf",
+            image: "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+            owner: "Mohsen",
             description: "blabla3",
             followersCount: 30
           },
           {
             name: "playList4",
-            id: "4",
-            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-            owner: "samir",
+            id: "4qrimFUz8KFC8W6WrDiDng",
+            image: "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+            owner: "Mohsen",
             description: "blabla4",
             followersCount: 30
           },
           {
             name: "playList5",
-            id: "5",
+            id: "4qrimFUz8KFC8W6WrDiDnh",
             image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-            owner: "samir",
+            owner: "Mohsen",
             description: "blabla5",
             followersCount: 30
           },
           {
             name: "playList6",
-            id: "6",
+            id: "4qrimFUz8KFC8W6WrDiDni",
             image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-            owner: "samir",
+            owner: "Mohsen",
             description: "blabla6",
             followersCount: 30
           },
           {
             name: "playList7",
-            id: "7",
-            image: "https://i.scdn.co/image/ab67616d00001e020a8faf02e33a80f13070b58a",
-            owner: "samir",
+            id: "4qrimFUz8KFC8W6WrDiDnj",
+            image: "https://i.scdn.co/image/ab67616d00001e0284c0ae5b34bc3fe4238c3bdd",
+            owner: "Mohsen",
             description: "blabla7",
             followersCount: 30
           }

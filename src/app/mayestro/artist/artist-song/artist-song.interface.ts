@@ -6,5 +6,6 @@ export interface IASong{
     image:string;
     isLiked:boolean;
     id:string;
-    url:string
+    url:string;
+    artist:string;
 }

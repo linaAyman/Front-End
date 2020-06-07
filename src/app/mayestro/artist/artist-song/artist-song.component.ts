@@ -1,5 +1,7 @@
+import { PlayerService } from 'src/app/mayestro/player.service';
 import { IASong } from './artist-song.interface';
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artist-song',
@@ -17,7 +19,7 @@ export class ArtistSongComponent implements OnInit {
    * object of type IASong contain song information
    */
   @Input() song: IASong;
-  constructor() { }
+  constructor(private route:ActivatedRoute,private player:PlayerService) { }
 
   ngOnInit() {
   }
@@ -31,5 +33,8 @@ export class ArtistSongComponent implements OnInit {
        this.isPlaying=false;
     else this.isPlaying=true;
   } 
+  // playSong(){
+  //   this.player.getTracks()    
+  // }
 
 }

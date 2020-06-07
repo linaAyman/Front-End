@@ -37,10 +37,12 @@ export class ArtistOverviewComponent implements OnInit {
   /**
    * boolean if there it more button
    */
-  more=true;
+  // showMore=true;
   
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
-
+  // ngAfterViewInit(){
+  //   this.moreFunc();
+  // }
   /**
    * get data(artist singles,songs,albums) from the server and push it to the arrays(singles,albums,songs)
    */
@@ -59,8 +61,8 @@ export class ArtistOverviewComponent implements OnInit {
       })
       )
       .subscribe((comp:any)=>{
-        console.log("hhhhhhh")
-        console.log(comp[3])
+        // console.log("hhhhhhh")
+        // console.log(comp[3])
         comp[0].tracks.forEach((element:any) => {
           const song:IASong={
             name: element.name,
@@ -68,7 +70,8 @@ export class ArtistOverviewComponent implements OnInit {
             image:element.image,
             isLiked:element.isLiked,
             id:element.id,
-            url:element.url
+            url:element.url,
+            artist:element.artist
           }
           this.songs.push(song)
         });
@@ -120,14 +123,37 @@ export class ArtistOverviewComponent implements OnInit {
           this.appearsOn.push(appearOn);
         });
       });
-   
   }
-
+  
   moreFunc(){
-    if(this.albums.length<12)
-      this.more=false;
-    else 
-      this.more=true;
+    // this.albums=[]
+    // this.showMore=false;
+    console.log("innnnn")
+    this.route.params.pipe(
+      switchMap(param=>{
+        this.id=param['id']
+        return combineLatest([
+          this.artist.getMoreAlbums(this.id)
+        ]); 
+      })
+      )
+      .subscribe((comp:any)=>{
+        console.log("more")
+        console.log(comp[0])
+        comp[0].albums.forEach((element:any) => {
+          const album:IACard={
+            name: element.name,
+            duration:0,
+            image:element.image,
+            isLiked:false,
+            id:element.id,
+            totalTracks:element.totalTracks,
+            type:"album"
+          }
+          this.moreAlbums.push(album);
+        });
+      
+      });
   }
 
 }

@@ -13,7 +13,7 @@
         <div class="row px-1"  >
             <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let a of albums"><app-artist-card [aCard]="a"></app-artist-card></div>    
         </div>
-        <div class="text-center" style="margin-top: 20px;" [class.show]="show"  *ngIf="more"><button class=" showmore-btn" (click)="show = !show">{{ show ? 'SHOW LESS': 'SHOW MORE' }} {{moreFunc()}} <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
+        <div class="text-center" style="margin-top: 40px;" [class.show]="show"  *ngIf="albums.length >= 12"><button class=" showmore-btn" (click)="showMore = !showMore"  (click)=moreFunc()>{{ showMore ? 'SHOW LESS': 'SHOW MORE' }}  <div class="fa " style="padding-left:5px; font-size: 20px; ">{{ showMore ? '&#xf106;': '&#xf107;' }}</div></button></div>
     </div>
 
     <div class="artist-albums" >
@@ -22,7 +22,7 @@
             <div class="col-lg-2 col-md-3 col-sm-4"  *ngFor="let si of singles"><app-artist-card [aCard]="si"></app-artist-card></div>
 
         </div>
-        <div class="text-center" style="margin-top: 20px;" [class.show]="show"><button class=" showmore-btn" (click)="show = !show">{{ show ? 'SHOW LESS': 'SHOW MORE' }} <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
+        <div class="text-center" style="margin-top: 40px;" [class.show]="show"  *ngIf="singles.length >= 12"><button class=" showmore-btn" (click)="showMore = !showMore"  >{{ showMore ? 'SHOW LESS': 'SHOW MORE' }}  <div class="fa " style="padding-left:5px; font-size: 20px; ">{{ showMore ? '&#xf106;': '&#xf107;' }}</div></button></div>
     </div>
 
     <div class="artist-albums" >
@@ -31,6 +31,6 @@
             <div class="col-lg-2 col-md-3 col-sm-4"  *ngFor="let ap of appearsOn"><app-artist-card [aCard]="ap"></app-artist-card></div>
             
         </div>
-        <div class="text-center" style="margin-top: 20px;" [class.show]="show"><button class=" showmore-btn" (click)="show = !show">{{ show ? 'SHOW LESS': 'SHOW MORE' }} <div class="fa" style="padding-left:5px; font-size: 20px;">&#xf107;</div></button></div>
+        <div class="text-center" style="margin-top: 40px;" [class.show]="show"  *ngIf="appearsOn.length >= 12"><button class=" showmore-btn" (click)="showMore = !showMore" >{{ showMore ? 'SHOW LESS': 'SHOW MORE' }}  <div class="fa " style="padding-left:5px; font-size: 20px; ">{{ showMore ? '&#xf106;': '&#xf107;' }}</div></button></div>
     </div>
 </div>

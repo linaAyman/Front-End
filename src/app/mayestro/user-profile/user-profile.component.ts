@@ -47,7 +47,7 @@ export class UserProfileComponent implements OnInit {
           description: element.description,
           imgUrl:element.image,
           ID: element.id,
-          type:"playlists"
+          type:"playlist"
         }
         this.playListArray.push(card);
       }
