@@ -38,12 +38,14 @@
         </li>
         
         <hr class="divider">
-
-        <li  class="nav-link n-list" *ngFor="let item of MyPlaylist">
-            <a class="nav-link text-white" [routerLink]="['/mayestro/playlist',item.id,item.type]">
-                {{item.name}}
-            </a>
-        </li>
+        <div style="overflow-y: visible;">
+            <li  class="nav-link n-list" *ngFor="let item of MyPlaylist" >
+                <a class="nav-link text-white" [routerLink]="['/mayestro/playlist',item.id,item.type]">
+                    {{item.name}}
+                </a>
+            </li>
+        </div>
+        
     </ul>
     
 </nav>

@@ -27,6 +27,7 @@ export class MockServerService implements HttpInterceptor {
   mytracks: any;
   categories: any;
   myPlaylists:any;
+  libraryAlbums=[];
   constructor() {
     
     this.categories = {
@@ -1402,6 +1403,7 @@ export class MockServerService implements HttpInterceptor {
         country: "Egypt"
       }
     ];
+    
     this.myPlaylists=[
       {
         type: "myplaylist",
@@ -1792,6 +1794,7 @@ export class MockServerService implements HttpInterceptor {
     let mytracks = this.mytracks;
     let categories = this.categories;
     let myPlaylists= this.myPlaylists;
+    let libraryAlbums=this.libraryAlbums;
     const { url, method, headers, body } = request;
     console.log(method);
     // wrap in delayed observable to simulate server api call
@@ -1831,13 +1834,17 @@ export class MockServerService implements HttpInterceptor {
           return viewplaylist();
         case url.match(/\/me\/playlists\/\S+$/) && method === "GET":
           return viewmyplaylist();
-        case url.match("/me\/playlists") && method === "DELETE":
+        case url.match("/me\/tracks") && method === "DELETE":
           return removetrack();
-        case url.endsWith("/me\/playlists") && method === "PUT":
+        case url.endsWith("/me\/tracks") && method === "PUT":
           return addtrack();
+        case url.endsWith("/me\/albums") && method === "PUT":
+          return addalbum();
+        case url.endsWith("/me\/albums") && method === "GET":
+          return getLibraryAlbums();
         case url.endsWith("/me/playlists") && method === "GET":
           return viewmyplaylists();
-        case url.endsWith("/me/playlists") && method === "POST":
+        case url.endsWith("/user/createPlaylist") && method === "PUT":
           return createplaylist();
         case url.endsWith("/me/playlist") && method === "GET":
           return viewHomePlaylists();
@@ -1876,7 +1883,6 @@ export class MockServerService implements HttpInterceptor {
         tracks: []
       }
       myPlaylists.push(list);
-      console.log(myPlaylists)
       return ok({
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
@@ -1973,6 +1979,24 @@ export class MockServerService implements HttpInterceptor {
       return error("no album found with this id");
     }
 
+    function getLibraryAlbums(){
+      
+      return ok(libraryAlbums); 
+    }
+    function addalbum(){
+      const { id } = body;
+      let album;
+      categories.Home.forEach(cat => {
+        if (cat.albums) {
+          cat.albums.forEach(pl => {
+            if (pl.id === id) album = pl;
+          });
+        }
+      });
+      libraryAlbums.push(album);
+      if (album) return ok("added");
+      return error("no album found with this id");
+    }
     function removetrack(){
       return ok({
         token:

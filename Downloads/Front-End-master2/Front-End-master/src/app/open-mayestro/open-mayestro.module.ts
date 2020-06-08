@@ -16,6 +16,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { fakeBackendProvider } from "../shared/mock-server/mock-server.service";
 import { UserService } from "./user.service";
 import { HomeComponent } from './home/home.component';
+import { LoginHelpComponent } from './login-help/login-help.component';
+import { EditAccountHelpComponent } from './edit-account-help/edit-account-help.component';
+import { NotificationHelpComponent } from './notification-help/notification-help.component';
+import { ResetPasswordHelpComponent } from './reset-password-help/reset-password-help.component';
+import { ChangeEmailHelpComponent } from './change-email-help/change-email-help.component';
+import { SidebarHelpComponent } from './sidebar-help/sidebar-help.component';
+import { AccountHelpComponent } from './account-help/account-help.component';
+import { UsingMayestroComponent } from './using-mayestro/using-mayestro.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,15 @@ import { HomeComponent } from './home/home.component';
     SetDevicePasswordComponent,
     SidebarComponent,
     ChangePasswordComponent,
-    HomeComponent
+    HomeComponent,
+    LoginHelpComponent,
+    EditAccountHelpComponent,
+    NotificationHelpComponent,
+    ResetPasswordHelpComponent,
+    ChangeEmailHelpComponent,
+    SidebarHelpComponent,
+    AccountHelpComponent,
+    UsingMayestroComponent
   ],
   imports: [
     CommonModule,

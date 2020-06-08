@@ -78,7 +78,7 @@ export class MayestroService {
    * @param id of the song to be added to the playlist
    */
   putTrack(id:any){
-    return this.httpClient.put(this.auth.URL+'/me/playlists',id).pipe(
+    return this.httpClient.put(this.auth.URL+'/me/tracks',id).pipe(
       map((res: any) => {
         localStorage.setItem("token", res.token);
       })
@@ -90,7 +90,7 @@ export class MayestroService {
    * @param id  of the song to be removed from the playlist
    */
     deleteTrack(id:any){
-      return this.httpClient.delete(this.auth.URL+'/me/playlists',id).pipe(
+      return this.httpClient.delete(this.auth.URL+'/me/tracks',id).pipe(
         map((res: any) => {
           localStorage.setItem("token", res.token);
         })
@@ -113,9 +113,30 @@ export class MayestroService {
    */
   createPlaylist(name){
     let obj={name}
-    return this.httpClient.post(this.auth.URL+"/me/playlists",obj,
+    return this.httpClient.put(this.auth.URL+"/user/createPlaylist",obj,
     {
       headers: { token: localStorage.getItem("token") }, 
+    });
+  }
+  /**
+   * adds album to library
+   * @param id of the album to be added in your library
+   */
+  AddAlbum(id){
+    let obj={id}
+    return this.httpClient.put(this.auth.URL+"/me/albums",obj,
+    {
+      headers: { token: localStorage.getItem("token") }, 
+    });
+  }
+  /**
+   * get library albums 
+   */
+  GetLibraryAlbums(){
+    console.log("here")
+    return this.httpClient.get(this.auth.URL+"/me/albums",
+    {
+      headers: { token: localStorage.getItem("token") }
     });
   }
 }

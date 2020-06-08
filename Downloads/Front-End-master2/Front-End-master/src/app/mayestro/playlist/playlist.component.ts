@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MayestroService } from "../mayestro.service";
 import { ActivatedRoute } from "@angular/router";
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: "app-playlist",
@@ -25,9 +26,17 @@ export class PlaylistComponent implements OnInit {
   tracks: [];
   constructor(
     private MayestroService: MayestroService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private snackbar: MatSnackBar
   ) {}
 
+  add(){
+    let snack= this.snackbar.open("added to Your Library",'',{duration:500})
+    this.MayestroService.AddAlbum(this.id).subscribe(
+      response =>{
+      }
+    );
+  }
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.id = param["id"];

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MayestroService } from '../mayestro.service';
+import { MatDialog } from '@angular/material';
 
 
 @Component({
@@ -9,11 +11,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlaylistsComponent implements OnInit {
 
-  constructor(private http: HttpClient) {   }
+  constructor(private service: MayestroService,private dialog: MatDialog) {   }
+
+  songs:any[];
 
   ngOnInit() {
-    
-  }
+    this.service.getMyPlaylists()
+      .subscribe(
+        (data:any[]) =>{
+          this.songs=data;
+        }
+      );
+      
+    }
+
+    openDialog() {
+
+      this.dialog.open(DialogComponent);
+  
+    }
 
 
 
