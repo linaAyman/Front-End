@@ -1,4 +1,4 @@
-<div class="m-2 row">
+<!-- <div class="m-2 row">
   <div class="pad col-2">
     <a class="card podcast" >
       <div class="teet2">
@@ -43,8 +43,15 @@
         </div>
       </a>
     </div>
+</div> -->
+<div class="pad">
+  <a class="card podcast" [ngStyle]="{ 'background-color': cards.bgColor}" [routerLink]="['/mayestro/search/seeall',browse,cards.bgColor,cards.name]">
+    <div class="teet2">
+      <h4 class="text-center title">{{cards.name}} </h4>
+      <img class="card-img-top" [src]="cards.img" class="img">
+    </div>
+  </a>
 </div>
-
   
 
 

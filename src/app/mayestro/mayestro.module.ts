@@ -23,11 +23,12 @@ import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule} from '@
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TopResultComponent } from './search/top-result/top-result.component';
 import { SongsComponent } from './search/songs/songs.component';
+import { RecentSearchComponent } from './search/recent-search/recent-search.component';
 
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent,UserProfileComponent, TopResultComponent, SongsComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent,UserProfileComponent, TopResultComponent, SongsComponent, RecentSearchComponent],
   imports: [
     MatMenuModule,
     CommonModule,

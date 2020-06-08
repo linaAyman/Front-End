@@ -12,7 +12,8 @@
         </a>
       </li>
       <li class="col-5 nav-item" *ngIf="loc.path()==='/mayestro/search'">
-        <input type="text" placeholder="Search.." class="search">
+        <input type="text" placeholder="Search for Artists, Songs and Podcasts.."
+         class="search" (input)="onKey($event)">
       </li> 
     </ul>
     <!-- <div *ngIf="router.url!=='/mayestro/home'">

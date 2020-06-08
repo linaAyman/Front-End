@@ -25,6 +25,8 @@ const routes: Routes = [
       { path: "player", component: PlayerComponent },
       { path: "side", component: SideBarComponent },
       { path: "seeall/:name", component: SeeAllComponent },
+      { path: "search/seeall/:browse/:color/:name", component: SeeAllComponent },
+      { path: "seeall/:browse/:name", component: SeeAllComponent },
       { path: "search", component: SearchComponent },
       { path: "playlist/:id/:type", component: PlaylistComponent },
       { path: "yourlibrary/playlists", component: PlaylistsComponent },

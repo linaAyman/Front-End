@@ -1,24 +1,22 @@
 <section>
-<div class="top">
-<h2 class="top-text">
-    Top result
-</h2>
-</div>
-<a href="#" class="resultcard">
-    <div class="topimage">
-        <img src="https://i.scdn.co/image/ff8d83627cb2a80d4c1fa36fd80a193ca34b7a50" class="img">
+    <div class="top">
+        <h2 class="top-text">
+            Top result
+        </h2>
     </div>
-    <div>
-        <div class="name">
-            <div>Imagine Dragons</div>
+    <a href="#" class="resultcard">
+        <div class="topimage">
+            <img [src]="topResult.image" class="squareimage">
+        </div>  
+        <div>
+            <div class="name">
+                <div>{{topResult.name}}</div>
+            </div>
+            <div class="type">
+                <span class="type2">
+                    {{topResult.type}}
+                </span>
+            </div>
         </div>
-        <div class="type">
-            <span class="type2">
-                Artist
-            </span>
-        </div>
-    </div>
-
-    
-</a>
+    </a>
 </section>

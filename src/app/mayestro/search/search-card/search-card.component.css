@@ -46,7 +46,7 @@
 }
 .podcast{
     overflow: hidden;
-    background-color: rgb(245, 155, 35);
+    /* background-color: rgb(245, 155, 35); */
     position: relative;
     border: none;
     border-radius: 8px;
