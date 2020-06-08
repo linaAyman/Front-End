@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: "set-device-password", component: SetDevicePasswordComponent },
       { path: "change-password", component: ChangePasswordComponent },
       { path: "premium",component: PremiumComponent},
-      { path:"getpremium" , component:GetPremiumComponent},
+      { path:"getpremium/:plan" , component:GetPremiumComponent},
       { path:"changeplan",component:ChangePlanComponent},
       { path: "**", component: NotFoundComponent }
     ]

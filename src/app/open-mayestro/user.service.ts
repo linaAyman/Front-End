@@ -39,7 +39,9 @@ export class UserService {
       headers: { token: localStorage.getItem("token") }
     });  
   }
-
+  getPremiumPlan(plan){
+    return this.httpClinet.get(this.auth.URL + `/getpremium/${plan}`);
+  }
   /**
    * methode that edits user data
    * 

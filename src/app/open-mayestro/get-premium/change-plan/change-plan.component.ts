@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./change-plan.component.css']
 })
 export class ChangePlanComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

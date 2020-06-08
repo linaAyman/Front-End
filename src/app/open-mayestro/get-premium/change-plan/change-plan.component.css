@@ -48,3 +48,14 @@
     background-color:  #616161;
     color: white;
 }
+
+.card-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: .3em 0.6em;
+    background: #3794D1;
+    color: #FFF;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 4px;
+}
