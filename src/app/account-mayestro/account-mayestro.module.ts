@@ -1,3 +1,6 @@
+import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
+import { GetPremiumHeaderComponent } from './get-premium/get-premium-header/get-premium-header.component';
+import { GetPremiumComponent } from './get-premium/get-premium.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
@@ -22,6 +25,7 @@ import { SharedModule } from "../shared/shared.module";
 import { ForgetPasswordComponent } from "./forget-password/forget-password.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -42,7 +46,8 @@ import { ResetPasswordComponent } from "./reset-password/reset-password.componen
     HeaderComponent,
     ForgetPasswordComponent,
     ChangePasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     CommonModule,

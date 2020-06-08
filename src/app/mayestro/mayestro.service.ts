@@ -63,6 +63,11 @@ export class MayestroService {
   }
 
   getRecentSearch(){
-    return this.httpClient.get(this.auth.URL+"/search");
+    return this.httpClient.get(this.auth.URL+"/search");}
+  getUser(id){
+    return this.httpClient.get(this.auth.URL+`/users/${id}`)
+  }
+  getUserPLaylist(id){
+    return this.httpClient.get(this.auth.URL+`/users/${id}/playlists`)
   }
 }

@@ -70,7 +70,10 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangePlanComponent } from &#x27;./get-premium/change-plan/change-plan.component&#x27;;
+import { GetPremiumComponent } from &#x27;./get-premium/get-premium.component&#x27;;
+import { PremiumComponent } from &#x27;./premium/premium.component&#x27;;
+import { NgModule } from &quot;@angular/core&quot;;
 import { Routes, RouterModule } from &quot;@angular/router&quot;;
 import { OpenMayestroComponent } from &quot;./open-mayestro.component&quot;;
 import { OverviewComponent } from &quot;./overview/overview.component&quot;;
@@ -91,6 +94,9 @@ const routes: Routes &#x3D; [
       { path: &quot;profile&quot;, component: ProfileComponent },
       { path: &quot;set-device-password&quot;, component: SetDevicePasswordComponent },
       { path: &quot;change-password&quot;, component: ChangePasswordComponent },
+      { path: &quot;premium&quot;,component: PremiumComponent},
+      { path:&quot;getpremium&quot; , component:GetPremiumComponent},
+      { path:&quot;changeplan&quot;,component:ChangePlanComponent},
       { path: &quot;**&quot;, component: NotFoundComponent }
     ]
   }

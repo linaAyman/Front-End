@@ -34,4 +34,5 @@ body{
   
   .showmore-btn:hover{
       transform: scale(1.05,1.05);
+      border: none;
   }

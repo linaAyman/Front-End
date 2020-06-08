@@ -1,3 +1,6 @@
+import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
+import { GetPremiumComponent } from './get-premium/get-premium.component';
+import { PremiumComponent } from './premium/premium.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { OpenMayestroComponent } from "./open-mayestro.component";
@@ -19,6 +22,9 @@ const routes: Routes = [
       { path: "profile", component: ProfileComponent },
       { path: "set-device-password", component: SetDevicePasswordComponent },
       { path: "change-password", component: ChangePasswordComponent },
+      { path: "premium",component: PremiumComponent},
+      { path:"getpremium" , component:GetPremiumComponent},
+      { path:"changeplan",component:ChangePlanComponent},
       { path: "**", component: NotFoundComponent }
     ]
   }

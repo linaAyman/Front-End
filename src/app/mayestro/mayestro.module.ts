@@ -40,7 +40,7 @@ import { RecentSearchComponent } from './search/recent-search/recent-search.comp
     MatInputModule
   ],
   exports:[
-  
+    CardComponent
   ]
 })
 export class MayestroModule {}

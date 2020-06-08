@@ -1,6 +1,7 @@
-import { MaystroService } from './../../maystro.service';
-import { Component, OnInit, Input } from '@angular/core';
-import { Iartist } from '../artist.interface';
+import { ArtistService } from './../artist.service';
+import { Component, OnInit, Input,HostBinding  } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap, combineLatest } from 'rxjs/operators';
 
 @Component({
   selector: 'app-artist-header',
@@ -8,40 +9,60 @@ import { Iartist } from '../artist.interface';
   styleUrls: ['./artist-header.component.css']
 })
 export class ArtistHeaderComponent implements OnInit {
-  isfollowed=true;
-  ispalyed=true;
-  @Input() artist:Iartist
-  constructor( ) { }
-
+  isFollowed=true;
+  isPalyed=true;
+  artistInfo={
+    name:'',
+    id:'',
+    img:'',
+    followers:''
+  };
+  id: any;
+ 
+  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
+  
   ngOnInit() {
-    // this.maysrtoService.getArtist(123).subscribe((res:any)=>{
-    //   res.forEach((art:any) => {
-        
-    //   });
-    // })
 
+    this.route.params.pipe(
+      switchMap(param=>{
+        this.id=param['id']
+        return this.artist.getArtist(this.id)
+       
+      })
+      )
+      .subscribe((comp:any)=>{
+       
+        this.artistInfo.id=comp.id;
+        this.artistInfo.name=comp.name;
+        this.artistInfo.img=comp.image;
+        this.isFollowed=comp.isFollowed;
+      });
   }
 
   /**
    * change follow button label
    */
 
-  Follow()
+  follow()
   {
-    if(this.isfollowed==true)
-       this.isfollowed=false;
-    else this.isfollowed=true;
+    if(this.isFollowed==true)
+       this.isFollowed=false;
+    else this.isFollowed=true;
   }
 
   /**
    * change play button label 
    */
 
-  PLay(){
+  pLay(){
     
-    if(this.ispalyed==true)
-       this.ispalyed=false;
-    else this.ispalyed=true;
+    if(this.isPalyed==true)
+       this.isPalyed=false;
+    else this.isPalyed=true;
   }
 
+  // @HostBinding('style.backgroundImage')
+  //  getBackgroundImageUrl() {
+  //    document.getElementById("backimg").style.backgroundImage = "url('this.artistinfo.img')";
+  // }
 }

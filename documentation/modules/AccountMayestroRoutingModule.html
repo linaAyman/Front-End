@@ -70,7 +70,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { GetPremiumComponent } from &#x27;./get-premium/get-premium.component&#x27;;
+import { NgModule } from &quot;@angular/core&quot;;
 import { Routes, RouterModule } from &quot;@angular/router&quot;;
 import { AccountMayestroComponent } from &quot;./account-mayestro.component&quot;;
 import { SigninComponent } from &quot;./signin/signin.component&quot;;
@@ -78,6 +79,7 @@ import { SignupComponent } from &quot;./signup/signup.component&quot;;
 import { ForgetPasswordComponent } from &quot;./forget-password/forget-password.component&quot;;
 import { ResetPasswordComponent } from &quot;./reset-password/reset-password.component&quot;;
 import { ChangePasswordComponent } from &quot;./change-password/change-password.component&quot;;
+import { PrivacyPolicyComponent } from &quot;./privacy-policy/privacy-policy.component&quot;;
 
 const routes: Routes &#x3D; [
   {
@@ -91,6 +93,7 @@ const routes: Routes &#x3D; [
       { path: &quot;reset-password/:hashKey&quot;, component: ResetPasswordComponent },
       { path: &quot;forget-password&quot;, component: ForgetPasswordComponent },
       { path: &quot;change-password&quot;, component: ChangePasswordComponent },
+      { path: &quot;privacy-and-policy&quot;, component: PrivacyPolicyComponent },
       { path: &quot;**&quot;, redirectTo: &quot;login&quot; }
     ]
   }
