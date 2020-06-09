@@ -15,7 +15,7 @@
         <input type="text" placeholder="Search.." class="search">
       </li>
     </ul>
-    <div *ngIf="router.url!=='/mayestro/home'">
+    <div *ngIf="router.url=='/mayestro/yourlibrary/playlists'" >
       <div class="d-flex flex-row bd-highlight mb-list library">
         <div class="p-2 bd-highlight">
           <a class="nav-link" routerLink='yourlibrary/playlists'>Playlists</a>
@@ -28,7 +28,39 @@
         <div class="p-2 bd-highlight album">
           <a class="nav-link" routerLink='yourlibrary/album'>Albums</a>
         </div>
+    
+      </div>
+    </div>
+    <div *ngIf="router.url=='/mayestro/yourlibrary/artist'" >
+      <div class="d-flex flex-row bd-highlight mb-list library">
+        <div class="p-2 bd-highlight">
+          <a class="nav-link" routerLink='yourlibrary/playlists'>Playlists</a>
+        </div>
 
+        <div class="p-2 bd-highlight">
+          <a class="nav-link" routerLink='yourlibrary/artist'>Artists</a>
+        </div>
+
+        <div class="p-2 bd-highlight album">
+          <a class="nav-link" routerLink='yourlibrary/album'>Albums</a>
+        </div>
+    
+      </div>
+    </div>
+    <div *ngIf="router.url=='/mayestro/yourlibrary/album'" >
+      <div class="d-flex flex-row bd-highlight mb-list library">
+        <div class="p-2 bd-highlight">
+          <a class="nav-link" routerLink='yourlibrary/playlists'>Playlists</a>
+        </div>
+
+        <div class="p-2 bd-highlight">
+          <a class="nav-link" routerLink='yourlibrary/artist'>Artists</a>
+        </div>
+
+        <div class="p-2 bd-highlight album">
+          <a class="nav-link" routerLink='yourlibrary/album'>Albums</a>
+        </div>
+    
       </div>
     </div>
     <ul class="navbar-nav btnEnd">
