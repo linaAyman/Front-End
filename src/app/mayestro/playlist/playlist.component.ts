@@ -60,6 +60,7 @@ export class PlaylistComponent implements OnInit {
                 this.totalTracks = data.totalTracks;
                 this.date = new Date(this.date);
                 this.year = this.date.getFullYear();
+                this.playerservice.id = this.id;
                 this.MayestroService.playlistimage=this.imageURL;
                 this.MayestroService.songs=data;
           });
@@ -74,6 +75,7 @@ export class PlaylistComponent implements OnInit {
             this.date = new Date(this.date);
             this.year = this.date.getFullYear();
             this.MayestroService.playlistimage=this.imageURL;
+            this.playerservice.id = this.id;
             this.MayestroService.getTracks(this.id).subscribe((res: any) => {
               this.tracks = res;
               this.MayestroService.songs=res;
@@ -120,19 +122,25 @@ export class PlaylistComponent implements OnInit {
               this.MayestroService.getMytracks(this.id)
               .subscribe(
                  (data:any[])=>{
-                   if(this.first)
-                   {
-                   this.playerservice.songs = data;
-                   this.playerservice.array = data.length;
-                   }
+                  this.playerservice.songs = [...data];
+                  this.playerservice.array = data.length;
+            this.playerservice.artist = this.playerservice.songs[0].artists[0].name;
+            this.playerservice.imageURL = this.imageURL;
+            this.playerservice.x.src = this.playerservice.songs[0].url;
+            this.playerservice.name = this.playerservice.songs[0].name;
                  } 
               );
     }
     if (this.type == "album") {
         this.MayestroService.getTracks(this.id).subscribe((res: any) => {
           this.tracks = res;
-          this.playerservice.songs = res;
+          this.playerservice.songs = [...res];
           this.playerservice.array = res.length;
+          this.playerservice.id=res[0].id;
+    this.playerservice.artist = this.playerservice.songs[0].artists[0].name;
+    this.playerservice.imageURL = this.imageURL;
+    this.playerservice.x.src = this.playerservice.songs[0].url;
+    this.playerservice.name = this.playerservice.songs[0].name;
 
         });
     }
@@ -141,8 +149,10 @@ export class PlaylistComponent implements OnInit {
         this.MayestroService.getPlaylistTracks(this.id).subscribe(
           (res: any) => {
             this.tracks = res;
+            this.playerservice.id=res[0].id;
             this.playerservice.songs = [...res];
             this.playerservice.array = res.length;
+          this.playerservice.checkindex=0;
       this.playerservice.artist = this.playerservice.songs[0].artists[0].name;
       this.playerservice.imageURL = this.imageURL;
       this.playerservice.x.src = this.playerservice.songs[0].url;

@@ -1,6 +1,3 @@
-import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
-import { GetPremiumComponent } from './get-premium/get-premium.component';
-import { PremiumComponent } from './premium/premium.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { OpenMayestroComponent } from "./open-mayestro.component";
@@ -18,6 +15,9 @@ import { ResetPasswordHelpComponent } from './reset-password-help/reset-password
 import { ChangeEmailHelpComponent } from './change-email-help/change-email-help.component';
 import { AccountHelpComponent } from './account-help/account-help.component';
 import { UsingMayestroComponent } from './using-mayestro/using-mayestro.component';
+import { PremiumComponent } from './premium/premium.component';
+import { GetPremiumComponent } from './get-premium/get-premium.component';
+import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
 
 const routes: Routes = [
   {

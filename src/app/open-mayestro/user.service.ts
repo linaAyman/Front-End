@@ -57,7 +57,6 @@ export class UserService {
       })
     );
   }
-
   /**
    * gets playlists for home in open.mayestro
    */
@@ -72,10 +71,11 @@ export class UserService {
    * @param user user body 
    */
   UpdateUser(user:any){
-    return this.httpClinet.put(this.auth.URL+'/user/editprofile',user).pipe(
-     map((res: any) => {
-       localStorage.setItem("token", res.token);
-     })
-   );
+   return this.httpClinet.put(this.auth.URL+'/user/editprofile',user).pipe(
+    map((res: any) => {
+      localStorage.setItem("token", res.token);
+    })
+  );
+
   }
 }

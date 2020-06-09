@@ -21,16 +21,16 @@ export class ArtistsComponent implements OnInit {
   ngOnInit() {
   
     }
-follow()
-{
-  console.log(this.id);
-   //this.data.isFollowed(this.id,"artists").subscribe(res => {
-   // console.log(res);
-    if(this.isFollowed==true)
-    this.isFollowed=false;
- else this.isFollowed=true;
-   //})
+// follow()
+// {
+//   console.log(this.id);
+//    //this.data.isFollowed(this.id,"artists").subscribe(res => {
+//    // console.log(res);
+//     if(this.isFollowed==true)
+//     this.isFollowed=false;
+//  else this.isFollowed=true;
+//    //})
 
-}
+// }
 
 }

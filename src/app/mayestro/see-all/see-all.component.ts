@@ -21,6 +21,9 @@ export class SeeAllComponent implements OnInit {
   cards: Array<ICard> = [];
   /** array of type any */
   cardsArray: Array<any>;
+  completed=false;
+  color;
+  browse;
   constructor(private route: ActivatedRoute, private mystro: MayestroService) {}
 
 
@@ -33,8 +36,16 @@ export class SeeAllComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(p => {
       this.requestSeeAll = p["name"];
-      console.log(p["name"]);
-      console.log(this.requestSeeAll);
+      this.browse=p["browse"];
+      if(p["color"]){
+        this.color=p["color"];
+      }
+      this.completed=true;
+      // console.log(p["name"]);
+      
+      // console.log(this.color);
+      // console.log(this.browse? this.color:'rgb(18,18,18)');
+      // console.log(this.requestSeeAll);
       this.mystro.getSeeAll(this.requestSeeAll).subscribe((res: any) => {
         this.category.name = res.category.name;
         if (res.category.playlists) {

@@ -91,6 +91,7 @@ export class TrackComponent implements OnInit {
           (data:any[])=>{
             this.songs=data;
             this.length=data.length;
+            console.log(this.songs);
           }
        );
      }

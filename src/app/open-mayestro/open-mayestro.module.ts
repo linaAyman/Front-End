@@ -17,6 +17,8 @@ import { PremiumComponent } from './premium/premium.component';
 import { GetPremiumComponent } from './get-premium/get-premium.component';
 import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
 import { GetPremiumHeaderComponent } from './get-premium/get-premium-header/get-premium-header.component';
+import { fakeBackendProvider } from "../shared/mock-server/mock-server.service";
+import { UserService } from "./user.service";
 import { HomeComponent } from './home/home.component';
 import { LoginHelpComponent } from './login-help/login-help.component';
 import { EditAccountHelpComponent } from './edit-account-help/edit-account-help.component';
@@ -58,7 +60,7 @@ import { UsingMayestroComponent } from './using-mayestro/using-mayestro.componen
     SharedModule,
     FormsModule,
     ReactiveFormsModule
-  ]
-  // providers:[fakeBackendProvider,UserService]
+  ],
+   providers:[fakeBackendProvider,UserService]
 })
 export class OpenMayestroModule {}
