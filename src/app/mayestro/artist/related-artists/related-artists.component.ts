@@ -2,6 +2,7 @@ import { ArtistService } from './../artist.service';
 import { ICard } from './../../card/card.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MayestroService } from '../../mayestro.service';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
