@@ -120,19 +120,24 @@ export class PlaylistComponent implements OnInit {
               this.MayestroService.getMytracks(this.id)
               .subscribe(
                  (data:any[])=>{
-                   if(this.first)
-                   {
-                   this.playerservice.songs = data;
-                   this.playerservice.array = data.length;
-                   }
+                  this.playerservice.songs = [...data];
+                  this.playerservice.array = data.length;
+            this.playerservice.artist = this.playerservice.songs[0].artists[0].name;
+            this.playerservice.imageURL = this.imageURL;
+            this.playerservice.x.src = this.playerservice.songs[0].url;
+            this.playerservice.name = this.playerservice.songs[0].name;
                  } 
               );
     }
     if (this.type == "album") {
         this.MayestroService.getTracks(this.id).subscribe((res: any) => {
           this.tracks = res;
-          this.playerservice.songs = res;
+          this.playerservice.songs = [...res];
           this.playerservice.array = res.length;
+    this.playerservice.artist = this.playerservice.songs[0].artists[0].name;
+    this.playerservice.imageURL = this.imageURL;
+    this.playerservice.x.src = this.playerservice.songs[0].url;
+    this.playerservice.name = this.playerservice.songs[0].name;
 
         });
     }

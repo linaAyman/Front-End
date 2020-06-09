@@ -139,10 +139,10 @@ export class PlayerComponent implements OnInit {
     else {
       this.playerservice.tracksong = true;
     }
-    if (this.playerservice.id == null) {
-      console.log("No next track");
-    }
-    else {
+    // if (this.service.playlistbuttonpressed == false) {
+    //   console.log("No next track");
+    // }
+    // else {
       this.playerservice.checkindex = this.playerservice.checkindex + 1;
       if (this.playerservice.checkindex < this.playerservice.array && this.playerservice.array != 1) {
         this.playerservice.x.pause();
@@ -164,7 +164,7 @@ export class PlayerComponent implements OnInit {
         this.end = this.playerservice.songs[this.playerservice.checkindex].duration;
         this.playerservice.x.play();
       }
-    }
+    // }
   }
   /**
    * to play the previous audio based on the previous button click
@@ -177,10 +177,10 @@ export class PlayerComponent implements OnInit {
     else {
       this.playerservice.tracksong = true;
     }
-    if (this.playerservice.id == null) {
-      console.log("No previous track");
-    }
-    else if (this.playerservice.nextsong == true && this.service.playlistbuttonpressed == true) {
+    // if (this.playerservice.id == null) {
+    //   console.log("No previous track");
+    // }
+      if (this.playerservice.nextsong == true && this.service.playlistbuttonpressed == true) {
       this.playerservice.checkindex = this.playerservice.checkindex - 1;
       if (this.playerservice.checkindex < this.playerservice.array && this.playerservice.checkindex >= 0) {
         this.value = 0;
@@ -200,7 +200,7 @@ export class PlayerComponent implements OnInit {
         this.end = this.playerservice.songs[this.playerservice.checkindex].duration;
         this.playerservice.x.play();
       }
-    }
+     }
   }
   /**
    * to mute the audio

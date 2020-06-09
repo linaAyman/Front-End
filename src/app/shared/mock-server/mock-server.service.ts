@@ -1448,6 +1448,7 @@ export class MockServerService implements HttpInterceptor {
             trackNumber: 2,
             id: 2,
             duration: 2,
+            url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
             artists: [
               {
                 name: "CamilaCabello"
