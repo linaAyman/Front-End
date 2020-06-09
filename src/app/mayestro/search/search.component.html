@@ -1,0 +1,31 @@
+<section class="h" *ngIf="top">
+    <div class="col-4 in">
+        <top-result [topResult]="top"></top-result>
+    </div>
+    <div class="col-8 in" >
+        <songs></songs>
+    </div>
+</section>
+<div class="row m-0 ">
+    <a [routerLink]="['/mayestro/seeall',recent.name]" class="testing catName">{{recent.name}}</a>
+    <a class="seeall" [routerLink]="['/mayestro/seeall',recent.name]">SEE ALL</a>
+</div>
+<div class="row m-0 txt">
+    <p>{{recent.description}}
+    </p>
+</div>
+<div class="row px-4 txt">
+    <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let c of cards |slice:0:6">
+        <recent-search [card]="c" [recent]="true"></recent-search>
+    </div>
+</div>
+
+<div class="row">
+    <div class="p-2 text">
+        Browse All
+    </div>
+</div>
+<div class ="m-2 in" *ngFor="let b of browse">
+    <search-card [browseCards]="b"></search-card>
+</div>
+    
