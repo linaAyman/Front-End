@@ -42,6 +42,13 @@ export class UserService {
   getPremiumPlan(plan){
     return this.httpClinet.get(this.auth.URL + `/getpremium/${plan}`);
   }
+  toBePremium(email){
+    return this.httpClinet.post(this.auth.URL+"/user/premium",email).pipe(
+      map((res: any) => {
+        localStorage.setItem("token", res.token);
+      })
+    );
+  }
   /**
    * methode that edits user data
    * 

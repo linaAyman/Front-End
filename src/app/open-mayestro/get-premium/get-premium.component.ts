@@ -1,7 +1,8 @@
+import { Router } from '@angular/router';
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../user.service';
-import { switchMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-get-premium',
@@ -10,13 +11,29 @@ import { switchMap } from 'rxjs/operators';
 })
 export class GetPremiumComponent implements OnInit {
 
+  /**
+   * error message that display to user if email invalid
+   */
+  errMsg: string;
+  /**
+   * the premuim plan
+    */
   plan:string;
+  /**
+   * monthly plan
+   */
   monthly=true;
+  /**
+   * yearly plan
+   */
   yearly=false;
-  constructor(private route:ActivatedRoute,private service:UserService) { }
+
+  constructor(private route:ActivatedRoute,private service:UserService, private router:Router) { }
   
   ngOnInit() {
-    // console.log("this.plan")
+   /**
+    * get the plan from the router link and pass it to html 
+    */
     this.route.params.subscribe(
       param=>{
         this.plan=param["plan"]
@@ -28,6 +45,34 @@ export class GetPremiumComponent implements OnInit {
         this.monthly=false;
         this.yearly=true;
       }
+  }
+
+  /**
+   * disabeld Submit button if email invalid
+   * @param f form object
+   */
+  invalid(f) {
+    return f.invalid;
+  }
+  /**
+   * submit email to the server
+   * @param f form object
+   */
+  submit(f) {
+    // f.valid;
+    
+    if (this.invalid(f)) {
+      return;
+    };
+    this.service.toBePremium(f.value.email).subscribe(
+      () => {
+        this.router.navigate(["/open.mayestro/overview"]);
+      },
+      err => {
+        console.log(err);
+        this.errMsg = "Invalid email";
+      }
+    );
   }
   
 }

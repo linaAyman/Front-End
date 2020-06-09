@@ -5,6 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './premium.component.html',
   styleUrls: ['./premium.component.css']
 })
+/**
+ * premium component
+ */
 export class PremiumComponent implements OnInit {
 
   constructor() { }

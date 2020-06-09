@@ -1615,7 +1615,8 @@ export class MockServerService implements HttpInterceptor {
           return getUserPLaylist();
         case url.match(/\/users\/\S+$/) && method === "GET":
           return getUser();
-         
+        case url.endsWith("/user/premium") && method === "POST":
+          return toBePremium();
         // case url.match(/\/albums\/\S+\/tracks$/) && method === "GET":
         case url.match(/\/playlist\/\S+\/tracks$/) && method === "GET":
           return viewtracks();
@@ -2626,6 +2627,16 @@ export class MockServerService implements HttpInterceptor {
         totalPlaylists: 7
       }
       return ok(userplaylist)
+    }
+
+    function toBePremium(){
+      const email=body;
+      let user=users.find(
+        x=>(x.email ===email)
+      );
+      if(!user) return error("invalid email");
+      return ok({token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"});
+
     }
     // helper functions
 
