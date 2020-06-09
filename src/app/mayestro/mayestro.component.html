@@ -8,7 +8,7 @@
     <div class="test">
         <section class=" position-relative  p-0">
             <div class="container p-0 router">
-                <router-outlet></router-outlet>
+                <router-outlet (activate)="onActivate($event)" ></router-outlet>
             </div>
         </section>
         <footer class="player ">

@@ -7,7 +7,6 @@
 }
 .playlist-content {
   padding: 20px 25px 0px 50px;
-  outline: 0;
 }
 
 .play-button {
@@ -20,7 +19,6 @@
   border-radius: 20px;
   border: #343a40;
   font: arial;
-  outline: 0;
 }
 
 .play-button:hover {
@@ -31,7 +29,6 @@
   border-radius: 20px;
   border: rgb(25, 206, 88);
   font: arial;
-  outline: 0;
 }
 .like-button {
   position: relative;
@@ -41,7 +38,6 @@
   border: rgb(18, 18, 18);
   width: 48px;
   height: 48px;
-  outline: 0;
 }
 i {
   -webkit-text-stroke-width: 1px;
@@ -57,7 +53,6 @@ i {
   width: 48px;
   height: 48px;
   line-height: 48px;
-  outline: 0;
 }
 
 .nav-link {

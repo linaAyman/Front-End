@@ -79,3 +79,8 @@
   font-size: 12px;
   text-align: center;
 }
+
+.myClass .mat-dialog-container {
+  padding: 0;
+  background-color: aqua;
+}
