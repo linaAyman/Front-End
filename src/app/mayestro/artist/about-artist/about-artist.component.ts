@@ -9,11 +9,23 @@ import { switchMap } from 'rxjs/operators';
   templateUrl: './about-artist.component.html',
   styleUrls: ['./about-artist.component.css']
 })
+
+/**
+ * about artist component
+ */
+
 export class AboutArtistComponent implements OnInit {
+
+  /**
+   * object to push artist info to it
+   */
   artistInfo:any;
   id:any;
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
+  /**
+   * get artist info from the srver and pass it to artistInfo object
+  */
   ngOnInit() {
 
     this.route.params.pipe(

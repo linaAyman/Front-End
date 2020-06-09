@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: start;
     background-color: rgba(0,0,0,.8);
-    height: 750px;
+    min-height: 700px;
 }
 
 .brand{
@@ -13,7 +13,7 @@
     letter-spacing: .21px;
     line-height: 20px;
     font-family: Arial;
-    padding: 30px;
+    padding: 18px;
 }
 
 .n-list{
@@ -31,7 +31,7 @@
     list-style: none;
     margin-left: 0px;
     padding-top:5px;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 
 .playlist{
@@ -61,3 +61,59 @@
     margin: 8px var(--left-sidebar-padding-right) 8px var(--left-sidebar-padding-left);
     /* border-color: #282828; */
 }
+
+::ng-deep .mat-dialog-container{
+    color: #ffffff;
+    
+    background-color:rgb(61, 60, 60);
+
+  }
+  .Download{
+    color: white;
+    /* background-color:#282828; */
+    overflow: hidden;
+    outline: none;
+    text-decoration: none;
+}
+.install{
+  /* margin-top: 5%; */
+  background-color:rgba(0,0,0,.8); 
+  line-height: 28px;
+  font-weight: 650;
+  letter-spacing: 1.2px;
+  border: 6px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 97%;
+  font-size: 15px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: url("https://sp-bootstrap.global.ssl.fastly.net/8.12.4/fonts/circular-bold.woff2");
+  text-decoration: none;
+  outline: none;
+}
+.fa-download
+{
+  color: white;
+}
+::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,.8);
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: rgba(0,0,0,.8);
+}
+
+::-webkit-scrollbar-thumb
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+

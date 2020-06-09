@@ -39,7 +39,14 @@ export class UserService {
       headers: { token: localStorage.getItem("token") }
     });  
   }
-
+  /**
+   * gets playlists for home in open.mayestro
+   */
+  getHomePlaylists(){
+    return this.httpClinet.get(this.auth.URL+'/me/playlist',{
+      headers: { token: localStorage.getItem("token") }
+    });
+  }
   /**
    * methode that edits user data
    * 
@@ -48,7 +55,6 @@ export class UserService {
   UpdateUser(user:any){
    return this.httpClinet.put(this.auth.URL+'/user/editprofile',user).pipe(
     map((res: any) => {
-      console.log("res", res);
       localStorage.setItem("token", res.token);
     })
   );

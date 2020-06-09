@@ -12,14 +12,18 @@ import { ProfileComponent } from "./profile/profile.component";
 import { SetDevicePasswordComponent } from "./set-device-password/set-device-password.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
-import { TrackComponent } from "./track/track.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { fakeBackendProvider } from "../shared/mock-server/mock-server.service";
 import { UserService } from "./user.service";
-import { PremiumComponent } from './premium/premium.component';
-import { GetPremiumComponent } from '../account-mayestro/get-premium/get-premium.component';
-import { ChangePlanComponent } from '../account-mayestro/get-premium/change-plan/change-plan.component';
-import { GetPremiumHeaderComponent } from '../account-mayestro/get-premium/get-premium-header/get-premium-header.component';
+import { HomeComponent } from './home/home.component';
+import { LoginHelpComponent } from './login-help/login-help.component';
+import { EditAccountHelpComponent } from './edit-account-help/edit-account-help.component';
+import { NotificationHelpComponent } from './notification-help/notification-help.component';
+import { ResetPasswordHelpComponent } from './reset-password-help/reset-password-help.component';
+import { ChangeEmailHelpComponent } from './change-email-help/change-email-help.component';
+import { SidebarHelpComponent } from './sidebar-help/sidebar-help.component';
+import { AccountHelpComponent } from './account-help/account-help.component';
+import { UsingMayestroComponent } from './using-mayestro/using-mayestro.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +36,15 @@ import { GetPremiumHeaderComponent } from '../account-mayestro/get-premium/get-p
     SetDevicePasswordComponent,
     SidebarComponent,
     ChangePasswordComponent,
-    TrackComponent,
-    PremiumComponent, 
-    GetPremiumComponent, 
-    ChangePlanComponent,
-    GetPremiumHeaderComponent
+    HomeComponent,
+    LoginHelpComponent,
+    EditAccountHelpComponent,
+    NotificationHelpComponent,
+    ResetPasswordHelpComponent,
+    ChangeEmailHelpComponent,
+    SidebarHelpComponent,
+    AccountHelpComponent,
+    UsingMayestroComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +52,7 @@ import { GetPremiumHeaderComponent } from '../account-mayestro/get-premium/get-p
     SharedModule,
     FormsModule,
     ReactiveFormsModule
-  ]
-  // providers:[fakeBackendProvider,UserService]
+  ],
+   providers:[fakeBackendProvider,UserService]
 })
 export class OpenMayestroModule {}

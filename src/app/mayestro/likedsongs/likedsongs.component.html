@@ -1,0 +1,26 @@
+<div class="container">
+    <img src="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png" alt="Liked Songs" class="likedsongs"
+        srcset="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 150w, https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 300w"
+        sizes="(min-width: 1280px) 232px, 192px">
+    <h1 class="Liked" font-size="(min-width: 1280px) 232px, 192px">Liked Songs </h1>
+    <div class="playlist">
+        <ol *ngFor="let song of songs">
+            <div style=" background: repeat-x scroll center top rgb(18,18,18) ;">
+                <li class="row track" style="list-style-type:none;">
+                    <div>
+                        <img src="https://rlv.zcache.co.nz/white_music_8th_note_on_black_background_key_ring-r1e442478e5d048b784a77ea6b012b548_x7j3z_8byvr_307.jpg?rvtype=content"
+                            height="18" width="16" />
+                    </div>
+                    <div class="col-8" [style.color]="isPlaying ? 'rgb(25, 206, 88)' :'white' ">
+                        {{song.name}} <br>
+                        <a href=# style="color: white;"> {{song.artists[0].name}}</a>
+                    </div>
+                    <div class="col-1" [style.color]="isPlaying ? 'rgb(25, 206, 88)' :'white' "
+                        style="margin-left: 60px;">
+                        <p>{{song.duration}}</p>
+                    </div>
+                </li>
+            </div>
+        </ol>
+    </div>
+</div>

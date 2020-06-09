@@ -8,9 +8,13 @@ import { IACard } from './artist-card.interface';
 })
 export class ArtistCardComponent implements OnInit {
   @Input() aCard: IACard;
+  album:"album";
   constructor() { }
 
   ngOnInit() {
   }
+  // navigate() {
+  //   this.router.navigate([["/playlist", this.card.ID, this.card.type]]);
+  // }
 
 }

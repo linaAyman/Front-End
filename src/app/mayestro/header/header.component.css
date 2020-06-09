@@ -278,4 +278,10 @@ a {
 }
 
 .library {
+
+ background-color:rgb(18, 18, 18);
+ position: absolute;
+left :150px;
+font-size: 15px;
+margin-top:-20px;
 }

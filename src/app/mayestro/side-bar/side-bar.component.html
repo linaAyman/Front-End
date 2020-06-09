@@ -25,17 +25,31 @@
             PLAYLISTS
         </li>
         <li class="nav-link n-list">
-            <a class="nav-link text-white" routerLink="/mayestro/home">
+            <button class="nav-link text-white"  style="background-color: black; border: none; outline: none;" (click)="openDialog()">
                 <i class="fa fa-plus-square"></i>
                 Create PlayList
-            </a>
+            </button>
         </li>
         <li class="nav-link n-list">
-            <a class="nav-link text-white" routerLink="/mayestro/home">
+            <a class="nav-link text-white" routerLink="/mayestro/LikedSongs">
                 <i class="fa fa-heart"></i>
                 Liked Songs
             </a>
         </li>
+        
         <hr class="divider">
+        <div style="overflow-y: scroll; display: block; height: 90px; ">
+            <li  class="nav-link n-list" *ngFor="let item of MyPlaylist" >
+                <a class="nav-link text-white" [routerLink]="['/mayestro/playlist',item.id,item.type]">
+                    {{item.name}}
+                </a>
+            </li>
+        </div>
+        
     </ul>
+    <button class=" w3-round-large install">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <a class="Download" routerLink="/mayestro/download"> Install App </a>
+    </button>
+    
 </nav>

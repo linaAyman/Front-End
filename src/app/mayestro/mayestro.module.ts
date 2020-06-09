@@ -19,13 +19,21 @@ import { TrackComponent } from './track/track.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
-import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule} from '@angular/material';
+import{ MatSliderModule,MatFormFieldModule,MatInputModule,MatIconModule,MatDialogModule, MatSnackBar, MatSnackBarModule} from '@angular/material';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-
+import { DialogComponent } from './dialog/dialog.component';
+import { fakeBackendProvider } from '../shared/mock-server/mock-server.service';
+import { MayestroService } from './mayestro.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import 'hammerjs';
+import { LikedsongsComponent } from './likedsongs/likedsongs.component';
+import { PlayingQueueComponent } from './playing-queue/playing-queue.component';
+import { DownloadComponent } from './download/download.component';
 
 
 @NgModule({
-  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent,UserProfileComponent],
+  declarations: [MayestroComponent, HeaderComponent, SideBarComponent, PlayerComponent, MiniCardViewerComponent, CardComponent, HomeComponent, SeeAllComponent, SearchCardComponent, SearchComponent, PlaylistComponent, TrackComponent,AlbumsComponent,ArtistsComponent,PlaylistsComponent,UserProfileComponent, DialogComponent,LikedsongsComponent,PlayingQueueComponent,DownloadComponent],
+  entryComponents:[DialogComponent],
   imports: [
     MatMenuModule,
     CommonModule,
@@ -34,10 +42,16 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     MatSliderModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
-    CardComponent
-  ]
+  
+  ],
+  
+  providers:[fakeBackendProvider,MayestroService]
 })
 export class MayestroModule {}

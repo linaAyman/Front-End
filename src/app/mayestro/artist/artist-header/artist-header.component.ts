@@ -8,9 +8,21 @@ import { switchMap, combineLatest } from 'rxjs/operators';
   templateUrl: './artist-header.component.html',
   styleUrls: ['./artist-header.component.css']
 })
+
+/**
+ * Artist Header component 
+ */
+
 export class ArtistHeaderComponent implements OnInit {
+/**
+ * boolean to check if the user follow this artist
+ */
   isFollowed=true;
   isPalyed=true;
+
+/**
+ * artistInfo object to contain artist information  
+ */
   artistInfo={
     name:'',
     id:'',
@@ -21,6 +33,10 @@ export class ArtistHeaderComponent implements OnInit {
  
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
   
+  /**
+   * get artist information from the server and pass it to the object 
+   */
+
   ngOnInit() {
 
     this.route.params.pipe(
@@ -61,8 +77,4 @@ export class ArtistHeaderComponent implements OnInit {
     else this.isPalyed=true;
   }
 
-  // @HostBinding('style.backgroundImage')
-  //  getBackgroundImageUrl() {
-  //    document.getElementById("backimg").style.backgroundImage = "url('this.artistinfo.img')";
-  // }
 }
