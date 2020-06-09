@@ -11,11 +11,12 @@
           <i class="fa fa-chevron-right"></i>
         </a>
       </li>
-      <li class="col-4 nav-item" *ngIf="loc.path()==='/mayestro/search'">
-        <input type="text" placeholder="Search.." class="search">
-      </li>
+      <li class="col-5 nav-item" *ngIf="loc.path()==='/mayestro/search'">
+        <input type="text" placeholder="Search for Artists, Songs and Podcasts.."
+         class="search" (input)="onKey($event)">
+      </li> 
     </ul>
-    <div *ngIf="router.url=='/mayestro/yourlibrary/playlists'" >
+    <div *ngIf="loc.path()==='/mayestro/yourlibrary/playlists'" >
       <div class="d-flex flex-row bd-highlight mb-list library">
         <div class="p-2 bd-highlight">
           <a class="nav-link" routerLink='yourlibrary/playlists'>Playlists</a>

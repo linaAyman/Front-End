@@ -14,6 +14,7 @@ export class MiniCardViewerComponent implements OnInit {
   @Input() category: ICategory;
 /** cards array of type ICard */
   cards:Array<ICard>=[];
+  browse=false;
   constructor() { }
 
 /** 
@@ -21,19 +22,19 @@ export class MiniCardViewerComponent implements OnInit {
  * Filter the description of each card based on the card type.
 */
   ngOnInit() {
-    this.category.cards.forEach((card)=>{
+    this.category.cards.forEach(card=>{
       let desc:string;
-      if(this.category.type=="playlists"){
+      if(card.type=="playlist"){
         desc=card.description;
       }
-      else if(this.category.type=="albums"){
+      else if(card.type=="album"){
         desc='';
         card.artists.forEach(art=>{
           desc+=art.name+','
         })
         desc=desc.slice(0,desc.length-1)
       }
-      else if(this.category.type=="artists"){
+      else if(card.type=="artist"){
         desc=card.artist_name;
       }
       const crd:ICard={

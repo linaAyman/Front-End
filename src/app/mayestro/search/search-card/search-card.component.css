@@ -1,50 +1,18 @@
 .c{
-    display:flex;
-    flex-direction: column;
-    position: relative;
-    /* padding: 20px 20px 16px; */
-    /* border-radius: 8px; */
-    isolation: isolate;
-    box-sizing: border-box;
-    min-height: 70%;
-    cursor: pointer;
-    background: linear-gradient(transparent,rgba(0,0,0,.4));
-    color: #fff;
-    opacity: 1;
-    overflow: hidden;
-    /* height: 100%; */
-    width:100%;
+   display: inline-flex;
     
 }
 .img{
     transform: rotate(25deg) translate(18%,-2%);
-    /* position: absolute; */
     right:0;
-    /* position: absolute; */
     bottom:0;
     float: right;
     width:50%;
     height:50%;
-    /* overflow: hidden; */
-    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
-    /* width:0%;
-    height:50%; */
 }
 
-.cl1{
-    background-color: rgb(160,195,210);
-    position: relative;
-    overflow: hidden;
-    border: none;
-    border-radius: 8px;
-    height: 100%;
-    min-width:100%;
-}
-.cl2{
-    /* position: relative; */
-    overflow: hidden;
-    border: none;
-    border-radius: 8px;
+.pad{
+    padding: 0.5%;
 }
 
 .teet{
@@ -74,7 +42,34 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
-    /* position: absolute; */
-    /* padding-top: 2%; */
 
+}
+.podcast{
+    overflow: hidden;
+    /* background-color: rgb(245, 155, 35); */
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.charts{
+    overflow: hidden;
+    background-color: rgb(75, 145, 125);
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.discover{
+    overflow: hidden;
+    background-color: rgb(180, 155, 200);
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    height: 100%;
+    cursor: pointer;
 }
