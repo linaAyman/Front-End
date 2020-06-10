@@ -21,6 +21,9 @@ export class ArtistHeaderComponent implements OnInit {
  */
   isFollowed=true;
   isPalyed=true;
+  /**
+   * array of follwed artists
+   */
   FollowedArtists:any[];
   artists:any;
   index:any;
@@ -67,7 +70,7 @@ export class ArtistHeaderComponent implements OnInit {
   }
 
   /**
-   * change follow button label
+   *  follow  artist and add it to library
    */
 
   follow()
@@ -84,6 +87,9 @@ export class ArtistHeaderComponent implements OnInit {
         let snack= this.snackbar.open("Added to Your Library" ,'',{duration:500})
     }
   }
+  /**
+   * unfollow artist and remove it from library
+   */
 unfollow()
 {
    

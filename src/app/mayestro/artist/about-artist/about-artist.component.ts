@@ -20,7 +20,13 @@ export class AboutArtistComponent implements OnInit {
    * object to push artist info to it
    */
   artistInfo:any;
+  /**
+   * array of listners numbers and locations
+   */
   listners:[];
+  /**
+   * artist id
+   */
   id:any;
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
