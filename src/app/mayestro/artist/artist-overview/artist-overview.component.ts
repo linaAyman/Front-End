@@ -50,7 +50,7 @@ export class ArtistOverviewComponent implements OnInit {
    */
   id:any;
   /**
-   * albums show less button
+   * albums show less button  
    */
   aShowLess=false;
   /**

@@ -8,7 +8,7 @@
         <div class="buttonContainer ">
             
             <button class="button-scss b"  type="button" (click)=pLay()>{{isPalyed?'Play':'Pause'}}</button>
-            <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? 'white':'#1fa14d' " type="button"  (click)="follow()" >{{isFollowed?'Follow':'unFollow'}}</button>
+            <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? '#1fa14d':'white' " type="button"  (click)="follow()" >{{isFollowed?'unFollow':'Follow'}}</button>
             <div  style="display: inline;">
                 <button type="button" title="More" class="moreButton">...</button>
 

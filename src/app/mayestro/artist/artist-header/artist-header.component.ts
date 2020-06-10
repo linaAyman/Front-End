@@ -17,8 +17,8 @@ export class ArtistHeaderComponent implements OnInit {
 /**
  * boolean to check if the user follow this artist
  */
-  isFollowed=true;
-  isPalyed=true;
+  isFollowed:boolean;
+  isPalyed:boolean;
 
 /**
  * artistInfo object to contain artist information  
@@ -27,7 +27,8 @@ export class ArtistHeaderComponent implements OnInit {
     name:'',
     id:'',
     img:'',
-    followers:''
+    followers:'',
+    imgUrl:''
   };
   id: any;
  
@@ -51,7 +52,9 @@ export class ArtistHeaderComponent implements OnInit {
         this.artistInfo.id=comp.id;
         this.artistInfo.name=comp.name;
         this.artistInfo.img=comp.image;
-        this.isFollowed=comp.isFollowed;
+        // this.isFollowed=comp.isFollowed;
+        this.artistInfo.imgUrl=comp.imgurl;
+       
       });
   }
 

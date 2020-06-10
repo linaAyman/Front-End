@@ -1,5 +1,7 @@
 import { Time } from '@angular/common';
-
+/**
+ * Artist card interface
+ */
 export interface IASong{
     name: string;
     duration:Time;
