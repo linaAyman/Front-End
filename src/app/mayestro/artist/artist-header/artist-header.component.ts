@@ -57,7 +57,7 @@ export class ArtistHeaderComponent implements OnInit {
         this.artistInfo.name=comp.name;
         this.artistInfo.img=comp.image;
         //this.isFollowed=comp.isFollowed; 
-        this.artistInfo.imgUrl=comp.imgUrl;
+        this.artistInfo.imgUrl=comp.imgurl;
         this.artists=comp;
       });
       this.followartist.GetFollowedArtists()

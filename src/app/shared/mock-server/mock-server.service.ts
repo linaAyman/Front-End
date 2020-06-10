@@ -2406,14 +2406,14 @@ function viewartist(){
       id: "3xl0OvcSlc9Mwe5ToaFtD3",
       type: "Artist",
       name: "Amr Diab",
-      isFollowed: false,
+      isFollowed: true,
       image: "https://i.scdn.co/image/5ac491f3bf789a7a1491b20de5e83006e0ef2ba0",
-      imgurl:"https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b"
+      imgUrl:"https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b"
     }    
   console.log("viewArtist")
   return ok(artists) ; 
-}
 
+}
 function viewaboutartist(){
   const info={about : "Amr Diab is a pop singer and songwriter from Egypt. He has won a record seven World Music Awards to date, and is considered the all-time best-selling musical artist from the Middle East. He is the creator of his own genre; he calls his meld of Arabic harmony and Western rhythms 'Mediterranean Music,' and it has influenced many subsequent artists."
       ,listners :[{country:"cairo ,EG ",number:"68,297"},
