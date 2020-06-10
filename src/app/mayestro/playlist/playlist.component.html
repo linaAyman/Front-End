@@ -20,8 +20,9 @@
                 <mat-menu #menu="matMenu" class="dropdownmenu">
                     <button mat-menu-item *ngIf="type=='album'" class="text-white" style="outline: 0;" (click)="add()">Save to Your Library</button>
                     <button mat-menu-item *ngIf="type=='playlist'" class="text-white" style="outline: 0;" (click)="addList()">Save to Your Library</button>
-                    <button mat-menu-item *ngIf="type=='myplaylist'" class="text-white" style="outline: 0;" (click)="remove()">Delete</button>
-                </mat-menu>
+                    <a style="text-decoration: none;"routerLink="/mayestro/yourlibrary/playlists"><button mat-menu-item *ngIf="type=='myplaylist'" class="text-white" style="outline: 0;" (click)="remove()">Delete</button>
+                    </a>
+                    </mat-menu>
                 <p style="text-align: center; color: white">{{year}} - {{totalTracks}} songs</p>
             </div>
 
