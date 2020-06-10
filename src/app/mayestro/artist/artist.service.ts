@@ -20,7 +20,6 @@ export class ArtistService {
    * @param auth authentication service
    */
   constructor(private httpClient: HttpClient, private auth:AuthService) { }
-
   /**
    * getArtist method get the artist from server  by its id
    * @param id artist id

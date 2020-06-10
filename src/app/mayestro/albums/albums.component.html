@@ -1,4 +1,4 @@
-<div *ngIf="songs.length==0"class="container">
+<div *ngIf="this.length==0"class="container">
     <div class="discovericon">
         <svg viewBox="0 0 80 79" xmlns="http://www.w3.org/2000/svg">
             <title>Album</title>
@@ -15,7 +15,7 @@
 
 
 <!-- <p>card works!</p> -->
-<div *ngIf="songs.length>0">
+<div *ngIf="this.length>0">
     <div *ngFor="let song of songs" class="col-lg-2 col-md-3 col-sm-4">
       <div class="p-2">
         <a class="card card-deck" [routerLink]="['/mayestro/playlist',song.id,song.type]">

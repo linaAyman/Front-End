@@ -195,9 +195,9 @@ export class ArtistOverviewComponent implements OnInit {
   
     this.sShowMoreBtn=true;
     this.sShowLess=false;
-    this.singles=this.orgSingles
+    this.singles=this.orgSingles;
       
-    this.artist.getMoreSingles(this.id).subscribe((res:any)=>{ 
+    this.artist.getMoreSingles(this.id).subscribe((res:any)=>{
       console.log(res)     
         res.tracks.forEach((element:any) => {
           const album:IACard={

@@ -6,7 +6,7 @@ describe('ArtistHeaderComponent', () => {
 
   var followed: ArtistHeaderComponent;
   beforeEach(()=>{
-    followed=new ArtistHeaderComponent(null,null);
+    var followed: ArtistHeaderComponent;
   });
       it('should change isfollowed vaule to false if input true',()=>{
         followed.isFollowed=true;

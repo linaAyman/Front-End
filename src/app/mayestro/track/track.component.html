@@ -13,7 +13,7 @@
                 <div class="col-1 button" [style.color]="isPlaying ? 'rgb(25, 206, 88)' :'white' " >
                     <mat-menu #menu="matMenu" class="dropdownmenu">
                         <button mat-menu-item [matMenuTriggerData]="MyPlaylist" [matMenuTriggerFor]="submenu" class="text-white" style="outline: 0;" >Add to playlist</button>
-                        <button mat-menu-item class="text-white" style="outline: 0;">Add to Liked Songs</button>
+                        <button mat-menu-item class="text-white" style="outline: 0;"  (click)="Sendsong(song)" (click)="likesong()">Add to Liked Songs</button>
                         <button mat-menu-item class="text-white" style="outline: 0;" (click)="addtoqueue()">Add to Queue</button>
                         <button mat-menu-item *ngIf="type=='myplaylist'" class="text-white" style="outline: 0;" (click)="remove()">Remove song from playlist</button>
                     </mat-menu>

@@ -30,6 +30,7 @@ export class MockServerService implements HttpInterceptor {
   myPlaylists:any;
   Liked:any;
   libraryAlbums=[];
+  FollowedArtists:any;
   constructor() {
     
     this.categories = {
@@ -98,8 +99,8 @@ export class MockServerService implements HttpInterceptor {
                   name: "KolMara",
                   trackNumber: 1,
                   id: 1,
-                  duration: 2,
-                  url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                  duration: 3.15,
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
                   artists: [
                     {
                       name: "tamer hosny"
@@ -137,6 +138,30 @@ export class MockServerService implements HttpInterceptor {
               ],
               tracks: [
                 {
+                  name: "Allamooni",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: "3.15",
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
+                  artists: [
+                    {
+                      name: "Fayrouz"
+                    }
+                  ]
+                },
+                {
+                  name: "AlaJisrAllawziyi",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 3.26,
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-2/ala_jisr_allawziyi.mp3",
+                  artists: [
+                    {
+                      name: "Fayrouz"
+                    }
+                  ]
+                }
+                ,{
                   name: "shady",
                   trackNumber: 1,
                   id: 1,
@@ -153,6 +178,7 @@ export class MockServerService implements HttpInterceptor {
                   trackNumber: 2,
                   id: 2,
                   duration: 2,
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
                   artists: [
                     {
                       name: "amrdiab"
@@ -162,7 +188,7 @@ export class MockServerService implements HttpInterceptor {
                 {
                   name: "SabahWeMasa",
                   trackNumber: 1,
-                  id: 1,
+                  id: 3,
                   duration: 2,
                   url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
                   artists: [
@@ -174,7 +200,7 @@ export class MockServerService implements HttpInterceptor {
                 {
                   name: "IWillAlwaysLoveYou",
                   trackNumber: 2,
-                  id: 2,
+                  id: 4,
                   duration: 2,
                   url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
                   artists: [
@@ -182,7 +208,8 @@ export class MockServerService implements HttpInterceptor {
                       name: "whitney huston"
                     }
                   ]
-                }
+                },
+          
               ]
             },
             {
@@ -1873,6 +1900,12 @@ export class MockServerService implements HttpInterceptor {
         ]
       }
       ];
+        this.FollowedArtists= [
+          {
+          artists: [
+        ]
+      }
+      ];
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
@@ -1882,7 +1915,8 @@ export class MockServerService implements HttpInterceptor {
     let categories = this.categories;
     let myPlaylists= this.myPlaylists;
     let LikedSongs= this.Liked;
-	let libraryAlbums=this.libraryAlbums;
+    let libraryAlbums=this.libraryAlbums;
+    let FollowedArtists=this.FollowedArtists;
     const { url, method, headers, body } = request;
     console.log(method);
     // wrap in delayed observable to simulate server api call
@@ -1962,8 +1996,6 @@ export class MockServerService implements HttpInterceptor {
           return UnLikeSongs();
         case url.endsWith("/follow") && method === "PUT":
           return FollowArtist();
-        case url.match("/\/artists\/\S+$/") && method === "GET":
-          return Artist();  
           case url.match(/\/artists\/\S+\/about$/) && method === "GET":
           return viewaboutartist();
         case url.match(/\/artists\/\S+\/top-tracks$/) && method === "GET":
@@ -1990,12 +2022,13 @@ export class MockServerService implements HttpInterceptor {
           return getUser();
         case url.endsWith("/user/premium") && method === "POST":
           return toBePremium();  
+        case url.endsWith("/me/artists") && method ==="GET":
+          return GetFollowedArtists(); 
+        case url.match(/\/unfollow\/\S+$/) && method ==="DELETE":
+          return UnFollowArtist();
       }
     }
-   function Artist()
-   {
-     return(ok);
-   }
+  
     function createplaylist(){
       const { name } = body;
       const _id = Math.floor(Math.random() * 100000);
@@ -2342,12 +2375,30 @@ export class MockServerService implements HttpInterceptor {
  }
     function FollowArtist()
     {
+      console.log("ddd");
       const { id,type } = body; 
-
+       let artist={
+        id: "3xl0OvcSlc9Mwe5ToaFtD3",
+        type: "Artist",
+       }
       return ok({
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
       });
+    }
+    function UnFollowArtist(){
+      const idUrl = url.split("/");
+      const type = idUrl[idUrl.length - 3];
+      const id = idUrl[idUrl.length - 2];
+      return ok({
+     
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
+      }); 
+    }
+    function GetFollowedArtists()
+    {
+      return ok(FollowedArtists);
     }
 ///////////////
 function viewartist(){
