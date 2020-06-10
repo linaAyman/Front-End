@@ -15,6 +15,9 @@ export class ArtistsComponent implements OnInit {
   constructor( private route:ActivatedRoute,private mayestro:MayestroService, private followartist : LikeAndFollowService) { }
 
   ngOnInit() {
+    /**
+     * gets followed artists
+     */
     this.followartist.GetFollowedArtists()
     .subscribe((comp:any)=>{     
     this.FollowedArtists=comp[0].artists;

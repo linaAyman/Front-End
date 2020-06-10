@@ -35,6 +35,9 @@ export class PlaylistComponent implements OnInit {
     public playerservice: PlayerService,
 	private snackbar: MatSnackBar
   ) { }
+  /**
+   * add songs to library
+   */
  add(){
     let snack= this.snackbar.open("added to Your Library",'',{duration:500})
     this.MayestroService.AddAlbum(this.id).subscribe(

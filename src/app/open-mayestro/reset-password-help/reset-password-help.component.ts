@@ -13,15 +13,21 @@ export class ResetPasswordHelpComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  /**
+   * to expand first topic on click
+   */
   First(){
     this.EmailAddress=!this.EmailAddress;
   }
-
+  /**
+   * to expand second topic on click
+   */
   Second(){
     this.Password=!this.Password;
   }
-
+  /**
+   * to expand third topic on click
+   */
   Third(){
     this.Link=!this.Link;
   }

@@ -13,6 +13,9 @@ export class AlbumsComponent implements OnInit {
   
   
   ngOnInit() {
+   /**
+    * gets albums of library
+    */
     this.service.GetLibraryAlbums()
       .subscribe(
         (data:any[]) =>{

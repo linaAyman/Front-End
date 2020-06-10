@@ -16,6 +16,9 @@ export class PlaylistsComponent implements OnInit {
   songs:any[];
   length:any;
   ngOnInit() {
+    /**
+     * gets playlists that made by user
+     */
     this.service.getMyPlaylists()
       .subscribe(
         (data:any[]) =>{
@@ -25,7 +28,9 @@ export class PlaylistsComponent implements OnInit {
       );
       
     }
-
+    /**
+     * opens create playlist dialog box
+     */
     openDialog() {
 
       this.dialog.open(DialogComponent);

@@ -41,12 +41,18 @@ export class TrackComponent implements OnInit {
     this.Pname= this.MyPlaylist[this.Pindex].name;//playlist name
     console.log(this.Pname);
   }
-
+  /**
+   * gets id of song to be added to a playlist
+   * @param song song to be added in playlist
+   */
   Sendsong(song){
-    console.log("gowa")
     this.index=this.songs.indexOf(song);
     this.ID= this.songs[this.index].id;//song id
   }
+  /**
+   * add song to a playlist
+   */
+
   add(){
     
     let snack= this.snackbar.open("added to "+this.Pname,'',{duration:500})
@@ -56,7 +62,9 @@ export class TrackComponent implements OnInit {
       }
     );
   }
-
+  /**
+   * remove song from playlist
+   */
   remove(){
     this.service.deleteTrack(this.ID).subscribe(
       response =>{

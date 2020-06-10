@@ -18,10 +18,16 @@ export class DialogComponent implements OnInit {
       newPlaylist:new FormControl(),
     })
   }
-
+  /**
+   * closes the  create playlist dialoge box
+   */
   create(){
     this.dialogRef.close();
   }
+  /**
+   * creates a new playlist
+   * @param f name of playlist to be created
+   */
   submit(f){
     if(f.dirty){
       this.PlaylistName=f.value.newPlaylist;
