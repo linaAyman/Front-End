@@ -3,6 +3,7 @@ import { Component, OnInit, Input,HostBinding  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, combineLatest } from 'rxjs/operators';
 import { LikeAndFollowService } from '../../like-and-follow.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-artist-header',
@@ -36,7 +37,7 @@ export class ArtistHeaderComponent implements OnInit {
   };
   id: any;
  
-  constructor(private route:ActivatedRoute,private artist:ArtistService, private followartist:LikeAndFollowService) { }
+  constructor(private route:ActivatedRoute,private artist:ArtistService, private followartist:LikeAndFollowService,    private snackbar: MatSnackBar,) { }
   
   /**
    * get artist information from the server and pass it to the object 
@@ -80,6 +81,7 @@ export class ArtistHeaderComponent implements OnInit {
           this.FollowedArtists[0].artists[0].isFollowed=false;
           console.log(this.FollowedArtists);
         })
+        let snack= this.snackbar.open("Added to Your Library" ,'',{duration:500})
     }
   }
 unfollow()
@@ -92,7 +94,7 @@ unfollow()
         this.FollowedArtists[0].artists.splice(0, 1);
         console.log("UNFOLLOWED");
       })
-
+      let snack= this.snackbar.open("Removed from Your Library" ,'',{duration:500})
 }
   /**
    * change play button label 
