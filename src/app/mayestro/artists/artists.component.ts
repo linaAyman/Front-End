@@ -18,7 +18,7 @@ export class ArtistsComponent implements OnInit {
     this.followartist.GetFollowedArtists()
     .subscribe((comp:any)=>{     
     this.FollowedArtists=comp[0].artists;
-    this.length=comp.length;
+    this.length=this.FollowedArtists.length;
     });
   
     }
