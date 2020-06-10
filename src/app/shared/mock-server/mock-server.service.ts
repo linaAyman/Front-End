@@ -1905,7 +1905,7 @@ export class MockServerService implements HttpInterceptor {
           artists: [
         ]
       }
-    ];
+      ];
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;

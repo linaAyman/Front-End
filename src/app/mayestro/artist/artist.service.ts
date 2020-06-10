@@ -67,14 +67,31 @@ export class ArtistService {
   getArtistSingles(id){
     return this.httpClient.get(this.auth.URL+`/artists/${id}/singles`)
   }
+    
+   /**
+   *get artist's more singles from server by artist id
+   * @param id artist id
+   */
+  getMoreSingles(id){
+    return this.httpClient.get(this.auth.URL+`/artists/${id}/more-singles`)
+  }
+
   /**
    *get artist's appears on from server by artist id
    * @param id artist id
    */
+  
   getAppearsOn(id){
     return this.httpClient.get(this.auth.URL+`/artists/${id}/appears-on`)
   }
 
+   /**
+   *get artist's more appears on from server by artist id
+   * @param id artist id
+   */
+  getMoreAppearsOn(id){
+    return this.httpClient.get(this.auth.URL+`/artists/${id}/more-appears-on`)
+  }
   /**
    *get related artists from server by artist id
    * @param id artist id

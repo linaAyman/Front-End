@@ -37,8 +37,6 @@ export class GetPremiumComponent implements OnInit {
     this.route.params.subscribe(
       param=>{
         this.plan=param["plan"]
-        console.log("this.plan")
-        console.log(this.plan)
         return this.plan
       })
       if(this.plan=="yearly"){

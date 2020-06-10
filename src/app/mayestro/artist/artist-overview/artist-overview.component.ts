@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IACard } from '../artist-card/artist-card.interface';
 import { switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-artist-overview',
@@ -24,25 +25,69 @@ export class ArtistOverviewComponent implements OnInit {
    * array of albums of type IACard
    */
   albums:Array<IACard>=[];
+   /**
+   * array of more albums of type IACard
+   */
   moreAlbums:Array<IACard>=[];
   /**
    * array of singles of type IACard
   */
   singles:Array<IACard>=[];
   /**
+   * array of more singles of type IACard
+  */
+  moreSingles:Array<IACard>=[];
+  /**
    * array of Appears on of type IACard
   */
   appearsOn:Array<IACard>=[];
+  /**
+   * array of more Appears on of type IACard
+  */
+  moreAppearsOn:Array<IACard>=[];
+  /**
+   * artist id
+   */
   id:any;
   /**
-   * boolean if there it more button
+   * albums show less button
    */
-  // showMore=true;
+  aShowLess=false;
+  /**
+   * singles show less button
+   */
+  sShowLess=false;
+  /**
+   * appears on show less button
+   */
+  apShowLess=false;
+  /**
+   * original albums array
+   */
+  orgAlbums:Array<IACard>=[];
+  /**
+   * original singles array
+   */
+  orgSingles:Array<IACard>=[];
+  /**
+   * original Appears on array
+   */
+  orgAppearsOn:Array<IACard>=[];
+  /**
+   *boolean if there is  albums more button
+   */
+  aShowMoreBtn=true;
+  /**
+   *  singles show more button
+   */
+  sShowMoreBtn=true;
+  /**
+   *appears on show more button
+   */
+  apShowMoreBtn=true;
   
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
-  // ngAfterViewInit(){
-  //   this.moreFunc();
-  // }
+ 
   /**
    * get data(artist singles,songs,albums) from the server and push it to the arrays(singles,albums,songs)
    */
@@ -61,8 +106,8 @@ export class ArtistOverviewComponent implements OnInit {
       })
       )
       .subscribe((comp:any)=>{
-        // console.log("hhhhhhh")
-        // console.log(comp[3])
+        
+      
         comp[0].tracks.forEach((element:any) => {
           const song:IASong={
             name: element.name,
@@ -75,6 +120,7 @@ export class ArtistOverviewComponent implements OnInit {
           }
           this.songs.push(song)
         });
+        console.log(comp[1])
         comp[1].albums.forEach((element:any) => {
           const album:IACard={
             name: element.name,
@@ -87,17 +133,8 @@ export class ArtistOverviewComponent implements OnInit {
           }
           this.albums.push(album);
         });
-        // comp[2].albums.forEach((element:any) => {
-        //   const album:IACard={
-        //     name: element.name,
-        //     duration:0,
-        //     image:element.image,
-        //     isLiked:false,
-        //     id:element.id,
-        //     totalTracks:element.totalTracks
-        //   }
-        //   this.moreAlbums.push(album);
-        // });
+        this.orgAlbums=this.albums
+
         comp[2].tracks.forEach((element:any) => {
           const single:IACard={
             name: element.name,
@@ -110,6 +147,7 @@ export class ArtistOverviewComponent implements OnInit {
           }
           this.singles.push(single);
         });
+        this.orgSingles=this.singles
         comp[3].albums.forEach((element:any) => {
           const appearOn:IACard={
             name: element.name,
@@ -122,25 +160,20 @@ export class ArtistOverviewComponent implements OnInit {
           }
           this.appearsOn.push(appearOn);
         });
+        this.orgAppearsOn=this.appearsOn
       });
   }
+  /**
+   * send request to server to get more albms
+   */
+  albmsMoreFunc(){
   
-  moreFunc(){
-    // this.albums=[]
-    // this.showMore=false;
-    console.log("innnnn")
-    this.route.params.pipe(
-      switchMap(param=>{
-        this.id=param['id']
-        return combineLatest([
-          this.artist.getMoreAlbums(this.id)
-        ]); 
-      })
-      )
-      .subscribe((comp:any)=>{
-        console.log("more")
-        console.log(comp[0])
-        comp[0].albums.forEach((element:any) => {
+    this.aShowMoreBtn=true;
+    this.aShowLess=false;
+    this.albums=this.orgAlbums
+      
+    this.artist.getMoreAlbums(this.id).subscribe((res:any)=>{      
+        res.albums.forEach((element:any) => {
           const album:IACard={
             name: element.name,
             duration:0,
@@ -152,8 +185,83 @@ export class ArtistOverviewComponent implements OnInit {
           }
           this.moreAlbums.push(album);
         });
-      
+        this.albums=this.albums.concat(this.moreAlbums)
       });
   }
-
+  /**
+   * send request to server to get more singles
+   */
+  singlesMoreFunc(){
+  
+    this.sShowMoreBtn=true;
+    this.sShowLess=false;
+    this.singles=this.orgSingles
+      
+    this.artist.getMoreSingles(this.id).subscribe((res:any)=>{ 
+      console.log(res)     
+        res.tracks.forEach((element:any) => {
+          const album:IACard={
+            name: element.name,
+            duration:0,
+            image:element.image,
+            isLiked:false,
+            id:element.id,
+            totalTracks:element.totalTracks,
+            type:"album"
+          }
+          this.moreSingles.push(album);
+        });
+        this.singles=this.singles.concat(this.moreSingles)
+      });
+  }
+  /**
+   * send request to server to get more appears on
+   */
+  appearsMoreFunc(){
+  
+    this.apShowMoreBtn=true;
+    this.apShowLess=false;
+    this.appearsOn=this.orgAppearsOn
+      
+    this.artist.getMoreAppearsOn(this.id).subscribe((res:any)=>{      
+        res.albums.forEach((element:any) => {
+          const album:IACard={
+            name: element.name,
+            duration:0,
+            image:element.image,
+            isLiked:false,
+            id:element.id,
+            totalTracks:element.totalTracks,
+            type:"album"
+          }
+          this.moreAppearsOn.push(album);
+        });
+        this.appearsOn=this.appearsOn.concat(this.moreAppearsOn)
+      });
+  }
+  /**
+   * show less albums 
+   */
+  albmusShowLessFunc(){
+    this.moreAlbums=[];
+    this.aShowLess=true;
+    this.aShowMoreBtn=false;
+  }
+   /**
+   * show less singles 
+   */
+  SinglesShowLessFunc(){
+    this.moreSingles=[];
+    this.sShowLess=true;
+    this.sShowMoreBtn=false;  
+  }
+   /**
+   * show less appears on 
+   */
+  appearsShowLessFunc(){
+    this.moreAppearsOn=[];
+    this.apShowLess=true;
+    this.apShowMoreBtn=false;  
+  }
+  
 }
