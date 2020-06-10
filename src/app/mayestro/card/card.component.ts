@@ -19,6 +19,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     // console.log(this.card);
+    
   }
   /** 
    * Testing the routings (forgot to delete. It will be deleted in the next phase)

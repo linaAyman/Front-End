@@ -3,6 +3,7 @@ import { MayestroService } from "../mayestro.service";
 import { ActivatedRoute } from "@angular/router";
 import { MatSnackBar } from '@angular/material';
 import { PlayerService } from '../player.service';
+import { LikeAndFollowService } from '../like-and-follow.service';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class TrackComponent implements OnInit {
     private service: MayestroService,
     private route: ActivatedRoute,
     private snackbar: MatSnackBar,
-    private playerservice: PlayerService
+    private playerservice: PlayerService,
+    private liked: LikeAndFollowService
   ) {}
    /**
     * gets id of chosen playlist
@@ -102,6 +104,7 @@ export class TrackComponent implements OnInit {
          (data:any[]) =>{
            this.songs=data;
           this.length=data.length;
+          console.log(this.songs);
          });
      }
     });
@@ -119,9 +122,10 @@ export class TrackComponent implements OnInit {
       this.service.mayestroartist=this.playerservice.artist=this.songs[this.index].artists[0].name;
       this.playerservice.imageURL=this.service.playlistimage;
       this.playerservice.checkindex=this.index;
+      console.log(this.playerservice.checkindex);
       this.playerservice.array=this.length;
-      this.playerservice.songs=this.service.songs;
-      console.log( this.index);
+      this.playerservice.songs=[...this.service.songs];
+      console.log( this.playerservice.songs);
       this.playerservice.play();
     }
     else this.isPlaying = true;
@@ -133,12 +137,34 @@ export class TrackComponent implements OnInit {
     {
    this.playerservice.TempSongs.splice(0,this.playerservice.array);
    this.firstqueue=false;
+   
     }
    this.playerservice.queueexist=true;
    console.log(this.songs[this.index]);
    this.playerservice.TempSongs.splice(this.queueindex,0,this.songs[this.index]);
    this.playerservice.urls=this.songs[this.index].url;
-   console.log(this.playerservice.urls);
+   this.playerservice.queueimage=this.service.playlistimage;
    this.queueindex++;
+  }
+    /**
+   * add song to LikedSongs
+   */
+  likesong() {
+    let snack= this.snackbar.open("Added to your Liked Songs" ,'',{duration:500})
+    this.liked.LikeSong(this.ID).subscribe(
+      response => {
+        this.playerservice.LikedSongs[0].tracks.push(this.songs[this.index]);
+      })
+  }
+  /**
+   * Unlike Songs
+   */
+  delete() {
+    let snack= this.snackbar.open("Removed from your Liked Songs" ,'',{duration:500})
+    this.playerservice.index = this.playerservice.LikedSongs.indexOf(this.playerservice.songs[this.playerservice.checkindex]);
+    this.liked.UnLikeSong(this.playerservice.ID).subscribe(
+      response => {
+        this.playerservice.LikedSongs[0].tracks.splice(this.playerservice.index, 1);
+      })
   }
 }

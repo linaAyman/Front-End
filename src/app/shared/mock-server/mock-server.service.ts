@@ -30,6 +30,7 @@ export class MockServerService implements HttpInterceptor {
   myPlaylists:any;
   Liked:any;
   libraryAlbums=[];
+  FollowedArtists:any;
   constructor() {
     
     this.categories = {
@@ -98,8 +99,8 @@ export class MockServerService implements HttpInterceptor {
                   name: "KolMara",
                   trackNumber: 1,
                   id: 1,
-                  duration: 2,
-                  url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                  duration: 3.15,
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
                   artists: [
                     {
                       name: "tamer hosny"
@@ -137,6 +138,30 @@ export class MockServerService implements HttpInterceptor {
               ],
               tracks: [
                 {
+                  name: "Allamooni",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: "3.15",
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
+                  artists: [
+                    {
+                      name: "Fayrouz"
+                    }
+                  ]
+                },
+                {
+                  name: "AlaJisrAllawziyi",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 3.26,
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-2/ala_jisr_allawziyi.mp3",
+                  artists: [
+                    {
+                      name: "Fayrouz"
+                    }
+                  ]
+                }
+                ,{
                   name: "shady",
                   trackNumber: 1,
                   id: 1,
@@ -153,6 +178,7 @@ export class MockServerService implements HttpInterceptor {
                   trackNumber: 2,
                   id: 2,
                   duration: 2,
+                  url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
                   artists: [
                     {
                       name: "amrdiab"
@@ -162,7 +188,7 @@ export class MockServerService implements HttpInterceptor {
                 {
                   name: "SabahWeMasa",
                   trackNumber: 1,
-                  id: 1,
+                  id: 3,
                   duration: 2,
                   url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
                   artists: [
@@ -174,7 +200,7 @@ export class MockServerService implements HttpInterceptor {
                 {
                   name: "IWillAlwaysLoveYou",
                   trackNumber: 2,
-                  id: 2,
+                  id: 4,
                   duration: 2,
                   url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
                   artists: [
@@ -182,7 +208,8 @@ export class MockServerService implements HttpInterceptor {
                       name: "whitney huston"
                     }
                   ]
-                }
+                },
+          
               ]
             },
             {
@@ -1328,6 +1355,85 @@ export class MockServerService implements HttpInterceptor {
               image:
                 "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
               name: "songs for carmella: lullabies & sing-a-longs"
+            },{
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              artists: [
+                {
+                  id: "3xl0OvcSlc9Mwe5ToaFtD3",
+                  name: "Amr Diab"
+                }
+              ],
+              type: "album",
+              id: "3xl0OvcSlc9Mwe5ToaFtD23",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+              name: "Sahran"
+            },
+            {
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              artists: [
+                {
+                  id: "3xl0OvcSlc9Mwe5ToaFtD3",
+                  name: "Amr Diab"
+                }
+              ],
+              type: "album",
+              id: "3xl0OvcSlc9Mwe5ToaFtD23",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+              name: "Sahran"
             },
             {
               totalTracks: 2,
@@ -1794,6 +1900,12 @@ export class MockServerService implements HttpInterceptor {
         ]
       }
       ];
+        this.FollowedArtists= [
+          {
+          artists: [
+        ]
+      }
+    ];
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
@@ -1803,7 +1915,8 @@ export class MockServerService implements HttpInterceptor {
     let categories = this.categories;
     let myPlaylists= this.myPlaylists;
     let LikedSongs= this.Liked;
-	let libraryAlbums=this.libraryAlbums;
+    let libraryAlbums=this.libraryAlbums;
+    let FollowedArtists=this.FollowedArtists;
     const { url, method, headers, body } = request;
     console.log(method);
     // wrap in delayed observable to simulate server api call
@@ -1823,6 +1936,12 @@ export class MockServerService implements HttpInterceptor {
           return home();
         case url.match(/\/home\/[\S\s]+$/) && method === "GET":
           return seeAll();
+        case url.endsWith("/search") && method == "GET":
+          return browse();
+        case url.endsWith("/search") && method == "GET":
+          return recentSearch();
+        case url.match(/\/search\/\S+$/) && method == "GET":
+          return search();
         case url.match(
           /\/user\/mailExist\/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
         ) && method === "GET":
@@ -1877,8 +1996,6 @@ export class MockServerService implements HttpInterceptor {
           return UnLikeSongs();
         case url.endsWith("/follow") && method === "PUT":
           return FollowArtist();
-        case url.match("/\/artists\/\S+$/") && method === "GET":
-          return Artist();  
           case url.match(/\/artists\/\S+\/about$/) && method === "GET":
           return viewaboutartist();
         case url.match(/\/artists\/\S+\/top-tracks$/) && method === "GET":
@@ -1905,12 +2022,13 @@ export class MockServerService implements HttpInterceptor {
           return getUser();
         case url.endsWith("/user/premium") && method === "POST":
           return toBePremium();  
+        case url.endsWith("/me/artists") && method ==="GET":
+          return GetFollowedArtists(); 
+        case url.match(/\/unfollow\/\S+$/) && method ==="DELETE":
+          return UnFollowArtist();
       }
     }
-   function Artist()
-   {
-     return(ok);
-   }
+  
     function createplaylist(){
       const { name } = body;
       const _id = Math.floor(Math.random() * 100000);
@@ -2257,12 +2375,30 @@ export class MockServerService implements HttpInterceptor {
  }
     function FollowArtist()
     {
+      console.log("ddd");
       const { id,type } = body; 
-
+       let artist={
+        id: "3xl0OvcSlc9Mwe5ToaFtD3",
+        type: "Artist",
+       }
       return ok({
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
       });
+    }
+    function UnFollowArtist(){
+      const idUrl = url.split("/");
+      const type = idUrl[idUrl.length - 3];
+      const id = idUrl[idUrl.length - 2];
+      return ok({
+     
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFobWVkIEhlbG15IiwiaWF0IjoxNTE2MjM5MDIyfQ.1IywQey38ixVhRWY9cXsk8xzD7Z-aN9P-jQUsHwGhBE"
+      }); 
+    }
+    function GetFollowedArtists()
+    {
+      return ok(FollowedArtists);
     }
 ///////////////
 function viewartist(){
@@ -2271,18 +2407,481 @@ function viewartist(){
       type: "Artist",
       name: "Amr Diab",
       isFollowed: true,
-      image: "https://i.scdn.co/image/5ac491f3bf789a7a1491b20de5e83006e0ef2ba0"
+      image: "https://i.scdn.co/image/5ac491f3bf789a7a1491b20de5e83006e0ef2ba0",
+      imgUrl:"https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b"
     }    
   console.log("viewArtist")
   return ok(artists) ; 
 
 }
 function viewaboutartist(){
-  const info={about : "Amr Diab is a pop singer and songwriter from Egypt. He has won a record seven World Music Awards to date, and is considered the all-time best-selling musical artist from the Middle East. He is the creator of his own genre; he calls his meld of Arabic harmony and Western rhythms 'Mediterranean Music,' and it has influenced many subsequent artists."} 
+  const info={about : "Amr Diab is a pop singer and songwriter from Egypt. He has won a record seven World Music Awards to date, and is considered the all-time best-selling musical artist from the Middle East. He is the creator of his own genre; he calls his meld of Arabic harmony and Western rhythms 'Mediterranean Music,' and it has influenced many subsequent artists."
+      ,listners :[{country:"cairo ,EG ",number:"68,297"},
+      {country:"cairo, EG ",number:"68,297"},
+      {country:"Alexandria, EG ",number:"14,957"},
+      {country:"Paris, FR ",number:"12,001"},
+      {country:"Stockholm, SE ",number:"11,962"},
+      {country:"Amman, JO",number:"10,225 "}
+    ]
+    } 
   console.log("viewAboutArtist")
   return ok(info);
 }
+function browse(){
+  let browse ={
+      playlists: [
+        {
+          type: "playlist",
+          description: "Some Comfort Tracks to relax",
+          id: "4qrimFUz8KFC8W6WrDiDnd",
+          image:
+            "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+          name: "Comfort Zone",
+          totalTracks: 2,
+          releaseDate:
+            "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+          owner: [
+            {
+              name: "me"
+            }
+          ],
+          tracks: [
+            {
+              name: "amarain",
+              trackNumber: 1,
+              id: 1,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            },
+            {
+              name: "sahran",
+              trackNumber: 2,
+              id: 2,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "playlist",
+          description: "Relax your Mind",
+          id: "4qrimFUz8KFC8W6WrDiDne",
+          image:
+            "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+          name: "Relaxtion",
+          totalTracks: 2,
+          releaseDate:
+            "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+          owner: [
+            {
+              name: "me"
+            }
+          ],
+          tracks: [
+            {
+              name: "amarain",
+              trackNumber: 1,
+              id: 1,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            },
+            {
+              name: "sahran",
+              trackNumber: 2,
+              id: 2,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            }
+          ]
+        }],
+        albums: [
+          {
+            totalTracks: 2,
+            releaseDate:
+              "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+            tracks: [
+              {
+                name: "amarain",
+                trackNumber: 1,
+                id: 1,
+                duration: 2,
+                artists: [
+                  {
+                    name: "amrdiab"
+                  }
+                ]
+              },
+              {
+                name: "sahran",
+                trackNumber: 2,
+                id: 2,
+                duration: 2,
+                artists: [
+                  {
+                    name: "amrdiab"
+                  }
+                ]
+              }
+            ],
+            artists: [
+              {
+                id: "7H55rcKCfwqkyDFH9wpKM6",
+                name: "Christina Perri"
+              }
+            ],
+            type: "album",
+            id: "3xl0OvcSlc9Mwe5ToaFtD3",
+            image:
+              "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
+            name: "songs for carmella: lullabies & sing-a-longs"
+          },
+          {
+            totalTracks: 2,
+            releaseDate:
+              "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+            artist: [
+              {
+                name: "amrdiab"
+              }
+            ],
+            tracks: [
+              {
+                name: "amarain",
+                trackNumber: 1,
+                id: 1,
+                duration: 2,
+                artists: [
+                  {
+                    name: "amrdiab"
+                  }
+                ]
+              },
+              {
+                name: "sahran",
+                trackNumber: 2,
+                id: 2,
+                duration: 2,
+                artists: [
+                  {
+                    name: "amrdiab"
+                  }
+                ]
+              }
+            ],
+            artists: [
+              {
+                id: "04gDigrS5kc9YWfZHwBETP",
+                name: "Marron 5"
+              }
+            ],
+            type: "album",
+            id: "75iQSBSaztFIAun9qLLCnb",
+            image:
+              "https://i.scdn.co/image/ab67616d00001e0234ce9a9dde9c057225509276",
+            name: "Girls Like You (feat. Cardi B)"
+          }
+        ],
+        artists: [
+          {
+            type: "artist",
+            id: "3xl0OvcSlc9Mwe5ToaFtD3",
+            image:
+              "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+            name: "Amr Diab"
+          },
+          {
+            type: "artist",
+            id: "75iQSBSaztFIAun9qLLCnb",
+            image:
+              "https://i.scdn.co/image/ab67616d0000b2732b737b0411be58583293e17e",
+            name: "Tamer Hosni"
+          }
+        ],
+    Browse: [{
+    color: 'rgb(245, 155, 35)',
+    name: "Podcast",
+    cardUrl: 'hanshof',
+    imgUrl: "https://t.scdn.co/images/ad4d5c268a214f78920517e76e6ed107.jpeg"
+    },
+    {
+    color: 'rgb(75, 145, 125)',
+    name: "Charts",
+    cardUrl: 'hanshof',
+    imgUrl: "https://t.scdn.co/images/4b7472015a274eadbc00119f5141e548.jpeg"
+    },
+    {
+        color: 'rgb(180, 155, 200)',
+        name: "Discover",
+        cardUrl: 'hanshof',
+        imgUrl: "https://t.scdn.co/images/d0fb2ab104dc4846bdc56d72b0b0d785.jpeg"
+    },
+    {
+        color: 'rgb(160,195,210)',
+        name: "Made For You",
+        cardUrl: 'hanshof',
+        imgUrl: "https://t.scdn.co/images/68433b0ee5b5465b8e926c42b84cbcdb.jpeg"
+    },
+    {
+        color: 'rgb(160,195,210)',
+        name: "New Releases",
+        cardUrl: 'hanshof',
+        imgUrl: "https://t.scdn.co/images/acc7b5d7b1264d0593ec05c020d0a689.jpeg"
+    },
+    {
+        color: 'rgb(245, 155, 35)',
+        name: "Podcast",
+        cardUrl: 'hanshof',
+        imgUrl: "https://t.scdn.co/images/ad4d5c268a214f78920517e76e6ed107.jpeg"
+    },
+    {
+        color: 'rgb(245, 155, 35)',
+        name: "Podcast",
+        cardUrl: 'hanshof',
+        imgUrl: "https://t.scdn.co/images/ad4d5c268a214f78920517e76e6ed107.jpeg"
+    },
+        
 
+]
+ 
+};
+return ok(browse);
+}
+
+function search(){
+  let text=idFromUrl()
+  let artists=[];
+  let albums=[];
+  let playlists=[];
+  categories.Home.forEach(el=>{
+    if(el["playlists"] && playlists.length<6){
+      el.playlists.forEach(pl=>{
+        if(pl.name.startsWith(text) || pl.name.startsWith(text.toUpperCase())) playlists.push(pl);
+      })
+    }
+    if(el["albums"] && albums.length<6){
+      el.albums.forEach(al=>{
+        if(al.name.startsWith(text) || al.name.startsWith(text.toUpperCase()) || al.name==text) albums.push(al);
+      })
+    }
+    if(el["artists"] && artists.length<6){
+      el.artists.forEach(al=>{
+        if(al.name.startsWith(text) || al.name.startsWith(text.toUpperCase()) || al.name==text) artists.push(al);
+      })
+    }
+  })
+  let searchResult={topResult:[],playlists:[],albums:[],artists:[]};
+  searchResult["topResult"]=albums[0];
+  searchResult["playlists"]=playlists;
+  searchResult["albums"]=albums;
+  searchResult["artists"]=artists;
+  return ok(searchResult);
+}
+
+function recentSearch(){
+  let recent={
+    playlists: [
+      {
+        type: "playlist",
+        description: "Some Comfort Tracks to relax",
+        id: "4qrimFUz8KFC8W6WrDiDnd",
+        image:
+          "https://i.scdn.co/image/ab67706f00000002a86f06fb337166fc5047efee",
+        name: "Comfort Zone",
+        totalTracks: 2,
+        releaseDate:
+          "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+        owner: [
+          {
+            name: "me"
+          }
+        ],
+        tracks: [
+          {
+            name: "amarain",
+            trackNumber: 1,
+            id: 1,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          },
+          {
+            name: "sahran",
+            trackNumber: 2,
+            id: 2,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: "playlist",
+        description: "Relax your Mind",
+        id: "4qrimFUz8KFC8W6WrDiDne",
+        image:
+          "https://i.scdn.co/image/ab67616d00001e029df54b112dfa5da467239db0",
+        name: "Relaxtion",
+        totalTracks: 2,
+        releaseDate:
+          "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+        owner: [
+          {
+            name: "me"
+          }
+        ],
+        tracks: [
+          {
+            name: "amarain",
+            trackNumber: 1,
+            id: 1,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          },
+          {
+            name: "sahran",
+            trackNumber: 2,
+            id: 2,
+            duration: 2,
+            artists: [
+              {
+                name: "amrdiab"
+              }
+            ]
+          }
+        ]
+      }],
+      albums: [
+        {
+          totalTracks: 2,
+          releaseDate:
+            "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+          tracks: [
+            {
+              name: "amarain",
+              trackNumber: 1,
+              id: 1,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            },
+            {
+              name: "sahran",
+              trackNumber: 2,
+              id: 2,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            }
+          ],
+          artists: [
+            {
+              id: "7H55rcKCfwqkyDFH9wpKM6",
+              name: "Christina Perri"
+            }
+          ],
+          type: "album",
+          id: "3xl0OvcSlc9Mwe5ToaFtD3",
+          image:
+            "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
+          name: "songs for carmella: lullabies & sing-a-longs"
+        },
+        {
+          totalTracks: 2,
+          releaseDate:
+            "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+          artist: [
+            {
+              name: "amrdiab"
+            }
+          ],
+          tracks: [
+            {
+              name: "amarain",
+              trackNumber: 1,
+              id: 1,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            },
+            {
+              name: "sahran",
+              trackNumber: 2,
+              id: 2,
+              duration: 2,
+              artists: [
+                {
+                  name: "amrdiab"
+                }
+              ]
+            }
+          ],
+          artists: [
+            {
+              id: "04gDigrS5kc9YWfZHwBETP",
+              name: "Marron 5"
+            }
+          ],
+          type: "album",
+          id: "75iQSBSaztFIAun9qLLCnb",
+          image:
+            "https://i.scdn.co/image/ab67616d00001e0234ce9a9dde9c057225509276",
+          name: "Girls Like You (feat. Cardi B)"
+        }
+      ],
+      artists: [
+        {
+          type: "artist",
+          id: "3xl0OvcSlc9Mwe5ToaFtD3",
+          image:
+            "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+          name: "Amr Diab"
+        },
+        {
+          type: "artist",
+          id: "75iQSBSaztFIAun9qLLCnb",
+          image:
+            "https://i.scdn.co/image/ab67616d0000b2732b737b0411be58583293e17e",
+          name: "Tamer Hosni"
+        }
+      ]
+    }
+    return ok(recent);
+}
 function artisttop() {
   const artistTracks={
     tracks:[{
@@ -2417,78 +3016,78 @@ function moreArtistAlbums(){
 
   const moreArtistAlbums={
     albums:[
-    {
-      id: "1234",
-      image: "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
-      name: "Sahran",
-      totalTracks: 10
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b2738a523d8df82dd2fb7f4e73b0",
-      name: "Ya Tariq Ya Tariq",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b273b4df726e2f184eacb95261a9",
-      name: "Kol Hayaty",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b2737c607f5d6a8f657998ad9936",
-      name: "Meaddy El Nas",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b2732d9f87aa8712f69aed19d68f",
-      name: "Men Asmaa Allah El Hosna",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b273477710b297411eb12928835d",
-      name: "Ahla W Ahla",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b273a2fe1e657e50598ca383ffaa",
-      name: "Ya Tareeq",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b2734259ffed781de4b68c120976",
-      name: "Ahla Ma Ghana",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b273a57e351b00f7daf08e445300",
-      name: "Alem Kalby",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b2734861e6bc90711f6aab9f714f",
-      name: "Aktar Wahed",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b2732a37edda69e67266f05a9753",
-      name: "Tamali Maak",
-      totalTracks: 8
-      },
-      {
-      id: "1235",
-      image: "https://i.scdn.co/image/ab67616d0000b27335f0ee93b7a038510fe0dad0",
-      name: "Kamareen",
-      totalTracks: 8
-      },
+    // {
+    //   id: "1234",
+    //   image: "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+    //   name: "Sahran",
+    //   totalTracks: 10
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b2738a523d8df82dd2fb7f4e73b0",
+    //   name: "Ya Tariq Ya Tariq",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b273b4df726e2f184eacb95261a9",
+    //   name: "Kol Hayaty",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b2737c607f5d6a8f657998ad9936",
+    //   name: "Meaddy El Nas",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b2732d9f87aa8712f69aed19d68f",
+    //   name: "Men Asmaa Allah El Hosna",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b273477710b297411eb12928835d",
+    //   name: "Ahla W Ahla",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b273a2fe1e657e50598ca383ffaa",
+    //   name: "Ya Tareeq",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b2734259ffed781de4b68c120976",
+    //   name: "Ahla Ma Ghana",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b273a57e351b00f7daf08e445300",
+    //   name: "Alem Kalby",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b2734861e6bc90711f6aab9f714f",
+    //   name: "Aktar Wahed",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b2732a37edda69e67266f05a9753",
+    //   name: "Tamali Maak",
+    //   totalTracks: 8
+    //   },
+    //   {
+    //   id: "1235",
+    //   image: "https://i.scdn.co/image/ab67616d0000b27335f0ee93b7a038510fe0dad0",
+    //   name: "Kamareen",
+    //   totalTracks: 8
+    //   },
       {
       id: "1234",
       image: "https://i.scdn.co/image/ab67616d0000b273d352e68d3f9ef21f6d167a96",
@@ -2607,92 +3206,92 @@ function artistSingles(){
 function artistMoreSingles(){
   const moreSingles={
     tracks: [
+      // {
+      //   name: "Ya Agmal Eyoun (Remix)",
+      //   id: "1234",
+      //   image: "https://i.scdn.co/image/ab67616d0000b27322f6db77466f8b64009eeef7",
+      //   duration: 5,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Yetalemo (Remix)",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b27322f6db77466f8b64009eeef7",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Youm Talat (Remix)",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b27322f6db77466f8b64009eeef7",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Awel Youm Fi Elboad",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Odam Merayetha",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Mitghayar",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Tehayrk",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Ana Gheir (Remix)",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Youm Talat",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Ana Gheir",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Bahebo",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // {
+      //   name: "Africa",
+      //   id: "124",
+      //   image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
+      //   duration: 3,
+      //   isLiked: true
+      // },
+      // ////
       {
-        name: "Ya Agmal Eyoun (Remix)",
-        id: "1234",
-        image: "https://i.scdn.co/image/ab67616d0000b27322f6db77466f8b64009eeef7",
-        duration: 5,
-        isLiked: true
-      },
-      {
-        name: "Yetalemo (Remix)",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b27322f6db77466f8b64009eeef7",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Youm Talat (Remix)",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b27322f6db77466f8b64009eeef7",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Awel Youm Fi Elboad",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Odam Merayetha",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Mitghayar",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Tehayrk",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Ana Gheir (Remix)",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Youm Talat",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Ana Gheir",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Bahebo",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b273683c4f14fd8c4191f066fb04",
-        duration: 3,
-        isLiked: true
-      },
-      {
-        name: "Africa",
-        id: "124",
-        image: "https://i.scdn.co/image/ab67616d0000b27342c7fab68cc97d580526167c",
-        duration: 3,
-        isLiked: true
-      }
-      ////
-      ,{
         name: "Gamaa Habybak",
         id: "124",
         image: "https://i.scdn.co/image/ab67616d0000b273f3a86e44b95285f50078e1ff",

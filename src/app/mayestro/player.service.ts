@@ -44,6 +44,10 @@ export class PlayerService {
   end: any;
   nextsong: any;
   tracksong = false;
+  queueimage:any;
+  type:any;
+  ids:any;
+  PlayerTemp:any[];
   x: HTMLAudioElement = new Audio();
   constructor(private http: HttpClient, private auth: AuthService, private route: ActivatedRoute) {
 
@@ -71,18 +75,26 @@ export class PlayerService {
   /**
    * randomize the array of element
    */
-  random(myarray) {
+  // random(myarray) {
 
-    let ctr = myarray.length, temp, index;
-    while (ctr > 0) {
-      index = Math.floor(Math.random() * ctr);
-      ctr--;
-      temp = myarray[ctr];
-      myarray[ctr] = myarray[index];
-      myarray[index] = temp;
+  //   let ctr = myarray.length, temp, index;
+  //   while (ctr > 0) {
+  //     index = Math.floor(Math.random() * ctr);
+  //     ctr--;
+  //     temp = myarray[ctr];
+  //     myarray[ctr] = myarray[index];
+  //     myarray[index] = temp;
+  //   }
+  //   return myarray;
+  // }
+   random (array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
-    return myarray;
-  }
+}
   /**
    * to mute the audio
    */

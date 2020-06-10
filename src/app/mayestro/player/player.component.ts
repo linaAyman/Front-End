@@ -23,22 +23,23 @@ export class PlayerComponent implements OnInit {
   first = true;
   value: any;
   end: any;
-  LikedSongs: any[];
   TempLikeSong: any[];
-
+  shuffleindex;
+  randomize=false;
+  id:any;
   constructor(
     public playerservice: PlayerService, private liked: LikeAndFollowService, private router: ActivatedRoute, private service: MayestroService
   ) {
   }
 
   ngOnInit() {
-
+    this.id=this.playerservice.id;
 
     this.liked.GetLikedSongs()
       .subscribe(
         (data: any[]) => {
-          this.LikedSongs = data;
-          this.playerservice.TempSongs = [...this.LikedSongs];
+          this.playerservice.LikedSongs = data;
+          this.playerservice.TempSongs = [...this.playerservice.LikedSongs];
         }
       );
     this.value = this.playerservice.value;
@@ -72,14 +73,16 @@ export class PlayerComponent implements OnInit {
       if (this.playerservice.array == 1) {
         this.playerservice.player = true;
       }
-      if (this.isshuffled == false) {
-        this.playerservice.random(this.playerservice.songs);
-        console.log("Shuffle");
-        console.log(this.playerservice.songs);
+      if(this.randomize==true)
+      {
+      this.playerservice.random(this.playerservice.songs);
+      this.randomize=false;
+      this.playerservice.x.src=this.playerservice.songs[(this.playerservice.checkindex)].url;
+      this.playerservice.name=this.playerservice.songs[(this.playerservice.checkindex)].name;
+      this.playerservice.artist=this.playerservice.songs[(this.playerservice.checkindex)].artists[0].name;
+      this.playerservice.x.play();
       }
-      this.next();
-      // this.playerservice.x.src=this.
-      //this.end=this.playerservice.songs[this.checkindex].duration;
+      else this.next();
     });
 
   }
@@ -103,8 +106,7 @@ export class PlayerComponent implements OnInit {
    * to play the audio based on the play button click
    */
   play() {
-    this.playerservice.random(this.playerservice.songs);
-    console.log("Shuffle");
+  
     if (this.first) {
       if (this.playerservice.x.src == null) {
         this.playerservice.playing = false;
@@ -143,6 +145,16 @@ export class PlayerComponent implements OnInit {
     //   console.log("No next track");
     // }
     // else {
+      if(this.randomize==true)
+      {
+        this.playerservice.random(this.playerservice.songs);
+          console.log("Shuffle");
+          this.randomize=false;
+        this.playerservice.x.src=this.playerservice.songs[(this.playerservice.checkindex)].url;
+        this.playerservice.name=this.playerservice.songs[(this.playerservice.checkindex)].name;
+        this.playerservice.artist=this.playerservice.songs[(this.playerservice.checkindex)].artists[0].name;
+      }
+      else
       this.playerservice.checkindex = this.playerservice.checkindex + 1;
       if (this.playerservice.checkindex < this.playerservice.array && this.playerservice.array != 1) {
         this.playerservice.x.pause();
@@ -246,14 +258,23 @@ export class PlayerComponent implements OnInit {
     }
   }
   /**
-   *  toggle the shuffle button color
+   *  toggle the shuffle button color and shuffle
    */
   shuffle() {
-    if (this.isshuffled) {
-      this.value = 0;
+    if (this.isshuffled) {       
+        console.log(this.playerservice.songs);
       this.isshuffled = false;
-    } else this.isshuffled = true;
-    this.value = 0;
+      this.randomize=true;
+    }
+     else
+     { 
+    this.isshuffled = true;
+    this.randomize=false;
+    console.log(this.findWithAttr(this.playerservice.PlayerTemp,'name',this.playerservice.PlayerTemp[this.playerservice.checkindex].name));
+    this.playerservice.index=this.playerservice.PlayerTemp.indexOf(this.playerservice.songs[this.playerservice.checkindex]); 
+     this.playerservice.checkindex=this.playerservice.index;
+    this.playerservice.songs=[...this.playerservice.PlayerTemp];
+     }
   }
   /**
    * add song to LikedSongs
@@ -261,7 +282,7 @@ export class PlayerComponent implements OnInit {
   likesong() {
     this.liked.LikeSong(this.playerservice.songs[this.playerservice.checkindex].id).subscribe(
       response => {
-        this.LikedSongs[0].tracks.push(this.playerservice.songs[this.playerservice.checkindex]);
+        this.playerservice.LikedSongs[0].tracks.push(this.playerservice.songs[this.playerservice.checkindex]);
 
       }
 
@@ -277,10 +298,23 @@ export class PlayerComponent implements OnInit {
    * Unlike Songs
    */
   delete() {
-    this.playerservice.index = this.LikedSongs.indexOf(this.playerservice.songs[this.playerservice.checkindex]);
+    this.playerservice.index = this.playerservice.LikedSongs.indexOf(this.playerservice.songs[this.playerservice.checkindex]);
     this.liked.UnLikeSong(this.playerservice.ID).subscribe(
       response => {
-        this.LikedSongs[0].tracks.splice(this.playerservice.index, 1);
+        this.playerservice.LikedSongs[0].tracks.splice(this.playerservice.index, 1);
       })
   }
+  queue()
+  {
+    this.playerservice.queue=true;
+  }
+ findWithAttr(array, attr, value) {
+    for(var i = 0; i < array.length-1; i += 1) {
+        if(array[i][attr] === value) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 }

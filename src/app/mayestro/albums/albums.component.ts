@@ -7,6 +7,7 @@ import { MayestroService } from '../mayestro.service';
 })
 export class AlbumsComponent implements OnInit {
   songs:any[];
+  length:any;
   constructor(private service: MayestroService) { }
 
   
@@ -16,6 +17,8 @@ export class AlbumsComponent implements OnInit {
       .subscribe(
         (data:any[]) =>{
           this.songs=data;
+          this.length=this.songs.length;
+          console.log(this.songs);
         }
       );
     

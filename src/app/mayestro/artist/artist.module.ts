@@ -1,3 +1,5 @@
+import { MayestroModule } from './../mayestro.module';
+import { CardComponent } from './../card/card.component';
 import { ArtistSongComponent } from './artist-song/artist-song.component';
 import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -17,7 +19,9 @@ import { ArtistComponent } from './artist.component';
   imports: [
     CommonModule,
     ArtistRoutingModule,
-    SharedModule
+    SharedModule,
+    MayestroModule
+
   ]
 
 })

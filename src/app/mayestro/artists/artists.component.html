@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="this.length==0" class="container">
     <div class="addartisticon">
         <svg viewBox="0 0 52 54" xmlns="http://www.w3.org/2000/svg">
             <title>Add Artist Icon</title>
@@ -9,5 +9,21 @@
     </div>
     <h1 class="artist">Follow your first artist</h1>
     <p class="artisttext">Follow artists you like by tapping the follow button.</p>
-    <button class="btn btn-light  btn-lg" (click)="follow()">FIND ARTISTS</button>
+    <button class="btn btn-light  btn-lg" routerLink='/mayestro/search'>FIND ARTISTS</button>
 </div>
+<!-- <p>card works!</p> -->
+<div *ngIf="this.length>0">
+    <div *ngFor="let artist of FollowedArtists" class="col-lg-2 col-md-3 col-sm-4">
+      <div class="p-2">
+        <a class="card card-deck" [routerLink]="['/mayestro/artist',artist.id,'overview']">
+          <img [ngClass]="'rounded-circle'" class="card-img-top" src={{artist.imgUrl}} alt="Card image">
+          <div class="card-body p-0 pt-2">
+            <h4 class="card-title txt mb-1"> {{artist.name}} </h4>
+            <button class="stretch-link bton "><i class="fa fa-play ic"></i></button>
+          </div>
+        </a>    
+      </div>
+    </div>
+  </div>
+  
+  

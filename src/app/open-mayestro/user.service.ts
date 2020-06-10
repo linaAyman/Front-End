@@ -40,6 +40,24 @@ export class UserService {
     });  
   }
   /**
+   * method to get premium plan
+   * @param plan premium plan
+   */
+  getPremiumPlan(plan){
+    return this.httpClinet.get(this.auth.URL + `/getpremium/${plan}`);
+  }
+  /**
+   * send user email to server to get premium
+   * @param email user email
+   */
+  toBePremium(email){
+    return this.httpClinet.post(this.auth.URL+"/user/premium",email).pipe(
+      map((res: any) => {
+        localStorage.setItem("token", res.token);
+      })
+    );
+  }
+  /**
    * gets playlists for home in open.mayestro
    */
   getHomePlaylists(){

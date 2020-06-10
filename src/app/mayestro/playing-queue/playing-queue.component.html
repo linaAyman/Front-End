@@ -40,7 +40,7 @@
         </li>
     </div>
 </ol>
-<p class="next" > Next Up </p>
+<p class="next" *ngIf="exists" > Next Up </p>
 <ol *ngFor="let song of songs" class="tracks">
     <div class="tracks" style=" background: repeat-x scroll center top rgb(18,18,18) ;">
         <li class="row" style="list-style-type:none;">

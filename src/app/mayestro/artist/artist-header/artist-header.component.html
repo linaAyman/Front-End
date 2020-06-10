@@ -8,7 +8,8 @@
         <div class="buttonContainer ">
             
             <button class="button-scss b"  type="button" (click)=pLay()>{{isPalyed?'Play':'Pause'}}</button>
-            <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? 'white':'#1fa14d' " type="button"  (click)="follow()" >{{isFollowed?'Follow':'unFollow'}}</button>
+            <button *ngIf="isFollowed"  type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? 'white':'#1fa14d' " type="button"  (click)="follow()" > Follow</button>
+            <button *ngIf="!isFollowed"  type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? 'white':'#1fa14d' " type="button"  (click)="unfollow()" > UnFollow</button>
             <div  style="display: inline;">
                 <button type="button" title="More" class="moreButton">...</button>
 

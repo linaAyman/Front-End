@@ -1,5 +1,5 @@
 <!-- <p>card works!</p> -->
-<div class="p-2">
+<div class="p-2" *ngIf="card">
   <a [routerLink]="card.type==='artist'?['/mayestro/artist',card.ID]:['/mayestro/playlist',card.ID,card.type]"
     class="card card-deck">
     <img [ngClass]="{'rounded-circle':card.type==='artist'}" class="card-img-top" [src]="card.imgUrl" alt="Card image">

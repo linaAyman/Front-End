@@ -15,6 +15,9 @@ import { ResetPasswordHelpComponent } from './reset-password-help/reset-password
 import { ChangeEmailHelpComponent } from './change-email-help/change-email-help.component';
 import { AccountHelpComponent } from './account-help/account-help.component';
 import { UsingMayestroComponent } from './using-mayestro/using-mayestro.component';
+import { PremiumComponent } from './premium/premium.component';
+import { GetPremiumComponent } from './get-premium/get-premium.component';
+import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
 
 const routes: Routes = [
   {
@@ -35,7 +38,10 @@ const routes: Routes = [
       { path: "change-email-help", component: ChangeEmailHelpComponent},
       { path: "account-help", component: AccountHelpComponent},
       { path: "using-mayestro", component: UsingMayestroComponent},
-      { path: "**", component: NotFoundComponent },
+      { path: "premium",component: PremiumComponent},
+      { path:"getpremium/:plan" , component:GetPremiumComponent},
+      { path:"changeplan",component:ChangePlanComponent},
+      { path: "**", component: NotFoundComponent }
     ]
   }
 ];

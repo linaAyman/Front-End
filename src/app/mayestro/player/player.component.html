@@ -34,7 +34,7 @@
     </button>
     <mat-slider style="margin-top:55px; left: -130px" min="0" [max]="end" step="0.01" [value]="value"
       (input)="setPos($event.value)"></mat-slider>
-    <a class="list" routerLink="/mayestro/queue">
+    <a class="list" (click)="queue()" routerLink="/mayestro/queue">
       <i class="fa fa-list" aria-hidden="true"></i>
     </a>
     <div class="dropup">

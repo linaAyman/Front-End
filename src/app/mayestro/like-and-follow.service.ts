@@ -40,8 +40,14 @@ export class LikeAndFollowService {
       })
     );
   }
+
+  /**
+   * following an artist
+   * @param id 
+   * @param type
+   */
   FollowArtist(id,type){
-    return this.httpClient.put(this.auth.URL+'/me/tracks',{id,type}).pipe(
+    return this.httpClient.put(this.auth.URL+'/follow',{id,type}).pipe(
       map((res: any) => {
         localStorage.setItem("token", res.token);
       })
@@ -52,6 +58,22 @@ export class LikeAndFollowService {
    */
   GetFollowedArtists()
 {
-   return this.httpClient.get(this.auth.URL+'/me/follow');
+   return this.httpClient.get(this.auth.URL+'/me/artists',{
+   headers: { token: localStorage.getItem("token") }
+  });
+}
+UnFollowArtist(id,type)
+{
+  return this.httpClient.delete(this.auth.URL+`/unfollow/${id}`).pipe(
+    map((res: any) => {
+      localStorage.setItem("token", res.token);
+    })
+  );
+}
+getArtist(id:any)
+{
+  return this.httpClient.get(this.auth.URL+`/artists/${id}`,{
+    headers: { token: localStorage.getItem("token") }
+   });
 }
 }

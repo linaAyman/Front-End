@@ -13,6 +13,10 @@ import { SetDevicePasswordComponent } from "./set-device-password/set-device-pas
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { PremiumComponent } from './premium/premium.component';
+import { GetPremiumComponent } from './get-premium/get-premium.component';
+import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
+import { GetPremiumHeaderComponent } from './get-premium/get-premium-header/get-premium-header.component';
 import { fakeBackendProvider } from "../shared/mock-server/mock-server.service";
 import { UserService } from "./user.service";
 import { HomeComponent } from './home/home.component';
@@ -44,7 +48,11 @@ import { UsingMayestroComponent } from './using-mayestro/using-mayestro.componen
     ChangeEmailHelpComponent,
     SidebarHelpComponent,
     AccountHelpComponent,
-    UsingMayestroComponent
+    UsingMayestroComponent,
+    PremiumComponent, 
+    GetPremiumComponent, 
+    ChangePlanComponent,
+    GetPremiumHeaderComponent
   ],
   imports: [
     CommonModule,

@@ -20,6 +20,7 @@ export class AboutArtistComponent implements OnInit {
    * object to push artist info to it
    */
   artistInfo:any;
+  listners:[];
   id:any;
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
@@ -36,6 +37,7 @@ export class AboutArtistComponent implements OnInit {
       )
       .subscribe((comp:any)=>{
         this.artistInfo=comp.about;
+        this.listners=comp.listners;
       });
   }
 

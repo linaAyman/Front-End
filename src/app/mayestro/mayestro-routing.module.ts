@@ -5,7 +5,7 @@ import { HomeComponent } from "./home/home.component";
 import { PlayerComponent } from "./player/player.component";
 import { SideBarComponent } from "./side-bar/side-bar.component";
 import { SeeAllComponent } from "./see-all/see-all.component";
-import { SearchCardComponent } from "./search-card/search-card.component";
+import { SearchCardComponent } from "./search/search-card/search-card.component";
 import { SearchComponent } from "./search/search.component";
 import { PlaylistComponent } from "./playlist/playlist.component";
 import { PlaylistsComponent } from "./playlists/playlists.component";
@@ -27,6 +27,8 @@ const routes: Routes = [
       { path: "player", component: PlayerComponent },
       { path: "side", component: SideBarComponent },
       { path: "seeall/:name", component: SeeAllComponent },
+      { path: "search/seeall/:browse/:color/:name", component: SeeAllComponent },
+      { path: "seeall/:browse/:name", component: SeeAllComponent },
       { path: "search", component: SearchComponent },
       { path: "playlist/:id/:type", component: PlaylistComponent },
       { path: "yourlibrary/playlists", component: PlaylistsComponent },
@@ -40,7 +42,7 @@ const routes: Routes = [
         loadChildren: () =>
           import(`./artist/artist.module`).then(m => m.ArtistModule)
       },
-      { path: "profile", component: UserProfileComponent },
+      { path: "profile/:id", component: UserProfileComponent },
       { path: "**", component: NotFoundComponent }
     ]
   }

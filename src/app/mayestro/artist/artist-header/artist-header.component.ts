@@ -2,6 +2,7 @@ import { ArtistService } from './../artist.service';
 import { Component, OnInit, Input,HostBinding  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, combineLatest } from 'rxjs/operators';
+import { LikeAndFollowService } from '../../like-and-follow.service';
 
 @Component({
   selector: 'app-artist-header',
@@ -19,6 +20,9 @@ export class ArtistHeaderComponent implements OnInit {
  */
   isFollowed=true;
   isPalyed=true;
+  FollowedArtists:any[];
+  artists:any;
+  index:any;
 
 /**
  * artistInfo object to contain artist information  
@@ -27,11 +31,12 @@ export class ArtistHeaderComponent implements OnInit {
     name:'',
     id:'',
     img:'',
-    followers:''
+    followers:'',
+    imgUrl:''
   };
   id: any;
  
-  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
+  constructor(private route:ActivatedRoute,private artist:ArtistService, private followartist:LikeAndFollowService) { }
   
   /**
    * get artist information from the server and pass it to the object 
@@ -42,16 +47,21 @@ export class ArtistHeaderComponent implements OnInit {
     this.route.params.pipe(
       switchMap(param=>{
         this.id=param['id']
-        return this.artist.getArtist(this.id)
-       
+        return this.artist.getArtist(this.id);
       })
       )
       .subscribe((comp:any)=>{
-       
+             
         this.artistInfo.id=comp.id;
         this.artistInfo.name=comp.name;
         this.artistInfo.img=comp.image;
-        this.isFollowed=comp.isFollowed;
+        //this.isFollowed=comp.isFollowed; 
+        this.artistInfo.imgUrl=comp.imgUrl;
+        this.artists=comp;
+      });
+      this.followartist.GetFollowedArtists()
+      .subscribe((comp:any)=>{     
+      this.FollowedArtists=comp;
       });
   }
 
@@ -62,10 +72,28 @@ export class ArtistHeaderComponent implements OnInit {
   follow()
   {
     if(this.isFollowed==true)
+    {
        this.isFollowed=false;
-    else this.isFollowed=true;
+            this.followartist.FollowArtist(this.id,'artist').subscribe(
+        response => {
+          this.FollowedArtists[0].artists.push(this.artists);
+          this.FollowedArtists[0].artists[0].isFollowed=false;
+          console.log(this.FollowedArtists);
+        })
+    }
   }
+unfollow()
+{
+   
+     this.isFollowed=true;
+     console.log(this.id);
+    this.followartist.UnFollowArtist(this.id,'Artist').subscribe(
+      response => {
+        this.FollowedArtists[0].artists.splice(0, 1);
+        console.log("UNFOLLOWED");
+      })
 
+}
   /**
    * change play button label 
    */

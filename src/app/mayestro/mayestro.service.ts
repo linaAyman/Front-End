@@ -61,6 +61,32 @@ export class MayestroService {
   getSeeAll(name) {
     return this.httpClient.get(this.auth.URL + `/home/'${name}'`);
   }
+ 
+  getSearch(resp){
+    return this.httpClient.get(this.auth.URL+ "/search/"+resp);
+  }
+
+  getBrowse(){
+    return this.httpClient.get(this.auth.URL+ "/search");
+  }
+
+  getRecentSearch(){
+    return this.httpClient.get(this.auth.URL+"/search");
+  }
+   /**
+   * gets user information by its id
+   * @param id user id
+   */  
+  getUser(id){
+    return this.httpClient.get(this.auth.URL+`/users/${id}`)
+  }
+  /**
+   * get playlists of an user by its id
+   * @param id user's id
+   */
+  getUserPLaylist(id){
+    return this.httpClient.get(this.auth.URL+`/users/${id}/playlists`)
+  }
   /**
    * gets playlists made by user
    */
