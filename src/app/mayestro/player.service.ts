@@ -48,6 +48,7 @@ export class PlayerService {
   type:any;
   ids:any;
   PlayerTemp:any[];
+  playerindex:any;
   x: HTMLAudioElement = new Audio();
   constructor(private http: HttpClient, private auth: AuthService, private route: ActivatedRoute) {
 

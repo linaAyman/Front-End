@@ -6,6 +6,7 @@ import { IACard } from '../artist-card/artist-card.interface';
 import { switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { element } from 'protractor';
+import { PlayerService } from '../../player.service';
 
 @Component({
   selector: 'app-artist-overview',
@@ -86,7 +87,7 @@ export class ArtistOverviewComponent implements OnInit {
    */
   apShowMoreBtn=true;
   
-  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
+  constructor(private route:ActivatedRoute,private artist:ArtistService,private playerservice:PlayerService) { }
  
   /**
    * get data(artist singles,songs,albums) from the server and push it to the arrays(singles,albums,songs)
@@ -117,9 +118,18 @@ export class ArtistOverviewComponent implements OnInit {
             id:element.id,
             url:element.url,
             artist:element.artist
+            
           }
-          this.songs.push(song)
+          this.songs.push(song);
+          this.playerservice.songs=comp[0].tracks;
         });
+        this.playerservice.name=this.playerservice.songs[0].name;
+        this.playerservice.imageURL=this.playerservice.songs[0].image;
+        this.playerservice.artist=this.playerservice.songs[0].artists[0].name;
+        this.playerservice.x.src=this.playerservice.songs[0].url;
+        this.playerservice.array=this.playerservice.songs.length;
+        this.playerservice.checkindex=this.playerservice.playerindex;
+        ////////////////
         console.log(comp[1])
         comp[1].albums.forEach((element:any) => {
           const album:IACard={
@@ -132,6 +142,7 @@ export class ArtistOverviewComponent implements OnInit {
             type:"album"
           }
           this.albums.push(album);
+          
         });
         this.orgAlbums=this.albums
 

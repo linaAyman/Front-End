@@ -139,6 +139,9 @@ export class TrackComponent implements OnInit {
     else this.isPlaying = true;
 
   }
+  /**
+   * adding track to queue
+   */
   addtoqueue()
   {
     if(this.firstqueue)

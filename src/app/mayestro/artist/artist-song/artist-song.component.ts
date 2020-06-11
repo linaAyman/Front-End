@@ -15,6 +15,9 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ArtistSongComponent implements OnInit {
   isPlaying=false;
+  songs : any [];
+  ID: any;
+index;
   /**
    * object of type IASong contain song information
    */
@@ -22,6 +25,7 @@ export class ArtistSongComponent implements OnInit {
   constructor(private route:ActivatedRoute,private player:PlayerService) { }
 
   ngOnInit() {
+    this.songs=this.player.songs;
   }
   /**
    * check if the song is played
@@ -30,11 +34,20 @@ export class ArtistSongComponent implements OnInit {
   {
     console.log("playing");
     if(this.isPlaying==true)
+    {
        this.isPlaying=false;
-    else this.isPlaying=true;
+       this.player.play();
+    }
+    else 
+    {
+      this.isPlaying=true;
+      this.player.pause();
+    }
+
   } 
   // playSong(){
   //   this.player.getTracks()    
   // }
 
 }
+

@@ -17,9 +17,9 @@ export class PlayingQueueComponent implements OnInit {
   type: string;
   checkindex;
   queuesongs: any[];
-  image:any;
-  queuesongplay=false;
-  exists=false;
+  image: any;
+  queuesongplay = false;
+  exists = false;
   constructor(public playerservice: PlayerService, private service: MayestroService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -30,47 +30,37 @@ export class PlayingQueueComponent implements OnInit {
       this.checkindex = this.playerservice.checkindex;
       this.songs = [...this.playerservice.songs];
       this.songs.splice(this.checkindex, 1);
-      console.log(this.songs);
-      console.log(this.playerservice.songs);
-      this.image=this.playerservice.imageURL;
-      this.exists=true;
+      this.exists = true;
       this.playerservice.x.addEventListener("ended", () => {
         this.checkindex++;
-        //console.log(this.image)
-        if (this.checkindex <= this.playerservice.array - 1 && this.playerservice.queueexist == false)
-         {
-         if(this.playerservice.queueexist==false)
-         {
-           console.log("OOOOOO");
-          console.log(this.checkindex);
-          this.playerservice.imageURL=this.image;
-          this.name = this.playerservice.songs[this.playerservice.checkindex].name;
-          this.artist = this.playerservice.artist;
-          this.duration = this.playerservice.songs[this.playerservice.checkindex].duration;
-          this.songs = [...this.playerservice.songs];
-          this.songs.splice(this.checkindex, 1);
-          console.log(this.name);
-        
-         }
-         else {
-        
-        // //    console.log("DFFFF");
-        // //   this.playerservice.imageURL=this.image;
-        // //   this.name = this.playerservice.songs[this.playerservice.checkindex].name;
-        // //   this.artist = this.playerservice.artist;
-        // //   this.duration = this.playerservice.songs[this.playerservice.checkindex].duration;
-        // //   this.songs = [...this.playerservice.songs];
-        // //   this.queuesongs.splice(this.checkindex, 1);
-        // //   console.log(this.name);
-        this.songs.splice(this.checkindex, 1);
+        if (this.checkindex <= this.playerservice.array - 1 && this.playerservice.queueexist == false) {
+          if (this.playerservice.queueexist == false) {
+            this.playerservice.imageURL = this.image;
+            this.name = this.playerservice.songs[this.playerservice.checkindex].name;
+            this.artist = this.playerservice.artist;
+            this.duration = this.playerservice.songs[this.playerservice.checkindex].duration;
+            this.songs = [...this.playerservice.songs];
+            this.songs.splice(this.checkindex, 1);
+
           }
-        this.songs.splice(this.checkindex-1, 1);
-        this.exists=false;
-        } else if (this.playerservice.queueexist == true) 
-        {
-          this.playerservice.imageURL=this.playerservice.queueimage;
+          else {
+
+            // //    console.log("DFFFF");
+            // //   this.playerservice.imageURL=this.image;
+            // //   this.name = this.playerservice.songs[this.playerservice.checkindex].name;
+            // //   this.artist = this.playerservice.artist;
+            // //   this.duration = this.playerservice.songs[this.playerservice.checkindex].duration;
+            // //   this.songs = [...this.playerservice.songs];
+            // //   this.queuesongs.splice(this.checkindex, 1);
+            // //   console.log(this.name);
+            this.songs.splice(this.checkindex, 1);
+          }
+          this.songs.splice(this.checkindex - 1, 1);
+          this.exists = false;
+        } else if (this.playerservice.queueexist == true) {
+          this.playerservice.imageURL = this.playerservice.queueimage;
           console.log(this.playerservice.imageURL);
-          this.playerservice.queueexist=false;
+          this.playerservice.queueexist = false;
           // this.playerservice.queueexist=false;
           // console.log("MMM");
           // console.log(this.playerservice.queueexist);
@@ -83,20 +73,14 @@ export class PlayingQueueComponent implements OnInit {
         }
       })
       if (this.playerservice.queueexist == true) {
-        
-        console.log("SSD");
-        this.queuesongplay=true;
+        this.queuesongplay = true;
         this.queuesongs = [...this.playerservice.TempSongs];
-        this.playerservice.songs.splice(1,0,this.queuesongs[0]);
-        this.playerservice.array=(this.playerservice.array)+1;
-        console.log(this.playerservice.array);
-        console.log(this.queuesongs);
+        this.playerservice.songs.splice(1, 0, this.queuesongs[0]);
+        this.playerservice.array = (this.playerservice.array) + 1;
         this.playerservice.x.addEventListener("ended", () => {
-
-          console.log("EEE");
           this.queuesongs.splice(0, 1);  ///////////////removed queue item
         })
       }
-    } 
+    }
   }
 }

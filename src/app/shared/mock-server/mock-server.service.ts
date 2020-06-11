@@ -2890,8 +2890,8 @@ function artisttop() {
       name:"Nour Eloyon",
       isLiked: true,
       id:"3JOF9NzQVkUXtCcJbEQuAbm",
-      Url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
-      artist:"Amr Diab"
+      url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+      artists:[{name: "AmrDiab"}]
     },
     {
       image:"https://i.scdn.co/image/ab67616d0000b2732a37edda69e67266f05a9753",
@@ -2899,16 +2899,16 @@ function artisttop() {
       name:"Tamali Maak",
       isLiked: true,
       id:"123",
-      Url:"lmskmdlkm",
-      artist:"Amr Diab"
+      url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+      artists:[{name: "AmrDiab"}]
     },{
       image:"https://i.scdn.co/image/ab67616d0000b2737e6e6d8ffdd9597a96ab019e",
       duration:3,
       name:"Leily Nahary",
       isLiked: true,
       id:"123",
-      Url:"lmskmdlkm",
-      artist:"Amr Diab"
+      url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+      artists:[{name: "AmrDiab"}]
     },
     {
       image:"https://i.scdn.co/image/ab67616d0000b2737c607f5d6a8f657998ad9936",
@@ -2916,8 +2916,8 @@ function artisttop() {
       name:"Alby Etmannah",
       isLiked: true,
       id:"123",
-      Url:"lmskmdlkm",
-      artist:"Amr Diab"
+      url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+      artists:[{name: "AmrDiab"}]
     },
     {
       image:"https://i.scdn.co/image/ab67616d0000b273b4df726e2f184eacb95261a9",
@@ -2925,8 +2925,8 @@ function artisttop() {
       name:"Bayen Habeit",
       isLiked: true,
       id:"123",
-      Url:"lmskmdlkm",
-      artist:"Amr Diab"
+      url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+      artists: [{name: "AmrDiab"}]
     }]
   }
   return ok(artistTracks)

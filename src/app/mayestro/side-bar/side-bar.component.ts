@@ -24,7 +24,9 @@ export class SideBarComponent implements OnInit {
         }
       );
   }
-
+/**
+ * opens the dialogue box
+ */
   openDialog(){
     
     this.dialog.open(DialogComponent);

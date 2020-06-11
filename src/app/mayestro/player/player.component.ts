@@ -192,7 +192,17 @@ export class PlayerComponent implements OnInit {
     // if (this.playerservice.id == null) {
     //   console.log("No previous track");
     // }
-      if (this.playerservice.nextsong == true && this.service.playlistbuttonpressed == true) {
+    if(this.randomize==true)
+    {
+      this.playerservice.random(this.playerservice.songs);
+        console.log("Shuffle");
+        this.randomize=false;
+      this.playerservice.x.src=this.playerservice.songs[(this.playerservice.checkindex)].url;
+      this.playerservice.name=this.playerservice.songs[(this.playerservice.checkindex)].name;
+      this.playerservice.artist=this.playerservice.songs[(this.playerservice.checkindex)].artists[0].name;
+    }
+   
+    else  if (this.playerservice.nextsong == true && this.service.playlistbuttonpressed == true) {
       this.playerservice.checkindex = this.playerservice.checkindex - 1;
       if (this.playerservice.checkindex < this.playerservice.array && this.playerservice.checkindex >= 0) {
         this.value = 0;
@@ -270,7 +280,6 @@ export class PlayerComponent implements OnInit {
      { 
     this.isshuffled = true;
     this.randomize=false;
-    console.log(this.findWithAttr(this.playerservice.PlayerTemp,'name',this.playerservice.PlayerTemp[this.playerservice.checkindex].name));
     this.playerservice.index=this.playerservice.PlayerTemp.indexOf(this.playerservice.songs[this.playerservice.checkindex]); 
      this.playerservice.checkindex=this.playerservice.index;
     this.playerservice.songs=[...this.playerservice.PlayerTemp];
@@ -304,17 +313,12 @@ export class PlayerComponent implements OnInit {
         this.playerservice.LikedSongs[0].tracks.splice(this.playerservice.index, 1);
       })
   }
+  /**
+   * check queue
+   */
   queue()
   {
     this.playerservice.queue=true;
   }
- findWithAttr(array, attr, value) {
-    for(var i = 0; i < array.length-1; i += 1) {
-        if(array[i][attr] === value) {
-            return i;
-        }
-    }
-    return -1;
-}
 
 }
