@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'songs',
-  templateUrl: './songs.component.html',
-  styleUrls: ['./songs.component.css']
+  selector: "songs",
+  templateUrl: "./songs.component.html",
+  styleUrls: ["./songs.component.css"],
 })
+/**
+ * song card
+ */
 export class SongsComponent implements OnInit {
+  /**
+   * @ignore
+   */
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  /**
+   * @ignore
+   */
+  ngOnInit() {}
 }

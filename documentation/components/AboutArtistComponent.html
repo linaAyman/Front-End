@@ -135,6 +135,9 @@
                             <li>
                                 <a href="#id">id</a>
                             </li>
+                            <li>
+                                <a href="#listners">listners</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -173,7 +176,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -254,14 +257,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>get artist info from the srver and pass it to artistInfo object</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -297,10 +302,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>object to push artist info to it</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -324,10 +335,43 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:30</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>artist id</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listners"></a>
+                        <span class="name">
+                            <b>
+                            listners</b>
+                            <a href="#listners"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/mayestro/artist/about-artist/about-artist.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>array of listners numbers and locations</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -341,25 +385,49 @@
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { MayestroService } from &#x27;../../mayestro.service&#x27;;
+import { switchMap } from &#x27;rxjs/operators&#x27;;
 
 @Component({
   selector: &#x27;app-about-artist&#x27;,
   templateUrl: &#x27;./about-artist.component.html&#x27;,
   styleUrls: [&#x27;./about-artist.component.css&#x27;]
 })
+
+/**
+ * about artist component
+ */
+
 export class AboutArtistComponent implements OnInit {
+
+  /**
+   * object to push artist info to it
+   */
   artistInfo:any;
+  /**
+   * array of listners numbers and locations
+   */
+  listners:[];
+  /**
+   * artist id
+   */
   id:any;
   constructor(private route:ActivatedRoute,private artist:ArtistService) { }
 
+  /**
+   * get artist info from the srver and pass it to artistInfo object
+  */
   ngOnInit() {
-    this.route.params.subscribe(param &#x3D;&gt; {
-      this.id &#x3D; param[&quot;id&quot;];
-    });
-    
-    this.artist.getAboutArtist(this.id).subscribe((res:any)&#x3D;&gt;{
-      this.artistInfo&#x3D;res.about;
-    })
+
+    this.route.params.pipe(
+      switchMap(param&#x3D;&gt;{
+        this.id&#x3D;param[&#x27;id&#x27;]
+        return this.artist.getAboutArtist(this.id)
+      })
+      )
+      .subscribe((comp:any)&#x3D;&gt;{
+        this.artistInfo&#x3D;comp.about;
+        this.listners&#x3D;comp.listners;
+      });
   }
 
 }
@@ -368,42 +436,24 @@ export class AboutArtistComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;margin-bottom:70px&quot;&gt;
-    &lt;!-- &lt;app-artist-header&gt;&lt;/app-artist-header&gt; --&gt;
-    &lt;div style&#x3D;&quot; margin: 24px,8px; padding-left: 24px; color: white;&quot;&gt;
-        &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top: -20px;&quot;&gt;
-            &lt;div class&#x3D;&quot;col-8&quot; style&#x3D;&quot;padding-right: 50px;&quot; &gt;
-              &lt;h2 style&#x3D;&quot;height: 11px; &quot;&gt;Biography&lt;/h2&gt;
-              &lt;p class&#x3D;&quot;spancontent&quot;&gt;{{artistInfo}}&lt;/p&gt;
+
+  &lt;div style&#x3D;&quot; margin: 24px,8px; padding-left: 24px; color: white;&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top: -20px;&quot;&gt;
+          &lt;div class&#x3D;&quot;col-8&quot; style&#x3D;&quot;padding-right: 50px;&quot; &gt;
+            &lt;h2 style&#x3D;&quot;height: 11px; padding-top: 5%;&quot;&gt;Biography&lt;/h2&gt;
+            &lt;p class&#x3D;&quot;spancontent&quot; style&#x3D;&quot; line-height: 170%; &quot;&gt;{{artistInfo}}&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-sm-2&quot; style&#x3D;&quot;padding-top: 5%; padding-bottom: 5%;&quot;&gt;
+            &lt;div style&#x3D;&quot;height: 11px; font-size:1.5vw; padding-bottom: 32px;&quot; class&#x3D;&quot;row&quot;&gt;Where people listen&lt;/div&gt;
+            &lt;div  *ngFor&#x3D;&quot;let l of listners&quot;&gt;
+              &lt;h2 style&#x3D;&quot;height: 11px;&quot;&gt;{{l.country}}&lt;/h2&gt;
+              &lt;span class&#x3D;&quot;spancontent&quot; style&#x3D;&quot;  margin-bottom:10%&quot;&gt; {{ l.number}} monthly listeners&lt;/span&gt;
             &lt;/div&gt;
-            &lt;div class&#x3D;&quot;col-sm-2&quot;&gt;
-              &lt;h2 style&#x3D;&quot;height: 11px; &quot;&gt;Where people listen&lt;/h2&gt;
-              &lt;div style&#x3D;&quot; margin-top: 32px; margin-bottom: 16px;&quot;&gt;
-                &lt;h2 style&#x3D;&quot;height: 11px;&quot;&gt;country&lt;/h2&gt;
-                &lt;span class&#x3D;&quot;spancontent&quot;&gt; no of monthly listeners&lt;/span&gt;
-              &lt;/div&gt;
-              &lt;div style&#x3D;&quot; margin-bottom: 16px;&quot;&gt;
-                &lt;h2 style&#x3D;&quot;height: 11px;&quot;&gt;country&lt;/h2&gt;
-                &lt;span class&#x3D;&quot;spancontent&quot;&gt; no of monthly listeners&lt;/span&gt;
-              &lt;/div&gt;
-              &lt;div style&#x3D;&quot; margin-bottom: 16px;&quot;&gt;
-                &lt;h2 style&#x3D;&quot;height: 11px;&quot;&gt;country&lt;/h2&gt;
-                &lt;span class&#x3D;&quot;spancontent&quot;&gt; no of monthly listeners&lt;/span&gt;
-              &lt;/div&gt;
-              &lt;div style&#x3D;&quot; margin-bottom: 16px;&quot;&gt;
-                &lt;h2 style&#x3D;&quot;height: 11px;&quot;&gt;country&lt;/h2&gt;
-                &lt;span class&#x3D;&quot;spancontent&quot;&gt; no of monthly listeners&lt;/span&gt;
-              &lt;/div&gt;
-              &lt;div style&#x3D;&quot; margin-bottom: 16px;&quot;&gt;
-                &lt;h2 style&#x3D;&quot;height: 11px;&quot;&gt;country&lt;/h2&gt;
-                &lt;span class&#x3D;&quot;spancontent&quot;&gt; no of monthly listeners&lt;/span&gt;
-              &lt;/div&gt;
-            
-             
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+           
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -412,13 +462,16 @@ export class AboutArtistComponent implements OnInit {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.spancontent {
    
-    font-size: 14px;
+    font-size: 16px;
     line-height: 16px;
     /* font-weight: var(--glue-font-weight-normal); */
     color: #e0dddd;
     /* letter-spacing: .16em; */
+    margin-top: 5%;
     opacity: .6;
     display: inline-block;
+    line-break: auto;
+   
 }</code></pre>
     </div>
 
@@ -447,8 +500,8 @@ export class AboutArtistComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="margin-bottom:70px">    <!-- <app-artist-header></app-artist-header> -->    <div style=" margin: 24px,8px; padding-left: 24px; color: white;">        <div class="row" style="margin-top: -20px;">            <div class="col-8" style="padding-right: 50px;" >              <h2 style="height: 11px; ">Biography</h2>              <p class="spancontent">{{artistInfo}}</p>            </div>            <div class="col-sm-2">              <h2 style="height: 11px; ">Where people listen</h2>              <div style=" margin-top: 32px; margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>              <div style=" margin-bottom: 16px;">                <h2 style="height: 11px;">country</h2>                <span class="spancontent"> no of monthly listeners</span>              </div>                                     </div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+        var COMPONENT_TEMPLATE = '<div><div style="margin-bottom:70px">  <div style=" margin: 24px,8px; padding-left: 24px; color: white;">      <div class="row" style="margin-top: -20px;">          <div class="col-8" style="padding-right: 50px;" >            <h2 style="height: 11px; padding-top: 5%;">Biography</h2>            <p class="spancontent" style=" line-height: 170%; ">{{artistInfo}}</p>          </div>          <div class="col-sm-2" style="padding-top: 5%; padding-bottom: 5%;">            <div style="height: 11px; font-size:1.5vw; padding-bottom: 32px;" class="row">Where people listen</div>            <div  *ngFor="let l of listners">              <h2 style="height: 11px;">{{l.country}}</h2>              <span class="spancontent" style="  margin-bottom:10%"> {{ l.number}} monthly listeners</span>            </div>                     </div>      </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountHelpComponent', 'selector': 'app-account-help'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistManagementComponent', 'selector': 'app-artist-management'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardsContainerComponent', 'selector': 'app-cards-container'},{'name': 'ChangeEmailHelpComponent', 'selector': 'app-change-email-help'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ConnectComponent', 'selector': 'app-connect'},{'name': 'ConnectingComponent', 'selector': 'app-connecting'},{'name': 'CreateAlbumComponent', 'selector': 'app-create-album'},{'name': 'CreateSongComponent', 'selector': 'app-create-song'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'EditAccountHelpComponent', 'selector': 'app-edit-account-help'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikedsongsComponent', 'selector': 'app-likedsongs'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginHelpComponent', 'selector': 'app-login-help'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NotificationHelpComponent', 'selector': 'app-notification-help'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlayingQueueComponent', 'selector': 'app-playing-queue'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecentSearchComponent', 'selector': 'recent-search'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordHelpComponent', 'selector': 'app-reset-password-help'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarHelpComponent', 'selector': 'app-sidebar-help'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongsComponent', 'selector': 'songs'},{'name': 'TopResultComponent', 'selector': 'top-result'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsingMayestroComponent', 'selector': 'app-using-mayestro'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AboutArtistComponent'};
 </script>

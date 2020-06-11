@@ -156,7 +156,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/open-mayestro/premium/premium.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/open-mayestro/premium/premium.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -195,8 +195,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/open-mayestro/premium/premium.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/open-mayestro/premium/premium.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -225,6 +225,9 @@
   templateUrl: &#x27;./premium.component.html&#x27;,
   styleUrls: [&#x27;./premium.component.css&#x27;]
 })
+/**
+ * premium component
+ */
 export class PremiumComponent implements OnInit {
 
   constructor() { }
@@ -237,39 +240,39 @@ export class PremiumComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;background-color: white; width: 100%; height: 100%; font-family: Circular, Helvetica, Arial, sans-serif;&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div  style&#x3D;&quot;background-color: white; width: 100%; height: 100%; font-family: Circular, Helvetica, Arial, sans-serif;&quot;&gt;
     &lt;div class&#x3D;&quot;headerdiv&quot; &gt;
         &lt;div class&#x3D;&quot;headercontenet&quot;&gt;
-            &lt;h1 class&#x3D;&quot;k&quot;&gt;Get Premium free for 1 month&lt;/h1&gt;
-            &lt;h2 style&#x3D;&quot;padding-top: 40px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 30px;font-weight: bold;&quot;&gt;Just EGP 49.99/month after. Cancel anytime.&lt;/h2&gt;
-            &lt;a routerLink&#x3D;&quot;./../getpremium&quot;&gt;
+            &lt;h1 class&#x3D;&quot;k &quot;&gt;Get Premium free for 1 month&lt;/h1&gt;
+            &lt;h2  style&#x3D;&quot;padding-top: 40px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 30px;font-weight: bold;&quot;&gt;Just EGP 49.99/month after. Cancel anytime.&lt;/h2&gt;
+            &lt;a routerLink&#x3D;&quot;./../getpremium/monthly&quot;&gt;
                 &lt;button class&#x3D;&quot;button-scss b&quot;  type&#x3D;&quot;button&quot; &gt; GET PREMIUM&lt;/button&gt;
             &lt;/a&gt;
             
-            &lt;div style&#x3D;&quot;color: white; padding-top: 40px;&quot;&gt; Terms and conditions apply. 1 month free not available for users who have already tried Premium.&lt;/div&gt;
+            &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;color: white; padding-top: 40px;&quot;&gt; Terms and conditions apply. 1 month free not available for users who have already tried Premium.&lt;/div&gt;
         &lt;/div&gt;
       
     &lt;/div&gt; 
-    &lt;div class&#x3D;&quot;bodyc&quot; &gt;
-        &lt;h1 class&#x3D;&quot;m&quot; style&#x3D;&quot;font-size: 48px; font-weight: bold; margin-bottom: 75px;&quot; &gt;Why go Premium?&lt;/h1&gt;
-        &lt;div class&#x3D;&quot;row &quot; style&#x3D;&quot;height: 267px; padding-left: 30px; width: 100%;&quot;&gt;
+    &lt;div class&#x3D;&quot;bodyc container&quot; &gt;
+        &lt;h1 class&#x3D;&quot;m&quot; style&#x3D;&quot;font-size: 3.5vw; font-weight: bold; &quot; &gt;Why go Premium?&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;row &quot; style&#x3D;&quot;height: 267px;  width: 100%; padding-top: 7%; padding-left: 5%;&quot;&gt;
 
-            &lt;div class&#x3D;&quot;col-sm-3&quot; &gt;
+            &lt;div class&#x3D;&quot;col-lg-3 col-md-5 &quot; &gt;
                 &lt;img src&#x3D;&quot;https://campaigns.scdn.co/images/benefit_1.png&quot; class&#x3D;&quot;img-responsive margin&quot; style&#x3D;&quot;width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;&quot; &gt;
                 &lt;h3 style&#x3D;&quot;font-size: 21px;font-weight: bold;&quot;&gt;Download music.&lt;/h3&gt;
                 &lt;p style&#x3D;&quot;font-size: 16px;&quot;&gt;Listen anywhere.&lt;/p&gt;                
             &lt;/div&gt;
-            &lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-3 col-md-5 &quot;&gt;
                 &lt;img src&#x3D;&quot;https://campaigns.scdn.co/images/benefit_2.png&quot; class&#x3D;&quot;img-responsive margin&quot; style&#x3D;&quot;width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;&quot; &gt;
                 &lt;h3 style&#x3D;&quot;font-size: 21px;font-weight: bold;&quot;&gt;No ad interruptions.&lt;/h3&gt;   
                 &lt;p style&#x3D;&quot;font-size: 16px;&quot;&gt;Enjoy nonstop music.&lt;/p&gt;                
             &lt;/div&gt;
-            &lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-3 col-md-5 &quot;&gt;
                 &lt;img src&#x3D;&quot;https://campaigns.scdn.co/images/benefit_3.png&quot; class&#x3D;&quot;img-responsive margin&quot; style&#x3D;&quot;width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;&quot; &gt;
                 &lt;h3 style&#x3D;&quot;font-size: 21px;font-weight: bold;&quot;&gt;Play any song.&lt;/h3&gt;
                 &lt;p style&#x3D;&quot;font-size: 16px;&quot;&gt;Even on mobile.&lt;/p&gt;                
             &lt;/div&gt;
-            &lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-3 col-md-5 text-center&quot;&gt;
                 &lt;img src&#x3D;&quot;https://campaigns.scdn.co/images/benefit_4.png&quot; class&#x3D;&quot;img-responsive margin&quot; style&#x3D;&quot;width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;&quot; &gt;
                 &lt;h3 style&#x3D;&quot;font-size: 21px;font-weight: bold;&quot;&gt;Unlimited skips.&lt;/h3&gt;
                 &lt;p style&#x3D;&quot;font-size: 16px;&quot;&gt;Just hit next.&lt;/p&gt;                
@@ -278,27 +281,29 @@ export class PremiumComponent implements OnInit {
         &lt;/div&gt;
        
     &lt;/div&gt;  
-    &lt;div class&#x3D;&quot;bodyc &quot; style&#x3D;&quot;text-align: left;&quot; &gt;
-            &lt;div class&#x3D;&quot;card&quot;&gt;
-                &lt;h3 style&#x3D;&quot;font-size: 22px;&quot;&gt;Spotify Premium&lt;/h3&gt;
-                &lt;h2 style&#x3D;&quot;font-size: 32px; font-weight: 900;&quot;&gt;EGP 49.99 &lt;span style&#x3D;&quot;font-size: 16px; font-weight: 400;&quot;&gt; / month&lt;/span&gt; &lt;/h2&gt;
-                &lt;p style&#x3D;&quot;color: rgb(145, 145, 145); font-size: 12px; margin-top: -12px;&quot;&gt;1 month free&lt;/p&gt;
-                &lt;hr class&#x3D;&quot;divider&quot;&gt;
-                &lt;dl style&#x3D;&quot;padding: 24px 0px 22px;&quot;&gt;
-                    &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;Play any song&lt;/dt&gt; 
-                    &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;Listen offline&lt;/dt&gt; 
-                    &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;No ad interruptions.&lt;/dt&gt; 
-                    &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;Unlimited skips&lt;/dt&gt; 
-                    &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;High audio quality&lt;/dt&gt; 
-                &lt;/dl&gt;
-                &lt;hr class&#x3D;&quot;divider&quot;&gt;
-                &lt;a routerLink&#x3D;&quot;./../getpremium&quot;&gt;
-                &lt;button class&#x3D;&quot;button-scss b&quot;  type&#x3D;&quot;button&quot; style&#x3D;&quot;width: 100%; margin-top: -1px;&quot;&gt; GET PREMIUM&lt;/button&gt;
-                &lt;/a&gt;
-            &lt;/div&gt; 
-            &lt;div class&#x3D;&quot;text-center&quot; style&#x3D;&quot;margin-top: 40px; cursor: pointer;&quot;&gt;
-                &lt;a  style&#x3D;&quot;color:rgb(193, 195, 198); &quot;&gt;Terms and conditions&lt;/a&gt;   
-            &lt;/div&gt;
+    &lt;div class&#x3D;&quot;bodyc&quot; style&#x3D;&quot;text-align: left;padding-top: 10%;&quot; &gt;
+         
+        &lt;div class&#x3D;&quot;card&quot; &gt;
+            &lt;h3 style&#x3D;&quot;font-size: 22px;&quot;&gt;Spotify Premium&lt;/h3&gt;
+            &lt;h2 style&#x3D;&quot;font-size: 32px; font-weight: 900;&quot;&gt;EGP 49.99 &lt;span style&#x3D;&quot;font-size: 16px; font-weight: 400;&quot;&gt; / month&lt;/span&gt; &lt;/h2&gt;
+            &lt;p style&#x3D;&quot;color: rgb(145, 145, 145); font-size: 12px; margin-top: -12px;&quot;&gt;1 month free&lt;/p&gt;
+            &lt;hr class&#x3D;&quot;divider&quot;&gt;
+            &lt;dl style&#x3D;&quot;padding: 24px 0px 22px;&quot;&gt;
+                &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;Play any song&lt;/dt&gt; 
+                &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;Listen offline&lt;/dt&gt; 
+                &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;No ad interruptions.&lt;/dt&gt; 
+                &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;Unlimited skips&lt;/dt&gt; 
+                &lt;dt class&#x3D;&quot;l&quot; style&#x3D;&quot;font-weight:500;&quot;&gt;High audio quality&lt;/dt&gt; 
+            &lt;/dl&gt;
+            &lt;hr class&#x3D;&quot;divider&quot;&gt;
+            &lt;a routerLink&#x3D;&quot;./../getpremium/monthly&quot;&gt;
+            &lt;button class&#x3D;&quot;button-scss b &quot;  type&#x3D;&quot;button&quot; style&#x3D;&quot;width: 100%; margin-top: -1px;&quot;&gt; GET PREMIUM&lt;/button&gt;
+            &lt;/a&gt;
+        &lt;/div&gt; 
+        &lt;div class&#x3D;&quot;text-center&quot; style&#x3D;&quot;margin-top: 40px; cursor: pointer;&quot;&gt;
+            &lt;a  style&#x3D;&quot;color:rgb(193, 195, 198); &quot;&gt;Terms and conditions&lt;/a&gt;   
+        &lt;/div&gt;
+       
     &lt;/div&gt; 
 &lt;/div&gt;</code></pre>
     </div>
@@ -320,18 +325,18 @@ export class PremiumComponent implements OnInit {
 }
 
 .headercontenet{
-    margin-left: 180px;
-    margin-right: 180px;
+    padding-left: 10%;
+    /* margin-right: 180px; */
     padding-top: 80px;
     width: 100%;
 }
 
 .k{
-    font-size: 80px;
+    font-size: 5vw;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    width: 100%;
+    width: auto;
 }
 
 .button-scss{
@@ -348,8 +353,8 @@ export class PremiumComponent implements OnInit {
     transition: all 33ms cubic-bezier(.3,0,0,1);
     will-change: transform;
     white-space: nowrap;
-    padding: 8px 34px;
-    margin-right: 15px;
+    /* padding: 8px 34px; */
+    /* margin-right: 15px; */
     display: inline-block;
     cursor: pointer;
     text-align: center;
@@ -371,10 +376,10 @@ export class PremiumComponent implements OnInit {
 .bodyc{
     padding-top: 75px;
     padding-bottom: 75px;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
     margin-left: 174px;
-    margin-right: 174px;
+    margin-right: 174px; 
     /* padding-top: 75px; */
     text-align: center;
     
@@ -390,21 +395,21 @@ export class PremiumComponent implements OnInit {
     margin-right: auto;
     padding: 30px 20px;
     margin-bottom: 20px;
-  }
+}
   
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  .l::before{
-    font-size: 16px;
-    content: &quot;✓&quot;;
-    font-weight: 700;
-    padding: 0px 10px 0px 0px;
-  }
-  .l{
-      padding-bottom: 7px;
-  }</code></pre>
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.l::before{
+font-size: 16px;
+content: &quot;✓&quot;;
+font-weight: 700;
+padding: 0px 10px 0px 0px;
+}
+.l{
+    padding-bottom: 7px;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -432,8 +437,8 @@ export class PremiumComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="background-color: white; width: 100%; height: 100%; font-family: Circular, Helvetica, Arial, sans-serif;">    <div class="headerdiv" >        <div class="headercontenet">            <h1 class="k">Get Premium free for 1 month</h1>            <h2 style="padding-top: 40px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 30px;font-weight: bold;">Just EGP 49.99/month after. Cancel anytime.</h2>            <a routerLink="./../getpremium">                <button class="button-scss b"  type="button" > GET PREMIUM</button>            </a>                        <div style="color: white; padding-top: 40px;"> Terms and conditions apply. 1 month free not available for users who have already tried Premium.</div>        </div>          </div>     <div class="bodyc" >        <h1 class="m" style="font-size: 48px; font-weight: bold; margin-bottom: 75px;" >Why go Premium?</h1>        <div class="row " style="height: 267px; padding-left: 30px; width: 100%;">            <div class="col-sm-3" >                <img src="https://campaigns.scdn.co/images/benefit_1.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">Download music.</h3>                <p style="font-size: 16px;">Listen anywhere.</p>                            </div>            <div class="col-sm-3">                <img src="https://campaigns.scdn.co/images/benefit_2.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">No ad interruptions.</h3>                   <p style="font-size: 16px;">Enjoy nonstop music.</p>                            </div>            <div class="col-sm-3">                <img src="https://campaigns.scdn.co/images/benefit_3.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">Play any song.</h3>                <p style="font-size: 16px;">Even on mobile.</p>                            </div>            <div class="col-sm-3">                <img src="https://campaigns.scdn.co/images/benefit_4.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">Unlimited skips.</h3>                <p style="font-size: 16px;">Just hit next.</p>                            </div>        </div>           </div>      <div class="bodyc " style="text-align: left;" >            <div class="card">                <h3 style="font-size: 22px;">Spotify Premium</h3>                <h2 style="font-size: 32px; font-weight: 900;">EGP 49.99 <span style="font-size: 16px; font-weight: 400;"> / month</span> </h2>                <p style="color: rgb(145, 145, 145); font-size: 12px; margin-top: -12px;">1 month free</p>                <hr class="divider">                <dl style="padding: 24px 0px 22px;">                    <dt class="l" style="font-weight:500;">Play any song</dt>                     <dt class="l" style="font-weight:500;">Listen offline</dt>                     <dt class="l" style="font-weight:500;">No ad interruptions.</dt>                     <dt class="l" style="font-weight:500;">Unlimited skips</dt>                     <dt class="l" style="font-weight:500;">High audio quality</dt>                 </dl>                <hr class="divider">                <a routerLink="./../getpremium">                <button class="button-scss b"  type="button" style="width: 100%; margin-top: -1px;"> GET PREMIUM</button>                </a>            </div>             <div class="text-center" style="margin-top: 40px; cursor: pointer;">                <a  style="color:rgb(193, 195, 198); ">Terms and conditions</a>               </div>    </div> </div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+        var COMPONENT_TEMPLATE = '<div><div  style="background-color: white; width: 100%; height: 100%; font-family: Circular, Helvetica, Arial, sans-serif;">    <div class="headerdiv" >        <div class="headercontenet">            <h1 class="k ">Get Premium free for 1 month</h1>            <h2  style="padding-top: 40px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 30px;font-weight: bold;">Just EGP 49.99/month after. Cancel anytime.</h2>            <a routerLink="./../getpremium/monthly">                <button class="button-scss b"  type="button" > GET PREMIUM</button>            </a>                        <div class="row" style="color: white; padding-top: 40px;"> Terms and conditions apply. 1 month free not available for users who have already tried Premium.</div>        </div>          </div>     <div class="bodyc container" >        <h1 class="m" style="font-size: 3.5vw; font-weight: bold; " >Why go Premium?</h1>        <div class="row " style="height: 267px;  width: 100%; padding-top: 7%; padding-left: 5%;">            <div class="col-lg-3 col-md-5 " >                <img src="https://campaigns.scdn.co/images/benefit_1.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">Download music.</h3>                <p style="font-size: 16px;">Listen anywhere.</p>                            </div>            <div class="col-lg-3 col-md-5 ">                <img src="https://campaigns.scdn.co/images/benefit_2.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">No ad interruptions.</h3>                   <p style="font-size: 16px;">Enjoy nonstop music.</p>                            </div>            <div class="col-lg-3 col-md-5 ">                <img src="https://campaigns.scdn.co/images/benefit_3.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">Play any song.</h3>                <p style="font-size: 16px;">Even on mobile.</p>                            </div>            <div class="col-lg-3 col-md-5 text-center">                <img src="https://campaigns.scdn.co/images/benefit_4.png" class="img-responsive margin" style="width: 142px; height: 142px; margin-bottom: 40px; margin-left: 40px; margin-right: 40px;" >                <h3 style="font-size: 21px;font-weight: bold;">Unlimited skips.</h3>                <p style="font-size: 16px;">Just hit next.</p>                            </div>        </div>           </div>      <div class="bodyc" style="text-align: left;padding-top: 10%;" >                 <div class="card" >            <h3 style="font-size: 22px;">Spotify Premium</h3>            <h2 style="font-size: 32px; font-weight: 900;">EGP 49.99 <span style="font-size: 16px; font-weight: 400;"> / month</span> </h2>            <p style="color: rgb(145, 145, 145); font-size: 12px; margin-top: -12px;">1 month free</p>            <hr class="divider">            <dl style="padding: 24px 0px 22px;">                <dt class="l" style="font-weight:500;">Play any song</dt>                 <dt class="l" style="font-weight:500;">Listen offline</dt>                 <dt class="l" style="font-weight:500;">No ad interruptions.</dt>                 <dt class="l" style="font-weight:500;">Unlimited skips</dt>                 <dt class="l" style="font-weight:500;">High audio quality</dt>             </dl>            <hr class="divider">            <a routerLink="./../getpremium/monthly">            <button class="button-scss b "  type="button" style="width: 100%; margin-top: -1px;"> GET PREMIUM</button>            </a>        </div>         <div class="text-center" style="margin-top: 40px; cursor: pointer;">            <a  style="color:rgb(193, 195, 198); ">Terms and conditions</a>           </div>           </div> </div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountHelpComponent', 'selector': 'app-account-help'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistManagementComponent', 'selector': 'app-artist-management'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardsContainerComponent', 'selector': 'app-cards-container'},{'name': 'ChangeEmailHelpComponent', 'selector': 'app-change-email-help'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ConnectComponent', 'selector': 'app-connect'},{'name': 'ConnectingComponent', 'selector': 'app-connecting'},{'name': 'CreateAlbumComponent', 'selector': 'app-create-album'},{'name': 'CreateSongComponent', 'selector': 'app-create-song'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'EditAccountHelpComponent', 'selector': 'app-edit-account-help'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikedsongsComponent', 'selector': 'app-likedsongs'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginHelpComponent', 'selector': 'app-login-help'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NotificationHelpComponent', 'selector': 'app-notification-help'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlayingQueueComponent', 'selector': 'app-playing-queue'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecentSearchComponent', 'selector': 'recent-search'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordHelpComponent', 'selector': 'app-reset-password-help'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarHelpComponent', 'selector': 'app-sidebar-help'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongsComponent', 'selector': 'songs'},{'name': 'TopResultComponent', 'selector': 'top-result'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsingMayestroComponent', 'selector': 'app-using-mayestro'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PremiumComponent'};
 </script>

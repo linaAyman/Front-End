@@ -3273,7 +3273,8 @@ export class MockServerService implements HttpInterceptor {
               image:
                 "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
               name: "songs for carmella: lullabies & sing-a-longs",
-            },{
+            },
+            {
               totalTracks: 2,
               releaseDate:
                 "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
@@ -3285,9 +3286,9 @@ export class MockServerService implements HttpInterceptor {
                   duration: 2,
                   artists: [
                     {
-                      name: "amrdiab"
-                    }
-                  ]
+                      name: "amrdiab",
+                    },
+                  ],
                 },
                 {
                   name: "sahran",
@@ -3296,22 +3297,22 @@ export class MockServerService implements HttpInterceptor {
                   duration: 2,
                   artists: [
                     {
-                      name: "amrdiab"
-                    }
-                  ]
-                }
+                      name: "amrdiab",
+                    },
+                  ],
+                },
               ],
               artists: [
                 {
                   id: "3xl0OvcSlc9Mwe5ToaFtD3",
-                  name: "Amr Diab"
-                }
+                  name: "Amr Diab",
+                },
               ],
               type: "album",
               id: "3xl0OvcSlc9Mwe5ToaFtD23",
               image:
                 "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
-              name: "Sahran"
+              name: "Sahran",
             },
             {
               totalTracks: 2,
@@ -3748,43 +3749,43 @@ export class MockServerService implements HttpInterceptor {
         ],
       },
     ];
-    this.FollowedArtists= [
+    this.FollowedArtists = [
       {
-      artists: [
-    ]
-  }
-  ];
-    this.Liked= [
+        artists: [],
+      },
+    ];
+    this.Liked = [
       {
-
         tracks: [
           {
             name: "Allamooni",
             trackNumber: 11,
             id: 1,
             duration: 3.15,
-            url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
+            url:
+              "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-1/allamooni.mp3",
             artists: [
               {
-                name: "Fayrouz"
-              }
-            ]
+                name: "Fayrouz",
+              },
+            ],
           },
           {
             name: "AlaJisrAllawziyi",
             trackNumber: 12,
             id: 2,
             duration: 3.26,
-            url: "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-2/ala_jisr_allawziyi.mp3",
+            url:
+              "http://www.arabicsheetmusic.com/Added%20Music%20Notations/Feirouz-2/ala_jisr_allawziyi.mp3",
             artists: [
               {
-                name: "Fayrouz"
-              }
-            ]
-          }
-        ]
-      }
-      ];
+                name: "Fayrouz",
+              },
+            ],
+          },
+        ],
+      },
+    ];
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     let users = this.users;
@@ -4425,7 +4426,6 @@ export class MockServerService implements HttpInterceptor {
 
     function recentSearch() {
       let recentIds = JSON.parse(localStorage.getItem("recent"));
-      console.log(recentIds);
       let recent = [];
       categories.Home.forEach((p) => {
         for (const r of categories.Home) {

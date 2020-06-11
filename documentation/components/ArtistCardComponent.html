@@ -121,6 +121,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#album">album</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -146,7 +160,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#acard">acard</a>
+                                <a href="#aCard">aCard</a>
                             </li>
                         </ul>
                     </td>
@@ -170,7 +184,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/mayestro/artist/artist-card/artist-card.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/mayestro/artist/artist-card/artist-card.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -184,19 +198,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="acard"></a>
-                        <b>acard</b>
+                        <a name="aCard"></a>
+                        <b>aCard</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/IACard.html" target="_self" >IACard</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/IACard.html" target="_self" >IACard</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/mayestro/artist/artist-card/artist-card.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mayestro/artist/artist-card/artist-card.component.ts:13</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -232,8 +246,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/mayestro/artist/artist-card/artist-card.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/mayestro/artist/artist-card/artist-card.component.ts:17</a></div>
                 </td>
             </tr>
 
@@ -250,6 +264,33 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="album"></a>
+                        <span class="name">
+                            <b>
+                            album</b>
+                            <a href="#album"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/mayestro/artist/artist-card/artist-card.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
@@ -263,8 +304,12 @@ import { IACard } from &#x27;./artist-card.interface&#x27;;
   templateUrl: &#x27;./artist-card.component.html&#x27;,
   styleUrls: [&#x27;./artist-card.component.css&#x27;]
 })
+/**
+ * artist card component
+ */
 export class ArtistCardComponent implements OnInit {
-  @Input() acard: IACard;
+  @Input() aCard: IACard;
+  album:&quot;album&quot;;
   constructor() { }
 
   ngOnInit() {
@@ -275,14 +320,25 @@ export class ArtistCardComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card-container&quot;&gt;
-    &lt;a class&#x3D;&quot;a&quot; [routerLink]&#x3D;&quot;[&#x27;/mayestro/playlist&#x27;,acard.id,album]&quot; &gt; 
-        &lt;img [src]&#x3D;&quot;acard.image&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;div class&#x3D;&quot;card-container&quot;&gt;
+    &lt;a class&#x3D;&quot;a&quot; [routerLink]&#x3D;&quot;[&#x27;/mayestro/playlist&#x27;,aCard.id,album]&quot; &gt; 
+        &lt;img [src]&#x3D;&quot;aCard.image&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
         &lt;div class&#x3D;&quot;card-body&quot;&gt;
-            &lt;p class&#x3D;&quot;album-name&quot;&gt;{{acard.name}} &lt;/p&gt; 
+            &lt;p class&#x3D;&quot;album-name&quot;&gt;{{aCard.name}} &lt;/p&gt; 
             &lt;button class&#x3D;&quot;btn fa&quot;&gt;&amp;#xf01d;&lt;/button&gt;
         &lt;/div&gt;
     &lt;/a&gt;
+&lt;/div&gt; --&gt;
+
+&lt;div class&#x3D;&quot;card mb-4&quot;&gt;
+    &lt;a class&#x3D;&quot;a&quot; [routerLink]&#x3D;&quot;[&#x27;/mayestro/playlist&#x27;,aCard.id,aCard.type]&quot; &gt;
+        &lt;img [src]&#x3D;&quot;aCard.image&quot; style&#x3D;&quot;width: 100%;&quot; class&#x3D;&quot;card-img-top&quot; alt&#x3D;&quot;...&quot;&gt;
+    &lt;/a&gt;
+    &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;p class&#x3D;&quot;album-name card-text&quot;&gt;{{aCard.name}} &lt;/p&gt; 
+        &lt;button class&#x3D;&quot;btn fa&quot;&gt;&amp;#xf01d;&lt;/button&gt;
+    &lt;/div&gt;
+   
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -290,8 +346,7 @@ export class ArtistCardComponent implements OnInit {
                 <p class="comment">
                     <code>./artist-card.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">
-.card-container{
+                <pre class="line-numbers"><code class="language-scss">.card-container{
     padding-left: 8px;
     padding-right: 8px;
     width: 206px;
@@ -306,7 +361,7 @@ export class ArtistCardComponent implements OnInit {
 
   .album-name{
     /* padding-top: 12px; */
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
     letter-spacing: .015em;
     color: #fff;
@@ -317,19 +372,22 @@ export class ArtistCardComponent implements OnInit {
  .btn{
     visibility: hidden;
     color: white;
-    transform: translate(30px, -190px);
+    transform: translate(50%, -220%);
     background: transparent;
-    font-size: 80px;
+    font-size: 70px;
     border: none;
     
 }
-.card-container:hover .btn{
+.card:hover .btn{
     visibility: visible; 
-  
 }
 
 a:hover{
     text-decoration: none; 
+}
+.card{
+    background: #121212;
+    border: none;
 }</code></pre>
     </div>
 
@@ -358,8 +416,8 @@ a:hover{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card-container">    <a class="a" [routerLink]="[\'/mayestro/playlist\',acard.id,album]" >         <img [src]="acard.image" style="width: 100%;">        <div class="card-body">            <p class="album-name">{{acard.name}} </p>             <button class="btn fa">&#xf01d;</button>        </div>    </a></div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+        var COMPONENT_TEMPLATE = '<div><!-- <div class="card-container">    <a class="a" [routerLink]="[\'/mayestro/playlist\',aCard.id,album]" >         <img [src]="aCard.image" style="width: 100%;">        <div class="card-body">            <p class="album-name">{{aCard.name}} </p>             <button class="btn fa">&#xf01d;</button>        </div>    </a></div> --><div class="card mb-4">    <a class="a" [routerLink]="[\'/mayestro/playlist\',aCard.id,aCard.type]" >        <img [src]="aCard.image" style="width: 100%;" class="card-img-top" alt="...">    </a>    <div class="card-body">        <p class="album-name card-text">{{aCard.name}} </p>         <button class="btn fa">&#xf01d;</button>    </div>   </div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountHelpComponent', 'selector': 'app-account-help'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistManagementComponent', 'selector': 'app-artist-management'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardsContainerComponent', 'selector': 'app-cards-container'},{'name': 'ChangeEmailHelpComponent', 'selector': 'app-change-email-help'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ConnectComponent', 'selector': 'app-connect'},{'name': 'ConnectingComponent', 'selector': 'app-connecting'},{'name': 'CreateAlbumComponent', 'selector': 'app-create-album'},{'name': 'CreateSongComponent', 'selector': 'app-create-song'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'EditAccountHelpComponent', 'selector': 'app-edit-account-help'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikedsongsComponent', 'selector': 'app-likedsongs'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginHelpComponent', 'selector': 'app-login-help'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NotificationHelpComponent', 'selector': 'app-notification-help'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlayingQueueComponent', 'selector': 'app-playing-queue'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecentSearchComponent', 'selector': 'recent-search'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordHelpComponent', 'selector': 'app-reset-password-help'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarHelpComponent', 'selector': 'app-sidebar-help'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongsComponent', 'selector': 'songs'},{'name': 'TopResultComponent', 'selector': 'top-result'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsingMayestroComponent', 'selector': 'app-using-mayestro'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ArtistCardComponent'};
 </script>

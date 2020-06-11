@@ -70,22 +70,49 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+import { Routes, RouterModule } from &quot;@angular/router&quot;;
 
 const routes: Routes &#x3D; [
-  {path:&#x27;&#x27;,pathMatch:&quot;full&quot;,redirectTo:&quot;mayestro&quot; },
-  {path:&#x27;mayestro&#x27;,loadChildren: () &#x3D;&gt; &quot;import(&#x60;./mayestro/mayestro.module&#x60;).then(m &#x3D;&gt; m.MayestroModule)&quot; },
-  {path:&#x27;account.mayestro&#x27;,loadChildren: () &#x3D;&gt; &quot;import(&#x60;./account-mayestro/account-mayestro.module&#x60;).then(m &#x3D;&gt; m.AccountMayestroModule)&quot; },
-  {path:&#x27;open.mayestro&#x27;,loadChildren: () &#x3D;&gt; &quot;import(&#x60;./open-mayestro/open-mayestro.module&#x60;).then(m &#x3D;&gt; m.OpenMayestroModule)&quot; }
+  { path: &quot;&quot;, pathMatch: &quot;full&quot;, redirectTo: &quot;mayestro&quot; },
+  {
+    path: &quot;mayestro&quot;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x60;./mayestro/mayestro.module&#x60;).then((m) &#x3D;&gt; m.MayestroModule)&quot;,
+  },
+  {
+    path: &quot;account.mayestro&quot;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x60;./account-mayestro/account-mayestro.module&#x60;).then(\
+        (m) &#x3D;&gt; m.AccountMayestroModule\
+      )&quot;,
+  },
+  {
+    path: &quot;open.mayestro&quot;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x60;./open-mayestro/open-mayestro.module&#x60;).then(\
+        (m) &#x3D;&gt; m.OpenMayestroModule\
+      )&quot;,
+  },
+  {
+    path: &quot;download&quot;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x60;./connect/connect.module&#x60;).then((m) &#x3D;&gt; m.ConnectModule)&quot;,
+  },
+  {
+    path: &quot;artist.management&quot;,
+    loadChildren: () &#x3D;&gt;
+      &quot;import(&#x60;./artist-management/artist-management.module&#x60;).then(\
+        (m) &#x3D;&gt; m.ArtistManagementModule\
+      )&quot;,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 </code></pre>
     </div>
 </div>

@@ -1,11 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class SearchInputService {
-
-  text=new Subject();
-  constructor() { }
+  /**
+   * text from input search
+   */
+  text = new Subject();
+  /**
+   * @ignore
+   */
+  constructor() {}
 }

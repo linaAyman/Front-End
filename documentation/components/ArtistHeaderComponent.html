@@ -133,7 +133,16 @@
                                 <a href="#artistInfo">artistInfo</a>
                             </li>
                             <li>
+                                <a href="#artists">artists</a>
+                            </li>
+                            <li>
+                                <a href="#FollowedArtists">FollowedArtists</a>
+                            </li>
+                            <li>
                                 <a href="#id">id</a>
+                            </li>
+                            <li>
+                                <a href="#index">index</a>
                             </li>
                             <li>
                                 <a href="#isFollowed">isFollowed</a>
@@ -154,13 +163,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#Follow">Follow</a>
+                                <a href="#follow">follow</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#PLay">PLay</a>
+                                <a href="#pLay">pLay</a>
+                            </li>
+                            <li>
+                                <a href="#unfollow">unfollow</a>
                             </li>
                         </ul>
                     </td>
@@ -180,12 +192,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, artist: <a href="../injectables/ArtistService.html">ArtistService</a>)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, artist: <a href="../injectables/ArtistService.html">ArtistService</a>, followartist: <a href="../injectables/LikeAndFollowService.html">LikeAndFollowService</a>, snackbar: MatSnackBar)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -226,6 +238,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>followartist</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LikeAndFollowService.html" target="_self" >LikeAndFollowService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackbar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -248,33 +284,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="Follow"></a>
+                    <a name="follow"></a>
                     <span class="name">
                         <b>
-                            Follow
+                            follow
                         </b>
-                        <a href="#Follow"><span class="icon ion-ios-link"></span></a>
+                        <a href="#follow"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>Follow()</code>
+<code>follow()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:76</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>change follow button label</p>
+                    <div class="io-description"><p>follow  artist and add it to library</p>
 </div>
 
                     <div class="io-description">
@@ -307,14 +343,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:49</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>get artist information from the server and pass it to the object </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -328,26 +366,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="PLay"></a>
+                    <a name="pLay"></a>
                     <span class="name">
                         <b>
-                            PLay
+                            pLay
                         </b>
-                        <a href="#PLay"><span class="icon ion-ios-link"></span></a>
+                        <a href="#pLay"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>PLay()</code>
+<code>pLay()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:109</a></div>
                 </td>
             </tr>
 
@@ -355,6 +393,47 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>change play button label </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unfollow"></a>
+                    <span class="name">
+                        <b>
+                            unfollow
+                        </b>
+                        <a href="#unfollow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unfollow()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>unfollow artist and remove it from library</p>
 </div>
 
                     <div class="io-description">
@@ -395,16 +474,83 @@
     name:&#x27;&#x27;,
     id:&#x27;&#x27;,
     img:&#x27;&#x27;,
-    followers:&#x27;&#x27;
+    followers:&#x27;&#x27;,
+    imgUrl:&#x27;&#x27;
   }</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:34</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>artistInfo object to contain artist information  </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="artists"></a>
+                        <span class="name">
+                            <b>
+                            artists</b>
+                            <a href="#artists"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="FollowedArtists"></a>
+                        <span class="name">
+                            <b>
+                            FollowedArtists</b>
+                            <a href="#FollowedArtists"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>array of follwed artists</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -428,7 +574,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="index"></a>
+                        <span class="name">
+                            <b>
+                            index</b>
+                            <a href="#index"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -454,10 +627,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>boolean to check if the user follow this artist</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -480,7 +659,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/mayestro/artist/artist-header/artist-header.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -496,73 +675,123 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ArtistService } from &#x27;./../artist.service&#x27;;
 import { Component, OnInit, Input,HostBinding  } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { switchMap, combineLatest } from &#x27;rxjs/operators&#x27;;
+import { LikeAndFollowService } from &#x27;../../like-and-follow.service&#x27;;
+import { MatSnackBar } from &#x27;@angular/material&#x27;;
 
 @Component({
   selector: &#x27;app-artist-header&#x27;,
   templateUrl: &#x27;./artist-header.component.html&#x27;,
   styleUrls: [&#x27;./artist-header.component.css&#x27;]
 })
+
+/**
+ * Artist Header component 
+ */
+
 export class ArtistHeaderComponent implements OnInit {
+/**
+ * boolean to check if the user follow this artist
+ */
   isFollowed&#x3D;true;
   isPalyed&#x3D;true;
+  /**
+   * array of follwed artists
+   */
+  FollowedArtists:any[];
+  artists:any;
+  index:any;
+
+/**
+ * artistInfo object to contain artist information  
+ */
   artistInfo&#x3D;{
     name:&#x27;&#x27;,
     id:&#x27;&#x27;,
     img:&#x27;&#x27;,
-    followers:&#x27;&#x27;
+    followers:&#x27;&#x27;,
+    imgUrl:&#x27;&#x27;
   };
   id: any;
  
-  constructor(private route:ActivatedRoute,private artist:ArtistService) { }
+  constructor(private route:ActivatedRoute,private artist:ArtistService, private followartist:LikeAndFollowService,    private snackbar: MatSnackBar,) { }
   
+  /**
+   * get artist information from the server and pass it to the object 
+   */
+
   ngOnInit() {
 
-    this.route.params.subscribe(param &#x3D;&gt; {
-      this.id &#x3D; param[&quot;id&quot;];
-
-    });
-    this.artist.getArtist(this.id).subscribe((res: any) &#x3D;&gt; {
-
-      this.artistInfo.id&#x3D;res.id;
-      this.artistInfo.name&#x3D;res.name;
-      this.artistInfo.img&#x3D;res.image;
-      this.isFollowed&#x3D;res.isFollowed;
-      
-    });
+    this.route.params.pipe(
+      switchMap(param&#x3D;&gt;{
+        this.id&#x3D;param[&#x27;id&#x27;]
+        return this.artist.getArtist(this.id);
+      })
+      )
+      .subscribe((comp:any)&#x3D;&gt;{
+             
+        this.artistInfo.id&#x3D;comp.id;
+        this.artistInfo.name&#x3D;comp.name;
+        this.artistInfo.img&#x3D;comp.image;
+        //this.isFollowed&#x3D;comp.isFollowed; 
+        this.artistInfo.imgUrl&#x3D;comp.imgurl;
+        this.artists&#x3D;comp;
+      });
+      this.followartist.GetFollowedArtists()
+      .subscribe((comp:any)&#x3D;&gt;{     
+      this.FollowedArtists&#x3D;comp;
+      });
   }
 
   /**
-   * change follow button label
+   *  follow  artist and add it to library
    */
 
-  Follow()
+  follow()
   {
     if(this.isFollowed&#x3D;&#x3D;true)
+    {
        this.isFollowed&#x3D;false;
-    else this.isFollowed&#x3D;true;
+            this.followartist.FollowArtist(this.id,&#x27;artist&#x27;).subscribe(
+        response &#x3D;&gt; {
+          this.FollowedArtists[0].artists.push(this.artists);
+          this.FollowedArtists[0].artists[0].isFollowed&#x3D;false;
+          console.log(this.FollowedArtists);
+        })
+        let snack&#x3D; this.snackbar.open(&quot;Added to Your Library&quot; ,&#x27;&#x27;,{duration:500})
+    }
   }
-
+  /**
+   * unfollow artist and remove it from library
+   */
+unfollow()
+{
+   
+     this.isFollowed&#x3D;true;
+     console.log(this.id);
+    this.followartist.UnFollowArtist(this.id,&#x27;Artist&#x27;).subscribe(
+      response &#x3D;&gt; {
+        this.FollowedArtists[0].artists.splice(0, 1);
+        console.log(&quot;UNFOLLOWED&quot;);
+      })
+      let snack&#x3D; this.snackbar.open(&quot;Removed from Your Library&quot; ,&#x27;&#x27;,{duration:500})
+}
   /**
    * change play button label 
    */
 
-  PLay(){
+  pLay(){
     
     if(this.isPalyed&#x3D;&#x3D;true)
        this.isPalyed&#x3D;false;
     else this.isPalyed&#x3D;true;
   }
 
-  // @HostBinding(&#x27;style.backgroundImage&#x27;)
-  //  getBackgroundImageUrl() {
-  //    document.getElementById(&quot;backimg&quot;).style.backgroundImage &#x3D; &quot;url(&#x27;this.artistinfo.img&#x27;)&quot;;
-  // }
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div  &gt;            
+        <pre class="line-numbers"><code class="language-html">&lt;div &gt;            
     
     &lt;div class&#x3D;&quot;container-fluid bg-1&quot; 
     *ngIf&#x3D; &quot;artistInfo&quot; [ngStyle] &#x3D;&quot;{&#x27;background&#x27;:&#x27; linear-gradient(to top, #121212,70%, transparent),url(&#x27;+ artistInfo.img +&#x27;) no-repeat center&#x27;}&quot; &gt;
@@ -571,8 +800,9 @@ export class ArtistHeaderComponent implements OnInit {
         &lt;h1 class&#x3D;&quot;ArtistName&quot;   &gt;{{artistInfo.name}}&lt;/h1&gt;
         &lt;div class&#x3D;&quot;buttonContainer &quot;&gt;
             
-            &lt;button class&#x3D;&quot;button-scss b&quot;  type&#x3D;&quot;button&quot; (click)&#x3D;PLay()&gt;{{isPalyed?&#x27;Play&#x27;:&#x27;Pause&#x27;}}&lt;/button&gt;
-            &lt;button pButton type&#x3D;&quot;button&quot; class&#x3D;&quot;button-scss fb&quot; style&#x3D;&quot;background-color: transparent; border: 2px solid #fff; &quot; [style.color]&#x3D;&quot;isFollowed ? &#x27;white&#x27;:&#x27;#1fa14d&#x27; &quot; type&#x3D;&quot;button&quot;  (click)&#x3D;&quot;Follow()&quot; &gt;{{isFollowed?&#x27;Follow&#x27;:&#x27;unFollow&#x27;}}&lt;/button&gt;
+            &lt;button class&#x3D;&quot;button-scss b&quot;  type&#x3D;&quot;button&quot; (click)&#x3D;pLay()&gt;{{isPalyed?&#x27;Play&#x27;:&#x27;Pause&#x27;}}&lt;/button&gt;
+            &lt;button *ngIf&#x3D;&quot;isFollowed&quot;  type&#x3D;&quot;button&quot; class&#x3D;&quot;button-scss fb&quot; style&#x3D;&quot;background-color: transparent; border: 2px solid #fff; &quot; [style.color]&#x3D;&quot;isFollowed ? &#x27;white&#x27;:&#x27;#1fa14d&#x27; &quot; type&#x3D;&quot;button&quot;  (click)&#x3D;&quot;follow()&quot; &gt; Follow&lt;/button&gt;
+            &lt;button *ngIf&#x3D;&quot;!isFollowed&quot;  type&#x3D;&quot;button&quot; class&#x3D;&quot;button-scss fb&quot; style&#x3D;&quot;background-color: transparent; border: 2px solid #fff; &quot; [style.color]&#x3D;&quot;isFollowed ? &#x27;white&#x27;:&#x27;#1fa14d&#x27; &quot; type&#x3D;&quot;button&quot;  (click)&#x3D;&quot;unfollow()&quot; &gt; UnFollow&lt;/button&gt;
             &lt;div  style&#x3D;&quot;display: inline;&quot;&gt;
                 &lt;button type&#x3D;&quot;button&quot; title&#x3D;&quot;More&quot; class&#x3D;&quot;moreButton&quot;&gt;...&lt;/button&gt;
 
@@ -625,15 +855,14 @@ export class ArtistHeaderComponent implements OnInit {
     -o-background-size: cover;
     height:100%;
     background-color:  #121212;
-    /* background: linear-gradient(to top, #121212,70%, transparent),  url(&quot;https://i.scdn.co/image/c2fc7bf2aadbcdc07820307800a16d1acd83d057&quot;) no-repeat center;  */
+    background: linear-gradient(to top, #121212,70%, transparent),  url(&quot;https://i.scdn.co/image/c2fc7bf2aadbcdc07820307800a16d1acd83d057&quot;) no-repeat center; 
     color: #ffffff;
     padding-left:24px;
 }
 
 .container-fluid {
-    padding-top: 15px;
+    padding-top: 30px;
     padding-bottom: 30px;
-    margin-bottom: 15px;
   }
 
 .spancontent {
@@ -647,7 +876,7 @@ export class ArtistHeaderComponent implements OnInit {
     letter-spacing: .16em;
     color: #fff;
     opacity: .6;
-    padding-top: 80px;
+    padding-top: 100px;
     display: block;
     margin-bottom: 1em;
     margin-left: 11px;
@@ -772,7 +1001,13 @@ background-color: #3e8e41;
 
 /* .moreButton:hover  {
 background-color: #3e8e41;
-} */</code></pre>
+} */
+
+::ng-deep .mat-snack-bar-container{
+    color: #ffffff;
+    background-color: rgb(0, 89, 255);
+    width: 100px;
+  }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -800,8 +1035,8 @@ background-color: #3e8e41;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  >                    <div class="container-fluid bg-1"     *ngIf= "artistInfo" [ngStyle] ="{\'background\':\' linear-gradient(to top, #121212,70%, transparent),url(\'+ artistInfo.img +\') no-repeat center\'}" >         <span class="spancontent" >449,856  Monthly Listeners</span>        <h1 class="ArtistName"   >{{artistInfo.name}}</h1>        <div class="buttonContainer ">                        <button class="button-scss b"  type="button" (click)=PLay()>{{isPalyed?\'Play\':\'Pause\'}}</button>            <button pButton type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? \'white\':\'#1fa14d\' " type="button"  (click)="Follow()" >{{isFollowed?\'Follow\':\'unFollow\'}}</button>            <div  style="display: inline;">                <button type="button" title="More" class="moreButton">...</button>                <!-- <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">                    <i class="fa fa-user usericon"></i>                    ...                    <i class="fa fa-sort-down usericon-up" ></i>                </button>                  <mat-menu #menu="matMenu" class="dropdownmenu">                    <a mat-menu-item class="items">Start Radio</a>                    <a mat-menu-item class="items">Follow</a>                    <a mat-menu-item class="items">Copy Artist Link</a>                    <a mat-menu-item class="items">Open In Desktop App</a>                  </mat-menu> -->                                  <div class="dropdown-content">                    <a href="#">Link 1</a>                    <a href="#">Link 2</a>                    <a href="#">Link 3</a>                </div>            </div>        </div>        <nav>                        <li style="display: inline-block;">                <a  [routerLink]="[\'overview\']" aria-current="page" class="uc " style="background-color: #333;"  >Overview</a>            </li>            <li style="display: inline-block;">                <a  [routerLink]="[\'related\']" class="uc" style="cursor: pointer;">Related Artists</a>            </li>            <li style="display: inline-block;">                <a  [routerLink]="[\'about\']" class="uc">About</a>            </li>                    </nav>       </div>       </div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+        var COMPONENT_TEMPLATE = '<div><div >                    <div class="container-fluid bg-1"     *ngIf= "artistInfo" [ngStyle] ="{\'background\':\' linear-gradient(to top, #121212,70%, transparent),url(\'+ artistInfo.img +\') no-repeat center\'}" >         <span class="spancontent" >449,856  Monthly Listeners</span>        <h1 class="ArtistName"   >{{artistInfo.name}}</h1>        <div class="buttonContainer ">                        <button class="button-scss b"  type="button" (click)=pLay()>{{isPalyed?\'Play\':\'Pause\'}}</button>            <button *ngIf="isFollowed"  type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? \'white\':\'#1fa14d\' " type="button"  (click)="follow()" > Follow</button>            <button *ngIf="!isFollowed"  type="button" class="button-scss fb" style="background-color: transparent; border: 2px solid #fff; " [style.color]="isFollowed ? \'white\':\'#1fa14d\' " type="button"  (click)="unfollow()" > UnFollow</button>            <div  style="display: inline;">                <button type="button" title="More" class="moreButton">...</button>                <!-- <button mat-button [matMenuTriggerFor]="menu" class="dropmenu">                    <i class="fa fa-user usericon"></i>                    ...                    <i class="fa fa-sort-down usericon-up" ></i>                </button>                  <mat-menu #menu="matMenu" class="dropdownmenu">                    <a mat-menu-item class="items">Start Radio</a>                    <a mat-menu-item class="items">Follow</a>                    <a mat-menu-item class="items">Copy Artist Link</a>                    <a mat-menu-item class="items">Open In Desktop App</a>                  </mat-menu> -->                                  <div class="dropdown-content">                    <a href="#">Link 1</a>                    <a href="#">Link 2</a>                    <a href="#">Link 3</a>                </div>            </div>        </div>        <nav>                        <li style="display: inline-block;">                <a  [routerLink]="[\'overview\']" aria-current="page" class="uc " style="background-color: #333;"  >Overview</a>            </li>            <li style="display: inline-block;">                <a  [routerLink]="[\'related\']" class="uc" style="cursor: pointer;">Related Artists</a>            </li>            <li style="display: inline-block;">                <a  [routerLink]="[\'about\']" class="uc">About</a>            </li>                    </nav>       </div>       </div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountHelpComponent', 'selector': 'app-account-help'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistManagementComponent', 'selector': 'app-artist-management'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardsContainerComponent', 'selector': 'app-cards-container'},{'name': 'ChangeEmailHelpComponent', 'selector': 'app-change-email-help'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ConnectComponent', 'selector': 'app-connect'},{'name': 'ConnectingComponent', 'selector': 'app-connecting'},{'name': 'CreateAlbumComponent', 'selector': 'app-create-album'},{'name': 'CreateSongComponent', 'selector': 'app-create-song'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'EditAccountHelpComponent', 'selector': 'app-edit-account-help'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikedsongsComponent', 'selector': 'app-likedsongs'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginHelpComponent', 'selector': 'app-login-help'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NotificationHelpComponent', 'selector': 'app-notification-help'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlayingQueueComponent', 'selector': 'app-playing-queue'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecentSearchComponent', 'selector': 'recent-search'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordHelpComponent', 'selector': 'app-reset-password-help'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarHelpComponent', 'selector': 'app-sidebar-help'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongsComponent', 'selector': 'songs'},{'name': 'TopResultComponent', 'selector': 'top-result'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsingMayestroComponent', 'selector': 'app-using-mayestro'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ArtistHeaderComponent'};
 </script>

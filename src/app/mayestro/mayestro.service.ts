@@ -64,25 +64,36 @@ export class MayestroService {
     );
   }
 
+  /**
+   * snd requist with string to search with it
+   * @param resp string to search
+   */
   getSearch(resp) {
     return this.httpClient.get(this.auth.URL + "/search/" + resp);
   }
 
+  /**
+   * get browse cards
+   */
   getBrowse() {
     return this.httpClient.get(this.auth.URL + "/search");
   }
 
+  /**
+   * get recent search
+   */
   getRecentSearch() {
     return this.httpClient.get(this.auth.URL + "/recentSearch");
   }
+
   /**
    * gets user information by its id
    * @param id user id
    */
-
   getUser(id) {
     return this.httpClient.get(this.auth.URL + `/users/${id}`);
   }
+
   /**
    * get playlists of an user by its id
    * @param id user's id

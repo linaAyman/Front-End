@@ -77,7 +77,7 @@ import { HomeComponent } from &quot;./home/home.component&quot;;
 import { PlayerComponent } from &quot;./player/player.component&quot;;
 import { SideBarComponent } from &quot;./side-bar/side-bar.component&quot;;
 import { SeeAllComponent } from &quot;./see-all/see-all.component&quot;;
-import { SearchCardComponent } from &quot;./search-card/search-card.component&quot;;
+import { SearchCardComponent } from &quot;./search/search-card/search-card.component&quot;;
 import { SearchComponent } from &quot;./search/search.component&quot;;
 import { PlaylistComponent } from &quot;./playlist/playlist.component&quot;;
 import { PlaylistsComponent } from &quot;./playlists/playlists.component&quot;;
@@ -86,7 +86,9 @@ import { AlbumsComponent } from &quot;./albums/albums.component&quot;;
 import { UserProfileComponent } from &quot;./user-profile/user-profile.component&quot;;
 import { from } from &quot;rxjs&quot;;
 import { NotFoundComponent } from &quot;../shared/components/not-found/not-found.component&quot;;
-
+import { LikedsongsComponent } from &quot;../mayestro/likedsongs/likedsongs.component&quot;;
+import { PlayingQueueComponent } from &#x27;./playing-queue/playing-queue.component&#x27;;
+import { DownloadComponent } from &#x27;./download/download.component&#x27;;
 const routes: Routes &#x3D; [
   {
     path: &quot;&quot;,
@@ -97,12 +99,16 @@ const routes: Routes &#x3D; [
       { path: &quot;player&quot;, component: PlayerComponent },
       { path: &quot;side&quot;, component: SideBarComponent },
       { path: &quot;seeall/:name&quot;, component: SeeAllComponent },
+      { path: &quot;search/seeall/:browse/:color/:name&quot;, component: SeeAllComponent },
+      { path: &quot;seeall/:browse/:name&quot;, component: SeeAllComponent },
       { path: &quot;search&quot;, component: SearchComponent },
       { path: &quot;playlist/:id/:type&quot;, component: PlaylistComponent },
       { path: &quot;yourlibrary/playlists&quot;, component: PlaylistsComponent },
       { path: &quot;yourlibrary/artist&quot;, component: ArtistsComponent },
       { path: &quot;yourlibrary/album&quot;, component: AlbumsComponent },
-
+      {path:&quot;LikedSongs&quot;,component:LikedsongsComponent} ,
+      {path: &quot;queue&quot;,component: PlayingQueueComponent},
+      {path: &quot;download&quot;, component:DownloadComponent},
       {
         path: &quot;artist/:id&quot;,
         loadChildren: () &#x3D;&gt;

@@ -9,25 +9,64 @@ import { ArtistManagementService } from "../artist-management.service";
   templateUrl: "./card.component.html",
   styleUrls: ["./card.component.css"],
 })
+
+/**
+ * card component
+ */
 export class CardComponent implements OnInit {
+  /**
+   * card data
+   */
   @Input() card: IArtistCard;
+  /**
+   * card type
+   */
   @Input() type;
+  /**
+   * edite mode flag to edite or show
+   */
   editeMode = false;
+
+  /**
+   * all songs array
+   */
   allSongs = [];
+
+  /**
+   * album songs array
+   */
   albumSongs = [];
+
+  /**
+   * new name to edite
+   */
   newName;
+  /**
+   * new description to edite
+   */
   newDescription;
 
+  /**
+   *
+   * @param dialog dialog to show charts in it
+   * @param service artist managment service
+   */
   constructor(
     private dialog: MatDialog,
     private service: ArtistManagementService
   ) {}
 
+  /**
+   * set new name and new description to current data
+   */
   ngOnInit() {
     this.newName = this.card.name;
     this.newDescription = this.card.description;
   }
 
+  /**
+   * open chart data in dialog and pass it service function refrence
+   */
   openChart() {
     this.dialog
       .open(ChartComponent, {
@@ -38,6 +77,10 @@ export class CardComponent implements OnInit {
       })
       .updateSize("1000px", "500px");
   }
+
+  /**
+   * send new data to the serve
+   */
   openEdite() {
     if (this.type == "s") {
       let newSong: IArtistCard = {
@@ -65,6 +108,9 @@ export class CardComponent implements OnInit {
     }
   }
 
+  /**
+   * delete song or album
+   */
   openDelete() {
     if (this.type == "s") {
       this.service.deleteSong(this.card._id).subscribe((res) => {
@@ -77,6 +123,10 @@ export class CardComponent implements OnInit {
     }
   }
 
+  /**
+   * push song in album songs array
+   * @param songs song from all songs
+   */
   selectSong(songs) {
     this.albumSongs.push(this.allSongs.find((s) => s.id == songs.value));
     this.allSongs.splice(
@@ -85,6 +135,9 @@ export class CardComponent implements OnInit {
     );
   }
 
+  /**
+   * change mode to edite mode
+   */
   enableEditeMode() {
     if (this.type == "a") {
       this.albumSongs = this.card.songs.slice();

@@ -7,10 +7,23 @@ import { MAT_DIALOG_DATA } from "@angular/material";
   templateUrl: "./chart.component.html",
   styleUrls: ["./chart.component.css"],
 })
+/**
+ * charts component
+ */
 export class ChartComponent implements OnInit {
+  /**
+   * listeners data per day , month , and year
+   */
   listeners;
+  /**
+   * likes data per day , month , and year
+   */
   likes;
 
+  /**
+   * call listeners and likes data from serve thes pass it to renderChart function to display it
+   * @param data service function refrence to call it
+   */
   constructor(@Inject(MAT_DIALOG_DATA) data) {
     data.subscribe((res) => {
       this.listeners = res.listeners;
@@ -50,8 +63,18 @@ export class ChartComponent implements OnInit {
     });
   }
 
+  /**
+   * @ignore
+   */
   ngOnInit() {}
 
+  /**
+   * render data from array to display it in html element by id
+   * @param title chart title
+   * @param subtitle chart subtitle
+   * @param data chart data
+   * @param id htmg id
+   */
   renderChart(title, subtitle, data, id) {
     let chart = new cjs.Chart(id, {
       zoomEnabled: true,

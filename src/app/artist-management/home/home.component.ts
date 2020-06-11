@@ -7,15 +7,38 @@ import { LoadingService } from "src/app/shared/services/loading.service";
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
 })
+
+/**
+ * artist home component
+ */
 export class HomeComponent implements OnInit {
+  /**
+   * artist songs
+   */
   songs;
+  /**
+   * artist albumse
+   */
   albums;
+
+  /**
+   * artist basic info
+   */
   artist;
+
+  /**
+   *
+   * @param service artist managment service
+   * @param loading loading service
+   */
   constructor(
     private service: ArtistManagementService,
     private loading: LoadingService
   ) {}
 
+  /**
+   * get artist data songs , albums and basic info
+   */
   ngOnInit() {
     this.loading.loading.next(true);
     setTimeout(() => {

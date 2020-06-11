@@ -133,6 +133,9 @@
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#onActivate">onActivate</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -212,6 +215,79 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onActivate"></a>
+                    <span class="name">
+                        <b>
+                            onActivate
+                        </b>
+                        <a href="#onActivate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onActivate(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/mayestro/mayestro.component.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>function to go to the top of window </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>event get from html</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 </div>
@@ -231,6 +307,20 @@ export class MayestroComponent implements OnInit {
 
   ngOnInit() {
   }
+  /**
+   * function to go to the top of window 
+   * @param event event get from html
+   */
+  onActivate(event) {
+    let scrollToTop &#x3D; window.setInterval(() &#x3D;&gt; {
+        let pos &#x3D; window.pageYOffset;
+        if (pos &gt; 0) {
+            window.scrollTo(0, pos - 20); // how far to scroll on each step
+        } else {
+            window.clearInterval(scrollToTop);
+        }
+    }, 16);
+}
 
 }
 </code></pre>
@@ -247,7 +337,7 @@ export class MayestroComponent implements OnInit {
     &lt;div class&#x3D;&quot;test&quot;&gt;
         &lt;section class&#x3D;&quot; position-relative  p-0&quot;&gt;
             &lt;div class&#x3D;&quot;container p-0 router&quot;&gt;
-                &lt;router-outlet&gt;&lt;/router-outlet&gt;
+                &lt;router-outlet (activate)&#x3D;&quot;onActivate($event)&quot;&gt;&lt;/router-outlet&gt;
             &lt;/div&gt;
         &lt;/section&gt;
         &lt;footer class&#x3D;&quot;player &quot;&gt;
@@ -261,7 +351,7 @@ export class MayestroComponent implements OnInit {
                     <code>./mayestro.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.player {
-  z-index: 9;
+  z-index: 10;
   width: 100%;
   display: flex;
   line-height: 1.5;
@@ -275,7 +365,8 @@ export class MayestroComponent implements OnInit {
   bottom: 0;
   flex-direction: row;
   height: 75px;
-  background-color: rgb(105, 105, 105);
+  background-color:#282828;
+  
 }
 .test {
   margin: 0;
@@ -341,6 +432,11 @@ export class MayestroComponent implements OnInit {
   font-size: 12px;
   text-align: center;
 }
+
+.myClass .mat-dialog-container {
+  padding: 0;
+  background-color: aqua;
+}
 </code></pre>
     </div>
 
@@ -369,8 +465,8 @@ export class MayestroComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-0 test" style="background-color: #121212;">    <div class="side">        <app-side-bar></app-side-bar>    </div>    <div class="position-fixed headd">        <app-header></app-header>    </div>    <div class="test">        <section class=" position-relative  p-0">            <div class="container p-0 router">                <router-outlet></router-outlet>            </div>        </section>        <footer class="player ">            <app-player></app-player>        </footer></div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+        var COMPONENT_TEMPLATE = '<div><div class="p-0 test" style="background-color: #121212;">    <div class="side">        <app-side-bar></app-side-bar>    </div>    <div class="position-fixed headd">        <app-header></app-header>    </div>    <div class="test">        <section class=" position-relative  p-0">            <div class="container p-0 router">                <router-outlet (activate)="onActivate($event)"></router-outlet>            </div>        </section>        <footer class="player ">            <app-player></app-player>        </footer></div></div>'
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountHelpComponent', 'selector': 'app-account-help'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistManagementComponent', 'selector': 'app-artist-management'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardsContainerComponent', 'selector': 'app-cards-container'},{'name': 'ChangeEmailHelpComponent', 'selector': 'app-change-email-help'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ConnectComponent', 'selector': 'app-connect'},{'name': 'ConnectingComponent', 'selector': 'app-connecting'},{'name': 'CreateAlbumComponent', 'selector': 'app-create-album'},{'name': 'CreateSongComponent', 'selector': 'app-create-song'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'EditAccountHelpComponent', 'selector': 'app-edit-account-help'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikedsongsComponent', 'selector': 'app-likedsongs'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginHelpComponent', 'selector': 'app-login-help'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NotificationHelpComponent', 'selector': 'app-notification-help'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlayingQueueComponent', 'selector': 'app-playing-queue'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecentSearchComponent', 'selector': 'recent-search'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordHelpComponent', 'selector': 'app-reset-password-help'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarHelpComponent', 'selector': 'app-sidebar-help'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongsComponent', 'selector': 'songs'},{'name': 'TopResultComponent', 'selector': 'top-result'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsingMayestroComponent', 'selector': 'app-using-mayestro'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MayestroComponent'};
 </script>

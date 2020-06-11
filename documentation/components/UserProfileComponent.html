@@ -174,12 +174,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, mystro: <a href="../injectables/MayestroService.html">MayestroService</a>)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, mystro: <a href="../injectables/MayestroService.html">MayestroService</a>, loading: <a href="../injectables/LoadingService.html">LoadingService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -213,6 +213,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/MayestroService.html" target="_self" >MayestroService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loading</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -260,8 +272,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -303,7 +315,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -330,7 +342,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -362,7 +374,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -390,14 +402,14 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    image:&quot;&quot;,
-    name:&quot;&quot;
+    image: &quot;&quot;,
+    name: &quot;&quot;,
   }</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/mayestro/user-profile/user-profile.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -410,54 +422,73 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ICard } from &#x27;./../card/card.interface&#x27;;
-import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { MayestroService } from &#x27;../mayestro.service&#x27;;
-import { tick } from &#x27;@angular/core/testing&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ICard } from &quot;./../card/card.interface&quot;;
+import { Component, OnInit } from &quot;@angular/core&quot;;
+import { ActivatedRoute } from &quot;@angular/router&quot;;
+import { MayestroService } from &quot;../mayestro.service&quot;;
+import &quot;rxjs&quot;;
+// import &quot;rxjs-compat/add/observable/combineLatest&quot;
+// import &quot;rxjs-compat/add/operator/switchMap&quot;
+// import { Observable } from &#x27;rxjs&#x27;;
+import { combineLatest } from &quot;rxjs&quot;;
+import { switchMap } from &quot;rxjs/operators&quot;;
+import { LoadingService } from &quot;src/app/shared/services/loading.service&quot;;
 
 @Component({
-  selector: &#x27;app-user-profile&#x27;,
-  templateUrl: &#x27;./user-profile.component.html&#x27;,
-  styleUrls: [&#x27;./user-profile.component.css&#x27;]
+  selector: &quot;app-user-profile&quot;,
+  templateUrl: &quot;./user-profile.component.html&quot;,
+  styleUrls: [&quot;./user-profile.component.css&quot;],
 })
 export class UserProfileComponent implements OnInit {
-
-  id:any;
-  user&#x3D;{
-    image:&quot;&quot;,
-    name:&quot;&quot;
+  id: any;
+  user &#x3D; {
+    image: &quot;&quot;,
+    name: &quot;&quot;,
   };
-  image:any;
-  playListArray:Array&lt;ICard&gt;&#x3D;[];
-  constructor(private route:ActivatedRoute,private mystro:MayestroService) { }
+  image: any;
+  playListArray: Array&lt;ICard&gt; &#x3D; [];
+  constructor(
+    private route: ActivatedRoute,
+    private mystro: MayestroService,
+    private loading: LoadingService
+  ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(p&#x3D;&gt;{
-      this.id&#x3D;p[&#x27;id&#x27;];
-    })
+    this.loading.loading.next(true);
+    setTimeout(() &#x3D;&gt; {
+      this.route.params
+        .pipe(
+          switchMap((param) &#x3D;&gt; {
+            this.id &#x3D; param[&quot;id&quot;];
+            return combineLatest([
+              this.mystro.getUser(this.id),
+              this.mystro.getUserPLaylist(this.id),
+            ]);
+          })
+        )
+        .subscribe(
+          (comp: any) &#x3D;&gt; {
+            this.user.name &#x3D; comp[0].name;
+            this.user.image &#x3D; comp[0].image;
 
-    this.mystro.getUser(this.id).subscribe((res:any)&#x3D;&gt;{
-      this.user.name&#x3D;res.name;
-      this.user.image&#x3D;res.image;
-    })
-
-    this.mystro.getUserPLaylist(this.id).subscribe((res:any)&#x3D;&gt;{
-      res.playlists.forEach(element &#x3D;&gt; {
-        const card:ICard&#x3D;{
-          name: element.name,
-          description: element.description,
-          imgUrl:element.image,
-          ID: element.id,
-          type:&quot;playlists&quot;
-        }
-        this.playListArray.push(card);
-      }
-      );
-    })
-
+            comp[1].playlists.forEach((element) &#x3D;&gt; {
+              const card: ICard &#x3D; {
+                name: element.name,
+                description: element.description,
+                imgUrl: element.image,
+                ID: element.id,
+                type: &quot;playlist&quot;,
+              };
+              this.playListArray.push(card);
+            });
+          },
+          (err) &#x3D;&gt; {},
+          () &#x3D;&gt; {
+            this.loading.loading.next(false);
+          }
+        );
+    }, 3000);
   }
-
 }
 </code></pre>
     </div>
@@ -514,7 +545,7 @@ export class UserProfileComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div style="padding-bottom: 32px;">    <div class="text-center" style="padding: 32px;">        <img [src]="user.image" alt="Avatar" class="avatar">        <h1 style="padding-top: 32px; color: white; font-size: 36px;  font-weight: bold; ">{{user.name}}</h1>    </div>    <div style="padding-bottom: 32px; padding-left: 20px; padding-right: 20px;">        <div class="row px-4">            <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let l of playListArray"><app-card [card]="l" ></app-card></div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'}];
+    var COMPONENTS = [{'name': 'AboutArtistComponent', 'selector': 'app-about-artist'},{'name': 'AccountHelpComponent', 'selector': 'app-account-help'},{'name': 'AccountMayestroComponent', 'selector': 'app-account-mayestro'},{'name': 'AlbumsComponent', 'selector': 'app-albums'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistCardComponent', 'selector': 'app-artist-card'},{'name': 'ArtistComponent', 'selector': 'app-artist'},{'name': 'ArtistHeaderComponent', 'selector': 'app-artist-header'},{'name': 'ArtistManagementComponent', 'selector': 'app-artist-management'},{'name': 'ArtistOverviewComponent', 'selector': 'app-artist-overview'},{'name': 'ArtistsComponent', 'selector': 'app-artists'},{'name': 'ArtistSongComponent', 'selector': 'app-artist-song'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CardsContainerComponent', 'selector': 'app-cards-container'},{'name': 'ChangeEmailHelpComponent', 'selector': 'app-change-email-help'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePlanComponent', 'selector': 'app-change-plan'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ConnectComponent', 'selector': 'app-connect'},{'name': 'ConnectingComponent', 'selector': 'app-connecting'},{'name': 'CreateAlbumComponent', 'selector': 'app-create-album'},{'name': 'CreateSongComponent', 'selector': 'app-create-song'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'DownloadComponent', 'selector': 'app-download'},{'name': 'EditAccountHelpComponent', 'selector': 'app-edit-account-help'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'GetPremiumComponent', 'selector': 'app-get-premium'},{'name': 'GetPremiumHeaderComponent', 'selector': 'app-get-premium-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeArtistCardComponent', 'selector': 'app-home-artist-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikedsongsComponent', 'selector': 'app-likedsongs'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginHelpComponent', 'selector': 'app-login-help'},{'name': 'MayestroComponent', 'selector': 'app-mayestro'},{'name': 'MiniCardViewerComponent', 'selector': 'mini-card-viewer'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NotificationHelpComponent', 'selector': 'app-notification-help'},{'name': 'OpenMayestroComponent', 'selector': 'app-open-mayestro'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlayingQueueComponent', 'selector': 'app-playing-queue'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistsComponent', 'selector': 'app-playlists'},{'name': 'PremiumComponent', 'selector': 'app-premium'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecentSearchComponent', 'selector': 'recent-search'},{'name': 'RelatedArtistsComponent', 'selector': 'app-related-artists'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordHelpComponent', 'selector': 'app-reset-password-help'},{'name': 'SearchCardComponent', 'selector': 'search-card'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SeeAllComponent', 'selector': 'app-see-all'},{'name': 'SetDevicePasswordComponent', 'selector': 'app-set-device-password'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarHelpComponent', 'selector': 'app-sidebar-help'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongComponent', 'selector': 'app-song'},{'name': 'SongsComponent', 'selector': 'songs'},{'name': 'TopResultComponent', 'selector': 'top-result'},{'name': 'TrackComponent', 'selector': 'app-track'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsingMayestroComponent', 'selector': 'app-using-mayestro'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserProfileComponent'};
 </script>

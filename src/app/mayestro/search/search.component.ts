@@ -11,23 +11,52 @@ import { LoadingService } from "src/app/shared/services/loading.service";
   templateUrl: "./search.component.html",
   styleUrls: ["./search.component.css"],
 })
+/**
+ * search component
+ */
 export class SearchComponent implements OnInit {
+  /**
+   * top result
+   */
   top: any;
+
+  /**
+   * browse cards
+   */
   browse: any;
+  /**
+   * search input
+   */
   input: any;
-  recentsearch: boolean;
-  rec = { playlists: [], albums: [], artists: [] };
-  recent: ICategory;
-  cards: Array<ICard> = [];
+
+  /**
+   * playlists form search
+   */
   playlists = new ICategory();
+  /**
+   * albums form search
+   */
   albums = new ICategory();
+  /**
+   * artists form search
+   */
   artists = new ICategory();
+
+  /**
+   *
+   * @param mystro mayestro service
+   * @param search search service
+   * @param loading loading service
+   */
   constructor(
     private mystro: MayestroService,
     private search: SearchInputService,
     private loading: LoadingService
   ) {}
 
+  /**
+   * get browse cards from server
+   */
   ngOnInit() {
     let c = new ICategory();
     let arr;
@@ -46,6 +75,9 @@ export class SearchComponent implements OnInit {
     this.searchInput();
   }
 
+  /**
+   * listen to search input then send requist with characters
+   */
   searchInput() {
     this.loading.loading.next(true);
     this.search.text.subscribe(

@@ -10,18 +10,47 @@ import { LoadingService } from "src/app/shared/services/loading.service";
   templateUrl: "./create-song.component.html",
   styleUrls: ["./create-song.component.css"],
 })
+
+/**
+ * create song component
+ */
 export class CreateSongComponent implements OnInit {
+  /**
+   * song image data
+   */
   image;
+
+  /**
+   * song data
+   */
   song;
+
+  /**
+   * img url to show the artist befor send to server
+   */
   imgUrl;
+
+  /**
+   *
+   * @param service artist managment service
+   * @param router router service
+   * @param loading loading service
+   */
   constructor(
     private service: ArtistManagementService,
     private router: Router,
     private loading: LoadingService
   ) {}
 
+  /**
+   * @ignore
+   */
   ngOnInit() {}
 
+  /**
+   * set img data and url from input
+   * @param event input file data
+   */
   uploadImg(event) {
     this.image = event[0];
     const reader = new FileReader();
@@ -30,9 +59,19 @@ export class CreateSongComponent implements OnInit {
       this.imgUrl = reader.result;
     };
   }
+
+  /**
+   * set  data  from input
+   * @param event input file data
+   */
   uploadSong(event) {
     this.song = event[0];
   }
+
+  /**
+   * send data from input to server to create new song
+   * @param f form data
+   */
   submit(f) {
     this.loading.loading.next(true);
     setTimeout(() => {
