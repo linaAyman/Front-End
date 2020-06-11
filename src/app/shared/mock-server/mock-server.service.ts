@@ -3273,6 +3273,45 @@ export class MockServerService implements HttpInterceptor {
               image:
                 "https://i.scdn.co/image/ab67616d00001e02d32c61683be0aed19bafcf99",
               name: "songs for carmella: lullabies & sing-a-longs",
+            },{
+              totalTracks: 2,
+              releaseDate:
+                "Wed May 01 2020 00:00:00 GMT+0200 (Eastern European Standard Time)",
+              tracks: [
+                {
+                  name: "amarain",
+                  trackNumber: 1,
+                  id: 1,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                },
+                {
+                  name: "sahran",
+                  trackNumber: 2,
+                  id: 2,
+                  duration: 2,
+                  artists: [
+                    {
+                      name: "amrdiab"
+                    }
+                  ]
+                }
+              ],
+              artists: [
+                {
+                  id: "3xl0OvcSlc9Mwe5ToaFtD3",
+                  name: "Amr Diab"
+                }
+              ],
+              type: "album",
+              id: "3xl0OvcSlc9Mwe5ToaFtD23",
+              image:
+                "https://i.scdn.co/image/ab67616d0000b273abf13a20e745572fc39f939b",
+              name: "Sahran"
             },
             {
               totalTracks: 2,

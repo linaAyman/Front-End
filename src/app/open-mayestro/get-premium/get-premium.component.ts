@@ -63,7 +63,7 @@ export class GetPremiumComponent implements OnInit {
       return;
     };
     this.service.toBePremium(f.value.email).subscribe(
-      () => {
+      res => {
         this.router.navigate(["/open.mayestro/overview"]);
       },
       err => {
