@@ -9,5 +9,6 @@ cd Front-End
 npm install
 ng build --aot=false
 sudo systemctl restart nginx
+
 exit
 EOF
