@@ -9,6 +9,9 @@ install:
   - npm install
   - npm install -g @angular/cli@8.3.5
 
+script:
+  - ng test
+
 before_deploy:
   - chmod 400 testaws.pem
   - eval "$(ssh-agent -s)"
