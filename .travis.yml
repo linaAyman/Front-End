@@ -1,6 +1,10 @@
 language: node_js 
 node_js: node
 sudo: required
+
+addons:
+  chrome: stable
+
 branches:
   only:
     - master
@@ -11,7 +15,7 @@ install:
   - npm install -g @angular/cli@8.3.5
 
 #script:
-  #- npm test
+  - ng test
 
 before_deploy:
   - chmod 400 testaws.pem
