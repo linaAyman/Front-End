@@ -3709,7 +3709,12 @@ export class MockServerService implements HttpInterceptor {
         ],
       },
     ];
-    ////////////
+    this.FollowedArtists= [
+      {
+      artists: [
+    ]
+  }
+  ];
     this.Liked= [
       {
 
