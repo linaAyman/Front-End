@@ -1,5 +1,5 @@
 .player {
-  z-index: 9;
+  z-index: 10;
   width: 100%;
   display: flex;
   line-height: 1.5;
@@ -13,7 +13,8 @@
   bottom: 0;
   flex-direction: row;
   height: 75px;
-  background-color: rgb(105, 105, 105);
+  background-color:#282828;
+  
 }
 .test {
   margin: 0;
@@ -78,4 +79,9 @@
   opacity: 0.6;
   font-size: 12px;
   text-align: center;
+}
+
+.myClass .mat-dialog-container {
+  padding: 0;
+  background-color: aqua;
 }

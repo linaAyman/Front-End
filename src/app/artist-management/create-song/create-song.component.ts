@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ArtistManagementService } from "../artist-management.service";
 import { switchMap } from "rxjs/operators";
 import { combineLatest } from "rxjs";
+import { Router } from "@angular/router";
+import { LoadingService } from "src/app/shared/services/loading.service";
 
 @Component({
   selector: "app-create-song",
@@ -12,7 +14,11 @@ export class CreateSongComponent implements OnInit {
   image;
   song;
   imgUrl;
-  constructor(private service: ArtistManagementService) {}
+  constructor(
+    private service: ArtistManagementService,
+    private router: Router,
+    private loading: LoadingService
+  ) {}
 
   ngOnInit() {}
 
@@ -28,18 +34,28 @@ export class CreateSongComponent implements OnInit {
     this.song = event[0];
   }
   submit(f) {
-    this.service
-      .postSong(f.value)
-      .pipe(
-        switchMap((res: any) => {
-          return combineLatest([
-            this.service.uploadSongImg(this.image, res.song._id),
-            this.service.uploadSongData(this.song, res.song._id),
-          ]);
-        })
-      )
-      .subscribe((res) => {
-        console.log(res);
-      });
+    this.loading.loading.next(true);
+    setTimeout(() => {
+      this.service
+        .postSong(f.value)
+        .pipe(
+          switchMap((res: any) => {
+            return combineLatest([
+              this.service.uploadSongImg(this.image, res.song._id),
+              this.service.uploadSongData(this.song, res.song._id),
+            ]);
+          })
+        )
+        .subscribe(
+          (res) => {
+            console.log(res);
+            this.router.navigate(["./artist.management/artist"]);
+          },
+          (err) => {},
+          () => {
+            this.loading.loading.next(false);
+          }
+        );
+    }, 3000);
   }
 }

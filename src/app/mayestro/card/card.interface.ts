@@ -2,7 +2,7 @@
 /**
  * Card Interface 
  */
-export interface ICard{
+export class ICard{
     name: string;
     description: string;
     imgUrl: string;

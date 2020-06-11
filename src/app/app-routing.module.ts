@@ -23,6 +23,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: "download",
+    loadChildren: () =>
+      import(`./connect/connect.module`).then((m) => m.ConnectModule),
+  },
+  {
     path: "artist.management",
     loadChildren: () =>
       import(`./artist-management/artist-management.module`).then(

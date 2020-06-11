@@ -6,18 +6,16 @@ describe('ArtistHeaderComponent', () => {
 
   var followed: ArtistHeaderComponent;
   beforeEach(()=>{
-    followed=new ArtistHeaderComponent();
+    var followed: ArtistHeaderComponent;
   });
       it('should change isfollowed vaule to false if input true',()=>{
-        followed.isfollowed=true;
-        followed.Follow()
-        console.log(followed.isfollowed)
-        expect(followed.isfollowed).toBeFalsy();
+        followed.isFollowed=true;
+        followed.follow()
+        expect(followed.isFollowed).toBeFalsy();
       })
       it('should change isplayed vaule to false if input true',()=>{
-        followed.ispalyed=true;
-        followed.PLay()
-        console.log(followed.ispalyed)
-        expect(followed.ispalyed).toBeFalsy();
+        followed.isPalyed=true;
+        followed.pLay()
+        expect(followed.isPalyed).toBeFalsy();
       })
 });

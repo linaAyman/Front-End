@@ -9,10 +9,10 @@ describe("PlayerComponent", () => {
   let fixture: ComponentFixture<PlayerComponent>;
   let service: PlayerService;
 
-  beforeEach(() => {
-    service = new PlayerService(null, null);
-    component = new PlayerComponent(service, null);
-  });
+  // beforeEach(() => {
+  //   service = new PlayerService(null, null);
+  //   component = new PlayerComponent(service, null);
+  // });
 
   // it("should set GetTracksProperty with items returned from the server ", () => {
   //   let urls = [];

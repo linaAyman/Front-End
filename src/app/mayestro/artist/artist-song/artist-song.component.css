@@ -1,43 +1,13 @@
-.song-box{
-    width: 100%;
-    height: 56px;
-    background-color:  #121212;
-    cursor: pointer;
-    
-}
-
-.song-box :hover{
+.table-hover:hover{
     background-color:rgb(44, 44, 44);
 }
-
-.song-box:hover .song-more-btn{
+.table-hover:hover .song-more-btn{
     background-color:rgb(44, 44, 44);
-    visibility: visible;
-   
-}
-
-.hoverbox{
-    height: 56px;
-    width: 100%;
-}
-.music-icon{
-    width: 28px;
-    height: 56px;
-    margin-left: 14px;
-    
-}
-
-.song-image{
-    width: 56px;
-    height: 60px;
-    margin-right: 14px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-   
+    visibility: visible;   
 }
 
 .song-name{
-    /* width: 920px; */
+
     width: 75%;
     font-size: 16px;
     line-height: 22px;
@@ -46,8 +16,7 @@
 }
 
 .song-more-btn{
-    visibility: hidden;
-    
+    visibility: hidden;    
     font-size: 30px;
     /* background-color: rgb(44, 44, 44); */
     background-color: #121212;
@@ -57,4 +26,3 @@
     height: 48px;
     margin-right: 60px;
 }
-

@@ -29,10 +29,10 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    let c = new ICategory();
+    let arr;
     this.loading.loading.next(true);
     setTimeout(() => {
-      let c = new ICategory();
-      let arr;
       this.mystro.getBrowse().subscribe(
         (res) => {
           this.browse = res["Browse"];

@@ -1,5 +1,10 @@
-language: generic 
+language: node_js 
+node_js: node
 sudo: required
+
+addons:
+  chrome: stable
+
 branches:
   only:
     - master
@@ -8,6 +13,9 @@ branches:
 install:
   - npm install
   - npm install -g @angular/cli@8.3.5
+
+script:
+  - ng test --watch false --browsers ChromeHeadless
 
 before_deploy:
   - chmod 400 testaws.pem

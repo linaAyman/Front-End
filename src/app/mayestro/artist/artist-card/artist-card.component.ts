@@ -6,8 +6,12 @@ import { IACard } from './artist-card.interface';
   templateUrl: './artist-card.component.html',
   styleUrls: ['./artist-card.component.css']
 })
+/**
+ * artist card component
+ */
 export class ArtistCardComponent implements OnInit {
   @Input() aCard: IACard;
+  album:"album";
   constructor() { }
 
   ngOnInit() {

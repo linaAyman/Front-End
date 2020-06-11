@@ -34,6 +34,6 @@ export class HomeComponent implements OnInit {
           this.loading.loading.next(false);
         }
       );
-    }, 3000);
+    }, 1000);
   }
 }

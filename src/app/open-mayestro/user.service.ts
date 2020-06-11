@@ -39,7 +39,32 @@ export class UserService {
       headers: { token: localStorage.getItem("token") }
     });  
   }
-
+  /**
+   * method to get premium plan
+   * @param plan premium plan
+   */
+  getPremiumPlan(plan){
+    return this.httpClinet.get(this.auth.URL + `/getpremium/${plan}`);
+  }
+  /**
+   * send user email to server to get premium
+   * @param email user email
+   */
+  toBePremium(email){
+    return this.httpClinet.post(this.auth.URL+"/user/premium",email).pipe(
+      map((res: any) => {
+        localStorage.setItem("token", res.token);
+      })
+    );
+  }
+  /**
+   * gets playlists for home in open.mayestro
+   */
+  getHomePlaylists(){
+    return this.httpClinet.get(this.auth.URL+'/me/playlist',{
+      headers: { token: localStorage.getItem("token") }
+    });
+  }
   /**
    * methode that edits user data
    * 
@@ -48,7 +73,6 @@ export class UserService {
   UpdateUser(user:any){
    return this.httpClinet.put(this.auth.URL+'/user/editprofile',user).pipe(
     map((res: any) => {
-      console.log("res", res);
       localStorage.setItem("token", res.token);
     })
   );

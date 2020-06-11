@@ -11,7 +11,7 @@
 
   .button-scss{
     
-    font-size: 12px;
+    font-size: 0.9vw;
     font-weight: 600;
     letter-spacing: 1.76px;
     text-transform: uppercase;
@@ -47,4 +47,15 @@
 .bb:hover{
     background-color:  #616161;
     color: white;
+}
+
+.card-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: .3em 0.6em;
+    background: #3794D1;
+    color: #FFF;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 4px;
 }

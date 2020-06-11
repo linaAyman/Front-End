@@ -1,6 +1,3 @@
-import { ChangePlanComponent } from './get-premium/change-plan/change-plan.component';
-import { GetPremiumHeaderComponent } from './get-premium/get-premium-header/get-premium-header.component';
-import { GetPremiumComponent } from './get-premium/get-premium.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
@@ -26,6 +23,8 @@ import { ForgetPasswordComponent } from "./forget-password/forget-password.compo
 import { ChangePasswordComponent } from "./change-password/change-password.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { fakeBackendProvider } from '../shared/mock-server/mock-server.service';
+import { AccountMayestroService } from './account-mayestro.service';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -61,12 +60,13 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     SharedModule,
     HttpClientModule
     // SocialLoginModule
-  ]
+  ],
   // providers: [
   //   {
   //     provide: AuthServiceConfig,
   //     useFactory: provideConfig
   //   }
   // ]
+  providers:[fakeBackendProvider,AccountMayestroService]
 })
 export class AccountMayestroModule {}

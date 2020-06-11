@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ArtistManagementService } from "../artist-management.service";
 import { switchMap } from "rxjs/operators";
+import { Router } from "@angular/router";
+import { LoadingService } from "src/app/shared/services/loading.service";
 
 @Component({
   selector: "app-create-album",
@@ -12,7 +14,11 @@ export class CreateAlbumComponent implements OnInit {
   imgUrl;
   allSongs = [];
   albumSongs = [];
-  constructor(private service: ArtistManagementService) {}
+  constructor(
+    private service: ArtistManagementService,
+    private router: Router,
+    private loading: LoadingService
+  ) {}
 
   ngOnInit() {
     this.service.getArtistSongs().subscribe((res: any) => {
@@ -52,15 +58,25 @@ export class CreateAlbumComponent implements OnInit {
       ...f["value"],
       songs: this.albumSongs,
     };
-    this.service
-      .postAlbum(album)
-      .pipe(
-        switchMap((res: any) => {
-          return this.service.uploadAlbumImg(this.image, res.album._id);
-        })
-      )
-      .subscribe((res) => {
-        console.log(res);
-      });
+    this.loading.loading.next(true);
+    setTimeout(() => {
+      this.service
+        .postAlbum(album)
+        .pipe(
+          switchMap((res: any) => {
+            return this.service.uploadAlbumImg(this.image, res.album._id);
+          })
+        )
+        .subscribe(
+          (res) => {
+            console.log(res);
+            this.router.navigate(["./artist.management/artist"]);
+          },
+          (err) => {},
+          () => {
+            this.loading.loading.next(false);
+          }
+        );
+    }, 3000);
   }
 }

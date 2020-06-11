@@ -12,7 +12,7 @@ describe("PlaylistComponent", () => {
 
   beforeEach(() => {
     service = new MayestroService(null, null);
-    component = new PlaylistComponent(service, null);
+    //component = new PlaylistComponent(service, null);
   });
   // it("put things in component", () => {
   //   spyOn(service, "getPlaylist").and.callFake(() => {
