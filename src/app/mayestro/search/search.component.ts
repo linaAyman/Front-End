@@ -92,8 +92,8 @@ export class SearchComponent implements OnInit {
           if (res.albums.length > 0) {
             this.albums = {
               ID: "",
-              name: "Albumes",
-              type: "albume",
+              name: "Albums",
+              type: "album",
               description: "",
               cards: res.albums,
             };
