@@ -3,39 +3,39 @@ import { HttpClient } from "@angular/common/http";
 import { AuthService } from "../shared/services/auth.service";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class MayestroService {
   id: any;
   constructor(private httpClient: HttpClient, private auth: AuthService) {}
- /**
-  * gets an album 
-  * @param id  album id
-  */
+  /**
+   * gets an album
+   * @param id  album id
+   */
   getAlbum(id) {
     return this.httpClient.get(this.auth.URL + `/albums/${id}`);
   }
   /**
-  * gets tacks of an album 
-  * @param id  album id
-  */
+   * gets tacks of an album
+   * @param id  album id
+   */
   getTracks(id) {
     console.log("aaaa");
     return this.httpClient.get(this.auth.URL + `/albums/${id}/tracks`);
   }
 
-   /**
-  * gets a playlist 
-  * @param id  playlist id
-  */
+  /**
+   * gets a playlist
+   * @param id  playlist id
+   */
   getPlaylist(id) {
     return this.httpClient.get(this.auth.URL + `/playlist/${id}`);
   }
 
   /**
-  * gets tacks of a playlist 
-  * @param id  playlist id
-  */
+   * gets tacks of a playlist
+   * @param id  playlist id
+   */
   getPlaylistTracks(id) {
     return this.httpClient.get(this.auth.URL + `/playlist/1234/tracks`);
   }
@@ -50,24 +50,27 @@ export class MayestroService {
    * gets a category by its name
    * @param name category name
    */
-  getSeeAll(name) {
-    return this.httpClient.get(this.auth.URL + `/home/'${name}'`);
-  }
-  
-  getSearch(resp){
-    return this.httpClient.get(this.auth.URL+ "/search/"+resp);
+  getSeeAll(name, limit, start) {
+    return this.httpClient.get(
+      this.auth.URL + `/home/'${name}'/${limit}/${start}`
+    );
   }
 
-  getBrowse(){
-    return this.httpClient.get(this.auth.URL+ "/search");
+  getSearch(resp) {
+    return this.httpClient.get(this.auth.URL + "/search/" + resp);
   }
 
-  getRecentSearch(){
-    return this.httpClient.get(this.auth.URL+"/search");}
-  getUser(id){
-    return this.httpClient.get(this.auth.URL+`/users/${id}`)
+  getBrowse() {
+    return this.httpClient.get(this.auth.URL + "/search");
   }
-  getUserPLaylist(id){
-    return this.httpClient.get(this.auth.URL+`/users/${id}/playlists`)
+
+  getRecentSearch() {
+    return this.httpClient.get(this.auth.URL + "/recentSearch");
+  }
+  getUser(id) {
+    return this.httpClient.get(this.auth.URL + `/users/${id}`);
+  }
+  getUserPLaylist(id) {
+    return this.httpClient.get(this.auth.URL + `/users/${id}/playlists`);
   }
 }

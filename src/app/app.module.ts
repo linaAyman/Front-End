@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { fakeBackendProvider } from "./shared/mock-server/mock-server.service";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,9 +15,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ],
-  /// providers:[fakeBackendProvider],
-  bootstrap: [AppComponent]
+  providers: [fakeBackendProvider],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
