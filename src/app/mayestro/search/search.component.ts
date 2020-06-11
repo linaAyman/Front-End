@@ -42,7 +42,14 @@ export class SearchComponent implements OnInit {
           this.loading.loading.next(false);
         }
       );
-      this.search.text.subscribe((resp) => {
+    }, 3000);
+    this.searchInput();
+  }
+
+  searchInput() {
+    this.loading.loading.next(true);
+    this.search.text.subscribe(
+      (resp) => {
         this.input = resp;
         console.log(resp);
         this.mystro.getSearch(resp ? resp : "%20").subscribe((res: any) => {
@@ -78,7 +85,11 @@ export class SearchComponent implements OnInit {
             };
           }
         });
-      });
-    }, 3000);
+      },
+      (err) => {},
+      () => {
+        this.loading.loading.next(false);
+      }
+    );
   }
 }

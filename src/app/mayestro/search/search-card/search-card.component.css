@@ -49,6 +49,10 @@
     spotify-circular-arabic, spotify-circular-hebrew, Helvetica Neue, Helvetica,
     Arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
 }
+
+.podcast:hover {
+  text-decoration: none;
+}
 .podcast {
   overflow: hidden;
   /* background-color: rgb(245, 155, 35); */
