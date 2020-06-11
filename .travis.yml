@@ -1,5 +1,5 @@
 language: node_js 
-node_js: 11
+node_js: node
 sudo: required
 branches:
   only:
@@ -10,8 +10,8 @@ install:
   - npm install
   - npm install -g @angular/cli@8.3.5
 
-script:
-  - npm test
+#script:
+  #- npm test
 
 before_deploy:
   - chmod 400 testaws.pem
