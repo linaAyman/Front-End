@@ -25,3 +25,16 @@ Run `ng test --code--coverage` and it will generate coverage folder in the root
 ## Generate functional documentation
 
 Run `npm run compodoc` and it will generate documentation folder in the root
+
+## References
+
+https://www.udemy.com/course/the-complete-angular-master-class/
+https://getbootstrap.com/
+https://material.angular.io/
+https://jwt.io/
+https://fontawesome.com/
+https://canvasjs.com/
+https://www.w3schools.com/
+https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array 
+https://stackoverflow.com/questions/48048299/angular-5-scroll-to-top-on-every-route-click/48048822
+
